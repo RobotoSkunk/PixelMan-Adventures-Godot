@@ -1,4 +1,4 @@
-<p style="text-align: center">
+<p align="center">
 	<img
 		width="788"
 		height="196"
@@ -8,7 +8,7 @@
 	>
 </p>
 
-<p style="text-align: center; font-size: 1.3em">
+<p align="center" style="font-size: 1.3em">
 	<b>A simple, low-resource, open-source platformer game!</b>
 </p>
 
@@ -27,7 +27,8 @@ If you want to contribute to the project, please follow the
 We love contributions! So, feel free to contribute to the project as
 much as you want. Let's make the best platformer game ever!
 
-> Note: Please consider using C# over GDScript. GDScript is a great
+> **Note**
+> Please consider using C# over GDScript. GDScript is a great
 > language, but it's not as powerful and performant as C#.
 
 ### Note for Windows users
