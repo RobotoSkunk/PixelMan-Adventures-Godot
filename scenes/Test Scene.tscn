@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds8gpr35ere4s"]
+
+[ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="1_gw2ps"]
+[ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="2_eoc6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqmsn"]
+size = Vector2(16, 16)
+
+[node name="Test Scene" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(25.48, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("1_gw2ps")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_xqmsn")
+
+[node name="Player" parent="." instance=ExtResource("2_eoc6o")]
+position = Vector2(5, -54)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -56)
+zoom = Vector2(3.055, 3.055)

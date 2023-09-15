@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="PixelMan Adventures"
+run/main_scene="res://scenes/Test Scene.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
