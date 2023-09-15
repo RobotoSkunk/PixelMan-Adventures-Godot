@@ -1,0 +1,9 @@
+{
+	"files.exclude": {
+		"**/*.csproj": true,
+		"**/*.sln": true
+	},
+	"omnisharp.autoStart": true,
+	"omnisharp.useModernNet": true,
+	"dotnet.server.useOmnisharp": true
+}

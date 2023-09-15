@@ -1,16 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://so6iom4ptltd"]
+[gd_scene load_steps=4 format=3 uid="uid://so6iom4ptltd"]
 
-[ext_resource type="Texture2D" uid="uid://cf3brb4ojmk7w" path="res://assets/sprites/avatars.sprites/avatars/avatar-0/idle/0.tres" id="1_0sf53"]
+[ext_resource type="Script" path="res://objects/player/Player.cs" id="1_4lx6j"]
+[ext_resource type="Texture2D" uid="uid://cf3brb4ojmk7w" path="res://assets/sprites/avatars.sprites/avatars/avatar-0/idle/0.tres" id="2_os5tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o402s"]
 size = Vector2(7, 16)
 
 [node name="player" type="Node2D"]
+script = ExtResource("1_4lx6j")
 
 [node name="Renderer" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-texture = ExtResource("1_0sf53")
+texture = ExtResource("2_os5tj")
 
 [node name="Kinematic Body" type="CharacterBody2D" parent="."]
 
