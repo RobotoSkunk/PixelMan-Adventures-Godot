@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://so6iom4ptltd"]
+
+[ext_resource type="Texture2D" uid="uid://cf3brb4ojmk7w" path="res://assets/sprites/avatars.sprites/avatars/avatar-0/idle/0.tres" id="1_0sf53"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o402s"]
+size = Vector2(7, 16)
+
+[node name="player" type="Node2D"]
+
+[node name="Renderer" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_0sf53")
+
+[node name="Kinematic Body" type="CharacterBody2D" parent="."]
+
+[node name="Box Collider" type="CollisionShape2D" parent="Kinematic Body"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_o402s")
