@@ -14,7 +14,7 @@
 
 
 ## Development
-The game is being developed using [Godot 4.1.1 .NET](https://godotengine.org/download).
+The game is being developed using [Godot .NET 4.1.1](https://godotengine.org/download).
 
 Originally it was developed using [Unity](https://unity3d.com/download),
 but it was decided to switch to Godot to bring more flexibility, better performance
