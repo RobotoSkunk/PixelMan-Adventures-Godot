@@ -35,7 +35,7 @@ Also, make sure to follow the [coding style](CODING_STYLE.md) of the project.
 ### For Windows users
 If you're using Windows, please make sure to use the same line endings that the
 project uses. You can do this by configuring git to use `lf` line endings by
-default. You can do this by running the following command in the terminal:
+default by running the following command in the terminal:
 
 ```bash
 git config --global core.autocrlf input
