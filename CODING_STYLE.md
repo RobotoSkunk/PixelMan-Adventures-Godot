@@ -4,7 +4,8 @@
 > This is planned to be the new coding style for this project.
 
 This document describes the recommended coding style for this project.
-If you don't follow this style, we'll ask you to change your pull request to follow this style.
+If you don't follow this style, we'll ask you to change your pull request to
+follow this style.
 
 
 ## Contents
@@ -26,7 +27,8 @@ If you don't follow this style, we'll ask you to change your pull request to fol
 - Use 4 spaces for indentation in Markdown files.
 
 ## Variable declaration
-- Use `readonly` for variables that are not changed after initialization, except:
+- Use `readonly` for variables that are not changed after initialization,
+    except:
     - Variables that are used in the inspector.
 	- Variables that are going to be serialized.
 - Use camelCase for variable names.
@@ -53,7 +55,8 @@ public string errorString;
 
 ## Whitespace
 - Use blank lines to group statements.
-- Use only one blank line between methods, variables, etc... if they are of the same type or group.
+- Use only one blank line between methods, variables, etc... if they are of the
+    same type or group.
 - Use two blank lines between groups of methods, variables, etc...
 - Use only space after each keyword.
     - Exception: No space between return and `;`.
@@ -78,7 +81,8 @@ if (1 == 1) {
 ## Ennumeration
 Ideally it should be one member per line.
 
-Allwas add a trailing comma after the last member. This helps produce cleaner diffs.
+Allwas add a trailing comma after the last member. This helps produce cleaner
+diffs.
 
 The same rule in the braces section below applies here.
 
@@ -101,7 +105,8 @@ Sometimes enum members are written in all caps. It's completely fine to do so.
 
 
 ## Braces
-As a base rule, the left curly brace goes on the same line as the start of the statement.
+As a base rule, the left curly brace goes on the same line as the start of the
+statement.
 
 For example:
 ```csharp
@@ -129,14 +134,14 @@ enum OperatingSystem {
 }
 ```
 
-Exception: Function implementations, classes, structs and namespaces declarations always have the opnening brace
-on the start of a line.
+Exception: Function implementations, classes, structs and namespaces
+declarations always have the opnening brace on the start of a line.
 
 For example:
 ```csharp
 void LogError(string message)
 {
-	Debug.LogError(message);
+	GD.PrintErr(message);
 }
 
 class Ball : MonoBehaviour
@@ -145,25 +150,26 @@ class Ball : MonoBehaviour
 }
 ```
 
-Use curly braces even when the body of a conditional statement contains only one line.
+Use curly braces even when the body of a conditional statement contains only
+one line.
 
 For example:
 ```csharp
 // Bad
 if (1 == 1)
-	Debug.Log("1 is equal to 1");
+	GD.Print("1 is equal to 1");
 
 for (int i = 0; i < 10; i++)
-	Debug.Log(i);
+	GD.Print(i);
 
 
 // Good
 if (1 == 1) {
-	Debug.Log("1 is equal to 1");
+	GD.Print("1 is equal to 1");
 }
 
 for (int i = 0; i < 10; i++) {
-	Debug.Log(i);
+	GD.Print(i);
 }
 ```
 
@@ -173,18 +179,18 @@ For example:
 ```csharp
 // Bad
 if (1 == 1) {
-	Debug.Log("1 is equal to 1");
+	GD.Print("1 is equal to 1");
 }
 else {
-	Debug.Log("1 is not equal to 1");
+	GD.Print("1 is not equal to 1");
 }
 
 
 // Good
 if (1 == 1) {
-	Debug.Log("1 is equal to 1");
+	GD.Print("1 is equal to 1");
 } else {
-	Debug.Log("1 is not equal to 1");
+	GD.Print("1 is not equal to 1");
 }
 ```
 
@@ -195,26 +201,28 @@ For example:
 ```csharp
 switch (age) {
 	case > 18:
-		Debug.Log("You are legally an adult");
+		GD.Print("You are legally an adult");
 		break;
 	case > 50:
-		Debug.Log("You are old");
+		GD.Print("You are old");
 		break;
 	case < 13:
-		Debug.Log("You are a child");
+		GD.Print("You are a child");
 		break;
 	default:
-		Debug.Log("You are a teenager");
+		GD.Print("You are a teenager");
 		break;
 }
 ```
 
-If `break` is not used, add a comment `// Fallthorugh` to indicate that the fallthrough is intentional.
-If `default` is not used, add a comment `// No default` instead.
+If `break` is not used, add a comment `// Fallthorugh` to indicate that the
+fallthrough is intentional. If `default` is not used, add a comment
+`// No default` instead.
 
 
 ## Line breaks
-Try to keep lines shorter than 120 characters. If not possible, use line breaks to keep the code readable.
+Try to keep lines shorter than 120 characters. If not possible, use line breaks
+to keep the code readable.
 
 
 ## Comments
@@ -231,11 +239,12 @@ but overriding with this same document.
 
 
 ## Exceptions
-Sometimes it's better to break the rules than to follow them blindly. If you think that breaking the rules
-makes the code more readable, then do it.
+Sometimes it's better to break the rules than to follow them blindly. If you
+think that breaking the rules makes the code more readable, then do it.
 
-Encapsulate the code with `// Styling excuse: ...` to indicate that the code is an exception to the
-coding style rules, then, close the exception with `// End of styling excuse`.
+Encapsulate the code with `// Styling excuse: ...` to indicate that the code
+is an exception to the coding style rules, then, close the exception with
+`// End of styling excuse`.
 
 For example:
 ```csharp
