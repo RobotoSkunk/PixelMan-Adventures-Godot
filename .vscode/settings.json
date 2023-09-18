@@ -5,5 +5,17 @@
 	},
 	"omnisharp.autoStart": true,
 	"omnisharp.useModernNet": true,
-	"dotnet.server.useOmnisharp": true
+	"dotnet.server.useOmnisharp": true,
+	"editor.rulers": [
+		120
+	],
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"[markdown]": {
+		"editor.rulers": [
+			80
+		],
+		"editor.tabSize": 4,
+		"editor.insertSpaces": true
+	}
 }
