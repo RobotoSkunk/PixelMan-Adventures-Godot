@@ -1,11 +1,11 @@
 <p align="center">
-	<img
-		width="788"
-		height="196"
-		alt="PixelMan Title"
-		src=".resources/title.png"
-		style="max-width: 90%; height: auto"
-	>
+    <img
+        width="788"
+        height="196"
+        alt="PixelMan Title"
+        src=".resources/title.png"
+        style="max-width: 90%; height: auto"
+    >
 </p>
 
 <p align="center" style="font-size: 1.3em">
@@ -21,8 +21,8 @@ but it was decided to switch to Godot to bring more flexibility, better performa
 and a more open development environment.
 
 ## Contributing
-If you want to contribute to the project, please follow the
-[coding style](CODING_STYLE.md) and the [code of conduct](CODE_OF_CONDUCT.md).
+If you want to contribute to the project, read the [CONTRIBUTING.md](CONTRIBUTING.md)
+file for more information.
 
 We love contributions! So, feel free to contribute to the project as
 much as you want. Let's make the best platformer game ever!
