@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://so6iom4ptltd"]
+[gd_scene load_steps=21 format=3 uid="uid://so6iom4ptltd"]
 
 [ext_resource type="Script" path="res://objects/player/Player.cs" id="1_4lx6j"]
 [ext_resource type="Texture2D" uid="uid://dreijpy7bg3bt" path="res://assets/sprites/avatars.sprites/avatars/avatar-0/running/0.tres" id="2_g20lg"]
@@ -99,22 +99,35 @@ orbit_velocity_max = 0.0
 scale_min = 0.03
 scale_max = 0.05
 
-[node name="Player" type="Node2D"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uouwd"]
+lifetime_randomness = 0.25
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 140, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.07
+scale_max = 0.07
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
 texture_filter = 1
 texture_repeat = 1
 script = ExtResource("1_4lx6j")
+animator = NodePath("Animator")
 
 [node name="Animator" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kgtve")
 animation = &"Idle"
 offset = Vector2(0, -3)
 
-[node name="Kinematic Body" type="CharacterBody2D" parent="."]
-
-[node name="Box Collider" type="CollisionShape2D" parent="Kinematic Body"]
+[node name="Box Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_o402s")
 
 [node name="Running Particles" type="GPUParticles2D" parent="."]
+visible = false
 position = Vector2(0, 8)
 amount = 5
 process_material = SubResource("ParticleProcessMaterial_agblt")
@@ -122,10 +135,9 @@ texture = ExtResource("16_ylwl0")
 lifetime = 0.2
 
 [node name="Dying Particles" type="GPUParticles2D" parent="."]
-visible = false
 emitting = false
 amount = 128
-process_material = SubResource("ParticleProcessMaterial_agblt")
+process_material = SubResource("ParticleProcessMaterial_uouwd")
 texture = ExtResource("16_ylwl0")
 lifetime = 5.0
 one_shot = true
