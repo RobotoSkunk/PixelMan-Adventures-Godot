@@ -26,7 +26,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 	{
 		[Export] private AnimatedSprite2D animator;
 		[Export] private Vector2 speed = new(0, 0);
-		[Export] private float gravity = 140f;
+		[Export] private float gravityForce = 140f;
 
 		readonly private float maxJumpTriggerTime = 0.1f;
 		readonly private float maxHangCornerTime = 0.1f;
@@ -36,14 +36,29 @@ namespace RobotoSkunk.PixelMan.GameObjects
 
 		private float horizontalInput = 0f;
 		private bool pressedJump = false;
+		private bool invertedGravity = false;
+
+
+		/// <summary>
+		/// Gravity force applied to the player.
+		/// </summary>
+		private float Gravity
+		{
+			get
+			{
+				if (invertedGravity) {
+					return -gravityForce;
+				} else {
+					return gravityForce;
+				}
+			}
+		}
 
 
 		public override void _Process(double delta)
 		{
 			horizontalInput = Input.GetAxis("left", "right");
 			pressedJump = Input.IsActionJustPressed("jump");
-
-			
 		}
 
 		public override void _PhysicsProcess(double delta)
@@ -55,9 +70,14 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			}
 
 
-			// Vector2 velocity = Velocity;
+			Vector2 velocity = Velocity;
+			velocity.Y += Gravity * (float)delta;
 
+			if (jumpTriggerTime > 0f) {
+				velocity.Y = speed.Y;
+			}
 
+			velocity.X = speed.X * horizontalInput;
 		}
 	}
 }
