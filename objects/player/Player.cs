@@ -17,12 +17,13 @@
 */
 
 
+using System;
 using Godot;
 
 
 namespace RobotoSkunk.PixelMan.GameObjects
 {
-	public partial class Player : CharacterBody2D
+	public partial class Player : CharacterBody2D, IGameObject
 	{
 		[ExportGroup("Components")]
 		[Export] private Node2D renderer;
@@ -44,6 +45,10 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		private bool invertedGravity = false;
 
 
+		readonly private Guid id = Guid.NewGuid();
+		public Guid Id => id;
+
+
 		/// <summary>
 		/// Gravity force applied to the player.
 		/// </summary>
@@ -58,6 +63,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 				}
 			}
 		}
+
 
 
 		public override void _Process(double delta)
