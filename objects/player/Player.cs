@@ -44,6 +44,8 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		private bool pressedJump = false;
 		private bool invertedGravity = false;
 
+		private Vector2 velocity = new(0, 0);
+
 
 
 		/// <summary>
@@ -78,7 +80,6 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			}
 
 			// Process physics
-			Vector2 velocity = Velocity;
 			velocity.Y += Gravity * (float)delta;
 
 			if (jumpTriggerTime > 0f) {
