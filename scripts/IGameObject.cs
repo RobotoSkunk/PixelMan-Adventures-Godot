@@ -17,13 +17,10 @@
 */
 
 
-using System;
-
-
 namespace RobotoSkunk.PixelMan.GameObjects
 {
 	public interface IGameObject
 	{
-		Guid Id { get; }
+		// It will be used... in the future.
 	}
 }

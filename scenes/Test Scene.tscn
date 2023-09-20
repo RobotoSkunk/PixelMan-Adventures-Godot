@@ -19,6 +19,30 @@ texture = ExtResource("1_gw2ps")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
 shape = SubResource("RectangleShape2D_xqmsn")
 
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(-187, -115)
+scale = Vector2(1.08, 15.12)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2"]
+texture = ExtResource("1_gw2ps")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_xqmsn")
+
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2(191, -119)
+scale = Vector2(1.08, 15.12)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D3"]
+texture = ExtResource("1_gw2ps")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_xqmsn")
+
 [node name="Player" parent="." instance=ExtResource("2_eoc6o")]
 position = Vector2(5, -54)
 

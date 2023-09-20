@@ -45,9 +45,6 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		private bool invertedGravity = false;
 
 
-		readonly private Guid id = Guid.NewGuid();
-		public Guid Id => id;
-
 
 		/// <summary>
 		/// Gravity force applied to the player.
@@ -69,9 +66,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		public override void _Process(double delta)
 		{
 			horizontalInput = Input.GetAxis("left", "right");
-			pressedJump = Input.IsActionJustPressed("jump");
-
-			GD.Print(horizontalInput, " ", pressedJump);
+			pressedJump = Input.IsActionPressed("jump");
 		}
 
 		public override void _PhysicsProcess(double delta)
@@ -82,7 +77,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 				jumpTriggerTime -= (float)delta;
 			}
 
-
+			// Process physics
 			Vector2 velocity = Velocity;
 			velocity.Y += Gravity * (float)delta;
 
@@ -92,7 +87,10 @@ namespace RobotoSkunk.PixelMan.GameObjects
 
 			velocity.X = speed.X * horizontalInput;
 
+
+			// Apply changes
 			Velocity = velocity;
+			MoveAndSlide();
 		}
 	}
 }
