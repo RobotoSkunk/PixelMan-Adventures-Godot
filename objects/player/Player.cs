@@ -24,9 +24,14 @@ namespace RobotoSkunk.PixelMan.GameObjects
 {
 	public partial class Player : CharacterBody2D
 	{
+		[ExportGroup("Components")]
+		[Export] private Node2D renderer;
 		[Export] private AnimatedSprite2D animator;
+
+		[ExportGroup("Properties")]
 		[Export] private Vector2 speed = new(0, 0);
 		[Export] private float gravityForce = 140f;
+
 
 		readonly private float maxJumpTriggerTime = 0.1f;
 		readonly private float maxHangCornerTime = 0.1f;
@@ -59,6 +64,8 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		{
 			horizontalInput = Input.GetAxis("left", "right");
 			pressedJump = Input.IsActionJustPressed("jump");
+
+			GD.Print(horizontalInput, " ", pressedJump);
 		}
 
 		public override void _PhysicsProcess(double delta)
@@ -78,6 +85,8 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			}
 
 			velocity.X = speed.X * horizontalInput;
+
+			Velocity = velocity;
 		}
 	}
 }

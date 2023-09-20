@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://5jp60v6xyttn" path="res://assets/sprites/avatars.sprites/avatars/avatar-0/running/7.tres" id="9_op46w"]
 [ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="16_ylwl0"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o402s"]
+size = Vector2(8, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_kgtve"]
 animations = [{
 "frames": [{
@@ -82,9 +85,6 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o402s"]
-size = Vector2(8, 16)
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_agblt"]
 lifetime_randomness = 0.1
 emission_shape = 3
@@ -112,21 +112,26 @@ orbit_velocity_max = 0.0
 scale_min = 0.07
 scale_max = 0.07
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator")]
 texture_filter = 1
 texture_repeat = 1
+disable_mode = 2
 script = ExtResource("1_4lx6j")
-animator = NodePath("Animator")
-
-[node name="Animator" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_kgtve")
-animation = &"Idle"
-offset = Vector2(0, -3)
+renderer = NodePath("Rendering")
+animator = NodePath("Rendering/Animator")
+speed = Vector2(100, 100)
 
 [node name="Box Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_o402s")
 
-[node name="Running Particles" type="GPUParticles2D" parent="."]
+[node name="Rendering" type="Node2D" parent="."]
+
+[node name="Animator" type="AnimatedSprite2D" parent="Rendering"]
+sprite_frames = SubResource("SpriteFrames_kgtve")
+animation = &"Idle"
+offset = Vector2(0, -3)
+
+[node name="Running Particles" type="GPUParticles2D" parent="Rendering"]
 visible = false
 position = Vector2(0, 8)
 amount = 5
@@ -134,7 +139,7 @@ process_material = SubResource("ParticleProcessMaterial_agblt")
 texture = ExtResource("16_ylwl0")
 lifetime = 0.2
 
-[node name="Dying Particles" type="GPUParticles2D" parent="."]
+[node name="Dying Particles" type="GPUParticles2D" parent="Rendering"]
 emitting = false
 amount = 128
 process_material = SubResource("ParticleProcessMaterial_uouwd")
