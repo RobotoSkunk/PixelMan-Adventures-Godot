@@ -26,4 +26,10 @@
 
 	// Theme settings
 	"csharp.semanticHighlighting.enabled": true,
+
+	"editor.semanticTokenColorCustomizations": {
+		"rules": {
+			"macro": "#818181"
+		}
+	},
 }
