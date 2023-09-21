@@ -19,6 +19,18 @@ texture = ExtResource("1_gw2ps")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
 shape = SubResource("RectangleShape2D_xqmsn")
 
+[node name="Node2D4" type="Node2D" parent="."]
+position = Vector2(187, -32)
+scale = Vector2(8.575, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D4"]
+texture = ExtResource("1_gw2ps")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_xqmsn")
+
 [node name="Node2D2" type="Node2D" parent="."]
 position = Vector2(-187, -115)
 scale = Vector2(1.08, 15.12)

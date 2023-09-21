@@ -17,7 +17,6 @@
 */
 
 
-using System;
 using Godot;
 
 
@@ -28,24 +27,22 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		[ExportGroup("Components")]
 		[Export] private Node2D renderer;
 		[Export] private AnimatedSprite2D animator;
+		[Export] private GpuParticles2D dustParticles;
 
-		[ExportGroup("Properties")]
-		[Export] private Vector2 speed = new(0, 0);
-		[Export] private float gravityForce = 140f;
+		private Vector2 speed = new(144, 320);
 
 
-		readonly private float maxJumpTriggerTime = 0.1f;
-		readonly private float maxHangCornerTime = 0.1f;
+		readonly private float maxJumpTriggerTime = 0.16f;
+		// readonly private float maxHangCornerTime = 0.1f;
 
 		private float jumpTriggerTime = 0f;
 		private float hangCornerTime = 0f;
-
 		private float horizontalInput = 0f;
+		private float dustParticlesTimer = 0f;
+
 		private bool pressedJump = false;
+		private bool canReduceJump = false;
 		private bool invertedGravity = false;
-
-		private Vector2 velocity = new(0, 0);
-
 
 
 		/// <summary>
@@ -56,37 +53,106 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			get
 			{
 				if (invertedGravity) {
-					return -gravityForce;
+					return -Constants.Gravity;
 				} else {
-					return gravityForce;
+					return Constants.Gravity;
+				}
+			}
+		}
+
+		/// <summary>
+		/// Player's jump force.
+		/// </summary>
+		private float JumpForce
+		{
+			get
+			{
+				if (invertedGravity) {
+					return speed.Y;
+				} else {
+					return -speed.Y;
+				}
+			}
+		}
+
+
+		private bool IsGoingUp
+		{
+			get
+			{
+				if (invertedGravity) {
+					return Velocity.Y < 0f;
+				} else {
+					return Velocity.Y > 0f;
 				}
 			}
 		}
 
 
 
+		public override void _Input(InputEvent @event)
+		{
+			if (@event.IsActionPressed("jump")) {
+				pressedJump = true;
+			}
+		}
+
 		public override void _Process(double delta)
 		{
 			horizontalInput = Input.GetAxis("left", "right");
-			pressedJump = Input.IsActionPressed("jump");
+
+
+			if (IsOnFloor()) {
+				dustParticlesTimer = 0.1f;
+
+			} else if (dustParticlesTimer > 0f) {
+				dustParticlesTimer -= (float)delta;
+			}
+
+
+			if (horizontalInput != 0f) {
+				int direction = horizontalInput > 0f ? 1 : -1;
+
+				renderer.Scale = new Vector2(direction, renderer.Scale.Y);
+
+				dustParticles.Emitting = dustParticlesTimer > 0f;
+			} else {
+				dustParticles.Emitting = false;
+			}
 		}
 
 		public override void _PhysicsProcess(double delta)
 		{
 			if (pressedJump) {
 				jumpTriggerTime = maxJumpTriggerTime;
-			} else {
+				pressedJump = false;
+
+			} else if (jumpTriggerTime > 0f) {
 				jumpTriggerTime -= (float)delta;
 			}
 
-			// Process physics
+
+			#region Process physics
+
+			Vector2 velocity = Velocity;
+
+			// Vertical movement
 			velocity.Y += Gravity * (float)delta;
 
-			if (jumpTriggerTime > 0f) {
-				velocity.Y = speed.Y;
+			if (jumpTriggerTime > 0f && IsOnFloor()) {
+				velocity.Y = JumpForce;
+				jumpTriggerTime = 0f;
+				canReduceJump = true;
+
+			} else if (IsGoingUp && !pressedJump && canReduceJump) {
+				velocity.Y *= 0.5f;
+				canReduceJump = false;
 			}
 
+			// Horizontal movement
 			velocity.X = speed.X * horizontalInput;
+
+			#endregion
 
 
 			// Apply changes
