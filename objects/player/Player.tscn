@@ -50,7 +50,6 @@ sounds = Array[AudioStream]([ExtResource("2_36iwa"), ExtResource("3_agnwr")])
 
 [node name="Box Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_o402s")
-disabled = true
 
 [node name="Audio Player" type="AudioStreamPlayer2D" parent="."]
 
@@ -68,6 +67,7 @@ texture = ExtResource("16_ylwl0")
 lifetime = 0.2
 
 [node name="Dying Particles" type="GPUParticles2D" parent="Rendering"]
+visible = false
 emitting = false
 amount = 128
 process_material = SubResource("ParticleProcessMaterial_1oq3g")
