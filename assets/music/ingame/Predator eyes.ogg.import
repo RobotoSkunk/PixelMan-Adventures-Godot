@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cismi5xy1fpqh"
+path="res://.godot/imported/Predator eyes.ogg-77384cc27c9c2a0af7d353ba955df6c6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/ingame/Predator eyes.ogg"
+dest_files=["res://.godot/imported/Predator eyes.ogg-77384cc27c9c2a0af7d353ba955df6c6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://so6iom4ptltd"]
+[gd_scene load_steps=8 format=3 uid="uid://so6iom4ptltd"]
 
 [ext_resource type="Script" path="res://objects/player/Player.cs" id="1_4lx6j"]
 [ext_resource type="SpriteFrames" uid="uid://00xgn5d1pig" path="res://objects/player/Animation/Avatar - 0.tres" id="2_6a3dg"]
+[ext_resource type="AudioStream" uid="uid://bdmsjyhuv5bir" path="res://assets/sounds/Jump.wav" id="2_36iwa"]
+[ext_resource type="AudioStream" uid="uid://cc466fco7woo1" path="res://assets/sounds/Death.wav" id="3_agnwr"]
 [ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="16_ylwl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o402s"]
-size = Vector2(8, 16)
+size = Vector2(8, 14)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_agblt"]
 lifetime_randomness = 0.1
@@ -21,7 +23,7 @@ orbit_velocity_max = 0.0
 scale_min = 0.03
 scale_max = 0.05
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "audioPlayer")]
 texture_filter = 1
 texture_repeat = 1
 disable_mode = 2
@@ -29,19 +31,23 @@ script = ExtResource("1_4lx6j")
 renderer = NodePath("Rendering")
 animator = NodePath("Rendering/Animator")
 dustParticles = NodePath("Rendering/Dust Particles")
+audioPlayer = NodePath("Audio Player")
+sounds = Array[AudioStream]([ExtResource("2_36iwa"), ExtResource("3_agnwr")])
 
 [node name="Box Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_o402s")
+
+[node name="Audio Player" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Rendering" type="Node2D" parent="."]
 
 [node name="Animator" type="AnimatedSprite2D" parent="Rendering"]
 sprite_frames = ExtResource("2_6a3dg")
 animation = &"running"
-offset = Vector2(0, -3)
+offset = Vector2(0, -4)
 
 [node name="Dust Particles" type="GPUParticles2D" parent="Rendering"]
-position = Vector2(0, 8)
+position = Vector2(0, 7)
 process_material = SubResource("ParticleProcessMaterial_agblt")
 texture = ExtResource("16_ylwl0")
 lifetime = 0.2

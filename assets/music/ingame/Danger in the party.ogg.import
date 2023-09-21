@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvh1ckujnb6lv"
+path="res://.godot/imported/Danger in the party.ogg-2a230b84fe92614c107824d4abe37b6b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/ingame/Danger in the party.ogg"
+dest_files=["res://.godot/imported/Danger in the party.ogg-2a230b84fe92614c107824d4abe37b6b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

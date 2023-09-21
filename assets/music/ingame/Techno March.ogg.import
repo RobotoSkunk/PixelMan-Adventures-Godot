@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dioliiyna7xpb"
+path="res://.godot/imported/Techno March.ogg-59f2f80439804ff6de6f689d892188c3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/ingame/Techno March.ogg"
+dest_files=["res://.godot/imported/Techno March.ogg-59f2f80439804ff6de6f689d892188c3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

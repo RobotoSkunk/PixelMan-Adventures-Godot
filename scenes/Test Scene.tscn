@@ -9,6 +9,7 @@ size = Vector2(16, 16)
 [node name="Test Scene" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 48)
 scale = Vector2(25.48, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
@@ -20,8 +21,8 @@ texture = ExtResource("1_gw2ps")
 shape = SubResource("RectangleShape2D_xqmsn")
 
 [node name="Node2D4" type="Node2D" parent="."]
-position = Vector2(187, -32)
-scale = Vector2(8.575, 1)
+position = Vector2(187, 16)
+scale = Vector2(8, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D4"]
 texture = ExtResource("1_gw2ps")
@@ -32,7 +33,7 @@ texture = ExtResource("1_gw2ps")
 shape = SubResource("RectangleShape2D_xqmsn")
 
 [node name="Node2D2" type="Node2D" parent="."]
-position = Vector2(-187, -115)
+position = Vector2(-187, -80)
 scale = Vector2(1.08, 15.12)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D2"]
@@ -44,7 +45,7 @@ texture = ExtResource("1_gw2ps")
 shape = SubResource("RectangleShape2D_xqmsn")
 
 [node name="Node2D3" type="Node2D" parent="."]
-position = Vector2(191, -119)
+position = Vector2(191, -80)
 scale = Vector2(1.08, 15.12)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D3"]

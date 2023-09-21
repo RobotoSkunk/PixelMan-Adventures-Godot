@@ -30,6 +30,10 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		[Export] private Node2D renderer;
 		[Export] private AnimatedSprite2D animator;
 		[Export] private GpuParticles2D dustParticles;
+		[Export] private AudioStreamPlayer2D audioPlayer;
+
+		[ExportGroup("Properties")]
+		[Export(PropertyHint.ArrayType)] private AudioStream[] sounds;
 
 
 		/// <summary>
@@ -90,7 +94,14 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		private bool invertedGravity = false;
 
 
+		/// <summary>
+		/// Current player state (for animation).
+		/// </summary>
 		private State currentState = State.IDLE;
+
+		/// <summary>
+		/// Previous player state (for animation).
+		/// </summary>
 		private State previousState = State.IDLE;
 
 
@@ -253,6 +264,8 @@ namespace RobotoSkunk.PixelMan.GameObjects
 				jumpTime = 0f;
 				canReduceJump = true;
 
+				audioPlayer.Stream = sounds[0];
+				audioPlayer.Play();
 			}
 
 			if (IsGoingUp && releasedJump && canReduceJump) {

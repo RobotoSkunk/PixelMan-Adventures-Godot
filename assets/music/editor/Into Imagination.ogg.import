@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://be11ne5lkr3xi"
+path="res://.godot/imported/Into Imagination.ogg-226903b84d1cf0f509b6977e1865cf8c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/editor/Into Imagination.ogg"
+dest_files=["res://.godot/imported/Into Imagination.ogg-226903b84d1cf0f509b6977e1865cf8c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

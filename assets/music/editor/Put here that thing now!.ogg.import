@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwp0e822a0w8f"
+path="res://.godot/imported/Put here that thing now!.ogg-5f496162838162889e03f9462f6a28c4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/editor/Put here that thing now!.ogg"
+dest_files=["res://.godot/imported/Put here that thing now!.ogg-5f496162838162889e03f9462f6a28c4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

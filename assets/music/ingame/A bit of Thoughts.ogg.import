@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cv5jkmiy3drh2"
+path="res://.godot/imported/A bit of Thoughts.ogg-55ea4e37b804c84166b97d4f3dfcb90e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/ingame/A bit of Thoughts.ogg"
+dest_files=["res://.godot/imported/A bit of Thoughts.ogg-55ea4e37b804c84166b97d4f3dfcb90e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
