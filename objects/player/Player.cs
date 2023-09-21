@@ -30,6 +30,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		[Export] private Node2D renderer;
 		[Export] private AnimatedSprite2D animator;
 		[Export] private GpuParticles2D dustParticles;
+		[Export] private GpuParticles2D fallDustParticles;
 		[Export] private AudioStreamPlayer2D audioPlayer;
 
 		[ExportGroup("Properties")]
@@ -92,6 +93,11 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		/// If the gravity is inverted.
 		/// </summary>
 		private bool invertedGravity = false;
+
+		/// <summary>
+		/// If the player should emit dust particles when falling.
+		/// </summary>
+		private bool emitFallDustParticles = false;
 
 
 		/// <summary>
@@ -175,12 +181,25 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			horizontalInput = Input.GetAxis("left", "right");
 
 
+			#region Dust Particles
 			if (IsOnFloor()) {
-				dustParticlesTimer = 0.08f;
+				if (Velocity.X != 0) {
+					dustParticlesTimer = 0.08f;
+				}
 
-			} else if (dustParticlesTimer > 0f) {
-				dustParticlesTimer -= (float)delta;
+				if (emitFallDustParticles) {
+					fallDustParticles.Restart();
+					fallDustParticles.Emitting = true;
+					emitFallDustParticles = false;
+				}
+			} else {
+				if (dustParticlesTimer > 0f) {
+					dustParticlesTimer -= (float)delta;
+				}
+
+				emitFallDustParticles = true;
 			}
+
 
 
 			if (horizontalInput != 0f) {
@@ -192,6 +211,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			} else {
 				dustParticles.Emitting = false;
 			}
+			#endregion
 
 
 
@@ -199,7 +219,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			if (IsOnFloor() && horizontalInput == 0f) {
 				currentState = State.IDLE;
 
-			} else if (IsOnFloor() && horizontalInput != 0f) {
+			} else if (IsOnFloor() && horizontalInput != 0f && Velocity.X != 0f) {
 				currentState = State.RUNNING;
 
 			} else if (!IsOnFloor() && IsGoingUp) {

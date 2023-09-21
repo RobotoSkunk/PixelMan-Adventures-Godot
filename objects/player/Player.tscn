@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://so6iom4ptltd"]
+[gd_scene load_steps=10 format=3 uid="uid://so6iom4ptltd"]
 
 [ext_resource type="Script" path="res://objects/player/Player.cs" id="1_4lx6j"]
 [ext_resource type="SpriteFrames" uid="uid://00xgn5d1pig" path="res://objects/player/Animation/Avatar - 0.tres" id="2_6a3dg"]
@@ -23,6 +23,23 @@ orbit_velocity_max = 0.0
 scale_min = 0.03
 scale_max = 0.05
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_413j1"]
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_box_extents = Vector3(6, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 65.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -61.44
+linear_accel_max = -52.01
+scale_min = 0.03
+scale_max = 0.05
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1oq3g"]
 lifetime_randomness = 0.35
 particle_flag_disable_z = true
@@ -37,7 +54,7 @@ scale_min = 0.08
 scale_max = 0.08
 collision_use_scale = true
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "audioPlayer")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer")]
 texture_filter = 1
 texture_repeat = 1
 disable_mode = 2
@@ -45,6 +62,7 @@ script = ExtResource("1_4lx6j")
 renderer = NodePath("Rendering")
 animator = NodePath("Rendering/Animator")
 dustParticles = NodePath("Rendering/Dust Particles")
+fallDustParticles = NodePath("Rendering/Fall Dust Particles")
 audioPlayer = NodePath("Audio Player")
 sounds = Array[AudioStream]([ExtResource("2_36iwa"), ExtResource("3_agnwr")])
 
@@ -57,7 +75,7 @@ shape = SubResource("RectangleShape2D_o402s")
 
 [node name="Animator" type="AnimatedSprite2D" parent="Rendering"]
 sprite_frames = ExtResource("2_6a3dg")
-animation = &"running"
+animation = &"idle"
 offset = Vector2(0, -4)
 
 [node name="Dust Particles" type="GPUParticles2D" parent="Rendering"]
@@ -65,6 +83,15 @@ position = Vector2(0, 7)
 process_material = SubResource("ParticleProcessMaterial_agblt")
 texture = ExtResource("16_ylwl0")
 lifetime = 0.2
+
+[node name="Fall Dust Particles" type="GPUParticles2D" parent="Rendering"]
+position = Vector2(0, 7)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_413j1")
+texture = ExtResource("16_ylwl0")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
 
 [node name="Dying Particles" type="GPUParticles2D" parent="Rendering"]
 visible = false
