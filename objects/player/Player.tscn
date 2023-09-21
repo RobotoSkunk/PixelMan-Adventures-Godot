@@ -42,7 +42,6 @@ offset = Vector2(0, -3)
 
 [node name="Dust Particles" type="GPUParticles2D" parent="Rendering"]
 position = Vector2(0, 8)
-amount = 10
 process_material = SubResource("ParticleProcessMaterial_agblt")
 texture = ExtResource("16_ylwl0")
 lifetime = 0.2

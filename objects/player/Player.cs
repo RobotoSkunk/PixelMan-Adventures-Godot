@@ -103,7 +103,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 
 
 			if (IsOnFloor()) {
-				dustParticlesTimer = 0.1f;
+				dustParticlesTimer = 0.08f;
 
 			} else if (dustParticlesTimer > 0f) {
 				dustParticlesTimer -= (float)delta;
