@@ -27,6 +27,7 @@ namespace RobotoSkunk.PixelMan
 	/// </summary>
 	public partial class Director : Node2D
 	{
+		[Export] private int avatarIndex = 0;
 		[Export] private SpriteFrames[] avatars;
 
 		public SpriteFrames[] Avatars
@@ -38,6 +39,7 @@ namespace RobotoSkunk.PixelMan
 		public override void _Ready()
 		{
 			this.SetDirector();
+			Globals.AvatarIndex = avatarIndex;
 		}
 	}
 }

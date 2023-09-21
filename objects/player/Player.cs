@@ -164,6 +164,10 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		}
 
 
+		public override void _Ready()
+		{
+			animator.SpriteFrames = Globals.Avatar;
+		}
 
 		public override void _Input(InputEvent @event)
 		{

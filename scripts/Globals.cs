@@ -44,12 +44,18 @@ namespace RobotoSkunk.PixelMan
 
 	public static class Globals
 	{
+		// Private variables
 		static Director director = null;
+		static int avatarIndex = 0;
+
+
+		/// <summary>
+		/// The director of the game.
+		/// </summary>
 		public static Director Director
 		{
 			get => director;
 		}
-
 
 		/// <summary>
 		/// Shorthand of <code>Globals.Director.Avatars</code>
@@ -59,6 +65,27 @@ namespace RobotoSkunk.PixelMan
 			get => director.Avatars;
 		}
 
+		/// <summary>
+		/// The index of the current avatar.
+		/// </summary>
+		public static int AvatarIndex
+		{
+			get => avatarIndex;
+			set {
+				if (value < 0) {
+					value = 0;
+				} else if (value >= Avatars.Length) {
+					value = Avatars.Length - 1;
+				}
+
+				avatarIndex = value;
+			}
+		}
+
+		public static SpriteFrames Avatar
+		{
+			get => Avatars[AvatarIndex];
+		}
 
 
 		/// <summary>
