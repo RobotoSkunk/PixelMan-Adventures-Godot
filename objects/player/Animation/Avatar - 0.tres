@@ -28,15 +28,15 @@ animations = [{
 "texture": ExtResource("3_4m0ip")
 }],
 "loop": false,
-"name": &"Falling",
-"speed": 10.0
+"name": &"falling",
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_vapck")
 }],
 "loop": false,
-"name": &"Idle",
+"name": &"idle",
 "speed": 1.0
 }, {
 "frames": [{
@@ -47,8 +47,8 @@ animations = [{
 "texture": ExtResource("6_pjwrk")
 }],
 "loop": false,
-"name": &"Jumping",
-"speed": 10.0
+"name": &"jumping",
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -76,6 +76,6 @@ animations = [{
 "texture": ExtResource("14_w5ig6")
 }],
 "loop": true,
-"name": &"Running",
-"speed": 15.0
+"name": &"running",
+"speed": 20.0
 }]

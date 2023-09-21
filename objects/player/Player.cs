@@ -24,6 +24,8 @@ namespace RobotoSkunk.PixelMan.GameObjects
 {
 	public partial class Player : CharacterBody2D, IGameObject
 	{
+		#region Variables
+
 		[ExportGroup("Components")]
 		[Export] private Node2D renderer;
 		[Export] private AnimatedSprite2D animator;
@@ -88,6 +90,10 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		private bool invertedGravity = false;
 
 
+		private State currentState = State.IDLE;
+		private State previousState = State.IDLE;
+
+
 		/// <summary>
 		/// Gravity force applied to the player.
 		/// </summary>
@@ -129,6 +135,17 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			}
 		}
 
+		#endregion
+
+
+		enum State
+		{
+			IDLE,
+			RUNNING,
+			JUMPING,
+			FALLING,
+		}
+
 
 
 		public override void _Input(InputEvent @event)
@@ -164,6 +181,45 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			} else {
 				dustParticles.Emitting = false;
 			}
+
+
+
+			#region Animation
+			if (IsOnFloor() && horizontalInput == 0f) {
+				currentState = State.IDLE;
+
+			} else if (IsOnFloor() && horizontalInput != 0f) {
+				currentState = State.RUNNING;
+
+			} else if (!IsOnFloor() && IsGoingUp) {
+				currentState = State.JUMPING;
+
+			} else if (!IsOnFloor() && !IsGoingUp) {
+				currentState = State.FALLING;
+
+			} else {
+				currentState = State.IDLE;
+			}
+
+
+			if (currentState != previousState) {
+
+				string animationName = currentState switch {
+					State.IDLE => "idle",
+					State.RUNNING => "running",
+					State.JUMPING => "jumping",
+					State.FALLING => "falling",
+					_ => "idle",
+				};
+
+				animator.Play(animationName);
+			}
+
+			float animationSpeed = Mathf.Abs(Velocity.X) / speed.X;
+
+			animator.SpeedScale = currentState == State.RUNNING ? animationSpeed : 1f;
+			previousState = currentState;
+			#endregion
 		}
 
 		public override void _PhysicsProcess(double delta)
