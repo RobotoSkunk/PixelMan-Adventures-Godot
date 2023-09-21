@@ -9,10 +9,11 @@ Before continuing, make sure that you read the
 ## Table of contents
 
 1. [Getting Started](#getting-started)
-2. [Reporting bugs](#reporting-bugs)
+2. [Working with velocities and units](#working-with-velocities-and-units)
+3. [Reporting bugs](#reporting-bugs)
     - [For Windows users](#for-windows-users)
-3. [Providing feedback](#providing-feedback)
-4. [For artists](#for-artists)
+4. [Providing feedback](#providing-feedback)
+5. [For artists](#for-artists)
     - [For pixel artists](#for-pixel-artists)
     - [For music artists](#for-music-artists)
 
@@ -40,6 +41,17 @@ default by running the following command in the terminal:
 ```bash
 git config --global core.autocrlf input
 ```
+
+## Working with velocities and units
+The game unit's base is 16 x 16 pixels. This means that, if you want to edit
+some velocity, you'll have to think in terms of pixels per second.
+
+You can use a simple formula to convert from units to pixels per second:
+
+```
+pixels_per_second = units_per_second * 16
+```
+
 
 ## Reporting bugs
 A **bug** is something that clearly *and objectively* does not work as intended.
