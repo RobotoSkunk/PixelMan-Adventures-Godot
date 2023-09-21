@@ -27,9 +27,17 @@ namespace RobotoSkunk.PixelMan
 	/// </summary>
 	public partial class Director : Node2D
 	{
+		[Export] private SpriteFrames[] avatars;
+
+		public SpriteFrames[] Avatars
+		{
+			get => avatars;
+		}
+
+
 		public override void _Ready()
 		{
-			GD.Print("I'm the Director!");
+			this.SetDirector();
 		}
 	}
 }

@@ -24,8 +24,11 @@ namespace RobotoSkunk.PixelMan
 {
 	public static class Constants
 	{
-		private static float gravity = 0f;
+		public readonly static int gridSize = 16;
+		public readonly static float maxSpeed = 640; // 16 pixels * 40 Unity units
 
+
+		static float gravity = 0f;
 		public static float Gravity
 		{
 			get
@@ -37,13 +40,33 @@ namespace RobotoSkunk.PixelMan
 				return gravity;
 			}
 		}
-
-		public readonly static int gridSize = 16;
-		public readonly static float maxSpeed = 640; // 16 pixels * 40 Unity units
 	}
 
 	public static class Globals
 	{
-		// More values here...
+		static Director director = null;
+		public static Director Director
+		{
+			get => director;
+		}
+
+
+		/// <summary>
+		/// Shorthand of <code>Globals.Director.Avatars</code>
+		/// </summary>
+		public static SpriteFrames[] Avatars
+		{
+			get => director.Avatars;
+		}
+
+
+
+		/// <summary>
+		/// Sets the director of the game.
+		/// </summary>
+		public static void SetDirector(this Director director)
+		{
+			Globals.director = director;
+		}
 	}
 }

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh4cjkxk6i4mk"]
+[gd_scene load_steps=3 format=3 uid="uid://dh4cjkxk6i4mk"]
 
 [ext_resource type="Script" path="res://scripts/Director.cs" id="1_ucqku"]
+[ext_resource type="SpriteFrames" uid="uid://00xgn5d1pig" path="res://objects/player/Animation/Avatar - 0.tres" id="2_a42iq"]
 
-[node name="director" type="Node2D"]
+[node name="Director" type="Node2D"]
 script = ExtResource("1_ucqku")
+avatars = Array[SpriteFrames]([ExtResource("2_a42iq")])
