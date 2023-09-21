@@ -33,16 +33,19 @@ namespace RobotoSkunk.PixelMan.GameObjects
 
 
 		readonly private float maxJumpTriggerTime = 0.16f;
-		// readonly private float maxHangCornerTime = 0.1f;
+		// readonly private float maxhangCount = 0.1f;
 
 		private float jumpTriggerTime = 0f;
-		private float hangCornerTime = 0f;
+		private float hangCount = 0f;
 		private float horizontalInput = 0f;
 		private float dustParticlesTimer = 0f;
 
 		private bool pressedJump = false;
+		private bool releasedJump = false;
 		private bool canReduceJump = false;
 		private bool invertedGravity = false;
+
+		private readonly float maxHangCount = 0.1f;
 
 
 		/// <summary>
@@ -80,11 +83,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		{
 			get
 			{
-				if (invertedGravity) {
-					return Velocity.Y < 0f;
-				} else {
-					return Velocity.Y > 0f;
-				}
+				return Velocity.Y < 0f;
 			}
 		}
 
@@ -94,6 +93,10 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		{
 			if (@event.IsActionPressed("jump")) {
 				pressedJump = true;
+			}
+
+			if (@event.IsActionReleased("jump")) {
+				releasedJump = true;
 			}
 		}
 
@@ -132,6 +135,14 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			}
 
 
+			// Hang Jump
+			if (IsOnFloor()) {
+				hangCount = maxHangCount;
+
+			} else if (hangCount > 0f) {
+				hangCount -= (float)delta;
+			}
+
 			#region Process physics
 
 			Vector2 velocity = Velocity;
@@ -139,12 +150,14 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			// Vertical movement
 			velocity.Y += Gravity * (float)delta;
 
-			if (jumpTriggerTime > 0f && IsOnFloor()) {
+			if (jumpTriggerTime > 0f && hangCount > 0f) {
 				velocity.Y = JumpForce;
 				jumpTriggerTime = 0f;
 				canReduceJump = true;
 
-			} else if (IsGoingUp && !pressedJump && canReduceJump) {
+			}
+
+			if (IsGoingUp && releasedJump && canReduceJump) {
 				velocity.Y *= 0.5f;
 				canReduceJump = false;
 			}
@@ -155,8 +168,16 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			#endregion
 
 
+			if (releasedJump) {
+				releasedJump = false;
+			}
+
+
 			// Apply changes
-			Velocity = velocity;
+			Velocity = new Vector2(
+				Mathf.Clamp(velocity.X, -Constants.maxSpeed, Constants.maxSpeed),
+				Mathf.Clamp(velocity.Y, -Constants.maxSpeed, Constants.maxSpeed)
+			);
 			MoveAndSlide();
 		}
 	}

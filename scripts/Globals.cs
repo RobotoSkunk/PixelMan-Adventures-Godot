@@ -39,6 +39,7 @@ namespace RobotoSkunk.PixelMan
 		}
 
 		public readonly static int gridSize = 16;
+		public readonly static float maxSpeed = 640; // 16 pixels * 40 Unity units
 	}
 
 	public static class Globals
