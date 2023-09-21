@@ -40,7 +40,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		/// <summary>
 		/// The speed to be applied to the player.
 		/// </summary>
-		readonly private Vector2 speed = new(144, 320);
+		readonly private Vector2 speed = new(144, 272);
 
 		/// <summary>
 		/// The maximum time to jump.
