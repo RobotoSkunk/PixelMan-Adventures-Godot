@@ -8,5 +8,5 @@
 
 [node name="Director" type="Node2D"]
 script = ExtResource("1_ucqku")
-avatarIndex = 2
+avatarIndex = 3
 avatars = Array[SpriteFrames]([ExtResource("2_a42iq"), ExtResource("3_7hk0i"), ExtResource("4_15n03"), ExtResource("5_t6nr4")])
