@@ -182,10 +182,10 @@ namespace RobotoSkunk.PixelMan.GameObjects
 
 
 			#region Dust Particles
+			bool doDustTimer = false;
+
 			if (IsOnFloor()) {
-				if (Velocity.X != 0) {
-					dustParticlesTimer = 0.08f;
-				}
+				doDustTimer = Velocity.X != 0;
 
 				if (emitFallDustParticles) {
 					fallDustParticles.Restart();
@@ -193,13 +193,15 @@ namespace RobotoSkunk.PixelMan.GameObjects
 					emitFallDustParticles = false;
 				}
 			} else {
-				if (dustParticlesTimer > 0f) {
-					dustParticlesTimer -= (float)delta;
-				}
-
 				emitFallDustParticles = true;
 			}
 
+			if (doDustTimer) {
+				dustParticlesTimer = 0.08f;
+
+			} else if (dustParticlesTimer > 0f) {
+				dustParticlesTimer -= (float)delta;
+			}
 
 
 			if (horizontalInput != 0f) {
