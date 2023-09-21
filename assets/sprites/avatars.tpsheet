@@ -882,25 +882,6 @@
 					}
 				},
 				{
-					"filename": "avatars/avatar-3/running/0.png",
-					"region": {
-						"x": 120,
-						"y": 120,
-						"w": 24,
-						"h": 24
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.466667,
-						"y": 0.526316
-					}
-				},
-				{
 					"filename": "avatars/avatar-3/jumping/0.png",
 					"region": {
 						"x": 144,
@@ -920,7 +901,7 @@
 					}
 				},
 				{
-					"filename": "avatars/avatar-3/running/1.png",
+					"filename": "avatars/avatar-3/running/0.png",
 					"region": {
 						"x": 168,
 						"y": 120,
@@ -939,9 +920,28 @@
 					}
 				},
 				{
-					"filename": "avatars/avatar-3/running/2.png",
+					"filename": "avatars/avatar-3/running/1.png",
 					"region": {
 						"x": 0,
+						"y": 144,
+						"w": 24,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.466667,
+						"y": 0.526316
+					}
+				},
+				{
+					"filename": "avatars/avatar-3/running/2.png",
+					"region": {
+						"x": 24,
 						"y": 144,
 						"w": 24,
 						"h": 24
@@ -960,7 +960,7 @@
 				{
 					"filename": "avatars/avatar-3/running/3.png",
 					"region": {
-						"x": 24,
+						"x": 48,
 						"y": 144,
 						"w": 24,
 						"h": 24
@@ -982,6 +982,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "1.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:496b41700c849a1b2695c66424e5d092:ba8c6f75af5eec221bd718774704dcf4:e8e4c3f0de7d096ef1c46adb9c1ef1bc$"
+		"smartupdate": "$TexturePacker:SmartUpdate:6e7ff5038499ec03c7be98b843a5d0f4:51ba5a47053e841801de176a3b4c1a47:e8e4c3f0de7d096ef1c46adb9c1ef1bc$"
 	}
 }

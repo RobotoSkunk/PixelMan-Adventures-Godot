@@ -75,7 +75,7 @@ shape = SubResource("RectangleShape2D_o402s")
 
 [node name="Animator" type="AnimatedSprite2D" parent="Rendering"]
 sprite_frames = ExtResource("2_6a3dg")
-animation = &"idle"
+animation = &"running"
 offset = Vector2(0, -4)
 
 [node name="Dust Particles" type="GPUParticles2D" parent="Rendering"]
