@@ -18,6 +18,10 @@ boot_splash/image="res://assets/sprites/ClockBomb Logo.png"
 boot_splash/fullsize=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+Director="*res://objects/Director.tscn"
+
 [display]
 
 window/stretch/aspect="keep_height"
