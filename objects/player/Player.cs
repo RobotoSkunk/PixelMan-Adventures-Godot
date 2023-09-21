@@ -29,23 +29,63 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		[Export] private AnimatedSprite2D animator;
 		[Export] private GpuParticles2D dustParticles;
 
-		private Vector2 speed = new(144, 320);
+
+		/// <summary>
+		/// The speed to be applied to the player.
+		/// </summary>
+		readonly private Vector2 speed = new(144, 320);
+
+		/// <summary>
+		/// The maximum time to jump.
+		/// </summary>
+		readonly private float maxJumpTime = 0.16f;
+
+		/// <summary>
+		/// The maximum time to jump (minor fix for jumping near the edge).
+		/// </summary>
+		private readonly float maxHangCount = 0.1f;
 
 
-		readonly private float maxJumpTriggerTime = 0.16f;
-		// readonly private float maxhangCount = 0.1f;
+		/// <summary>
+		/// Time left to jump.
+		/// </summary>
+		private float jumpTime = 0f;
 
-		private float jumpTriggerTime = 0f;
+		/// <summary>
+		/// Time left to jump (minor fix for jumping near the edge).
+		/// </summary>
 		private float hangCount = 0f;
+
+		/// <summary>
+		/// Horizontal input.
+		/// </summary>
 		private float horizontalInput = 0f;
+
+		/// <summary>
+		/// Time left to emit dust particles.
+		/// </summary>
 		private float dustParticlesTimer = 0f;
 
-		private bool pressedJump = false;
-		private bool releasedJump = false;
-		private bool canReduceJump = false;
-		private bool invertedGravity = false;
 
-		private readonly float maxHangCount = 0.1f;
+		/// <summary>
+		/// If the jump button was pressed.
+		/// </summary>
+		private bool pressedJump = false;
+
+		/// <summary>
+		/// If the jump button was released.
+		/// </summary>
+		private bool releasedJump = false;
+
+		/// <summary>
+		/// If the jump button can reduce the jump force when released.
+		/// </summary>
+		private bool canReduceJump = false;
+
+		/// <summary>
+		/// If the gravity is inverted.
+		/// </summary>
+		private bool invertedGravity = false;
 
 
 		/// <summary>
@@ -78,7 +118,9 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			}
 		}
 
-
+		/// <summary>
+		/// Is the player going up?
+		/// </summary>
 		private bool IsGoingUp
 		{
 			get
@@ -127,11 +169,11 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		public override void _PhysicsProcess(double delta)
 		{
 			if (pressedJump) {
-				jumpTriggerTime = maxJumpTriggerTime;
+				jumpTime = maxJumpTime;
 				pressedJump = false;
 
-			} else if (jumpTriggerTime > 0f) {
-				jumpTriggerTime -= (float)delta;
+			} else if (jumpTime > 0f) {
+				jumpTime -= (float)delta;
 			}
 
 
@@ -150,9 +192,9 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			// Vertical movement
 			velocity.Y += Gravity * (float)delta;
 
-			if (jumpTriggerTime > 0f && hangCount > 0f) {
+			if (jumpTime > 0f && hangCount > 0f) {
 				velocity.Y = JumpForce;
-				jumpTriggerTime = 0f;
+				jumpTime = 0f;
 				canReduceJump = true;
 
 			}
@@ -178,6 +220,8 @@ namespace RobotoSkunk.PixelMan.GameObjects
 				Mathf.Clamp(velocity.X, -Constants.maxSpeed, Constants.maxSpeed),
 				Mathf.Clamp(velocity.Y, -Constants.maxSpeed, Constants.maxSpeed)
 			);
+
+			// :3
 			MoveAndSlide();
 		}
 	}
