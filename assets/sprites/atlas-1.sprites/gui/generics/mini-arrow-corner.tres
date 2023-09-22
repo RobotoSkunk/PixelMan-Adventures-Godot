@@ -4,4 +4,4 @@
 
 [resource]
 atlas = ExtResource("1_srilp")
-region = Rect2(49, 848, 3, 3)
+region = Rect2(408, 262, 3, 3)

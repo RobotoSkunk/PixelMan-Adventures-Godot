@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=5 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="1_gw2ps"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="2_eoc6o"]
+[ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://objects/trampoline/Trampoline.tscn" id="3_bkv65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqmsn"]
 size = Vector2(16, 16)
@@ -62,3 +63,6 @@ position = Vector2(5, -54)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -56)
 zoom = Vector2(3.055, 3.055)
+
+[node name="Trampoline" parent="." instance=ExtResource("3_bkv65")]
+position = Vector2(-110, 31)

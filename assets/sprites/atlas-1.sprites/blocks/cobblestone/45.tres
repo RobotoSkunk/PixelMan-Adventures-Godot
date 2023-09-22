@@ -4,4 +4,4 @@
 
 [resource]
 atlas = ExtResource("1_dmf5r")
-region = Rect2(388, 738, 16, 16)
+region = Rect2(376, 777, 16, 16)

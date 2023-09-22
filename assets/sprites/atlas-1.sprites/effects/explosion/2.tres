@@ -4,4 +4,4 @@
 
 [resource]
 atlas = ExtResource("1_ltmpc")
-region = Rect2(1, 786, 59, 60)
+region = Rect2(401, 69, 59, 60)

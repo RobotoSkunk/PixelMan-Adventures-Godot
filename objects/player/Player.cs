@@ -319,5 +319,12 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			// :3
 			MoveAndSlide();
 		}
+
+
+		public void Impulse()
+		{
+			canReduceJump = false;
+			Velocity = new Vector2(Velocity.X, JumpForce * 1.5f);
+		}
 	}
 }

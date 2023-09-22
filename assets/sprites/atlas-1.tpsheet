@@ -3,8 +3,8 @@
 		{
 			"image": "atlas-1.png",
 			"size": {
-				"w": 471,
-				"h": 891
+				"w": 472,
+				"h": 890
 			},
 			"sprites": [
 				{
@@ -46,36 +46,17 @@
 					}
 				},
 				{
-					"filename": "gui/title.png",
-					"region": {
-						"x": 273,
-						"y": 1,
-						"w": 197,
-						"h": 49
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
 					"filename": "objects/laser/dots/0.png",
 					"region": {
 						"x": 1,
 						"y": 470,
-						"w": 382,
+						"w": 384,
 						"h": 1
 					},
 					"margin": {
 						"x": 0,
 						"y": 0,
-						"w": 2,
+						"w": 0,
 						"h": 0
 					},
 					"anchor": {
@@ -88,13 +69,13 @@
 					"region": {
 						"x": 1,
 						"y": 473,
-						"w": 383,
+						"w": 384,
 						"h": 1
 					},
 					"margin": {
 						"x": 0,
 						"y": 0,
-						"w": 1,
+						"w": 0,
 						"h": 0
 					},
 					"anchor": {
@@ -104,25 +85,6 @@
 				},
 				{
 					"filename": "objects/laser/dots/2.png",
-					"region": {
-						"x": 1,
-						"y": 473,
-						"w": 383,
-						"h": 1
-					},
-					"margin": {
-						"x": 1,
-						"y": 0,
-						"w": 1,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/laser/dots/4.png",
 					"region": {
 						"x": 1,
 						"y": 476,
@@ -141,7 +103,7 @@
 					}
 				},
 				{
-					"filename": "objects/laser/dots/5.png",
+					"filename": "objects/laser/dots/3.png",
 					"region": {
 						"x": 1,
 						"y": 479,
@@ -160,17 +122,36 @@
 					}
 				},
 				{
-					"filename": "objects/laser/dots/3.png",
+					"filename": "objects/laser/dots/4.png",
 					"region": {
 						"x": 1,
 						"y": 482,
-						"w": 382,
+						"w": 384,
 						"h": 1
 					},
 					"margin": {
-						"x": 2,
+						"x": 0,
 						"y": 0,
-						"w": 2,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/laser/dots/5.png",
+					"region": {
+						"x": 1,
+						"y": 485,
+						"w": 384,
+						"h": 1
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
 						"h": 0
 					},
 					"anchor": {
@@ -182,9 +163,28 @@
 					"filename": "gui/generics/color-selector/hue-rulette.png",
 					"region": {
 						"x": 273,
-						"y": 52,
+						"y": 1,
 						"w": 126,
 						"h": 126
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/title.png",
+					"region": {
+						"x": 1,
+						"y": 488,
+						"w": 197,
+						"h": 49
 					},
 					"margin": {
 						"x": 0,
@@ -201,7 +201,7 @@
 					"filename": "effects/explosion/6.png",
 					"region": {
 						"x": 273,
-						"y": 180,
+						"y": 129,
 						"w": 112,
 						"h": 103
 					},
@@ -220,7 +220,7 @@
 					"filename": "effects/explosion/8.png",
 					"region": {
 						"x": 1,
-						"y": 485,
+						"y": 539,
 						"w": 111,
 						"h": 91
 					},
@@ -238,8 +238,8 @@
 				{
 					"filename": "effects/explosion/7.png",
 					"region": {
-						"x": 278,
-						"y": 285,
+						"x": 1,
+						"y": 632,
 						"w": 97,
 						"h": 96
 					},
@@ -258,7 +258,7 @@
 					"filename": "effects/explosion/5.png",
 					"region": {
 						"x": 1,
-						"y": 578,
+						"y": 730,
 						"w": 94,
 						"h": 83
 					},
@@ -274,10 +274,29 @@
 					}
 				},
 				{
+					"filename": "effects/explosion/4.png",
+					"region": {
+						"x": 1,
+						"y": 815,
+						"w": 87,
+						"h": 74
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.494253,
+						"y": 0.486486
+					}
+				},
+				{
 					"filename": "gui/generics/buttons/back.png",
 					"region": {
-						"x": 114,
-						"y": 485,
+						"x": 200,
+						"y": 488,
 						"w": 133,
 						"h": 43
 					},
@@ -295,8 +314,8 @@
 				{
 					"filename": "gui/generics/buttons/credits.png",
 					"region": {
-						"x": 114,
-						"y": 530,
+						"x": 273,
+						"y": 234,
 						"w": 133,
 						"h": 43
 					},
@@ -314,8 +333,8 @@
 				{
 					"filename": "gui/generics/buttons/profile.png",
 					"region": {
-						"x": 249,
-						"y": 485,
+						"x": 278,
+						"y": 279,
 						"w": 133,
 						"h": 43
 					},
@@ -331,29 +350,10 @@
 					}
 				},
 				{
-					"filename": "effects/explosion/4.png",
-					"region": {
-						"x": 278,
-						"y": 383,
-						"w": 87,
-						"h": 74
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.494253,
-						"y": 0.486486
-					}
-				},
-				{
 					"filename": "gui/generics/volume-bar.png",
 					"region": {
-						"x": 249,
-						"y": 530,
+						"x": 278,
+						"y": 324,
 						"w": 128,
 						"h": 32
 					},
@@ -371,8 +371,8 @@
 				{
 					"filename": "objects/BOOM.png",
 					"region": {
-						"x": 1,
-						"y": 663,
+						"x": 278,
+						"y": 358,
 						"w": 98,
 						"h": 49
 					},
@@ -390,8 +390,8 @@
 				{
 					"filename": "effects/explosion/3.png",
 					"region": {
-						"x": 1,
-						"y": 714,
+						"x": 114,
+						"y": 539,
 						"w": 72,
 						"h": 70
 					},
@@ -409,8 +409,8 @@
 				{
 					"filename": "gui/generics/color-selector/color-bar-container.png",
 					"region": {
-						"x": 249,
-						"y": 564,
+						"x": 200,
+						"y": 533,
 						"w": 128,
 						"h": 16
 					},
@@ -429,7 +429,7 @@
 					"filename": "gui/generics/color-selector/sv-palette.png",
 					"region": {
 						"x": 401,
-						"y": 52,
+						"y": 1,
 						"w": 66,
 						"h": 66
 					},
@@ -447,8 +447,8 @@
 				{
 					"filename": "gui/generics/color-selector/color-bar-flat.png",
 					"region": {
-						"x": 114,
-						"y": 575,
+						"x": 188,
+						"y": 551,
 						"w": 122,
 						"h": 10
 					},
@@ -464,29 +464,10 @@
 					}
 				},
 				{
-					"filename": "effects/explosion/2.png",
-					"region": {
-						"x": 1,
-						"y": 786,
-						"w": 59,
-						"h": 60
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.474576,
-						"y": 0.466667
-					}
-				},
-				{
 					"filename": "gui/generics/color-selector/gradient-bar-palette.png",
 					"region": {
-						"x": 97,
-						"y": 587,
+						"x": 188,
+						"y": 563,
 						"w": 122,
 						"h": 10
 					},
@@ -504,8 +485,8 @@
 				{
 					"filename": "gui/generics/color-selector/hue-bar-palette.png",
 					"region": {
-						"x": 97,
-						"y": 599,
+						"x": 188,
+						"y": 575,
 						"w": 122,
 						"h": 10
 					},
@@ -523,8 +504,8 @@
 				{
 					"filename": "gui/generics/color-selector/transparency-checker-bar.png",
 					"region": {
-						"x": 97,
-						"y": 611,
+						"x": 188,
+						"y": 587,
 						"w": 122,
 						"h": 10
 					},
@@ -540,10 +521,29 @@
 					}
 				},
 				{
-					"filename": "gui/generics/buttons/T2.png",
+					"filename": "effects/explosion/2.png",
 					"region": {
 						"x": 401,
-						"y": 120,
+						"y": 69,
+						"w": 59,
+						"h": 60
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.474576,
+						"y": 0.466667
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/T2.png",
+					"region": {
+						"x": 278,
+						"y": 409,
 						"w": 46,
 						"h": 53
 					},
@@ -559,48 +559,10 @@
 					}
 				},
 				{
-					"filename": "gui/menu-dirt.png",
-					"region": {
-						"x": 97,
-						"y": 623,
-						"w": 80,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/platform/large.png",
-					"region": {
-						"x": 97,
-						"y": 641,
-						"w": 76,
-						"h": 10
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
 					"filename": "effects/explosion/1.png",
 					"region": {
-						"x": 101,
-						"y": 653,
+						"x": 326,
+						"y": 409,
 						"w": 47,
 						"h": 46
 					},
@@ -616,124 +578,10 @@
 					}
 				},
 				{
-					"filename": "gui/generics/buttons/editor-hide.png",
-					"region": {
-						"x": 1,
-						"y": 848,
-						"w": 46,
-						"h": 31
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/preview/checkpoint.png",
-					"region": {
-						"x": 75,
-						"y": 714,
-						"w": 22,
-						"h": 54
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.851852
-					}
-				},
-				{
-					"filename": "gui/generics/xbox/trigger-left.png",
-					"region": {
-						"x": 449,
-						"y": 120,
-						"w": 21,
-						"h": 26
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/xbox/trigger-right.png",
-					"region": {
-						"x": 449,
-						"y": 148,
-						"w": 21,
-						"h": 26
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/preview/saw-base.png",
-					"region": {
-						"x": 150,
-						"y": 653,
-						"w": 44,
-						"h": 46
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.804348
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/folder-add.png",
-					"region": {
-						"x": 179,
-						"y": 623,
-						"w": 38,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
 					"filename": "effects/explosion/0.png",
 					"region": {
-						"x": 196,
-						"y": 653,
+						"x": 335,
+						"y": 488,
 						"w": 48,
 						"h": 44
 					},
@@ -749,12 +597,12 @@
 					}
 				},
 				{
-					"filename": "gui/generics/buttons/editor-show.png",
+					"filename": "gui/menu-dirt.png",
 					"region": {
-						"x": 101,
-						"y": 701,
-						"w": 46,
-						"h": 31
+						"x": 188,
+						"y": 599,
+						"w": 80,
+						"h": 16
 					},
 					"margin": {
 						"x": 0,
@@ -763,15 +611,34 @@
 						"h": 0
 					},
 					"anchor": {
-						"x": 0,
+						"x": 0.5,
 						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/preview/saw-base.png",
+					"region": {
+						"x": 387,
+						"y": 131,
+						"w": 44,
+						"h": 46
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.804348
 					}
 				},
 				{
 					"filename": "objects/saw.png",
 					"region": {
-						"x": 99,
-						"y": 734,
+						"x": 387,
+						"y": 179,
 						"w": 44,
 						"h": 44
 					},
@@ -787,124 +654,10 @@
 					}
 				},
 				{
-					"filename": "gui/generics/symbols/local.png",
+					"filename": "gui/generics/symbols/folder-add.png",
 					"region": {
-						"x": 149,
-						"y": 701,
-						"w": 41,
-						"h": 31
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/online.png",
-					"region": {
-						"x": 145,
-						"y": 734,
-						"w": 36,
-						"h": 36
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/redo.png",
-					"region": {
-						"x": 219,
-						"y": 623,
-						"w": 28,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/pause.png",
-					"region": {
-						"x": 221,
-						"y": 587,
-						"w": 34,
-						"h": 34
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/rocket-launcher.png",
-					"region": {
-						"x": 257,
-						"y": 582,
-						"w": 41,
-						"h": 30
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.365854,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/laser-gun/outline.png",
-					"region": {
-						"x": 300,
-						"y": 582,
-						"w": 37,
-						"h": 30
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.405405,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/folder-up.png",
-					"region": {
-						"x": 339,
-						"y": 582,
+						"x": 433,
+						"y": 131,
 						"w": 38,
 						"h": 28
 					},
@@ -920,12 +673,12 @@
 					}
 				},
 				{
-					"filename": "objects/platform/medium.png",
+					"filename": "gui/generics/symbols/folder-up.png",
 					"region": {
-						"x": 257,
-						"y": 614,
-						"w": 46,
-						"h": 10
+						"x": 433,
+						"y": 161,
+						"w": 38,
+						"h": 28
 					},
 					"margin": {
 						"x": 0,
@@ -941,8 +694,8 @@
 				{
 					"filename": "gui/generics/symbols/folder.png",
 					"region": {
-						"x": 249,
-						"y": 626,
+						"x": 433,
+						"y": 191,
 						"w": 38,
 						"h": 28
 					},
@@ -958,10 +711,143 @@
 					}
 				},
 				{
+					"filename": "objects/preview/checkpoint.png",
+					"region": {
+						"x": 378,
+						"y": 358,
+						"w": 22,
+						"h": 54
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.851852
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor-hide.png",
+					"region": {
+						"x": 114,
+						"y": 611,
+						"w": 46,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor-show.png",
+					"region": {
+						"x": 100,
+						"y": 644,
+						"w": 46,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/local.png",
+					"region": {
+						"x": 100,
+						"y": 677,
+						"w": 41,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/platform/large.png",
+					"region": {
+						"x": 162,
+						"y": 617,
+						"w": 76,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/rocket-launcher.png",
+					"region": {
+						"x": 100,
+						"y": 710,
+						"w": 41,
+						"h": 30
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.365854,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/online.png",
+					"region": {
+						"x": 97,
+						"y": 742,
+						"w": 36,
+						"h": 36
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
 					"filename": "gui/generics/buttons/social-fb.png",
 					"region": {
-						"x": 246,
-						"y": 656,
+						"x": 97,
+						"y": 780,
 						"w": 35,
 						"h": 35
 					},
@@ -979,8 +865,8 @@
 				{
 					"filename": "gui/generics/buttons/social-gh.png",
 					"region": {
-						"x": 387,
-						"y": 180,
+						"x": 90,
+						"y": 817,
 						"w": 35,
 						"h": 35
 					},
@@ -998,8 +884,8 @@
 				{
 					"filename": "gui/generics/buttons/social-tw.png",
 					"region": {
-						"x": 387,
-						"y": 217,
+						"x": 90,
+						"y": 854,
 						"w": 35,
 						"h": 35
 					},
@@ -1017,10 +903,86 @@
 				{
 					"filename": "gui/generics/buttons/social-website.png",
 					"region": {
-						"x": 387,
-						"y": 254,
+						"x": 375,
+						"y": 414,
 						"w": 35,
 						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/platform/medium.png",
+					"region": {
+						"x": 162,
+						"y": 629,
+						"w": 46,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/laser-gun/outline.png",
+					"region": {
+						"x": 270,
+						"y": 599,
+						"w": 37,
+						"h": 30
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.405405,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/redo.png",
+					"region": {
+						"x": 240,
+						"y": 617,
+						"w": 28,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/stop.png",
+					"region": {
+						"x": 210,
+						"y": 629,
+						"w": 28,
+						"h": 28
 					},
 					"margin": {
 						"x": 0,
@@ -1036,8 +998,8 @@
 				{
 					"filename": "gui/generics/buttons/social-yt.png",
 					"region": {
-						"x": 377,
-						"y": 291,
+						"x": 312,
+						"y": 551,
 						"w": 35,
 						"h": 35
 					},
@@ -1053,240 +1015,12 @@
 					}
 				},
 				{
-					"filename": "gui/generics/buttons/editor/container.png",
+					"filename": "gui/generics/buttons/pause.png",
 					"region": {
-						"x": 377,
-						"y": 328,
-						"w": 32,
-						"h": 32
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/finish/0.png",
-					"region": {
-						"x": 424,
-						"y": 175,
-						"w": 23,
-						"h": 35
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.478261,
-						"y": 0.742857
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/T1.png",
-					"region": {
-						"x": 424,
-						"y": 212,
-						"w": 28,
-						"h": 35
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 1,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/help.png",
-					"region": {
-						"x": 424,
-						"y": 249,
-						"w": 32,
-						"h": 32
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/task.png",
-					"region": {
-						"x": 449,
-						"y": 176,
-						"w": 21,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/objects.png",
-					"region": {
-						"x": 377,
-						"y": 362,
-						"w": 32,
-						"h": 22
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 1,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/pause.png",
-					"region": {
-						"x": 367,
-						"y": 386,
-						"w": 32,
-						"h": 32
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/save-and-play.png",
-					"region": {
-						"x": 367,
-						"y": 420,
-						"w": 32,
-						"h": 32
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/color-selector/btn/hsv2-0.png",
-					"region": {
-						"x": 367,
-						"y": 454,
-						"w": 30,
-						"h": 14
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/exit.png",
-					"region": {
-						"x": 454,
-						"y": 194,
-						"w": 16,
-						"h": 24
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/dirt/9.png",
-					"region": {
-						"x": 454,
-						"y": 220,
-						"w": 16,
-						"h": 19
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.578947
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/restart_level.png",
-					"region": {
-						"x": 75,
-						"y": 770,
-						"w": 22,
-						"h": 23
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/save.png",
-					"region": {
-						"x": 62,
-						"y": 795,
-						"w": 32,
-						"h": 32
+						"x": 349,
+						"y": 534,
+						"w": 34,
+						"h": 34
 					},
 					"margin": {
 						"x": 0,
@@ -1302,8 +1036,8 @@
 				{
 					"filename": "objects/swivel-gun.png",
 					"region": {
-						"x": 99,
-						"y": 780,
+						"x": 270,
+						"y": 631,
 						"w": 37,
 						"h": 23
 					},
@@ -1321,8 +1055,8 @@
 				{
 					"filename": "objects/laser-gun/0.png",
 					"region": {
-						"x": 96,
-						"y": 805,
+						"x": 349,
+						"y": 570,
 						"w": 35,
 						"h": 28
 					},
@@ -1334,33 +1068,14 @@
 					},
 					"anchor": {
 						"x": 0.4,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/options.png",
-					"region": {
-						"x": 62,
-						"y": 829,
-						"w": 32,
-						"h": 22
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 1,
 						"y": 0.5
 					}
 				},
 				{
 					"filename": "objects/laser-gun/1.png",
 					"region": {
-						"x": 96,
-						"y": 835,
+						"x": 312,
+						"y": 588,
 						"w": 35,
 						"h": 28
 					},
@@ -1372,14 +1087,33 @@
 					},
 					"anchor": {
 						"x": 0.4,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/container.png",
+					"region": {
+						"x": 309,
+						"y": 618,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
 						"y": 0.5
 					}
 				},
 				{
 					"filename": "objects/laser-gun/2.png",
 					"region": {
-						"x": 49,
-						"y": 853,
+						"x": 349,
+						"y": 600,
 						"w": 35,
 						"h": 28
 					},
@@ -1395,88 +1129,12 @@
 					}
 				},
 				{
-					"filename": "gui/generics/buttons/editor/zoom-in.png",
+					"filename": "gui/generics/buttons/T1.png",
 					"region": {
-						"x": 86,
-						"y": 865,
-						"w": 25,
-						"h": 25
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/zoom-out.png",
-					"region": {
-						"x": 113,
-						"y": 865,
-						"w": 25,
-						"h": 25
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/finish/1.png",
-					"region": {
-						"x": 414,
-						"y": 291,
-						"w": 23,
+						"x": 408,
+						"y": 225,
+						"w": 28,
 						"h": 35
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.478261,
-						"y": 0.742857
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/locked.png",
-					"region": {
-						"x": 411,
-						"y": 328,
-						"w": 27,
-						"h": 33
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/properties.png",
-					"region": {
-						"x": 411,
-						"y": 363,
-						"w": 32,
-						"h": 22
 					},
 					"margin": {
 						"x": 0,
@@ -1490,409 +1148,10 @@
 					}
 				},
 				{
-					"filename": "gui/generics/buttons/editor/settings.png",
-					"region": {
-						"x": 401,
-						"y": 387,
-						"w": 32,
-						"h": 32
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/laser-gun/3.png",
-					"region": {
-						"x": 435,
-						"y": 387,
-						"w": 35,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.4,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/laser-gun/4.png",
-					"region": {
-						"x": 435,
-						"y": 417,
-						"w": 35,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.4,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/target_attempts.png",
-					"region": {
-						"x": 401,
-						"y": 421,
-						"w": 32,
-						"h": 32
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/laser-gun/5.png",
-					"region": {
-						"x": 435,
-						"y": 447,
-						"w": 35,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.4,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/saw-base.png",
-					"region": {
-						"x": 399,
-						"y": 455,
-						"w": 34,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.678571
-					}
-				},
-				{
-					"filename": "objects/laser-gun/6.png",
-					"region": {
-						"x": 435,
-						"y": 477,
-						"w": 35,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.4,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/target_coin.png",
-					"region": {
-						"x": 384,
-						"y": 485,
-						"w": 32,
-						"h": 32
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/containers/button-1.png",
-					"region": {
-						"x": 418,
-						"y": 485,
-						"w": 15,
-						"h": 15
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/finish/2.png",
-					"region": {
-						"x": 439,
-						"y": 283,
-						"w": 23,
-						"h": 35
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.478261,
-						"y": 0.742857
-					}
-				},
-				{
-					"filename": "objects/finish/3.png",
-					"region": {
-						"x": 440,
-						"y": 320,
-						"w": 23,
-						"h": 35
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.478261,
-						"y": 0.742857
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/zoom-reset.png",
-					"region": {
-						"x": 445,
-						"y": 357,
-						"w": 25,
-						"h": 25
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/stop.png",
-					"region": {
-						"x": 289,
-						"y": 626,
-						"w": 28,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/target_time.png",
-					"region": {
-						"x": 283,
-						"y": 656,
-						"w": 32,
-						"h": 32
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/color-selector/btn/hex-0.png",
-					"region": {
-						"x": 305,
-						"y": 614,
-						"w": 32,
-						"h": 10
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/laser-gun/7.png",
-					"region": {
-						"x": 339,
-						"y": 612,
-						"w": 35,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.4,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/beams/0.png",
-					"region": {
-						"x": 319,
-						"y": 626,
-						"w": 18,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/finish/4.png",
-					"region": {
-						"x": 183,
-						"y": 734,
-						"w": 23,
-						"h": 35
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.478261,
-						"y": 0.742857
-					}
-				},
-				{
-					"filename": "objects/checkpoint/post.png",
-					"region": {
-						"x": 192,
-						"y": 701,
-						"w": 22,
-						"h": 31
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.741935
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/test.png",
-					"region": {
-						"x": 216,
-						"y": 699,
-						"w": 28,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/laser-gun/8.png",
-					"region": {
-						"x": 246,
-						"y": 693,
-						"w": 35,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.4,
-						"y": 0.5
-					}
-				},
-				{
 					"filename": "gui/generics/symbols/editor.png",
 					"region": {
-						"x": 283,
-						"y": 690,
+						"x": 438,
+						"y": 221,
 						"w": 33,
 						"h": 28
 					},
@@ -1910,8 +1169,8 @@
 				{
 					"filename": "gui/generics/color-selector/btn/hex-1.png",
 					"region": {
-						"x": 384,
-						"y": 519,
+						"x": 438,
+						"y": 251,
 						"w": 33,
 						"h": 12
 					},
@@ -1927,10 +1186,10 @@
 					}
 				},
 				{
-					"filename": "objects/laser-gun/9.png",
+					"filename": "objects/laser-gun/3.png",
 					"region": {
-						"x": 379,
-						"y": 533,
+						"x": 343,
+						"y": 630,
 						"w": 35,
 						"h": 28
 					},
@@ -1942,14 +1201,261 @@
 					},
 					"anchor": {
 						"x": 0.4,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/test.png",
+					"region": {
+						"x": 240,
+						"y": 647,
+						"w": 28,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/laser-gun/4.png",
+					"region": {
+						"x": 270,
+						"y": 656,
+						"w": 35,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.4,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/finish/0.png",
+					"region": {
+						"x": 413,
+						"y": 262,
+						"w": 23,
+						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.478261,
+						"y": 0.742857
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/help.png",
+					"region": {
+						"x": 438,
+						"y": 265,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/laser-gun/5.png",
+					"region": {
+						"x": 413,
+						"y": 299,
+						"w": 35,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.4,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/xbox/trigger-left.png",
+					"region": {
+						"x": 450,
+						"y": 299,
+						"w": 21,
+						"h": 26
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/laser-gun/6.png",
+					"region": {
+						"x": 408,
+						"y": 329,
+						"w": 35,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.4,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/pause.png",
+					"region": {
+						"x": 402,
+						"y": 359,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/laser-gun/7.png",
+					"region": {
+						"x": 436,
+						"y": 359,
+						"w": 35,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.4,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/laser-gun/8.png",
+					"region": {
+						"x": 436,
+						"y": 389,
+						"w": 35,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.4,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/checkpoint/post.png",
+					"region": {
+						"x": 412,
+						"y": 393,
+						"w": 22,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.741935
+					}
+				},
+				{
+					"filename": "objects/laser-gun/9.png",
+					"region": {
+						"x": 436,
+						"y": 419,
+						"w": 35,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.4,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/restart_level.png",
+					"region": {
+						"x": 412,
+						"y": 426,
+						"w": 22,
+						"h": 23
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
 						"y": 0.5
 					}
 				},
 				{
 					"filename": "objects/laser-gun/10.png",
 					"region": {
-						"x": 379,
-						"y": 563,
+						"x": 436,
+						"y": 449,
 						"w": 35,
 						"h": 28
 					},
@@ -1965,10 +1471,181 @@
 					}
 				},
 				{
+					"filename": "gui/generics/xbox/trigger-right.png",
+					"region": {
+						"x": 450,
+						"y": 327,
+						"w": 21,
+						"h": 26
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/save-and-play.png",
+					"region": {
+						"x": 387,
+						"y": 451,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/coin/2.png",
+					"region": {
+						"x": 375,
+						"y": 451,
+						"w": 10,
+						"h": 17
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.55,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/save.png",
+					"region": {
+						"x": 148,
+						"y": 644,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/settings.png",
+					"region": {
+						"x": 143,
+						"y": 678,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/target_attempts.png",
+					"region": {
+						"x": 143,
+						"y": 712,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/target_coin.png",
+					"region": {
+						"x": 135,
+						"y": 746,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/target_time.png",
+					"region": {
+						"x": 134,
+						"y": 780,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/finish/1.png",
+					"region": {
+						"x": 182,
+						"y": 641,
+						"w": 23,
+						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.478261,
+						"y": 0.742857
+					}
+				},
+				{
 					"filename": "gui/generics/color-selector/btn/hsv2-1.png",
 					"region": {
-						"x": 379,
-						"y": 593,
+						"x": 207,
+						"y": 659,
 						"w": 31,
 						"h": 16
 					},
@@ -1984,10 +1661,124 @@
 					}
 				},
 				{
-					"filename": "objects/finish/5.png",
+					"filename": "gui/generics/symbols/locked.png",
 					"region": {
-						"x": 208,
-						"y": 734,
+						"x": 177,
+						"y": 678,
+						"w": 27,
+						"h": 33
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/undo.png",
+					"region": {
+						"x": 177,
+						"y": 713,
+						"w": 28,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/objects.png",
+					"region": {
+						"x": 309,
+						"y": 652,
+						"w": 32,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 1,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/saw-base.png",
+					"region": {
+						"x": 343,
+						"y": 660,
+						"w": 34,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.678571
+					}
+				},
+				{
+					"filename": "gui/generics/containers/button-1.png",
+					"region": {
+						"x": 330,
+						"y": 534,
+						"w": 15,
+						"h": 15
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/clock.png",
+					"region": {
+						"x": 421,
+						"y": 451,
+						"w": 13,
+						"h": 13
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/finish/2.png",
+					"region": {
+						"x": 127,
+						"y": 817,
 						"w": 23,
 						"h": 35
 					},
@@ -2000,13 +1791,127 @@
 					"anchor": {
 						"x": 0.478261,
 						"y": 0.742857
+					}
+				},
+				{
+					"filename": "objects/finish/3.png",
+					"region": {
+						"x": 127,
+						"y": 854,
+						"w": 23,
+						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.478261,
+						"y": 0.742857
+					}
+				},
+				{
+					"filename": "objects/finish/4.png",
+					"region": {
+						"x": 152,
+						"y": 814,
+						"w": 23,
+						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.478261,
+						"y": 0.742857
+					}
+				},
+				{
+					"filename": "objects/finish/5.png",
+					"region": {
+						"x": 152,
+						"y": 851,
+						"w": 23,
+						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.478261,
+						"y": 0.742857
+					}
+				},
+				{
+					"filename": "gui/generics/color-selector/btn/rgb-1.png",
+					"region": {
+						"x": 307,
+						"y": 676,
+						"w": 33,
+						"h": 12
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.484848,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/coin.png",
+					"region": {
+						"x": 421,
+						"y": 466,
+						"w": 13,
+						"h": 13
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/color-selector/h-picker.png",
+					"region": {
+						"x": 162,
+						"y": 611,
+						"w": 16,
+						"h": 4
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				},
 				{
 					"filename": "objects/finish/6.png",
 					"region": {
-						"x": 233,
-						"y": 729,
+						"x": 169,
+						"y": 746,
 						"w": 23,
 						"h": 35
 					},
@@ -2022,10 +1927,29 @@
 					}
 				},
 				{
+					"filename": "objects/gravity-switch-particles.png",
+					"region": {
+						"x": 168,
+						"y": 783,
+						"w": 28,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
 					"filename": "objects/finish/7.png",
 					"region": {
-						"x": 258,
-						"y": 723,
+						"x": 177,
+						"y": 813,
 						"w": 23,
 						"h": 35
 					},
@@ -2043,8 +1967,8 @@
 				{
 					"filename": "objects/finish/8.png",
 					"region": {
-						"x": 283,
-						"y": 720,
+						"x": 177,
+						"y": 850,
 						"w": 23,
 						"h": 35
 					},
@@ -2062,8 +1986,8 @@
 				{
 					"filename": "objects/finish/9.png",
 					"region": {
-						"x": 308,
-						"y": 720,
+						"x": 194,
+						"y": 743,
 						"w": 23,
 						"h": 35
 					},
@@ -2079,12 +2003,12 @@
 					}
 				},
 				{
-					"filename": "gui/generics/buttons/filter-order.png",
+					"filename": "objects/preview/gravity-switch.png",
 					"region": {
-						"x": 86,
-						"y": 853,
-						"w": 8,
-						"h": 10
+						"x": 198,
+						"y": 780,
+						"w": 28,
+						"h": 28
 					},
 					"margin": {
 						"x": 0,
@@ -2094,52 +2018,14 @@
 					},
 					"anchor": {
 						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/color-selector/btn/rgb-1.png",
-					"region": {
-						"x": 145,
-						"y": 772,
-						"w": 33,
-						"h": 12
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.484848,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/rocket/1.png",
-					"region": {
-						"x": 138,
-						"y": 786,
-						"w": 31,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.709677,
 						"y": 0.5
 					}
 				},
 				{
 					"filename": "objects/finish/10.png",
 					"region": {
-						"x": 133,
-						"y": 805,
+						"x": 202,
+						"y": 810,
 						"w": 23,
 						"h": 35
 					},
@@ -2155,126 +2041,12 @@
 					}
 				},
 				{
-					"filename": "objects/trampoline/2.png",
+					"filename": "gui/generics/buttons/editor/zoom-in.png",
 					"region": {
-						"x": 133,
-						"y": 842,
-						"w": 24,
-						"h": 20
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.6
-					}
-				},
-				{
-					"filename": "objects/checkpoint/sign.png",
-					"region": {
-						"x": 140,
-						"y": 864,
-						"w": 22,
-						"h": 26
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 1
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/editor/undo.png",
-					"region": {
-						"x": 158,
-						"y": 804,
-						"w": 28,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/gravity-switch-particles.png",
-					"region": {
-						"x": 159,
-						"y": 834,
-						"w": 28,
-						"h": 28
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/achievements.png",
-					"region": {
-						"x": 164,
-						"y": 864,
-						"w": 24,
-						"h": 24
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/beams/5.png",
-					"region": {
-						"x": 171,
-						"y": 786,
-						"w": 17,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/preview/gravity-switch.png",
-					"region": {
-						"x": 190,
-						"y": 771,
-						"w": 28,
-						"h": 28
+						"x": 202,
+						"y": 847,
+						"w": 25,
+						"h": 25
 					},
 					"margin": {
 						"x": 0,
@@ -2290,8 +2062,8 @@
 				{
 					"filename": "gui/generics/containers/button-3.png",
 					"region": {
-						"x": 418,
-						"y": 502,
+						"x": 202,
+						"y": 874,
 						"w": 15,
 						"h": 15
 					},
@@ -2307,10 +2079,10 @@
 					}
 				},
 				{
-					"filename": "gui/generics/color-selector/btn/rgb-0.png",
+					"filename": "gui/generics/color-selector/btn/hex-0.png",
 					"region": {
-						"x": 435,
-						"y": 507,
+						"x": 326,
+						"y": 457,
 						"w": 32,
 						"h": 10
 					},
@@ -2326,31 +2098,12 @@
 					}
 				},
 				{
-					"filename": "objects/rocket/4.png",
+					"filename": "gui/generics/containers/slider-1.png",
 					"region": {
-						"x": 419,
-						"y": 519,
-						"w": 31,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.709677,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/0.png",
-					"region": {
-						"x": 452,
-						"y": 519,
-						"w": 18,
-						"h": 18
+						"x": 462,
+						"y": 69,
+						"w": 9,
+						"h": 14
 					},
 					"margin": {
 						"x": 0,
@@ -2364,10 +2117,48 @@
 					}
 				},
 				{
+					"filename": "gui/generics/buttons/editor/options.png",
+					"region": {
+						"x": 387,
+						"y": 485,
+						"w": 32,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 1,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/editor/properties.png",
+					"region": {
+						"x": 385,
+						"y": 509,
+						"w": 32,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 1,
+						"y": 0.5
+					}
+				},
+				{
 					"filename": "objects/preview/mobile-saw.png",
 					"region": {
-						"x": 416,
-						"y": 537,
+						"x": 385,
+						"y": 533,
 						"w": 29,
 						"h": 24
 					},
@@ -2383,12 +2174,12 @@
 					}
 				},
 				{
-					"filename": "gui/generics/symbols/main_menu.png",
+					"filename": "gui/generics/buttons/editor/zoom-out.png",
 					"region": {
-						"x": 447,
-						"y": 539,
-						"w": 23,
-						"h": 19
+						"x": 386,
+						"y": 559,
+						"w": 25,
+						"h": 25
 					},
 					"margin": {
 						"x": 0,
@@ -2402,12 +2193,12 @@
 					}
 				},
 				{
-					"filename": "gui/generics/xbox/button-east-pressed.png",
+					"filename": "gui/generics/buttons/editor/zoom-reset.png",
 					"region": {
-						"x": 416,
-						"y": 563,
-						"w": 24,
-						"h": 24
+						"x": 386,
+						"y": 586,
+						"w": 25,
+						"h": 25
 					},
 					"margin": {
 						"x": 0,
@@ -2423,8 +2214,8 @@
 				{
 					"filename": "gui/generics/color-selector/btn/hsv1-0.png",
 					"region": {
-						"x": 442,
-						"y": 563,
+						"x": 386,
+						"y": 613,
 						"w": 28,
 						"h": 16
 					},
@@ -2440,10 +2231,10 @@
 					}
 				},
 				{
-					"filename": "gui/generics/xbox/button-north-pressed.png",
+					"filename": "gui/generics/symbols/achievements.png",
 					"region": {
-						"x": 220,
-						"y": 771,
+						"x": 380,
+						"y": 631,
 						"w": 24,
 						"h": 24
 					},
@@ -2459,69 +2250,50 @@
 					}
 				},
 				{
-					"filename": "gui/generics/symbols/date.png",
+					"filename": "objects/checkpoint/sign.png",
 					"region": {
-						"x": 278,
-						"y": 459,
-						"w": 11,
-						"h": 9
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/rocket/5.png",
-					"region": {
-						"x": 339,
-						"y": 642,
-						"w": 31,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.709677,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/2.png",
-					"region": {
-						"x": 319,
-						"y": 646,
-						"w": 18,
-						"h": 17
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.470588
-					}
-				},
-				{
-					"filename": "gui/generics/xbox/button-east.png",
-					"region": {
-						"x": 317,
-						"y": 665,
+						"x": 421,
+						"y": 481,
 						"w": 22,
-						"h": 22
+						"h": 26
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 1
+					}
+				},
+				{
+					"filename": "gui/generics/xbox/button-east-pressed.png",
+					"region": {
+						"x": 419,
+						"y": 509,
+						"w": 24,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/xbox/button-north-pressed.png",
+					"region": {
+						"x": 445,
+						"y": 479,
+						"w": 24,
+						"h": 24
 					},
 					"margin": {
 						"x": 0,
@@ -2537,8 +2309,8 @@
 				{
 					"filename": "gui/generics/xbox/button-south-pressed.png",
 					"region": {
-						"x": 318,
-						"y": 689,
+						"x": 445,
+						"y": 505,
 						"w": 24,
 						"h": 24
 					},
@@ -2556,8 +2328,8 @@
 				{
 					"filename": "gui/generics/xbox/button-weast-pressed.png",
 					"region": {
-						"x": 341,
-						"y": 660,
+						"x": 416,
+						"y": 535,
 						"w": 24,
 						"h": 24
 					},
@@ -2573,69 +2345,12 @@
 					}
 				},
 				{
-					"filename": "gui/generics/xbox/button-north.png",
-					"region": {
-						"x": 344,
-						"y": 686,
-						"w": 22,
-						"h": 22
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/rocket/6.png",
-					"region": {
-						"x": 283,
-						"y": 757,
-						"w": 31,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.709677,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/beams/1.png",
-					"region": {
-						"x": 316,
-						"y": 757,
-						"w": 17,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
 					"filename": "objects/trampoline/0.png",
 					"region": {
-						"x": 442,
-						"y": 581,
+						"x": 413,
+						"y": 561,
 						"w": 24,
-						"h": 16
+						"h": 22
 					},
 					"margin": {
 						"x": 0,
@@ -2651,10 +2366,10 @@
 				{
 					"filename": "objects/trampoline/1.png",
 					"region": {
-						"x": 416,
-						"y": 589,
+						"x": 413,
+						"y": 585,
 						"w": 24,
-						"h": 18
+						"h": 22
 					},
 					"margin": {
 						"x": 0,
@@ -2668,29 +2383,10 @@
 					}
 				},
 				{
-					"filename": "objects/trampoline/3.png",
-					"region": {
-						"x": 442,
-						"y": 599,
-						"w": 24,
-						"h": 22
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.636364
-					}
-				},
-				{
 					"filename": "gui/generics/color-selector/btn/hsv1-1.png",
 					"region": {
-						"x": 190,
-						"y": 801,
+						"x": 442,
+						"y": 535,
 						"w": 29,
 						"h": 18
 					},
@@ -2706,10 +2402,67 @@
 					}
 				},
 				{
-					"filename": "gui/generics/xbox/button-south.png",
+					"filename": "objects/rocket/3.png",
 					"region": {
-						"x": 221,
-						"y": 797,
+						"x": 442,
+						"y": 555,
+						"w": 29,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.689655,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/color-selector/btn/rgb-0.png",
+					"region": {
+						"x": 439,
+						"y": 573,
+						"w": 32,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/rocket/1.png",
+					"region": {
+						"x": 439,
+						"y": 585,
+						"w": 31,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.709677,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/xbox/button-east.png",
+					"region": {
+						"x": 416,
+						"y": 609,
 						"w": 22,
 						"h": 22
 					},
@@ -2725,10 +2478,86 @@
 					}
 				},
 				{
+					"filename": "objects/rocket/4.png",
+					"region": {
+						"x": 440,
+						"y": 603,
+						"w": 31,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.709677,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/rocket/5.png",
+					"region": {
+						"x": 440,
+						"y": 621,
+						"w": 31,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.709677,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/rocket/6.png",
+					"region": {
+						"x": 406,
+						"y": 633,
+						"w": 31,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.709677,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/color-selector/btn/hsv2-0.png",
+					"region": {
+						"x": 439,
+						"y": 639,
+						"w": 30,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
 					"filename": "objects/rocket/0.png",
 					"region": {
-						"x": 189,
-						"y": 821,
+						"x": 406,
+						"y": 651,
 						"w": 30,
 						"h": 16
 					},
@@ -2746,8 +2575,8 @@
 				{
 					"filename": "objects/rocket/2.png",
 					"region": {
-						"x": 189,
-						"y": 839,
+						"x": 438,
+						"y": 655,
 						"w": 30,
 						"h": 16
 					},
@@ -2763,12 +2592,50 @@
 					}
 				},
 				{
-					"filename": "gui/generics/xbox/button-weast.png",
+					"filename": "objects/trampoline/2.png",
 					"region": {
-						"x": 221,
-						"y": 821,
-						"w": 22,
+						"x": 380,
+						"y": 657,
+						"w": 24,
 						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.6
+					}
+				},
+				{
+					"filename": "objects/trampoline/3.png",
+					"region": {
+						"x": 406,
+						"y": 669,
+						"w": 24,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.636364
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/main_menu.png",
+					"region": {
+						"x": 432,
+						"y": 673,
+						"w": 23,
+						"h": 19
 					},
 					"margin": {
 						"x": 0,
@@ -2782,12 +2649,12 @@
 					}
 				},
 				{
-					"filename": "objects/rocket/3.png",
+					"filename": "objects/switch/0.png",
 					"region": {
-						"x": 190,
-						"y": 857,
-						"w": 29,
-						"h": 16
+						"x": 457,
+						"y": 673,
+						"w": 14,
+						"h": 21
 					},
 					"margin": {
 						"x": 0,
@@ -2796,17 +2663,17 @@
 						"h": 0
 					},
 					"anchor": {
-						"x": 0.689655,
-						"y": 0.5
+						"x": 0.5,
+						"y": 0.47619
 					}
 				},
 				{
-					"filename": "gui/generics/buttons/icon/global.png",
+					"filename": "gui/generics/buttons/filter-order.png",
 					"region": {
-						"x": 221,
-						"y": 845,
-						"w": 20,
-						"h": 20
+						"x": 402,
+						"y": 393,
+						"w": 8,
+						"h": 10
 					},
 					"margin": {
 						"x": 0,
@@ -2822,8 +2689,8 @@
 				{
 					"filename": "gui/generics/containers/button-2.png",
 					"region": {
-						"x": 1,
-						"y": 881,
+						"x": 462,
+						"y": 85,
 						"w": 9,
 						"h": 9
 					},
@@ -2841,8 +2708,8 @@
 				{
 					"filename": "gui/generics/containers/button-4.png",
 					"region": {
-						"x": 291,
-						"y": 459,
+						"x": 462,
+						"y": 96,
 						"w": 9,
 						"h": 9
 					},
@@ -2860,8 +2727,8 @@
 				{
 					"filename": "gui/generics/containers/button-5.png",
 					"region": {
-						"x": 12,
-						"y": 881,
+						"x": 462,
+						"y": 107,
 						"w": 9,
 						"h": 9
 					},
@@ -2877,12 +2744,107 @@
 					}
 				},
 				{
-					"filename": "gui/generics/symbols/play.png",
+					"filename": "gui/generics/xbox/button-north.png",
 					"region": {
-						"x": 190,
-						"y": 875,
-						"w": 15,
-						"h": 14
+						"x": 379,
+						"y": 681,
+						"w": 22,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/xbox/button-south.png",
+					"region": {
+						"x": 403,
+						"y": 693,
+						"w": 22,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/xbox/button-weast.png",
+					"region": {
+						"x": 427,
+						"y": 694,
+						"w": 22,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/icon/global.png",
+					"region": {
+						"x": 451,
+						"y": 696,
+						"w": 20,
+						"h": 20
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/exit.png",
+					"region": {
+						"x": 207,
+						"y": 717,
+						"w": 16,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/bullet/0.png",
+					"region": {
+						"x": 188,
+						"y": 539,
+						"w": 10,
+						"h": 8
 					},
 					"margin": {
 						"x": 0,
@@ -2898,142 +2860,9 @@
 				{
 					"filename": "objects/checkpoint/number/0.png",
 					"region": {
-						"x": 238,
-						"y": 575,
+						"x": 100,
+						"y": 632,
 						"w": 8,
-						"h": 10
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/icon/local.png",
-					"region": {
-						"x": 221,
-						"y": 867,
-						"w": 20,
-						"h": 20
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/color-selector/h-picker.png",
-					"region": {
-						"x": 454,
-						"y": 241,
-						"w": 16,
-						"h": 4
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/switch/0.png",
-					"region": {
-						"x": 246,
-						"y": 766,
-						"w": 14,
-						"h": 21
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.47619
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/info.png",
-					"region": {
-						"x": 262,
-						"y": 760,
-						"w": 19,
-						"h": 19
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/dirt/4.png",
-					"region": {
-						"x": 262,
-						"y": 781,
-						"w": 19,
-						"h": 17
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.526316,
-						"y": 0.588235
-					}
-				},
-				{
-					"filename": "objects/gravity-switch.png",
-					"region": {
-						"x": 283,
-						"y": 775,
-						"w": 20,
-						"h": 20
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/filter.png",
-					"region": {
-						"x": 246,
-						"y": 789,
-						"w": 14,
 						"h": 10
 					},
 					"margin": {
@@ -3050,8 +2879,8 @@
 				{
 					"filename": "objects/switch/1.png",
 					"region": {
-						"x": 245,
-						"y": 801,
+						"x": 219,
+						"y": 743,
 						"w": 14,
 						"h": 21
 					},
@@ -3067,10 +2896,238 @@
 					}
 				},
 				{
+					"filename": "gui/generics/buttons/filter.png",
+					"region": {
+						"x": 219,
+						"y": 766,
+						"w": 14,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/switch/2.png",
+					"region": {
+						"x": 228,
+						"y": 778,
+						"w": 14,
+						"h": 21
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.47619
+					}
+				},
+				{
+					"filename": "effects/sparkle/3.png",
+					"region": {
+						"x": 387,
+						"y": 225,
+						"w": 7,
+						"h": 7
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/editor-cur-idle.png",
+					"region": {
+						"x": 402,
+						"y": 405,
+						"w": 7,
+						"h": 7
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/left.png",
+					"region": {
+						"x": 219,
+						"y": 874,
+						"w": 14,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/beams/0.png",
+					"region": {
+						"x": 228,
+						"y": 801,
+						"w": 18,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/icon/local.png",
+					"region": {
+						"x": 227,
+						"y": 821,
+						"w": 20,
+						"h": 20
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/gravity-switch.png",
+					"region": {
+						"x": 229,
+						"y": 843,
+						"w": 20,
+						"h": 20
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/dirt/4.png",
+					"region": {
+						"x": 249,
+						"y": 677,
+						"w": 19,
+						"h": 17
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.526316,
+						"y": 0.588235
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/task.png",
+					"region": {
+						"x": 270,
+						"y": 686,
+						"w": 21,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/coin/4.png",
+					"region": {
+						"x": 293,
+						"y": 686,
+						"w": 10,
+						"h": 17
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.45,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/info.png",
+					"region": {
+						"x": 305,
+						"y": 690,
+						"w": 19,
+						"h": 19
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
 					"filename": "gui/generics/symbols/settings.png",
 					"region": {
-						"x": 245,
-						"y": 824,
+						"x": 326,
+						"y": 690,
 						"w": 19,
 						"h": 19
 					},
@@ -3088,199 +3145,9 @@
 				{
 					"filename": "gui/generics/symbols/next_level.png",
 					"region": {
-						"x": 243,
-						"y": 845,
+						"x": 347,
+						"y": 690,
 						"w": 19,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/dirt/0.png",
-					"region": {
-						"x": 243,
-						"y": 865,
-						"w": 18,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/dirt/3.png",
-					"region": {
-						"x": 305,
-						"y": 777,
-						"w": 18,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.555556,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/beams/4.png",
-					"region": {
-						"x": 325,
-						"y": 777,
-						"w": 16,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/trash-can.png",
-					"region": {
-						"x": 302,
-						"y": 459,
-						"w": 7,
-						"h": 9
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/coin/2.png",
-					"region": {
-						"x": 458,
-						"y": 247,
-						"w": 10,
-						"h": 17
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.55,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/switch/2.png",
-					"region": {
-						"x": 333,
-						"y": 715,
-						"w": 14,
-						"h": 21
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.47619
-					}
-				},
-				{
-					"filename": "blocks/beams/2.png",
-					"region": {
-						"x": 333,
-						"y": 738,
-						"w": 17,
-						"h": 17
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/1.png",
-					"region": {
-						"x": 335,
-						"y": 757,
-						"w": 17,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.470588,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/3.png",
-					"region": {
-						"x": 349,
-						"y": 710,
-						"w": 17,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.529412,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/13.png",
-					"region": {
-						"x": 343,
-						"y": 777,
-						"w": 16,
 						"h": 18
 					},
 					"margin": {
@@ -3297,8 +3164,8 @@
 				{
 					"filename": "objects/switch/3.png",
 					"region": {
-						"x": 352,
-						"y": 730,
+						"x": 235,
+						"y": 865,
 						"w": 14,
 						"h": 21
 					},
@@ -3311,13 +3178,70 @@
 					"anchor": {
 						"x": 0.5,
 						"y": 0.47619
+					}
+				},
+				{
+					"filename": "blocks/beams/1.png",
+					"region": {
+						"x": 251,
+						"y": 696,
+						"w": 17,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/0.png",
+					"region": {
+						"x": 270,
+						"y": 704,
+						"w": 18,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/beams/2.png",
+					"region": {
+						"x": 225,
+						"y": 724,
+						"w": 17,
+						"h": 17
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				},
 				{
 					"filename": "objects/switch/4.png",
 					"region": {
-						"x": 354,
-						"y": 753,
+						"x": 235,
+						"y": 743,
 						"w": 14,
 						"h": 21
 					},
@@ -3330,13 +3254,32 @@
 					"anchor": {
 						"x": 0.5,
 						"y": 0.47619
+					}
+				},
+				{
+					"filename": "objects/platform/short.png",
+					"region": {
+						"x": 235,
+						"y": 766,
+						"w": 16,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
 					}
 				},
 				{
 					"filename": "objects/switch/5.png",
 					"region": {
-						"x": 261,
-						"y": 801,
+						"x": 244,
+						"y": 778,
 						"w": 14,
 						"h": 21
 					},
@@ -3352,10 +3295,67 @@
 					}
 				},
 				{
+					"filename": "blocks/beams/4.png",
+					"region": {
+						"x": 248,
+						"y": 801,
+						"w": 16,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/dirt/9.png",
+					"region": {
+						"x": 249,
+						"y": 821,
+						"w": 16,
+						"h": 19
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.578947
+					}
+				},
+				{
 					"filename": "objects/switch/6.png",
 					"region": {
-						"x": 266,
-						"y": 824,
+						"x": 251,
+						"y": 842,
+						"w": 14,
+						"h": 21
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.47619
+					}
+				},
+				{
+					"filename": "objects/switch/7.png",
+					"region": {
+						"x": 251,
+						"y": 865,
 						"w": 14,
 						"h": 21
 					},
@@ -3373,8 +3373,8 @@
 				{
 					"filename": "blocks/beams/3.png",
 					"region": {
-						"x": 264,
-						"y": 847,
+						"x": 251,
+						"y": 716,
 						"w": 17,
 						"h": 17
 					},
@@ -3390,10 +3390,86 @@
 					}
 				},
 				{
+					"filename": "blocks/cobblestone/1.png",
+					"region": {
+						"x": 251,
+						"y": 735,
+						"w": 17,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.470588,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/dirt/0.png",
+					"region": {
+						"x": 270,
+						"y": 724,
+						"w": 18,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/2.png",
+					"region": {
+						"x": 270,
+						"y": 744,
+						"w": 18,
+						"h": 17
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.470588
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/play.png",
+					"region": {
+						"x": 253,
+						"y": 755,
+						"w": 15,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
 					"filename": "blocks/cobblestone/4.png",
 					"region": {
-						"x": 263,
-						"y": 866,
+						"x": 270,
+						"y": 763,
 						"w": 18,
 						"h": 17
 					},
@@ -3409,12 +3485,12 @@
 					}
 				},
 				{
-					"filename": "objects/switch/7.png",
+					"filename": "blocks/dirt/2.png",
 					"region": {
-						"x": 361,
-						"y": 776,
-						"w": 14,
-						"h": 21
+						"x": 260,
+						"y": 782,
+						"w": 18,
+						"h": 17
 					},
 					"margin": {
 						"x": 0,
@@ -3424,13 +3500,89 @@
 					},
 					"anchor": {
 						"x": 0.5,
-						"y": 0.47619
+						"y": 0.470588
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/3.png",
+					"region": {
+						"x": 266,
+						"y": 801,
+						"w": 17,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.529412,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/13.png",
+					"region": {
+						"x": 267,
+						"y": 821,
+						"w": 16,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/dirt/1.png",
+					"region": {
+						"x": 267,
+						"y": 841,
+						"w": 17,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.470588,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/dirt/3.png",
+					"region": {
+						"x": 267,
+						"y": 861,
+						"w": 18,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.555556,
+						"y": 0.5
 					}
 				},
 				{
 					"filename": "gui/generics/symbols/arrow.png",
 					"region": {
-						"x": 23,
+						"x": 267,
 						"y": 881,
 						"w": 16,
 						"h": 8
@@ -3447,219 +3599,10 @@
 					}
 				},
 				{
-					"filename": "effects/sparkle/3.png",
-					"region": {
-						"x": 97,
-						"y": 578,
-						"w": 7,
-						"h": 7
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/containers/dropdown-1.png",
-					"region": {
-						"x": 311,
-						"y": 459,
-						"w": 15,
-						"h": 8
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/containers/slider-1.png",
-					"region": {
-						"x": 207,
-						"y": 875,
-						"w": 9,
-						"h": 14
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/editor-cur-idle.png",
-					"region": {
-						"x": 62,
-						"y": 786,
-						"w": 7,
-						"h": 7
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/checkpoint/number/1.png",
-					"region": {
-						"x": 180,
-						"y": 772,
-						"w": 8,
-						"h": 10
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/coin/3.png",
-					"region": {
-						"x": 464,
-						"y": 266,
-						"w": 6,
-						"h": 17
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/containers/dropdown-2.png",
-					"region": {
-						"x": 243,
-						"y": 885,
-						"w": 9,
-						"h": 5
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/sync.png",
-					"region": {
-						"x": 424,
-						"y": 283,
-						"w": 7,
-						"h": 6
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/bullet/0.png",
-					"region": {
-						"x": 387,
-						"y": 470,
-						"w": 10,
-						"h": 8
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/dirt/1.png",
-					"region": {
-						"x": 367,
-						"y": 660,
-						"w": 17,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.470588,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/beams/6.png",
-					"region": {
-						"x": 372,
-						"y": 642,
-						"w": 17,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
 					"filename": "blocks/cobblestone/5.png",
 					"region": {
-						"x": 376,
-						"y": 623,
+						"x": 280,
+						"y": 782,
 						"w": 17,
 						"h": 17
 					},
@@ -3675,29 +3618,10 @@
 					}
 				},
 				{
-					"filename": "objects/platform/short.png",
-					"region": {
-						"x": 379,
-						"y": 611,
-						"w": 16,
-						"h": 10
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
 					"filename": "blocks/dirt/5.png",
 					"region": {
-						"x": 368,
-						"y": 680,
+						"x": 285,
+						"y": 801,
 						"w": 18,
 						"h": 18
 					},
@@ -3715,8 +3639,8 @@
 				{
 					"filename": "blocks/dirt/7.png",
 					"region": {
-						"x": 368,
-						"y": 700,
+						"x": 285,
+						"y": 821,
 						"w": 18,
 						"h": 18
 					},
@@ -3734,8 +3658,8 @@
 				{
 					"filename": "blocks/dirt/8.png",
 					"region": {
-						"x": 368,
-						"y": 720,
+						"x": 286,
+						"y": 841,
 						"w": 18,
 						"h": 18
 					},
@@ -3751,105 +3675,10 @@
 					}
 				},
 				{
-					"filename": "blocks/beams/7.png",
-					"region": {
-						"x": 397,
-						"y": 611,
-						"w": 17,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/dirt/2.png",
-					"region": {
-						"x": 416,
-						"y": 609,
-						"w": 18,
-						"h": 17
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.470588
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/14.png",
-					"region": {
-						"x": 395,
-						"y": 629,
-						"w": 18,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/dirt/6.png",
-					"region": {
-						"x": 391,
-						"y": 647,
-						"w": 18,
-						"h": 17
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.444444,
-						"y": 0.470588
-					}
-				},
-				{
-					"filename": "blocks/dirt/11.png",
-					"region": {
-						"x": 277,
-						"y": 800,
-						"w": 16,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.444444
-					}
-				},
-				{
 					"filename": "blocks/cobblestone/6.png",
 					"region": {
-						"x": 295,
-						"y": 797,
+						"x": 287,
+						"y": 861,
 						"w": 17,
 						"h": 17
 					},
@@ -3865,10 +3694,105 @@
 					}
 				},
 				{
+					"filename": "gui/generics/containers/dropdown-1.png",
+					"region": {
+						"x": 285,
+						"y": 881,
+						"w": 15,
+						"h": 8
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/date.png",
+					"region": {
+						"x": 302,
+						"y": 880,
+						"w": 11,
+						"h": 9
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/coin/3.png",
+					"region": {
+						"x": 368,
+						"y": 690,
+						"w": 6,
+						"h": 17
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/containers/dropdown-2.png",
+					"region": {
+						"x": 462,
+						"y": 118,
+						"w": 9,
+						"h": 5
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/dirt/6.png",
+					"region": {
+						"x": 290,
+						"y": 711,
+						"w": 18,
+						"h": 17
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.444444,
+						"y": 0.470588
+					}
+				},
+				{
 					"filename": "blocks/cobblestone/7.png",
 					"region": {
-						"x": 314,
-						"y": 797,
+						"x": 290,
+						"y": 730,
 						"w": 17,
 						"h": 17
 					},
@@ -3886,8 +3810,8 @@
 				{
 					"filename": "blocks/cobblestone/8.png",
 					"region": {
-						"x": 333,
-						"y": 797,
+						"x": 310,
+						"y": 711,
 						"w": 17,
 						"h": 17
 					},
@@ -3903,29 +3827,10 @@
 					}
 				},
 				{
-					"filename": "blocks/dirt/13.png",
-					"region": {
-						"x": 282,
-						"y": 820,
-						"w": 16,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.555556
-					}
-				},
-				{
 					"filename": "blocks/cobblestone/9.png",
 					"region": {
-						"x": 300,
-						"y": 816,
+						"x": 290,
+						"y": 749,
 						"w": 17,
 						"h": 17
 					},
@@ -3943,8 +3848,8 @@
 				{
 					"filename": "blocks/cobblestone/10.png",
 					"region": {
-						"x": 319,
-						"y": 816,
+						"x": 309,
+						"y": 730,
 						"w": 17,
 						"h": 17
 					},
@@ -3962,8 +3867,8 @@
 				{
 					"filename": "blocks/cobblestone/11.png",
 					"region": {
-						"x": 338,
-						"y": 816,
+						"x": 309,
+						"y": 749,
 						"w": 17,
 						"h": 17
 					},
@@ -3981,8 +3886,8 @@
 				{
 					"filename": "blocks/cobblestone/12.png",
 					"region": {
-						"x": 283,
-						"y": 840,
+						"x": 329,
+						"y": 711,
 						"w": 17,
 						"h": 17
 					},
@@ -3998,12 +3903,12 @@
 					}
 				},
 				{
-					"filename": "objects/coin/0.png",
+					"filename": "blocks/cobblestone/14.png",
 					"region": {
-						"x": 283,
-						"y": 859,
-						"w": 17,
-						"h": 17
+						"x": 328,
+						"y": 730,
+						"w": 18,
+						"h": 16
 					},
 					"margin": {
 						"x": 0,
@@ -4019,9 +3924,66 @@
 				{
 					"filename": "blocks/dirt/10.png",
 					"region": {
-						"x": 302,
-						"y": 835,
+						"x": 328,
+						"y": 748,
 						"w": 18,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/dirt/11.png",
+					"region": {
+						"x": 348,
+						"y": 710,
+						"w": 16,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.444444
+					}
+				},
+				{
+					"filename": "blocks/dirt/13.png",
+					"region": {
+						"x": 348,
+						"y": 730,
+						"w": 16,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.555556
+					}
+				},
+				{
+					"filename": "blocks/beams/5.png",
+					"region": {
+						"x": 348,
+						"y": 750,
+						"w": 17,
 						"h": 16
 					},
 					"margin": {
@@ -4038,8 +4000,8 @@
 				{
 					"filename": "blocks/dirt/14.png",
 					"region": {
-						"x": 302,
-						"y": 853,
+						"x": 299,
+						"y": 768,
 						"w": 18,
 						"h": 16
 					},
@@ -4055,10 +4017,67 @@
 					}
 				},
 				{
+					"filename": "gui/generics/symbols/trash-can.png",
+					"region": {
+						"x": 290,
+						"y": 768,
+						"w": 7,
+						"h": 9
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/beams/6.png",
+					"region": {
+						"x": 319,
+						"y": 768,
+						"w": 17,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/beams/7.png",
+					"region": {
+						"x": 338,
+						"y": 768,
+						"w": 17,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
 					"filename": "blocks/beams/8.png",
 					"region": {
-						"x": 322,
-						"y": 835,
+						"x": 357,
+						"y": 768,
 						"w": 17,
 						"h": 16
 					},
@@ -4074,50 +4093,12 @@
 					}
 				},
 				{
-					"filename": "blocks/cobblestone/19.png",
+					"filename": "objects/coin/0.png",
 					"region": {
-						"x": 322,
-						"y": 853,
+						"x": 305,
+						"y": 786,
 						"w": 17,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.470588,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/static-gun.png",
-					"region": {
-						"x": 341,
-						"y": 835,
-						"w": 14,
-						"h": 18
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.642857,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/beams/9.png",
-					"region": {
-						"x": 341,
-						"y": 855,
-						"w": 16,
-						"h": 16
+						"h": 17
 					},
 					"margin": {
 						"x": 0,
@@ -4127,52 +4108,14 @@
 					},
 					"anchor": {
 						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/20.png",
-					"region": {
-						"x": 302,
-						"y": 871,
-						"w": 17,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.470588,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/21.png",
-					"region": {
-						"x": 321,
-						"y": 871,
-						"w": 17,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.470588,
 						"y": 0.5
 					}
 				},
 				{
 					"filename": "blocks/cobblestone/15.png",
 					"region": {
-						"x": 340,
-						"y": 873,
+						"x": 305,
+						"y": 805,
 						"w": 16,
 						"h": 17
 					},
@@ -4190,8 +4133,8 @@
 				{
 					"filename": "blocks/cobblestone/16.png",
 					"region": {
-						"x": 358,
-						"y": 873,
+						"x": 324,
+						"y": 786,
 						"w": 16,
 						"h": 17
 					},
@@ -4209,8 +4152,8 @@
 				{
 					"filename": "blocks/cobblestone/17.png",
 					"region": {
-						"x": 370,
-						"y": 740,
+						"x": 323,
+						"y": 805,
 						"w": 16,
 						"h": 17
 					},
@@ -4223,32 +4166,13 @@
 					"anchor": {
 						"x": 0.5,
 						"y": 0.470588
-					}
-				},
-				{
-					"filename": "gui/generics/buttons/left.png",
-					"region": {
-						"x": 370,
-						"y": 759,
-						"w": 14,
-						"h": 14
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
 					}
 				},
 				{
 					"filename": "blocks/cobblestone/18.png",
 					"region": {
-						"x": 377,
-						"y": 775,
+						"x": 342,
+						"y": 786,
 						"w": 16,
 						"h": 17
 					},
@@ -4264,48 +4188,10 @@
 					}
 				},
 				{
-					"filename": "gui/generics/buttons/minus.png",
+					"filename": "blocks/cobblestone/19.png",
 					"region": {
-						"x": 386,
-						"y": 759,
-						"w": 14,
-						"h": 14
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/23.png",
-					"region": {
-						"x": 395,
-						"y": 775,
-						"w": 16,
-						"h": 17
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.529412
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/22.png",
-					"region": {
-						"x": 377,
-						"y": 794,
+						"x": 341,
+						"y": 805,
 						"w": 17,
 						"h": 16
 					},
@@ -4321,10 +4207,143 @@
 					}
 				},
 				{
+					"filename": "objects/static-gun.png",
+					"region": {
+						"x": 360,
+						"y": 786,
+						"w": 14,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.642857,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/beams/9.png",
+					"region": {
+						"x": 360,
+						"y": 806,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/buttons/minus.png",
+					"region": {
+						"x": 305,
+						"y": 824,
+						"w": 14,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/20.png",
+					"region": {
+						"x": 321,
+						"y": 824,
+						"w": 17,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.470588,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/21.png",
+					"region": {
+						"x": 306,
+						"y": 842,
+						"w": 17,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.470588,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/22.png",
+					"region": {
+						"x": 306,
+						"y": 860,
+						"w": 17,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.470588,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/23.png",
+					"region": {
+						"x": 325,
+						"y": 842,
+						"w": 16,
+						"h": 17
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.529412
+					}
+				},
+				{
 					"filename": "blocks/beams/10.png",
 					"region": {
-						"x": 396,
-						"y": 794,
+						"x": 325,
+						"y": 861,
 						"w": 16,
 						"h": 16
 					},
@@ -4342,8 +4361,8 @@
 				{
 					"filename": "blocks/beams/11.png",
 					"region": {
-						"x": 359,
-						"y": 799,
+						"x": 340,
+						"y": 824,
 						"w": 16,
 						"h": 16
 					},
@@ -4359,12 +4378,12 @@
 					}
 				},
 				{
-					"filename": "blocks/cobblestone/24.png",
+					"filename": "blocks/cobblestone/27.png",
 					"region": {
-						"x": 357,
-						"y": 817,
-						"w": 16,
-						"h": 17
+						"x": 358,
+						"y": 824,
+						"w": 17,
+						"h": 16
 					},
 					"margin": {
 						"x": 0,
@@ -4373,15 +4392,15 @@
 						"h": 0
 					},
 					"anchor": {
-						"x": 0.5,
-						"y": 0.529412
+						"x": 0.529412,
+						"y": 0.5
 					}
 				},
 				{
-					"filename": "blocks/cobblestone/25.png",
+					"filename": "blocks/cobblestone/24.png",
 					"region": {
-						"x": 357,
-						"y": 836,
+						"x": 343,
+						"y": 842,
 						"w": 16,
 						"h": 17
 					},
@@ -4399,8 +4418,8 @@
 				{
 					"filename": "blocks/beams/12.png",
 					"region": {
-						"x": 359,
-						"y": 855,
+						"x": 343,
+						"y": 861,
 						"w": 16,
 						"h": 16
 					},
@@ -4416,10 +4435,10 @@
 					}
 				},
 				{
-					"filename": "blocks/cobblestone/26.png",
+					"filename": "blocks/cobblestone/25.png",
 					"region": {
-						"x": 376,
-						"y": 873,
+						"x": 361,
+						"y": 842,
 						"w": 16,
 						"h": 17
 					},
@@ -4435,295 +4454,10 @@
 					}
 				},
 				{
-					"filename": "blocks/cobblestone/27.png",
-					"region": {
-						"x": 377,
-						"y": 812,
-						"w": 17,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.529412,
-						"y": 0.5
-					}
-				},
-				{
 					"filename": "blocks/beams/13.png",
 					"region": {
-						"x": 396,
-						"y": 812,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/28.png",
-					"region": {
-						"x": 375,
-						"y": 830,
-						"w": 17,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.529412,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/29.png",
-					"region": {
-						"x": 394,
-						"y": 830,
-						"w": 17,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.529412,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/30.png",
-					"region": {
-						"x": 377,
-						"y": 848,
-						"w": 17,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.529412,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/beams/14.png",
-					"region": {
-						"x": 396,
-						"y": 848,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/dirt/12.png",
-					"region": {
-						"x": 394,
-						"y": 866,
-						"w": 17,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.470588,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/coin/1.png",
-					"region": {
-						"x": 411,
-						"y": 647,
-						"w": 14,
-						"h": 17
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.535714,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/31.png",
-					"region": {
-						"x": 415,
-						"y": 629,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/coin/4.png",
-					"region": {
-						"x": 427,
-						"y": 647,
-						"w": 10,
-						"h": 17
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.45,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/coin/5.png",
-					"region": {
-						"x": 433,
-						"y": 628,
-						"w": 14,
-						"h": 17
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.464286,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/32.png",
-					"region": {
-						"x": 449,
-						"y": 623,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/33.png",
-					"region": {
-						"x": 439,
-						"y": 647,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/clock.png",
-					"region": {
-						"x": 457,
-						"y": 641,
-						"w": 13,
-						"h": 13
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/symbols/coin.png",
-					"region": {
-						"x": 457,
-						"y": 656,
-						"w": 13,
-						"h": 13
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/34.png",
-					"region": {
-						"x": 439,
-						"y": 665,
+						"x": 361,
+						"y": 861,
 						"w": 16,
 						"h": 16
 					},
@@ -4741,8 +4475,8 @@
 				{
 					"filename": "objects/bullet/1.png",
 					"region": {
-						"x": 328,
-						"y": 459,
+						"x": 360,
+						"y": 457,
 						"w": 10,
 						"h": 8
 					},
@@ -4758,10 +4492,86 @@
 					}
 				},
 				{
-					"filename": "objects/checkpoint/number/2.png",
+					"filename": "blocks/beams/14.png",
 					"region": {
-						"x": 457,
-						"y": 671,
+						"x": 377,
+						"y": 824,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/26.png",
+					"region": {
+						"x": 379,
+						"y": 842,
+						"w": 16,
+						"h": 17
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.529412
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/28.png",
+					"region": {
+						"x": 379,
+						"y": 861,
+						"w": 17,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.529412,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "effects/sparkle/2.png",
+					"region": {
+						"x": 253,
+						"y": 771,
+						"w": 5,
+						"h": 5
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/checkpoint/number/1.png",
+					"region": {
+						"x": 315,
+						"y": 879,
 						"w": 8,
 						"h": 10
 					},
@@ -4777,544 +4587,12 @@
 					}
 				},
 				{
-					"filename": "objects/laser/line.png",
+					"filename": "objects/checkpoint/number/2.png",
 					"region": {
-						"x": 249,
-						"y": 623,
-						"w": 6,
-						"h": 1
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "effects/sparkle/2.png",
-					"region": {
-						"x": 254,
-						"y": 885,
-						"w": 5,
-						"h": 5
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gui/generics/color-selector/picker.png",
-					"region": {
-						"x": 377,
-						"y": 866,
-						"w": 5,
-						"h": 5
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/laser/body/0.png",
-					"region": {
-						"x": 469,
-						"y": 52,
-						"w": 1,
-						"h": 7
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/laser/body/1.png",
-					"region": {
-						"x": 96,
-						"y": 795,
-						"w": 1,
-						"h": 7
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/35.png",
-					"region": {
-						"x": 413,
-						"y": 830,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/36.png",
-					"region": {
-						"x": 414,
-						"y": 848,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/37.png",
-					"region": {
-						"x": 413,
-						"y": 866,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "effects/sparkle/1.png",
-					"region": {
-						"x": 344,
-						"y": 710,
-						"w": 3,
-						"h": 3
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/38.png",
-					"region": {
-						"x": 388,
-						"y": 666,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/39.png",
-					"region": {
-						"x": 388,
-						"y": 684,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/40.png",
-					"region": {
-						"x": 406,
-						"y": 666,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/41.png",
-					"region": {
-						"x": 388,
-						"y": 702,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/42.png",
-					"region": {
-						"x": 406,
-						"y": 684,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/43.png",
-					"region": {
-						"x": 388,
-						"y": 720,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/44.png",
-					"region": {
-						"x": 406,
-						"y": 702,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/45.png",
-					"region": {
-						"x": 388,
-						"y": 738,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/cobblestone/46.png",
-					"region": {
-						"x": 406,
-						"y": 720,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/default.png",
-					"region": {
-						"x": 406,
-						"y": 738,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/dirt/15.png",
-					"region": {
-						"x": 402,
-						"y": 756,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/ice.png",
-					"region": {
-						"x": 413,
-						"y": 774,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/0.png",
-					"region": {
-						"x": 414,
-						"y": 792,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/1.png",
-					"region": {
-						"x": 414,
-						"y": 810,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/2.png",
-					"region": {
-						"x": 420,
-						"y": 756,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/3.png",
-					"region": {
-						"x": 431,
-						"y": 774,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/4.png",
-					"region": {
-						"x": 432,
-						"y": 792,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/5.png",
-					"region": {
-						"x": 432,
-						"y": 810,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/6.png",
-					"region": {
-						"x": 431,
-						"y": 828,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/7.png",
-					"region": {
-						"x": 432,
-						"y": 846,
-						"w": 16,
-						"h": 16
+						"x": 325,
+						"y": 879,
+						"w": 8,
+						"h": 10
 					},
 					"margin": {
 						"x": 0,
@@ -5330,8 +4608,8 @@
 				{
 					"filename": "objects/checkpoint/number/3.png",
 					"region": {
-						"x": 424,
-						"y": 666,
+						"x": 335,
+						"y": 879,
 						"w": 8,
 						"h": 10
 					},
@@ -5349,67 +4627,10 @@
 				{
 					"filename": "objects/checkpoint/number/4.png",
 					"region": {
-						"x": 424,
-						"y": 678,
+						"x": 345,
+						"y": 879,
 						"w": 8,
 						"h": 10
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/8.png",
-					"region": {
-						"x": 424,
-						"y": 690,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/9.png",
-					"region": {
-						"x": 424,
-						"y": 708,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/10.png",
-					"region": {
-						"x": 424,
-						"y": 726,
-						"w": 16,
-						"h": 16
 					},
 					"margin": {
 						"x": 0,
@@ -5425,8 +4646,8 @@
 				{
 					"filename": "objects/checkpoint/number/5.png",
 					"region": {
-						"x": 424,
-						"y": 744,
+						"x": 355,
+						"y": 879,
 						"w": 8,
 						"h": 10
 					},
@@ -5442,10 +4663,181 @@
 					}
 				},
 				{
-					"filename": "blocks/minimalistic/11.png",
+					"filename": "objects/checkpoint/number/6.png",
 					"region": {
-						"x": 442,
-						"y": 683,
+						"x": 365,
+						"y": 879,
+						"w": 8,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/checkpoint/number/7.png",
+					"region": {
+						"x": 375,
+						"y": 879,
+						"w": 8,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/checkpoint/number/8.png",
+					"region": {
+						"x": 385,
+						"y": 879,
+						"w": 8,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/checkpoint/number/9.png",
+					"region": {
+						"x": 395,
+						"y": 879,
+						"w": 8,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/coin/1.png",
+					"region": {
+						"x": 366,
+						"y": 710,
+						"w": 14,
+						"h": 17
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.535714,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/coin/5.png",
+					"region": {
+						"x": 366,
+						"y": 729,
+						"w": 14,
+						"h": 17
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.464286,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/29.png",
+					"region": {
+						"x": 382,
+						"y": 705,
+						"w": 17,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.529412,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/30.png",
+					"region": {
+						"x": 382,
+						"y": 723,
+						"w": 17,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.529412,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/dirt/12.png",
+					"region": {
+						"x": 401,
+						"y": 717,
+						"w": 17,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.470588,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/31.png",
+					"region": {
+						"x": 367,
+						"y": 748,
 						"w": 16,
 						"h": 16
 					},
@@ -5461,10 +4853,10 @@
 					}
 				},
 				{
-					"filename": "blocks/minimalistic/12.png",
+					"filename": "blocks/cobblestone/32.png",
 					"region": {
-						"x": 442,
-						"y": 701,
+						"x": 420,
+						"y": 718,
 						"w": 16,
 						"h": 16
 					},
@@ -5480,48 +4872,10 @@
 					}
 				},
 				{
-					"filename": "blocks/minimalistic/13.png",
-					"region": {
-						"x": 442,
-						"y": 719,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/minimalistic/14.png",
-					"region": {
-						"x": 442,
-						"y": 737,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "blocks/special/0.png",
+					"filename": "blocks/cobblestone/33.png",
 					"region": {
 						"x": 438,
-						"y": 755,
+						"y": 718,
 						"w": 16,
 						"h": 16
 					},
@@ -5540,9 +4894,28 @@
 					"filename": "gui/generics/buttons/plus.png",
 					"region": {
 						"x": 456,
-						"y": 755,
+						"y": 718,
 						"w": 14,
 						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/34.png",
+					"region": {
+						"x": 385,
+						"y": 741,
+						"w": 16,
+						"h": 16
 					},
 					"margin": {
 						"x": 0,
@@ -5558,8 +4931,8 @@
 				{
 					"filename": "gui/generics/buttons/right.png",
 					"region": {
-						"x": 456,
-						"y": 771,
+						"x": 403,
+						"y": 735,
 						"w": 14,
 						"h": 14
 					},
@@ -5575,10 +4948,10 @@
 					}
 				},
 				{
-					"filename": "blocks/special/1.png",
+					"filename": "blocks/cobblestone/35.png",
 					"region": {
-						"x": 450,
-						"y": 787,
+						"x": 419,
+						"y": 736,
 						"w": 16,
 						"h": 16
 					},
@@ -5594,10 +4967,10 @@
 					}
 				},
 				{
-					"filename": "gui/generics/editor-level-size-dragger.png",
+					"filename": "blocks/cobblestone/36.png",
 					"region": {
-						"x": 450,
-						"y": 805,
+						"x": 437,
+						"y": 736,
 						"w": 16,
 						"h": 16
 					},
@@ -5613,29 +4986,10 @@
 					}
 				},
 				{
-					"filename": "objects/killzone.png",
+					"filename": "blocks/cobblestone/37.png",
 					"region": {
-						"x": 450,
-						"y": 823,
-						"w": 16,
-						"h": 16
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "objects/spike.png",
-					"region": {
-						"x": 450,
-						"y": 841,
+						"x": 455,
+						"y": 736,
 						"w": 16,
 						"h": 16
 					},
@@ -5653,8 +5007,8 @@
 				{
 					"filename": "gui/generics/buttons/toggle-off.png",
 					"region": {
-						"x": 450,
-						"y": 859,
+						"x": 403,
+						"y": 751,
 						"w": 14,
 						"h": 14
 					},
@@ -5670,31 +5024,12 @@
 					}
 				},
 				{
-					"filename": "gui/generics/color-selector/handler.png",
+					"filename": "blocks/cobblestone/38.png",
 					"region": {
-						"x": 401,
-						"y": 175,
-						"w": 5,
-						"h": 3
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 1
-					}
-				},
-				{
-					"filename": "objects/checkpoint/number/6.png",
-					"region": {
-						"x": 460,
-						"y": 683,
-						"w": 8,
-						"h": 10
+						"x": 385,
+						"y": 759,
+						"w": 16,
+						"h": 16
 					},
 					"margin": {
 						"x": 0,
@@ -5708,12 +5043,12 @@
 					}
 				},
 				{
-					"filename": "objects/checkpoint/number/7.png",
+					"filename": "blocks/cobblestone/39.png",
 					"region": {
-						"x": 460,
-						"y": 695,
-						"w": 8,
-						"h": 10
+						"x": 419,
+						"y": 754,
+						"w": 16,
+						"h": 16
 					},
 					"margin": {
 						"x": 0,
@@ -5727,12 +5062,12 @@
 					}
 				},
 				{
-					"filename": "objects/checkpoint/number/8.png",
+					"filename": "blocks/cobblestone/40.png",
 					"region": {
-						"x": 460,
-						"y": 707,
-						"w": 8,
-						"h": 10
+						"x": 437,
+						"y": 754,
+						"w": 16,
+						"h": 16
 					},
 					"margin": {
 						"x": 0,
@@ -5746,12 +5081,12 @@
 					}
 				},
 				{
-					"filename": "objects/checkpoint/number/9.png",
+					"filename": "blocks/cobblestone/41.png",
 					"region": {
-						"x": 460,
-						"y": 719,
-						"w": 8,
-						"h": 10
+						"x": 455,
+						"y": 754,
+						"w": 16,
+						"h": 16
 					},
 					"margin": {
 						"x": 0,
@@ -5767,8 +5102,8 @@
 				{
 					"filename": "gui/generics/buttons/toggle-on.png",
 					"region": {
-						"x": 432,
-						"y": 864,
+						"x": 403,
+						"y": 767,
 						"w": 14,
 						"h": 14
 					},
@@ -5784,10 +5119,276 @@
 					}
 				},
 				{
+					"filename": "blocks/cobblestone/42.png",
+					"region": {
+						"x": 419,
+						"y": 772,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/43.png",
+					"region": {
+						"x": 437,
+						"y": 772,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/44.png",
+					"region": {
+						"x": 455,
+						"y": 772,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/45.png",
+					"region": {
+						"x": 376,
+						"y": 777,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/cobblestone/46.png",
+					"region": {
+						"x": 378,
+						"y": 795,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/symbols/sync.png",
+					"region": {
+						"x": 376,
+						"y": 766,
+						"w": 7,
+						"h": 6
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/laser/body/0.png",
+					"region": {
+						"x": 97,
+						"y": 730,
+						"w": 1,
+						"h": 7
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/laser/body/1.png",
+					"region": {
+						"x": 309,
+						"y": 599,
+						"w": 1,
+						"h": 7
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "effects/sparkle/1.png",
+					"region": {
+						"x": 408,
+						"y": 324,
+						"w": 3,
+						"h": 3
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/default.png",
+					"region": {
+						"x": 206,
+						"y": 678,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/dirt/15.png",
+					"region": {
+						"x": 224,
+						"y": 677,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/color-selector/picker.png",
+					"region": {
+						"x": 242,
+						"y": 677,
+						"w": 5,
+						"h": 5
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/ice.png",
+					"region": {
+						"x": 224,
+						"y": 695,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/laser/line.png",
+					"region": {
+						"x": 162,
+						"y": 641,
+						"w": 6,
+						"h": 1
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0,
+						"y": 0.5
+					}
+				},
+				{
 					"filename": "gui/generics/mini-arrow.png",
 					"region": {
-						"x": 277,
-						"y": 820,
+						"x": 433,
+						"y": 221,
 						"w": 3,
 						"h": 2
 					},
@@ -5803,10 +5404,409 @@
 					}
 				},
 				{
+					"filename": "blocks/minimalistic/0.png",
+					"region": {
+						"x": 396,
+						"y": 783,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/1.png",
+					"region": {
+						"x": 396,
+						"y": 801,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/2.png",
+					"region": {
+						"x": 414,
+						"y": 790,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/3.png",
+					"region": {
+						"x": 432,
+						"y": 790,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/4.png",
+					"region": {
+						"x": 450,
+						"y": 790,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/5.png",
+					"region": {
+						"x": 395,
+						"y": 819,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/6.png",
+					"region": {
+						"x": 414,
+						"y": 808,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/7.png",
+					"region": {
+						"x": 432,
+						"y": 808,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/8.png",
+					"region": {
+						"x": 450,
+						"y": 808,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/9.png",
+					"region": {
+						"x": 397,
+						"y": 837,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/10.png",
+					"region": {
+						"x": 398,
+						"y": 855,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/11.png",
+					"region": {
+						"x": 405,
+						"y": 873,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/12.png",
+					"region": {
+						"x": 415,
+						"y": 826,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/13.png",
+					"region": {
+						"x": 433,
+						"y": 826,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/minimalistic/14.png",
+					"region": {
+						"x": 451,
+						"y": 826,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/special/0.png",
+					"region": {
+						"x": 416,
+						"y": 844,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "blocks/special/1.png",
+					"region": {
+						"x": 434,
+						"y": 844,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/editor-level-size-dragger.png",
+					"region": {
+						"x": 452,
+						"y": 844,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/killzone.png",
+					"region": {
+						"x": 423,
+						"y": 862,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "objects/spike.png",
+					"region": {
+						"x": 441,
+						"y": 862,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gui/generics/color-selector/handler.png",
+					"region": {
+						"x": 242,
+						"y": 684,
+						"w": 5,
+						"h": 3
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 1
+					}
+				},
+				{
 					"filename": "gui/generics/area-selector.png",
 					"region": {
-						"x": 449,
-						"y": 194,
+						"x": 273,
+						"y": 279,
 						"w": 3,
 						"h": 3
 					},
@@ -5824,8 +5824,8 @@
 				{
 					"filename": "gui/generics/mini-arrow-corner.png",
 					"region": {
-						"x": 49,
-						"y": 848,
+						"x": 408,
+						"y": 262,
 						"w": 3,
 						"h": 3
 					},
@@ -5843,8 +5843,8 @@
 				{
 					"filename": "effects/sparkle/0.png",
 					"region": {
-						"x": 246,
-						"y": 653,
+						"x": 97,
+						"y": 739,
 						"w": 1,
 						"h": 1
 					},
@@ -5865,6 +5865,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "1.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:160328777729f6f036f199f94132ae5b:c405c885c883b2f9ec4015e65147d063:4a8cc2592f1acdee29b84bdae04b262b$"
+		"smartupdate": "$TexturePacker:SmartUpdate:07b41146c736b3d5c8b6d078eb5b5d94:f7779fcf86650084f52d96f329c58860:4a8cc2592f1acdee29b84bdae04b262b$"
 	}
 }

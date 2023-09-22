@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckmcojtyxje3x"]
+
+[ext_resource type="Script" path="res://objects/trampoline/Trampoline.cs" id="1_801t0"]
+[ext_resource type="Texture2D" uid="uid://c6ofq2kaoeeq8" path="res://assets/sprites/atlas-1.sprites/objects/trampoline/0.tres" id="1_tua6d"]
+[ext_resource type="Texture2D" uid="uid://u6it1op4nxud" path="res://assets/sprites/atlas-1.sprites/objects/trampoline/1.tres" id="2_kvhln"]
+[ext_resource type="Texture2D" uid="uid://dir27rpvhlxfe" path="res://assets/sprites/atlas-1.sprites/objects/trampoline/2.tres" id="3_dlhui"]
+[ext_resource type="Texture2D" uid="uid://cnbg7v4o10xql" path="res://assets/sprites/atlas-1.sprites/objects/trampoline/3.tres" id="4_5knm8"]
+[ext_resource type="AudioStream" uid="uid://c2slyy672ccbv" path="res://assets/sounds/Trampoline.wav" id="6_mdnmx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kok2o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tua6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kvhln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dlhui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5knm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dlhui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kvhln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_tua6d")
+}],
+"loop": false,
+"name": &"bounce",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tua6d")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rxpj"]
+size = Vector2(20, 16)
+
+[node name="Trampoline" type="Area2D" node_paths=PackedStringArray("animator", "audioPlayer")]
+texture_filter = 1
+texture_repeat = 1
+disable_mode = 1
+script = ExtResource("1_801t0")
+animator = NodePath("Animator")
+audioPlayer = NodePath("Audio Stream")
+
+[node name="Animator" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_kok2o")
+animation = &"bounce"
+frame = 6
+frame_progress = 1.0
+offset = Vector2(0, -1)
+
+[node name="Audio Stream" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_mdnmx")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6rxpj")
+debug_color = Color(0, 0.701961, 0.0235294, 0.419608)
