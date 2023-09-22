@@ -46,7 +46,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		private void OnBodyEnter(Node2D body)
 		{
 			if (body is Player player) {
-				player.Impulse();
+				player.Impulse(Mathf.DegToRad(RotationDegrees - 90f));
 
 				animator.Play("bounce");
 				audioPlayer.Play();

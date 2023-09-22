@@ -69,4 +69,12 @@ position = Vector2(-168, 31)
 rotation = 0.785398
 
 [node name="Trampoline2" parent="." instance=ExtResource("3_bkv65")]
-position = Vector2(-112, 32)
+position = Vector2(-42, 32)
+
+[node name="Trampoline3" parent="." instance=ExtResource("3_bkv65")]
+position = Vector2(79, -16)
+rotation = 1.57079
+
+[node name="Trampoline4" parent="." instance=ExtResource("3_bkv65")]
+position = Vector2(174, -33)
+rotation = -1.57079

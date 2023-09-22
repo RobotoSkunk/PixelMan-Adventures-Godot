@@ -25,7 +25,8 @@ namespace RobotoSkunk.PixelMan
 	public static class Constants
 	{
 		public readonly static int gridSize = 16;
-		public readonly static float maxSpeed = 640; // 16 pixels * 40 Unity units
+		public readonly static float maxSpeed = 16f * 40f;
+		public readonly static float trampolineForce = 16f * 17f * 1.5f;
 
 
 		static float gravity = 0f;

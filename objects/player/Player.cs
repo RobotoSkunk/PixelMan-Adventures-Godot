@@ -19,7 +19,7 @@
 
 using Godot;
 using Godot.Collections;
-
+using RobotoSkunk.PixelMan.Utils;
 
 namespace RobotoSkunk.PixelMan.GameObjects
 {
@@ -73,6 +73,16 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		/// Time left to emit dust particles.
 		/// </summary>
 		private float dustParticlesTimer = 0f;
+
+		/// <summary>
+		/// Friction applied to the player.
+		/// </summary>
+		private float friction = 0f;
+
+		/// <summary>
+		/// Acceleration input applied to the player.
+		/// </summary>
+		private float acceleration = 0f;
 
 
 		/// <summary>
@@ -150,6 +160,15 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			get
 			{
 				return Velocity.Y < 0f;
+			}
+		}
+
+
+		private float WantedHorizontalSpeed
+		{
+			get
+			{
+				return speed.X * horizontalInput;
 			}
 		}
 
@@ -283,7 +302,32 @@ namespace RobotoSkunk.PixelMan.GameObjects
 
 			Vector2 velocity = Velocity;
 
-			// Vertical movement
+			#region Horizontal movement
+
+			// Apply friction
+			if (IsOnFloor() && horizontalInput == 0f) {
+				friction = 4f;
+				acceleration = 1f;
+			} else {
+				friction = 2f;
+				acceleration = 3f;
+			}
+
+			if (Mathf.Abs(Velocity.X) > 10f) {
+				velocity.X -= Mathf.Sign(Velocity.X) * friction * speed.X * (float)delta;
+			} else {
+				velocity.X = 0f;
+			}
+
+			// Apply horizontal input
+			if (Mathf.Abs(Velocity.X) < speed.X && horizontalInput != 0f) {
+				velocity.X += Mathf.Pow(WantedHorizontalSpeed * (float)delta, 2f)
+								* Mathf.Sign(WantedHorizontalSpeed)
+								* acceleration;
+			}
+			#endregion
+
+			#region Vertical movement
 			velocity.Y += Gravity * (float)delta;
 
 			if (jumpTime > 0f && hangCount > 0f) {
@@ -299,9 +343,7 @@ namespace RobotoSkunk.PixelMan.GameObjects
 				velocity.Y *= 0.5f;
 				canReduceJump = false;
 			}
-
-			// Horizontal movement
-			velocity.X = speed.X * horizontalInput;
+			#endregion
 
 			#endregion
 
@@ -322,10 +364,22 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		}
 
 
-		public void Impulse()
+		public void AddVelocity(Vector2 velocity)
+		{
+			Velocity += velocity;
+		}
+
+		public void Impulse(float direction)
 		{
 			canReduceJump = false;
-			Velocity = new Vector2(Velocity.X, JumpForce * 1.5f);
+
+			Vector2 directionVector = RSMath.AngleToVector(direction);
+
+			GD.Print(directionVector);
+
+			Velocity *= Vector2.One - RSMath.Abs(directionVector);
+
+			Velocity += directionVector * Constants.trampolineForce;
 		}
 
 
