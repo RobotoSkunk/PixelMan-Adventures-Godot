@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cg4ppddvmeclv"]
+
+[ext_resource type="Texture2D" uid="uid://c6ofq2kaoeeq8" path="res://assets/sprites/atlas-1.sprites/objects/trampoline/0.tres" id="1_5wq17"]
+[ext_resource type="Texture2D" uid="uid://u6it1op4nxud" path="res://assets/sprites/atlas-1.sprites/objects/trampoline/1.tres" id="2_fqdtm"]
+[ext_resource type="Texture2D" uid="uid://dir27rpvhlxfe" path="res://assets/sprites/atlas-1.sprites/objects/trampoline/2.tres" id="3_wijbm"]
+[ext_resource type="Texture2D" uid="uid://cnbg7v4o10xql" path="res://assets/sprites/atlas-1.sprites/objects/trampoline/3.tres" id="4_pcwtd"]
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5wq17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fqdtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wijbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pcwtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wijbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fqdtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_5wq17")
+}],
+"loop": false,
+"name": &"bounce",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5wq17")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]

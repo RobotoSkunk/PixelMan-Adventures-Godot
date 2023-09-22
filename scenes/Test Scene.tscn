@@ -65,4 +65,8 @@ position = Vector2(0, -56)
 zoom = Vector2(3.055, 3.055)
 
 [node name="Trampoline" parent="." instance=ExtResource("3_bkv65")]
-position = Vector2(-110, 31)
+position = Vector2(-168, 31)
+rotation = 0.785398
+
+[node name="Trampoline2" parent="." instance=ExtResource("3_bkv65")]
+position = Vector2(-112, 32)
