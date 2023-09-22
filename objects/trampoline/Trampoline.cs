@@ -17,6 +17,7 @@
 */
 
 
+using System;
 using Godot;
 using Godot.Collections;
 
@@ -29,6 +30,9 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		[ExportGroup("Components")]
 		[Export] private AnimatedSprite2D animator;
 		[Export] private AudioStreamPlayer2D audioPlayer;
+
+		[ExportGroup("Object Properties")]
+		[Export] private float pushForce = 500f;
 
 		#endregion
 
