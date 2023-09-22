@@ -40,6 +40,8 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		public override void _Ready()
 		{
 			BodyEntered += OnBodyEnter;
+			BodyExited += OnBodyExit;
+
 			animator.Play("idle");
 		}
 
@@ -47,11 +49,21 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		{
 			if (body is Player player) {
 				player.Impulse(Mathf.DegToRad(RotationDegrees - 90f));
+				player.isInTrampoline = false;
 
 				animator.Play("bounce");
 				audioPlayer.Play();
 			}
 		}
+
+		private void OnBodyExit(Node2D body)
+		{
+			if (body is Player player) {
+				player.isInTrampoline = false;
+			}
+		}
+
+
 
 		public Dictionary Serialize()
 		{

@@ -39,6 +39,11 @@ namespace RobotoSkunk.PixelMan.GameObjects
 
 
 		/// <summary>
+		/// If the player is in a trampoline.
+		/// </summary>
+		public bool isInTrampoline = false;
+
+		/// <summary>
 		/// The speed to be applied to the player.
 		/// </summary>
 		readonly private Vector2 speed = new(144, 272);
@@ -163,7 +168,9 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			}
 		}
 
-
+		/// <summary>
+		/// Wanted horizontal speed.
+		/// </summary>
 		private float WantedHorizontalSpeed
 		{
 			get
@@ -204,6 +211,9 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		{
 			horizontalInput = Input.GetAxis("left", "right");
 
+			if (isInTrampoline) {
+				canReduceJump = false;
+			}
 
 			#region Dust Particles
 			bool doDustTimer = false;
@@ -371,14 +381,9 @@ namespace RobotoSkunk.PixelMan.GameObjects
 
 		public void Impulse(float direction)
 		{
-			canReduceJump = false;
-
 			Vector2 directionVector = RSMath.AngleToVector(direction);
 
-			GD.Print(directionVector);
-
 			Velocity *= Vector2.One - RSMath.Abs(directionVector);
-
 			Velocity += directionVector * Constants.trampolineForce;
 		}
 
