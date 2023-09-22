@@ -31,9 +31,8 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		[Export] private AnimatedSprite2D animator;
 		[Export] private AudioStreamPlayer2D audioPlayer;
 
-		[ExportGroup("Object Properties")]
-		[Export] private float pushForce = 500f;
 
+		private readonly float impulseForce = 16f * 17f * 1.5f;
 		#endregion
 
 
@@ -48,8 +47,11 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		private void OnBodyEnter(Node2D body)
 		{
 			if (body is Player player) {
-				player.Impulse(Mathf.DegToRad(RotationDegrees - 90f));
-				player.isInTrampoline = false;
+				player.isInTrampoline = true;
+			}
+
+			if (body is IGOImpulsable obj) {
+				obj.Impulse(Mathf.DegToRad(RotationDegrees - 90f), impulseForce);
 
 				animator.Play("bounce");
 				audioPlayer.Play();

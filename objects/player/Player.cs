@@ -23,7 +23,7 @@ using RobotoSkunk.PixelMan.Utils;
 
 namespace RobotoSkunk.PixelMan.GameObjects
 {
-	public partial class Player : CharacterBody2D, IGameObject
+	public partial class Player : CharacterBody2D, IGameObject, IGOImpulsable
 	{
 		#region Variables
 
@@ -211,10 +211,6 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		{
 			horizontalInput = Input.GetAxis("left", "right");
 
-			if (isInTrampoline) {
-				canReduceJump = false;
-			}
-
 			#region Dust Particles
 			bool doDustTimer = false;
 
@@ -349,7 +345,8 @@ namespace RobotoSkunk.PixelMan.GameObjects
 				audioPlayer.Play();
 			}
 
-			if (IsGoingUp && releasedJump && canReduceJump) {
+
+			if (IsGoingUp && releasedJump && canReduceJump && !isInTrampoline) {
 				velocity.Y *= 0.5f;
 				canReduceJump = false;
 			}
@@ -379,12 +376,14 @@ namespace RobotoSkunk.PixelMan.GameObjects
 			Velocity += velocity;
 		}
 
-		public void Impulse(float direction)
+		public void Impulse(float direction, float force)
 		{
 			Vector2 directionVector = RSMath.AngleToVector(direction);
 
 			Velocity *= Vector2.One - RSMath.Abs(directionVector);
-			Velocity += directionVector * Constants.trampolineForce;
+			Velocity += directionVector * force;
+
+			jumpTime = 0f;
 		}
 
 
