@@ -18,11 +18,11 @@
 
 
 using Godot;
-
+using Godot.Collections;
 
 namespace RobotoSkunk.PixelMan.GameObjects
 {
-	public partial class Trampoline : Area2D
+	public partial class Trampoline : Area2D, IGameObject
 	{
 		#region Variables
 
@@ -47,6 +47,23 @@ namespace RobotoSkunk.PixelMan.GameObjects
 				animator.Play("bounce");
 				audioPlayer.Play();
 			}
+		}
+
+		public Dictionary Serialize()
+		{
+			return new()
+			{
+				{ "position", Position },
+				{ "rotation", Rotation },
+				{ "scale", Scale.X }
+			};
+		}
+
+		public void Deserialize(Dictionary data)
+		{
+			Position = (Vector2)data["position"];
+			Rotation = (float)data["rotation"];
+			Scale = new Vector2((float)data["scale"], (float)data["scale"]);
 		}
 	}
 }

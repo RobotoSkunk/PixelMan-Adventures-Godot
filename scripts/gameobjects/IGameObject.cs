@@ -17,10 +17,20 @@
 */
 
 
+using Godot.Collections;
+
 namespace RobotoSkunk.PixelMan.GameObjects
 {
 	public interface IGameObject
 	{
-		// It will be used... in the future.
+		/// <summary>
+		/// Serializes the game object to a dictionary.
+		/// </summary>
+		public Dictionary Serialize();
+
+		/// <summary>
+		/// Deserializes the game object from a dictionary.
+		/// </summary>
+		public void Deserialize(Dictionary data);
 	}
 }

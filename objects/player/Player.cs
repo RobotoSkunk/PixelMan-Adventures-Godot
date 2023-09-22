@@ -18,6 +18,7 @@
 
 
 using Godot;
+using Godot.Collections;
 
 
 namespace RobotoSkunk.PixelMan.GameObjects
@@ -325,6 +326,20 @@ namespace RobotoSkunk.PixelMan.GameObjects
 		{
 			canReduceJump = false;
 			Velocity = new Vector2(Velocity.X, JumpForce * 1.5f);
+		}
+
+
+		public Dictionary Serialize()
+		{
+			return new()
+			{
+				{ "position", Position }
+			};
+		}
+
+		public void Deserialize(Dictionary data)
+		{
+			Position = (Vector2)data["position"];
 		}
 	}
 }
