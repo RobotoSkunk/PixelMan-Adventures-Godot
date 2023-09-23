@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://so6iom4ptltd"]
+[gd_scene load_steps=10 format=3 uid="uid://so6iom4ptltd"]
 
 [ext_resource type="Script" path="res://objects/player/Player.cs" id="1_4lx6j"]
 [ext_resource type="AudioStream" uid="uid://bdmsjyhuv5bir" path="res://assets/sounds/Jump.wav" id="2_36iwa"]
@@ -8,6 +8,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o402s"]
 size = Vector2(8, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn215"]
+size = Vector2(7, 13)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_agblt"]
 lifetime_randomness = 0.1
@@ -40,23 +43,6 @@ linear_accel_max = -52.01
 scale_min = 0.03
 scale_max = 0.05
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1oq3g"]
-lifetime_randomness = 0.35
-particle_flag_disable_z = true
-direction = Vector3(0, 0, 0)
-spread = 180.0
-gravity = Vector3(0, 1040, 0)
-initial_velocity_min = 15.0
-initial_velocity_max = 180.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-scale_min = 0.08
-scale_max = 0.08
-collision_use_scale = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn215"]
-size = Vector2(7, 13)
-
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer", "collisionShape", "killzoneHitbox", "killzoneCollisionShape")]
 texture_filter = 1
 texture_repeat = 1
@@ -80,6 +66,14 @@ shape = SubResource("RectangleShape2D_o402s")
 
 [node name="Audio Player" type="AudioStreamPlayer2D" parent="."]
 
+[node name="Killzone Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="Killzone Box Collider" type="CollisionShape2D" parent="Killzone Hitbox"]
+shape = SubResource("RectangleShape2D_jn215")
+debug_color = Color(1, 0, 0, 0.419608)
+
 [node name="Rendering" type="Node2D" parent="."]
 
 [node name="Animator" type="AnimatedSprite2D" parent="Rendering"]
@@ -101,22 +95,3 @@ texture = ExtResource("16_ylwl0")
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
-
-[node name="Dying Particles" type="GPUParticles2D" parent="Rendering"]
-visible = false
-emitting = false
-amount = 128
-process_material = SubResource("ParticleProcessMaterial_1oq3g")
-texture = ExtResource("16_ylwl0")
-lifetime = 5.0
-one_shot = true
-explosiveness = 1.0
-collision_base_size = 0.06
-
-[node name="Killzone Hitbox" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
-
-[node name="Killzone Box Collider" type="CollisionShape2D" parent="Killzone Hitbox"]
-shape = SubResource("RectangleShape2D_jn215")
-debug_color = Color(1, 0, 0, 0.419608)
