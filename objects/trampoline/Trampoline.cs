@@ -21,7 +21,7 @@ using Godot;
 using Godot.Collections;
 
 
-namespace RobotoSkunk.PixelMan.GameObjects
+namespace ClockBombGames.PixelMan.GameObjects
 {
 	public partial class Trampoline : Area2D, IGameObject
 	{

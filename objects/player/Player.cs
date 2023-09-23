@@ -19,9 +19,9 @@
 
 using Godot;
 using Godot.Collections;
-using RobotoSkunk.PixelMan.Utils;
+using ClockBombGames.PixelMan.Utils;
 
-namespace RobotoSkunk.PixelMan.GameObjects
+namespace ClockBombGames.PixelMan.GameObjects
 {
 	public partial class Player : CharacterBody2D, IGameObject, IGOImpulsable
 	{

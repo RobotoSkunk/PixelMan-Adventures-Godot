@@ -17,7 +17,7 @@
 */
 
 
-namespace RobotoSkunk.PixelMan.GameObjects
+namespace ClockBombGames.PixelMan.GameObjects
 {
 	public interface IGOImpulsable
 	{

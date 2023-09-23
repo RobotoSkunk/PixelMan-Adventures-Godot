@@ -20,7 +20,7 @@
 using Godot;
 
 
-namespace RobotoSkunk.PixelMan.Utils
+namespace ClockBombGames.PixelMan.Utils
 {
 	public static class RSMath
 	{

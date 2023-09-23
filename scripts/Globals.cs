@@ -20,7 +20,7 @@
 using Godot;
 
 
-namespace RobotoSkunk.PixelMan
+namespace ClockBombGames.PixelMan
 {
 	public static class Constants
 	{

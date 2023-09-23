@@ -20,7 +20,7 @@
 using Godot;
 
 
-namespace RobotoSkunk.PixelMan
+namespace ClockBombGames.PixelMan
 {
 	/// <summary>
 	/// The Director is the main node of the game.
