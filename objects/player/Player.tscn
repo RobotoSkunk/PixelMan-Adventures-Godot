@@ -54,16 +54,19 @@ scale_min = 0.08
 scale_max = 0.08
 collision_use_scale = true
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer", "collisionShape")]
 texture_filter = 1
 texture_repeat = 1
 disable_mode = 2
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_4lx6j")
 renderer = NodePath("Rendering")
 animator = NodePath("Rendering/Animator")
 dustParticles = NodePath("Rendering/Dust Particles")
 fallDustParticles = NodePath("Rendering/Fall Dust Particles")
 audioPlayer = NodePath("Audio Player")
+collisionShape = NodePath("Box Collider")
 sounds = Array[AudioStream]([ExtResource("2_36iwa"), ExtResource("3_agnwr")])
 
 [node name="Box Collider" type="CollisionShape2D" parent="."]

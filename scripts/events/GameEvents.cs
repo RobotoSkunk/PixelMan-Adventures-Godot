@@ -17,53 +17,41 @@
 */
 
 
-using System.Threading.Tasks;
-
-using Godot;
-
-using ClockBombGames.PixelMan.Events;
-
-
-namespace ClockBombGames.PixelMan
+namespace ClockBombGames.PixelMan.Events
 {
 	/// <summary>
-	/// The Director is the main node of the game.
+	/// The GameEvents class is used to trigger events in the game.
 	/// </summary>
-	public partial class Director : Node2D
+	public static class GameEvents
 	{
-		[Export] private int avatarIndex = 0;
-		[Export] private SpriteFrames[] avatars;
+		public delegate void GameEvent();
 
 
-		bool playerDied = false;
+		/// <summary>
+		/// When the player dies, this event is triggered.
+		/// </summary>
+		public static event GameEvent OnPlayerDeath = delegate { };
 
-		public SpriteFrames[] Avatars
+		/// <summary>
+		/// Is triggered when the director request reset all the objects in the game.
+		/// </summary>
+		public static event GameEvent OnResetGame = delegate { };
+
+
+		/// <summary>
+		/// Invoke the OnPlayerDeath event.
+		/// </summary>
+		public static void InvokePlayerDeath(this Director director)
 		{
-			get => avatars;
+			OnPlayerDeath();
 		}
 
-
-		public override void _Ready()
+		/// <summary>
+		/// Invoke the OnResetGame event.
+		/// </summary>
+		public static void InvokeResetGame(this Director director)
 		{
-			this.SetDirector();
-			Globals.AvatarIndex = avatarIndex;
-		}
-
-		public void TriggerPlayerDeath()
-		{
-			if (!playerDied) {
-				playerDied = true;
-
-				// Wait 1 second before reset the game.
-				Task.Run(async () => {
-					this.InvokePlayerDeath();
-
-					await Task.Delay(1000);
-
-					this.InvokeResetGame();
-					playerDied = false;
-				});
-			}
+			OnResetGame();
 		}
 	}
 }

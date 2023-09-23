@@ -17,6 +17,8 @@
 */
 
 
+using System;
+
 using Godot;
 
 
@@ -24,11 +26,22 @@ namespace ClockBombGames.PixelMan
 {
 	public static class Constants
 	{
+		static float gravity = 0f;
+
+		/// <summary>
+		/// The size of the grid in pixels.
+		/// </summary>
 		public readonly static int gridSize = 16;
+
+		/// <summary>
+		/// The max speed of every object in the game.
+		/// </summary>
 		public readonly static float maxSpeed = 16f * 40f;
 
 
-		static float gravity = 0f;
+		/// <summary>
+		/// The default gravity of the game.
+		/// </summary>
 		public static float Gravity
 		{
 			get
@@ -39,6 +52,13 @@ namespace ClockBombGames.PixelMan
 
 				return gravity;
 			}
+		}
+
+		[Flags]
+		public enum CollisionLayers {
+			Default = 1 << 0,
+			Player = 1 << 1,
+			Killzone = 1 << 2,
 		}
 	}
 
@@ -82,9 +102,21 @@ namespace ClockBombGames.PixelMan
 			}
 		}
 
+		/// <summary>
+		/// The current avatar of the player.
+		/// </summary>
 		public static SpriteFrames Avatar
 		{
 			get => Avatars[AvatarIndex];
+		}
+
+
+		/// <summary>
+		/// Tells the director that the player died.
+		/// </summary>
+		public static void PlayerDied()
+		{
+			director.TriggerPlayerDeath();
 		}
 
 

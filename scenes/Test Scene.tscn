@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=6 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="1_gw2ps"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="2_eoc6o"]
 [ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://objects/trampoline/Trampoline.tscn" id="3_bkv65"]
+[ext_resource type="PackedScene" uid="uid://dqenbapncf7e7" path="res://objects/spike/Spike.tscn" id="4_ujff4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqmsn"]
 size = Vector2(16, 16)
@@ -58,7 +59,7 @@ texture = ExtResource("1_gw2ps")
 shape = SubResource("RectangleShape2D_xqmsn")
 
 [node name="Player" parent="." instance=ExtResource("2_eoc6o")]
-position = Vector2(5, -54)
+position = Vector2(66, 19)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -56)
@@ -78,3 +79,9 @@ rotation = 1.57079
 [node name="Trampoline4" parent="." instance=ExtResource("3_bkv65")]
 position = Vector2(174, -33)
 rotation = -1.57079
+
+[node name="Spike" parent="." instance=ExtResource("4_ujff4")]
+position = Vector2(-4, 32)
+
+[node name="Spike2" parent="." instance=ExtResource("4_ujff4")]
+position = Vector2(12, 32)

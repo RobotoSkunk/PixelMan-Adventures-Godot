@@ -19,7 +19,9 @@
 
 using Godot;
 using Godot.Collections;
+
 using ClockBombGames.PixelMan.Utils;
+using ClockBombGames.PixelMan.Events;
 
 namespace ClockBombGames.PixelMan.GameObjects
 {
@@ -33,20 +35,18 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] private GpuParticles2D dustParticles;
 		[Export] private GpuParticles2D fallDustParticles;
 		[Export] private AudioStreamPlayer2D audioPlayer;
+		[Export] private CollisionShape2D collisionShape;
+
 
 		[ExportGroup("Properties")]
 		[Export(PropertyHint.ArrayType)] private AudioStream[] sounds;
+		[Export(PropertyHint.ResourceType)] private RigidBody2D deathParticle;
 
 
 		/// <summary>
 		/// If the player is in a trampoline.
 		/// </summary>
 		public bool isInTrampoline = false;
-
-		/// <summary>
-		/// The speed to be applied to the player.
-		/// </summary>
-		readonly private Vector2 speed = new(144, 272);
 
 		/// <summary>
 		/// The maximum time to jump.
@@ -57,6 +57,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// The maximum time to jump (minor fix for jumping near the edge).
 		/// </summary>
 		private readonly float maxHangCount = 0.1f;
+
+		/// <summary>
+		/// The speed to be applied to the player.
+		/// </summary>
+		readonly private Vector2 speed = new(144, 272);
 
 
 		/// <summary>
@@ -115,6 +120,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		private bool emitFallDustParticles = false;
 
+		/// <summary>
+		/// If the player is dead.
+		/// </summary>
+		private bool isDead = false;
+
 
 		/// <summary>
 		/// Current player state (for animation).
@@ -125,6 +135,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// Previous player state (for animation).
 		/// </summary>
 		private State previousState = State.IDLE;
+
+		/// <summary>
+		/// Player's start position.
+		/// </summary>
+		private Vector2 startPosition;
 
 
 		/// <summary>
@@ -194,10 +209,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 		public override void _Ready()
 		{
 			animator.SpriteFrames = Globals.Avatar;
+			startPosition = Position;
+
+			GameEvents.OnPlayerDeath += OnPlayerDeath;
 		}
 
 		public override void _Input(InputEvent @event)
 		{
+			if (isDead) {
+				return;
+			}
+
 			if (@event.IsActionPressed("jump")) {
 				pressedJump = true;
 			}
@@ -209,6 +231,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _Process(double delta)
 		{
+			if (isDead) {
+				dustParticles.Emitting = false;
+				return;
+			}
+
 			horizontalInput = Input.GetAxis("left", "right");
 
 			#region Dust Particles
@@ -287,6 +314,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _PhysicsProcess(double delta)
 		{
+			if (isDead) {
+				return;
+			}
+
 			if (pressedJump) {
 				jumpTime = maxJumpTime;
 				pressedJump = false;
@@ -367,7 +398,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 			);
 
 			// :3
-			MoveAndSlide();
+			if (MoveAndSlide()) {
+				for (int i = 0; i < GetSlideCollisionCount(); i++) {
+					var collision = GetSlideCollision(i);
+
+					if (collision.GetCollider() is Area2D area) {
+						if ((area.CollisionLayer & (uint)Constants.CollisionLayers.Killzone) != 0) {
+							Globals.PlayerDied();
+						}
+					}
+				}
+			}
 		}
 
 
@@ -384,6 +425,21 @@ namespace ClockBombGames.PixelMan.GameObjects
 			Velocity += directionVector * force;
 
 			jumpTime = 0f;
+		}
+
+		private void OnPlayerDeath()
+		{
+			isDead = true;
+			Velocity = Vector2.Zero;
+			collisionShape.Disabled = true;
+		}
+
+		private void OnGameReset()
+		{
+			isDead = false;
+			Position = startPosition;
+			Velocity = Vector2.Zero;
+			collisionShape.Disabled = false;
 		}
 
 

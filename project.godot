@@ -65,6 +65,12 @@ test_button={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Default"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Killzone"
+
 [physics]
 
 2d/run_on_separate_thread=true
