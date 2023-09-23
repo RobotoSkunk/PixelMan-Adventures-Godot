@@ -36,8 +36,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] private GpuParticles2D fallDustParticles;
 		[Export] private AudioStreamPlayer2D audioPlayer;
 		[Export] private CollisionShape2D collisionShape;
-		[Export] private Area2D hitBox;
 
+		[ExportGroup("Killzone detection components")]
+		[Export] private Area2D killzoneHitbox;
+		[Export] private CollisionShape2D killzoneCollisionShape;
+		[Export] private CollisionLayers killzoneCollisionMask;
 
 		[ExportGroup("Properties")]
 		[Export(PropertyHint.ArrayType)] private AudioStream[] sounds;
@@ -214,6 +217,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			startPosition = Position;
 
 			GameEvents.OnPlayerDeath += OnPlayerDeath;
+			GameEvents.OnResetGame += OnGameReset;
 		}
 
 		public override void _Input(InputEvent @event)
@@ -407,8 +411,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 
 			// Detect collision with killzones
-			foreach (Area2D area in hitBox.GetOverlappingAreas()){
-				if ((area.CollisionLayer & (uint)(CollisionLayers.Killzone | CollisionLayers.Default)) != 0) {
+			foreach (Area2D area in killzoneHitbox.GetOverlappingAreas()){
+				if ((area.CollisionLayer & (uint)killzoneCollisionMask) != 0) {
 					Globals.PlayerDied();
 				}
 			}
@@ -434,8 +438,13 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			isDead = true;
 			Velocity = Vector2.Zero;
+
 			collisionShape.Disabled = true;
+			killzoneCollisionShape.Disabled = true;
 			animator.Visible = false;
+
+			audioPlayer.Stream = sounds[1];
+			audioPlayer.Play();
 		}
 
 		private void OnGameReset()
@@ -443,7 +452,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 			isDead = false;
 			Position = startPosition;
 			Velocity = Vector2.Zero;
+
 			collisionShape.Disabled = false;
+			killzoneCollisionShape.Disabled = false;
 			animator.Visible = true;
 		}
 

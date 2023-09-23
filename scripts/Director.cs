@@ -36,6 +36,7 @@ namespace ClockBombGames.PixelMan
 
 
 		bool playerDied = false;
+		float restartTimer = 0f;
 
 		public SpriteFrames[] Avatars
 		{
@@ -49,20 +50,25 @@ namespace ClockBombGames.PixelMan
 			Globals.AvatarIndex = avatarIndex;
 		}
 
+		public override void _Process(double delta)
+		{
+			if (playerDied) {
+				restartTimer -= (float)delta;
+
+				if (restartTimer <= 0f) {
+					playerDied = false;
+					this.InvokeResetGame();
+				}
+			}
+		}
+
 		public void TriggerPlayerDeath()
 		{
 			if (!playerDied) {
 				playerDied = true;
+				restartTimer = 1f;
 
-				// Wait 1 second before reset the game.
-				Task.Run(async () => {
-					this.InvokePlayerDeath();
-
-					await Task.Delay(1000);
-
-					this.InvokeResetGame();
-					playerDied = false;
-				});
+				this.InvokePlayerDeath();
 			}
 		}
 	}

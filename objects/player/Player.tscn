@@ -57,7 +57,7 @@ collision_use_scale = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jn215"]
 size = Vector2(7, 13)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer", "collisionShape", "hitBox")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer", "collisionShape", "killzoneHitbox", "killzoneCollisionShape")]
 texture_filter = 1
 texture_repeat = 1
 disable_mode = 2
@@ -70,7 +70,9 @@ dustParticles = NodePath("Rendering/Dust Particles")
 fallDustParticles = NodePath("Rendering/Fall Dust Particles")
 audioPlayer = NodePath("Audio Player")
 collisionShape = NodePath("Box Collider")
-hitBox = NodePath("Hitbox")
+killzoneHitbox = NodePath("Killzone Hitbox")
+killzoneCollisionShape = NodePath("Killzone Hitbox/Killzone Box Collider")
+killzoneCollisionMask = 5
 sounds = Array[AudioStream]([ExtResource("2_36iwa"), ExtResource("3_agnwr")])
 
 [node name="Box Collider" type="CollisionShape2D" parent="."]
@@ -111,10 +113,10 @@ one_shot = true
 explosiveness = 1.0
 collision_base_size = 0.06
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Killzone Hitbox" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 
-[node name="Box Collider" type="CollisionShape2D" parent="Hitbox"]
+[node name="Killzone Box Collider" type="CollisionShape2D" parent="Killzone Hitbox"]
 shape = SubResource("RectangleShape2D_jn215")
-debug_color = Color(1, 0, 0.0431373, 0.419608)
+debug_color = Color(1, 0, 0, 0.419608)
