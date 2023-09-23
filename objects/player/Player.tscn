@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://so6iom4ptltd"]
+[gd_scene load_steps=11 format=3 uid="uid://so6iom4ptltd"]
 
 [ext_resource type="Script" path="res://objects/player/Player.cs" id="1_4lx6j"]
 [ext_resource type="AudioStream" uid="uid://bdmsjyhuv5bir" path="res://assets/sounds/Jump.wav" id="2_36iwa"]
@@ -53,6 +53,9 @@ orbit_velocity_max = 0.0
 scale_min = 0.08
 scale_max = 0.08
 collision_use_scale = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn215"]
+size = Vector2(7, 13)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer", "collisionShape", "hitBox")]
 texture_filter = 1
@@ -113,5 +116,5 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="Box Collider" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_o402s")
+shape = SubResource("RectangleShape2D_jn215")
 debug_color = Color(1, 0, 0.0431373, 0.419608)
