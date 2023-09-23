@@ -41,7 +41,7 @@ namespace ClockBombGames.PixelMan.Events
 		/// <summary>
 		/// Invoke the OnPlayerDeath event.
 		/// </summary>
-		public static void InvokePlayerDeath(this Director director)
+		public static void InvokePlayerDeath(this Director _)
 		{
 			OnPlayerDeath();
 		}
@@ -49,7 +49,7 @@ namespace ClockBombGames.PixelMan.Events
 		/// <summary>
 		/// Invoke the OnResetGame event.
 		/// </summary>
-		public static void InvokeResetGame(this Director director)
+		public static void InvokeResetGame(this Director _)
 		{
 			OnResetGame();
 		}
