@@ -43,10 +43,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export(PropertyHint.ResourceType)] private RigidBody2D deathParticle;
 
 
-		/// <summary>
-		/// If the player is in a trampoline.
-		/// </summary>
-		public bool isInTrampoline = false;
 
 		/// <summary>
 		/// The maximum time to jump.
@@ -94,6 +90,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		private float acceleration = 0f;
 
+
+		/// <summary>
+		/// If the player is in a trampoline.
+		/// </summary>
+		public bool isInTrampoline = false;
 
 		/// <summary>
 		/// If the jump button was pressed.
@@ -376,8 +377,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 				audioPlayer.Play();
 			}
 
+			if (isInTrampoline) {
+				canReduceJump = false;
 
-			if (IsGoingUp && releasedJump && canReduceJump && !isInTrampoline) {
+			} else if (IsGoingUp && releasedJump && canReduceJump) {
 				velocity.Y *= 0.5f;
 				canReduceJump = false;
 			}
