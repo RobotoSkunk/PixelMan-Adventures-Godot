@@ -54,7 +54,7 @@ scale_min = 0.08
 scale_max = 0.08
 collision_use_scale = true
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer", "collisionShape")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer", "hitBox")]
 texture_filter = 1
 texture_repeat = 1
 disable_mode = 2
@@ -66,7 +66,7 @@ animator = NodePath("Rendering/Animator")
 dustParticles = NodePath("Rendering/Dust Particles")
 fallDustParticles = NodePath("Rendering/Fall Dust Particles")
 audioPlayer = NodePath("Audio Player")
-collisionShape = NodePath("Box Collider")
+hitBox = NodePath("Hitbox")
 sounds = Array[AudioStream]([ExtResource("2_36iwa"), ExtResource("3_agnwr")])
 
 [node name="Box Collider" type="CollisionShape2D" parent="."]
@@ -88,7 +88,6 @@ texture = ExtResource("16_ylwl0")
 lifetime = 0.2
 
 [node name="Fall Dust Particles" type="GPUParticles2D" parent="Rendering"]
-visible = false
 position = Vector2(0, 7)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_413j1")
@@ -107,3 +106,11 @@ lifetime = 5.0
 one_shot = true
 explosiveness = 1.0
 collision_base_size = 0.06
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="Box Collider" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_o402s")
+debug_color = Color(1, 0, 0.0431373, 0.419608)

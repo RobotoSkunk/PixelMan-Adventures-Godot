@@ -36,6 +36,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] private GpuParticles2D fallDustParticles;
 		[Export] private AudioStreamPlayer2D audioPlayer;
 		[Export] private CollisionShape2D collisionShape;
+		[Export] private Area2D hitBox;
 
 
 		[ExportGroup("Properties")]
@@ -253,6 +254,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				emitFallDustParticles = true;
 			}
 
+
 			if (doDustTimer) {
 				dustParticlesTimer = 0.08f;
 
@@ -397,18 +399,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 				Mathf.Clamp(velocity.Y, -Constants.maxSpeed, Constants.maxSpeed)
 			);
 
-			// :3
-			if (MoveAndSlide()) {
-				for (int i = 0; i < GetSlideCollisionCount(); i++) {
-					var collision = GetSlideCollision(i);
-
-					if (collision.GetCollider() is Area2D area) {
-						if ((area.CollisionLayer & (uint)Constants.CollisionLayers.Killzone) != 0) {
-							Globals.PlayerDied();
-						}
+			if ((int)hitBox.GetOverlappingAreas().Count > 0) {
+				for(int i = 0; i < (int)hitBox.GetOverlappingAreas().Count; i++){
+					if ((hitBox.GetOverlappingAreas()[i].CollisionLayer & (uint)Constants.CollisionLayers.Killzone) != 0){
+						Globals.PlayerDied();
 					}
 				}
 			}
+
+			// The man? Pixel'd
+			MoveAndSlide();
+
 		}
 
 
