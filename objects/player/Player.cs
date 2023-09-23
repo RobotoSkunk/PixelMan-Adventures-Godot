@@ -402,17 +402,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 				Mathf.Clamp(velocity.Y, -Constants.maxSpeed, Constants.maxSpeed)
 			);
 
-			if ((int)hitBox.GetOverlappingAreas().Count > 0) {
-				for(int i = 0; i < (int)hitBox.GetOverlappingAreas().Count; i++){
-					if ((hitBox.GetOverlappingAreas()[i].CollisionLayer & (uint)Constants.CollisionLayers.Killzone) != 0){
-						Globals.PlayerDied();
-					}
-				}
-			}
-
 			// The man? Pixel'd
 			MoveAndSlide();
 
+
+			// Detect collision with killzones
+			foreach (Area2D area in hitBox.GetOverlappingAreas()){
+				if ((area.CollisionLayer & (uint)(CollisionLayers.Killzone | CollisionLayers.Default)) != 0) {
+					Globals.PlayerDied();
+				}
+			}
 		}
 
 
@@ -436,6 +435,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			isDead = true;
 			Velocity = Vector2.Zero;
 			collisionShape.Disabled = true;
+			animator.Visible = false;
 		}
 
 		private void OnGameReset()
@@ -444,6 +444,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			Position = startPosition;
 			Velocity = Vector2.Zero;
 			collisionShape.Disabled = false;
+			animator.Visible = true;
 		}
 
 

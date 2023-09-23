@@ -24,6 +24,13 @@ using Godot;
 
 namespace ClockBombGames.PixelMan
 {
+	[Flags]
+	public enum CollisionLayers {
+		Default = 1 << 0,
+		Player = 1 << 1,
+		Killzone = 1 << 2,
+	}
+
 	public static class Constants
 	{
 		static float gravity = 0f;
@@ -52,13 +59,6 @@ namespace ClockBombGames.PixelMan
 
 				return gravity;
 			}
-		}
-
-		[Flags]
-		public enum CollisionLayers {
-			Default = 1 << 0,
-			Player = 1 << 1,
-			Killzone = 1 << 2,
 		}
 	}
 
