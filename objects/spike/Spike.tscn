@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqenbapncf7e7"]
+
+[ext_resource type="Texture2D" uid="uid://c30rd5b34joaf" path="res://assets/sprites/atlas-1.sprites/objects/spike.tres" id="1_t0abb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcdc3"]
+size = Vector2(6, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rtwn"]
+size = Vector2(14, 3)
+
+[node name="Spike" type="Area2D"]
+texture_filter = 1
+texture_repeat = 1
+disable_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t0abb")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_fcdc3")
+debug_color = Color(0.701961, 0, 0, 0.419608)
+
+[node name="Hitbox Base" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_0rtwn")
+debug_color = Color(0.701961, 0, 0, 0.419608)
