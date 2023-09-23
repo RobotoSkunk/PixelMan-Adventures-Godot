@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh3w62ygikp60"]
+
+[ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="1_50kdv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpxo0"]
+size = Vector2(1, 1)
+
+[node name="Player Death Particle" type="RigidBody2D"]
+mass = 0.09
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.062505, 0.062505)
+texture = ExtResource("1_50kdv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jpxo0")
+debug_color = Color(0, 0.0980392, 0.701961, 0.419608)
