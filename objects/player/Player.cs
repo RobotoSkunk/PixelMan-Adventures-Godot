@@ -22,6 +22,7 @@ using Godot.Collections;
 
 using ClockBombGames.PixelMan.Utils;
 using ClockBombGames.PixelMan.Events;
+using System.Net;
 
 namespace ClockBombGames.PixelMan.GameObjects
 {
@@ -47,7 +48,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export(PropertyHint.ResourceType)] private RigidBody2D deathParticle;
 
 
-
+		#region Readonly variables
 		/// <summary>
 		/// The maximum time to jump.
 		/// </summary>
@@ -62,8 +63,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// The speed to be applied to the player.
 		/// </summary>
 		readonly private Vector2 speed = new(144, 272);
+		#endregion
 
-
+		#region Private variables
 		/// <summary>
 		/// Time left to jump.
 		/// </summary>
@@ -130,6 +132,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		private bool isDead = false;
 
+		/// <summary>
+		/// If the player is moving
+		/// </summary>
+		private bool isMoving = false;
+
 
 		/// <summary>
 		/// Current player state (for animation).
@@ -146,7 +153,13 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		private Vector2 startPosition;
 
+		/// <summary>
+		/// Player's previous position.
+		/// </summary>
+		private Vector2 previousPosition;
+		#endregion
 
+		#region Getters and setters
 		/// <summary>
 		/// Gravity force applied to the player.
 		/// </summary>
@@ -198,6 +211,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				return speed.X * horizontalInput;
 			}
 		}
+		#endregion
 
 		#endregion
 
@@ -248,7 +262,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			bool doDustTimer = false;
 
 			if (IsOnFloor()) {
-				doDustTimer = Velocity.X != 0;
+				doDustTimer = isMoving;
 
 				if (emitFallDustParticles) {
 					fallDustParticles.Restart();
@@ -285,7 +299,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			if (IsOnFloor() && horizontalInput == 0f) {
 				currentState = State.IDLE;
 
-			} else if (IsOnFloor() && horizontalInput != 0f && Velocity.X != 0f) {
+			} else if (IsOnFloor() && horizontalInput != 0f && isMoving) {
 				currentState = State.RUNNING;
 
 			} else if (!IsOnFloor() && IsGoingUp) {
@@ -324,6 +338,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 			if (isDead) {
 				return;
 			}
+
+
+			isMoving = previousPosition.DistanceSquaredTo(GlobalPosition) > 0.1f;
+			previousPosition = GlobalPosition;
+
 
 			if (pressedJump) {
 				jumpTime = maxJumpTime;
