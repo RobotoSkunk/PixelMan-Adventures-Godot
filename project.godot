@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GdTaskPlayerLoopAutoload="*res://addons/GDTask/Autoload/GDTaskPlayerLoopAutoload.cs"
 Director="*res://objects/Director.tscn"
 
 [display]
