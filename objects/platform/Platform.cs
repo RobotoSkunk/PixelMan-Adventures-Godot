@@ -25,6 +25,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 	public partial class Platform : CharacterBody2D
 	{
 		[Export] private float speed = 1f;
+		[Export] private PlatformType type = PlatformType.Normal;
+		[Export] private bool startPositive = true;
+
 
 		private bool goPositive = true;
 
@@ -33,10 +36,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private Vector2 startPosition = Vector2.Zero;
 		private Vector2 previousPosition = Vector2.Zero;
 
+		public enum PlatformType {
+			Normal,
+			Vertical,
+		}
+
 
 		public override void _Ready()
 		{
 			startPosition = Position;
+			goPositive = startPositive;
 		}
 
 		public override void _PhysicsProcess(double delta)
@@ -47,7 +56,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 				previousPosition = Vector2.One * Mathf.Inf;
 			} else {
-				Velocity = speed * (goPositive ? Vector2.Right : Vector2.Left);
+				if (type == PlatformType.Vertical) {
+					Velocity = speed * (goPositive ? Vector2.Down : Vector2.Up);
+				} else {
+					Velocity = speed * (goPositive ? Vector2.Right : Vector2.Left);
+				}
 
 				if (previousPosition.DistanceSquaredTo(Position) < 0.1f) {
 					goPositive = !goPositive;
@@ -57,8 +70,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 				previousPosition = Position;
 			}
 
+
+			// Purrr meow meow.
 			MoveAndSlide();
-			Position = new Vector2(Position.X, startPosition.Y);
+
+			// Freeze the platform in the correct position.
+			if (type == PlatformType.Vertical) {
+				Position = new Vector2(startPosition.X, Position.Y);
+			} else {
+				Position = new Vector2(Position.X, startPosition.Y);
+			}
 		}
 	}
 }

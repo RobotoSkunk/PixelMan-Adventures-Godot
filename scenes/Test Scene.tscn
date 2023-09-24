@@ -1,91 +1,51 @@
-[gd_scene load_steps=7 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=6 format=3 uid="uid://ds8gpr35ere4s"]
 
-[ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="1_gw2ps"]
+[ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://objects/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="2_eoc6o"]
 [ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://objects/trampoline/Trampoline.tscn" id="3_bkv65"]
 [ext_resource type="PackedScene" uid="uid://dqenbapncf7e7" path="res://objects/spike/Spike.tscn" id="4_ujff4"]
 [ext_resource type="PackedScene" uid="uid://di0sg0hxj0ubj" path="res://objects/platform/Platform.tscn" id="5_gadtr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqmsn"]
-size = Vector2(16, 16)
-
 [node name="Test Scene" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(0, 48)
-scale = Vector2(25.48, 1)
+[node name="Default Block" parent="." instance=ExtResource("1_1v0s6")]
+position = Vector2(0, 112)
+scale = Vector2(24, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-texture = ExtResource("1_gw2ps")
+[node name="Default Block4" parent="." instance=ExtResource("1_1v0s6")]
+position = Vector2(0, -112)
+scale = Vector2(24, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+[node name="Default Block2" parent="." instance=ExtResource("1_1v0s6")]
+position = Vector2(-192, 0)
+scale = Vector2(1, 14)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-shape = SubResource("RectangleShape2D_xqmsn")
-
-[node name="Node2D4" type="Node2D" parent="."]
-position = Vector2(187, 16)
-scale = Vector2(8, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D4"]
-texture = ExtResource("1_gw2ps")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/StaticBody2D"]
-shape = SubResource("RectangleShape2D_xqmsn")
-
-[node name="Node2D2" type="Node2D" parent="."]
-position = Vector2(-187, -80)
-scale = Vector2(1.08, 15.12)
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D2"]
-texture = ExtResource("1_gw2ps")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D"]
-shape = SubResource("RectangleShape2D_xqmsn")
-
-[node name="Node2D3" type="Node2D" parent="."]
-position = Vector2(191, -80)
-scale = Vector2(1.08, 15.12)
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D3"]
-texture = ExtResource("1_gw2ps")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/StaticBody2D"]
-shape = SubResource("RectangleShape2D_xqmsn")
+[node name="Default Block3" parent="." instance=ExtResource("1_1v0s6")]
+position = Vector2(192, 0)
+scale = Vector2(1, 14)
 
 [node name="Player" parent="." instance=ExtResource("2_eoc6o")]
-position = Vector2(66, 19)
+position = Vector2(65, 80)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -56)
 zoom = Vector2(3.055, 3.055)
 
 [node name="Trampoline" parent="." instance=ExtResource("3_bkv65")]
-position = Vector2(-168, 31)
+position = Vector2(-172, 92)
 rotation = 0.785398
 
 [node name="Trampoline2" parent="." instance=ExtResource("3_bkv65")]
-position = Vector2(-42, 32)
-
-[node name="Trampoline3" parent="." instance=ExtResource("3_bkv65")]
-position = Vector2(79, -16)
-rotation = 1.57079
-
-[node name="Trampoline4" parent="." instance=ExtResource("3_bkv65")]
-position = Vector2(174, -33)
-rotation = -1.57079
+position = Vector2(-43, 96)
 
 [node name="Spike" parent="." instance=ExtResource("4_ujff4")]
-position = Vector2(-4, 32)
+position = Vector2(-6, 96)
 
 [node name="Spike2" parent="." instance=ExtResource("4_ujff4")]
-position = Vector2(12, 32)
+position = Vector2(10, 96)
 
 [node name="Platform" parent="." instance=ExtResource("5_gadtr")]
-position = Vector2(-42, -15)
+position = Vector2(-43, 46)
+
+[node name="Platform2" parent="." instance=ExtResource("5_gadtr")]
+position = Vector2(-125, 53)
+type = 1

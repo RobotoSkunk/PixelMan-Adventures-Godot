@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://hudvebcfiwl1"]
+
+[ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="1_fkvdl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3e02l"]
+size = Vector2(16, 16)
+
+[node name="Default Block" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fkvdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3e02l")
