@@ -19,6 +19,8 @@
 
 using Godot;
 
+using ClockBombGames.PixelMan.Events;
+
 
 namespace ClockBombGames.PixelMan.GameObjects
 {
@@ -46,6 +48,12 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			startPosition = Position;
 			goPositive = startPositive;
+
+			GameEvents.OnResetGame += () => {
+				Position = startPosition;
+				goPositive = startPositive;
+				delayToMove = 0f;
+			};
 		}
 
 		public override void _PhysicsProcess(double delta)
@@ -57,7 +65,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				previousPosition = Vector2.One * Mathf.Inf;
 			} else {
 				if (type == PlatformType.Vertical) {
-					Velocity = speed * (goPositive ? Vector2.Down : Vector2.Up);
+					Velocity = speed * (goPositive ? Vector2.Up : Vector2.Down);
 				} else {
 					Velocity = speed * (goPositive ? Vector2.Right : Vector2.Left);
 				}
