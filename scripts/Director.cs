@@ -17,8 +17,6 @@
 */
 
 
-using System.Threading.Tasks;
-
 using Godot;
 
 using ClockBombGames.PixelMan.Events;
@@ -56,8 +54,8 @@ namespace ClockBombGames.PixelMan
 				restartTimer -= (float)delta;
 
 				if (restartTimer <= 0f) {
-					playerDied = false;
 					this.InvokeResetGame();
+					playerDied = false;
 				}
 			}
 		}
