@@ -61,6 +61,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			}
 
 			Monitoring = isActive;
+			Monitorable = isActive;
 			sprite2d.Visible = isActive;			
 		}
 

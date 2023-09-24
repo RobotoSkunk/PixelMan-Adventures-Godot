@@ -68,7 +68,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// <summary>
 		/// The player's death particles list.
 		/// </summary>
-		private readonly RigidBody2D[] deathParticles = new RigidBody2D[50];
+		private readonly PlayerDeathParticle[] deathParticles = new PlayerDeathParticle[50];
 		#endregion
 
 		#region Private variables
@@ -264,12 +264,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 			for (int i = 0; i < deathParticles.Length; i++) {
 				Node node = deathParticleScene.Instantiate();
 
-				if (node is RigidBody2D particle) {
+				if (node is PlayerDeathParticle particle) {
 					deathParticles[i] = particle;
-					deathParticles[i].Visible = false;
-					deathParticles[i].Freeze = true;
+					// deathParticles[i].Visible = false;
 
-					AddChild(particle);
+					GetOwner<Node2D>().CallDeferred("add_child", node);
 				}
 			}
 		}
@@ -384,11 +383,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 				if (!emitDeathParticles) {
 					emitDeathParticles = true;
 
-					foreach (RigidBody2D particle in deathParticles) {
-						particle.Position = Vector2.Zero;
+					foreach (PlayerDeathParticle particle in deathParticles) {
 						particle.Visible = true;
-						particle.Freeze = false;
-						particle.Sleeping = false;
+
+						particle.Reset(GlobalPosition);
 
 						particle.LinearVelocity = new Vector2(
 							(float)GD.RandRange(-16f, 16f) * 15f,
@@ -402,12 +400,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 			} else if (emitDeathParticles) {
 				emitDeathParticles = false;
 
-				foreach (RigidBody2D particle in deathParticles) {
-					particle.Visible = false;
-					particle.Freeze = true;
-					particle.Sleeping = true;
-					particle.LinearVelocity = Vector2.Zero;
-				}
+				// foreach (PlayerDeathParticle particle in deathParticles) {
+				// 	particle.Visible = false;
+				// }
 			}
 
 
