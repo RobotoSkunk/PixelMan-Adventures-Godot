@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=7 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://objects/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="2_eoc6o"]
 [ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://objects/trampoline/Trampoline.tscn" id="3_bkv65"]
 [ext_resource type="PackedScene" uid="uid://dqenbapncf7e7" path="res://objects/spike/Spike.tscn" id="4_ujff4"]
 [ext_resource type="PackedScene" uid="uid://di0sg0hxj0ubj" path="res://objects/platform/Platform.tscn" id="5_gadtr"]
+[ext_resource type="PackedScene" uid="uid://b0fsqkjb1mkwq" path="res://objects/gun/Gun.tscn" id="6_uhleu"]
 
 [node name="Test Scene" type="Node2D"]
 
@@ -49,3 +50,6 @@ position = Vector2(-43, 46)
 [node name="Platform2" parent="." instance=ExtResource("5_gadtr")]
 position = Vector2(-125, 53)
 type = 1
+
+[node name="Gun" parent="." instance=ExtResource("6_uhleu")]
+position = Vector2(65, -5)

@@ -236,6 +236,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 			animator.SpriteFrames = Globals.Avatar;
 			startPosition = Position;
 
+			// Register the player
+			this.RegisterPlayer();
+
+			// Connect events
 			GameEvents.OnPlayerDeath += OnPlayerDeath;
 			GameEvents.OnResetGame += OnGameReset;
 
@@ -484,9 +488,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			// Emit death particles
 			foreach (RigidBody2D particle in deathParticles) {
-				particle.Position = GlobalPosition;
 				particle.Visible = true;
 				particle.Freeze = false;
+				particle.Position = Vector2.Zero;
 				particle.GetChild<CollisionShape2D>(0).Disabled = false;
 
 				particle.LinearVelocity = new Vector2(
@@ -511,6 +515,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			// Stop emitting death particles
 			foreach (RigidBody2D particle in deathParticles) {
+				particle.LinearVelocity = Vector2.Zero;
 				particle.Visible = false;
 				particle.Freeze = true;
 				particle.GetChild<CollisionShape2D>(0).Disabled = true;

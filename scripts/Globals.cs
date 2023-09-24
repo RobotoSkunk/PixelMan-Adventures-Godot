@@ -18,7 +18,8 @@
 
 
 using System;
-
+using System.Collections.Generic;
+using ClockBombGames.PixelMan.GameObjects;
 using Godot;
 
 
@@ -68,6 +69,7 @@ namespace ClockBombGames.PixelMan
 		// Private variables
 		static Director director = null;
 		static int avatarIndex = 0;
+		readonly static List<Player> players = new();
 
 
 		/// <summary>
@@ -127,6 +129,30 @@ namespace ClockBombGames.PixelMan
 		public static void SetDirector(this Director director)
 		{
 			Globals.director = director;
+		}
+
+		/// <summary>
+		/// Registers a player to the game.
+		/// </summary>
+		public static void RegisterPlayer(this Player player)
+		{
+			players.Add(player);
+		}
+
+		/// <summary>
+		/// Gets all the registered players.
+		/// </summary>
+		public static Player[] GetPlayers()
+		{
+			return players.ToArray();
+		}
+
+		/// <summary>
+		/// Unregisters all the players.
+		/// </summary>
+		public static void UnregisterPlayers(this Director _)
+		{
+			players.Clear();
 		}
 	}
 }

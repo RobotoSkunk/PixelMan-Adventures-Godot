@@ -10,6 +10,7 @@ size = Vector2(76, 10)
 texture_filter = 1
 texture_repeat = 1
 collision_layer = 8
+motion_mode = 1
 script = ExtResource("1_406o7")
 speed = 80.0
 
