@@ -265,8 +265,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 				Node node = deathParticleScene.Instantiate();
 
 				if (node is PlayerDeathParticle particle) {
+					particle.Visible = false;
 					deathParticles[i] = particle;
-					// deathParticles[i].Visible = false;
 
 					GetOwner<Node2D>().CallDeferred("add_child", node);
 				}
@@ -384,8 +384,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 					emitDeathParticles = true;
 
 					foreach (PlayerDeathParticle particle in deathParticles) {
-						particle.Visible = true;
+						particle.LateVisible = true;
 
+						particle.Freeze = false;
 						particle.Reset(GlobalPosition);
 
 						particle.LinearVelocity = new Vector2(
@@ -400,9 +401,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 			} else if (emitDeathParticles) {
 				emitDeathParticles = false;
 
-				// foreach (PlayerDeathParticle particle in deathParticles) {
-				// 	particle.Visible = false;
-				// }
+				foreach (PlayerDeathParticle particle in deathParticles) {
+					particle.Visible = false;
+					particle.Freeze = true;
+				}
 			}
 
 

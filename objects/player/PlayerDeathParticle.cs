@@ -24,18 +24,54 @@ namespace ClockBombGames.PixelMan.GameObjects
 {
 	public partial class PlayerDeathParticle : RigidBody2D
 	{
-		Vector2 initialScale = Vector2.Zero;
+		Vector2 resetPosition;
+
+		bool isResetting = false;
+		bool isVisible = false;
+
+		float lateVisibleTimer = 0f;
 
 
-		public override void _Ready()
+		public bool LateVisible
 		{
-			initialScale = Scale;
+			get => Visible;
+			set {
+				isVisible = value;
+				lateVisibleTimer = 0.05f;
+			}
 		}
+
 
 		public void Reset(Vector2 position)
 		{
-			Transform = new Transform2D(0f, position);
-			LinearVelocity = Vector2.Zero;
+			resetPosition = position;
+			isResetting = true;
+		}
+
+		public override void _PhysicsProcess(double delta)
+		{
+			if (lateVisibleTimer > 0f) {
+				lateVisibleTimer -= (float)delta;
+
+				if (lateVisibleTimer <= 0f) {
+					Visible = isVisible;
+				}
+			}
+		}
+
+
+		// Courtesy of KidsCanCode (https://kidscancode.org/godot_recipes/4.x/physics/asteroids_physics/), thank you!
+		public override void _IntegrateForces(PhysicsDirectBodyState2D state)
+		{
+			if (isResetting) {
+				Transform2D transform = state.Transform;
+
+				transform.Origin = resetPosition;
+
+				state.Transform = transform;
+
+				isResetting = false;
+			}
 		}
 	}
 }
