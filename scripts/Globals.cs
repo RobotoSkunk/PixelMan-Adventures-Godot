@@ -29,6 +29,7 @@ namespace ClockBombGames.PixelMan
 		Default = 1 << 0,
 		Player = 1 << 1,
 		Killzone = 1 << 2,
+		Platform = 1 << 3,
 	}
 
 	public static class Constants

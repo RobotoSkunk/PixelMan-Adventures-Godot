@@ -9,6 +9,7 @@ size = Vector2(76, 10)
 [node name="Platform" type="CharacterBody2D"]
 texture_filter = 1
 texture_repeat = 1
+collision_layer = 8
 script = ExtResource("1_406o7")
 speed = 80.0
 
