@@ -7,7 +7,7 @@ friction = 0.1
 bounce = 0.3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpxo0"]
-size = Vector2(2, 2)
+size = Vector2(1, 1)
 
 [node name="Player Death Particle" type="RigidBody2D"]
 collision_layer = 2
@@ -16,12 +16,12 @@ mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_uttpr")
 gravity_scale = 0.5
 lock_rotation = true
+freeze_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jpxo0")
 debug_color = Color(0, 0.0980392, 0.701961, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(4.47035e-08, 4.47035e-08)
-scale = Vector2(0.125, 0.125)
+scale = Vector2(0.0625, 0.0625)
 texture = ExtResource("1_50kdv")

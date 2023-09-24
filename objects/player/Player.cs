@@ -22,7 +22,7 @@ using Godot.Collections;
 
 using ClockBombGames.PixelMan.Utils;
 using ClockBombGames.PixelMan.Events;
-using System;
+
 
 namespace ClockBombGames.PixelMan.GameObjects
 {
@@ -143,6 +143,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		private bool isMoving = false;
 
+		/// <summary>
+		/// If the player should particles when dying.
+		/// </summary>
+		private bool emitDeathParticles = false;
 
 		/// <summary>
 		/// Current player state (for animation).
@@ -264,7 +268,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 					deathParticles[i] = particle;
 					deathParticles[i].Visible = false;
 					deathParticles[i].Freeze = true;
-					particle.GetChild<CollisionShape2D>(0).Disabled = true;
 
 					AddChild(particle);
 				}
@@ -376,8 +379,35 @@ namespace ClockBombGames.PixelMan.GameObjects
 			killzoneHitbox.Monitoring = !isDead;
 			killzoneHitbox.Monitorable = !isDead;
 
+
 			if (isDead) {
+				if (!emitDeathParticles) {
+					emitDeathParticles = true;
+
+					foreach (RigidBody2D particle in deathParticles) {
+						particle.Position = Vector2.Zero;
+						particle.Visible = true;
+						particle.Freeze = false;
+						particle.Sleeping = false;
+
+						particle.LinearVelocity = new Vector2(
+							(float)GD.RandRange(-16f, 16f) * 15f,
+							(float)GD.RandRange(-16f, 16f) * 15f
+						);
+					}
+				}
+
 				return;
+
+			} else if (emitDeathParticles) {
+				emitDeathParticles = false;
+
+				foreach (RigidBody2D particle in deathParticles) {
+					particle.Visible = false;
+					particle.Freeze = true;
+					particle.Sleeping = true;
+					particle.LinearVelocity = Vector2.Zero;
+				}
 			}
 
 
@@ -493,19 +523,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			animator.Visible = false;
 
-			// Emit death particles
-			// foreach (RigidBody2D particle in deathParticles) {
-			// 	particle.GetChild<CollisionShape2D>(0).Disabled = false;
-			// 	particle.Freeze = false;
-			// 	particle.Visible = true;
-			// 	particle.Position = Vector2.Zero;
-
-			// 	particle.LinearVelocity = new Vector2(
-			// 		(float)GD.RandRange(-100f, 100f),
-			// 		(float)GD.RandRange(-100f, 100f)
-			// 	);
-			// }
-
 			audioPlayer.Stream = sounds[1];
 			audioPlayer.Play();
 		}
@@ -517,14 +534,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 			Velocity = Vector2.Zero;
 
 			animator.Visible = true;
-
-			// Stop emitting death particles
-			// foreach (RigidBody2D particle in deathParticles) {
-			// 	particle.GetChild<CollisionShape2D>(0).Disabled = true;
-			// 	particle.LinearVelocity = Vector2.Zero;
-			// 	particle.Visible = false;
-			// 	particle.Freeze = true;
-			// }
 		}
 
 
