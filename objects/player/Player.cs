@@ -22,7 +22,7 @@ using Godot.Collections;
 
 using ClockBombGames.PixelMan.Utils;
 using ClockBombGames.PixelMan.Events;
-
+using System;
 
 namespace ClockBombGames.PixelMan.GameObjects
 {
@@ -44,15 +44,15 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] private CollisionLayers killzoneCollisionMask;
 
 		[ExportGroup("Properties")]
+		[Export] private PackedScene deathParticleScene;
 		[Export(PropertyHint.ArrayType)] private AudioStream[] sounds;
-		[Export(PropertyHint.ResourceType)] private RigidBody2D deathParticle;
 
 
 		#region Readonly variables
 		/// <summary>
 		/// The maximum time to jump.
 		/// </summary>
-		readonly private float maxJumpTime = 0.16f;
+		private readonly float maxJumpTime = 0.16f;
 
 		/// <summary>
 		/// The maximum time to jump (minor fix for jumping near the edge).
@@ -62,7 +62,13 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// <summary>
 		/// The speed to be applied to the player.
 		/// </summary>
-		readonly private Vector2 speed = new(144, 272);
+		private readonly Vector2 speed = new(144, 272);
+
+
+		/// <summary>
+		/// The player's death particles list.
+		/// </summary>
+		private readonly RigidBody2D[] deathParticles = new RigidBody2D[50];
 		#endregion
 
 		#region Private variables
@@ -232,6 +238,20 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			GameEvents.OnPlayerDeath += OnPlayerDeath;
 			GameEvents.OnResetGame += OnGameReset;
+
+			// Create the death particles
+			for (int i = 0; i < deathParticles.Length; i++) {
+				Node node = deathParticleScene.Instantiate();
+
+				if (node is RigidBody2D particle) {
+					deathParticles[i] = particle;
+					deathParticles[i].Visible = false;
+					deathParticles[i].Freeze = true;
+					particle.GetChild<CollisionShape2D>(0).Disabled = true;
+
+					AddChild(particle);
+				}
+			}
 		}
 
 		public override void _Input(InputEvent @event)
@@ -462,6 +482,19 @@ namespace ClockBombGames.PixelMan.GameObjects
 			killzoneCollisionShape.Disabled = true;
 			animator.Visible = false;
 
+			// Emit death particles
+			foreach (RigidBody2D particle in deathParticles) {
+				particle.Position = GlobalPosition;
+				particle.Visible = true;
+				particle.Freeze = false;
+				particle.GetChild<CollisionShape2D>(0).Disabled = false;
+
+				particle.LinearVelocity = new Vector2(
+					(float)GD.RandRange(-100f, 100f),
+					(float)GD.RandRange(-100f, 100f)
+				);
+			}
+
 			audioPlayer.Stream = sounds[1];
 			audioPlayer.Play();
 		}
@@ -475,6 +508,13 @@ namespace ClockBombGames.PixelMan.GameObjects
 			collisionShape.Disabled = false;
 			killzoneCollisionShape.Disabled = false;
 			animator.Visible = true;
+
+			// Stop emitting death particles
+			foreach (RigidBody2D particle in deathParticles) {
+				particle.Visible = false;
+				particle.Freeze = true;
+				particle.GetChild<CollisionShape2D>(0).Disabled = true;
+			}
 		}
 
 

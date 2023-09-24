@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://so6iom4ptltd"]
+[gd_scene load_steps=11 format=3 uid="uid://so6iom4ptltd"]
 
 [ext_resource type="Script" path="res://objects/player/Player.cs" id="1_4lx6j"]
 [ext_resource type="AudioStream" uid="uid://bdmsjyhuv5bir" path="res://assets/sounds/Jump.wav" id="2_36iwa"]
+[ext_resource type="PackedScene" uid="uid://dh3w62ygikp60" path="res://objects/player/Player Death Particle.tscn" id="2_d8fqs"]
 [ext_resource type="AudioStream" uid="uid://cc466fco7woo1" path="res://assets/sounds/Death.wav" id="3_agnwr"]
 [ext_resource type="SpriteFrames" uid="uid://00xgn5d1pig" path="res://objects/player/animations/Avatar - 0.tres" id="4_7yq56"]
 [ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="16_ylwl0"]
@@ -49,6 +50,7 @@ texture_repeat = 1
 disable_mode = 2
 collision_layer = 2
 collision_mask = 13
+safe_margin = 0.05
 script = ExtResource("1_4lx6j")
 renderer = NodePath("Rendering")
 animator = NodePath("Rendering/Animator")
@@ -59,6 +61,7 @@ collisionShape = NodePath("Box Collider")
 killzoneHitbox = NodePath("Killzone Hitbox")
 killzoneCollisionShape = NodePath("Killzone Hitbox/Killzone Box Collider")
 killzoneCollisionMask = 5
+deathParticleScene = ExtResource("2_d8fqs")
 sounds = Array[AudioStream]([ExtResource("2_36iwa"), ExtResource("3_agnwr")])
 
 [node name="Box Collider" type="CollisionShape2D" parent="."]
