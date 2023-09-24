@@ -68,7 +68,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// <summary>
 		/// The player's death particles list.
 		/// </summary>
-		// private readonly RigidBody2D[] deathParticles = new RigidBody2D[50];
+		private readonly RigidBody2D[] deathParticles = new RigidBody2D[50];
 		#endregion
 
 		#region Private variables
@@ -257,18 +257,18 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 
 			// Create the death particles
-			// for (int i = 0; i < deathParticles.Length; i++) {
-			// 	Node node = deathParticleScene.Instantiate();
+			for (int i = 0; i < deathParticles.Length; i++) {
+				Node node = deathParticleScene.Instantiate();
 
-			// 	if (node is RigidBody2D particle) {
-			// 		deathParticles[i] = particle;
-			// 		deathParticles[i].Visible = false;
-			// 		deathParticles[i].Freeze = true;
-			// 		particle.GetChild<CollisionShape2D>(0).Disabled = true;
+				if (node is RigidBody2D particle) {
+					deathParticles[i] = particle;
+					deathParticles[i].Visible = false;
+					deathParticles[i].Freeze = true;
+					particle.GetChild<CollisionShape2D>(0).Disabled = true;
 
-			// 		AddChild(particle);
-			// 	}
-			// }
+					AddChild(particle);
+				}
+			}
 		}
 
 		public override void _Input(InputEvent @event)
@@ -372,6 +372,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _PhysicsProcess(double delta)
 		{
+			collisionShape.Disabled = isDead;
+			killzoneHitbox.Monitoring = !isDead;
+			killzoneHitbox.Monitorable = !isDead;
+
 			if (isDead) {
 				return;
 			}
@@ -487,8 +491,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 			isDead = true;
 			Velocity = Vector2.Zero;
 
-			collisionShape.Disabled = true;
-			killzoneCollisionShape.Disabled = true;
 			animator.Visible = false;
 
 			// Emit death particles
@@ -514,8 +516,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 			Position = startPosition;
 			Velocity = Vector2.Zero;
 
-			collisionShape.Disabled = false;
-			killzoneCollisionShape.Disabled = false;
 			animator.Visible = true;
 
 			// Stop emitting death particles

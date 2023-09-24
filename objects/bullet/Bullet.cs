@@ -39,18 +39,18 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _Ready()
 		{
-			BodyEntered += (other) => {
-				collisionShape.Disabled = true;
-				sprite2d.Visible = false;
+			BodyEntered += (other) =>
+			{
+				isActive = false;
 
 				if (other is Player) {
 					Globals.PlayerDied();
 				}
 			};
 
-			AreaEntered += (other) => {
-				collisionShape.Disabled = true;
-				sprite2d.Visible = false;
+			AreaEntered += (other) =>
+			{
+				isActive = false;
 			};
 		}
 
@@ -58,7 +58,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			if (isActive) {
 				GlobalPosition += velocity * (float)delta;
-			}			
+			}
+
+			Monitoring = isActive;
+			sprite2d.Visible = isActive;			
 		}
 
 		public void ShootAt(Vector2 position, float direction, float speed)
@@ -68,7 +71,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			velocity = new Vector2(speed, 0).Rotated(direction);
 			isActive = true;
 
-			collisionShape.Disabled = false;
+			Monitoring = false;
 			sprite2d.Visible = true;
 		}
 	}
