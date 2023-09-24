@@ -68,7 +68,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// <summary>
 		/// The player's death particles list.
 		/// </summary>
-		private readonly RigidBody2D[] deathParticles = new RigidBody2D[50];
+		// private readonly RigidBody2D[] deathParticles = new RigidBody2D[50];
 		#endregion
 
 		#region Private variables
@@ -243,19 +243,32 @@ namespace ClockBombGames.PixelMan.GameObjects
 			GameEvents.OnPlayerDeath += OnPlayerDeath;
 			GameEvents.OnResetGame += OnGameReset;
 
-			// Create the death particles
-			for (int i = 0; i < deathParticles.Length; i++) {
-				Node node = deathParticleScene.Instantiate();
+			killzoneHitbox.AreaEntered += (area) => {
+				Globals.PlayerDied();
+			};
 
-				if (node is RigidBody2D particle) {
-					deathParticles[i] = particle;
-					deathParticles[i].Visible = false;
-					deathParticles[i].Freeze = true;
-					particle.GetChild<CollisionShape2D>(0).Disabled = true;
-
-					AddChild(particle);
+			killzoneHitbox.BodyEntered += (area) => {
+				if (area is Player) {
+					return;
 				}
-			}
+
+				Globals.PlayerDied();
+			};
+
+
+			// Create the death particles
+			// for (int i = 0; i < deathParticles.Length; i++) {
+			// 	Node node = deathParticleScene.Instantiate();
+
+			// 	if (node is RigidBody2D particle) {
+			// 		deathParticles[i] = particle;
+			// 		deathParticles[i].Visible = false;
+			// 		deathParticles[i].Freeze = true;
+			// 		particle.GetChild<CollisionShape2D>(0).Disabled = true;
+
+			// 		AddChild(particle);
+			// 	}
+			// }
 		}
 
 		public override void _Input(InputEvent @event)
@@ -451,14 +464,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			// The man? Pixel'd
 			MoveAndSlide();
-
-
-			// Detect collision with killzones
-			foreach (Area2D area in killzoneHitbox.GetOverlappingAreas()){
-				if ((area.CollisionLayer & (uint)killzoneCollisionMask) != 0) {
-					Globals.PlayerDied();
-				}
-			}
 		}
 
 
@@ -487,17 +492,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 			animator.Visible = false;
 
 			// Emit death particles
-			foreach (RigidBody2D particle in deathParticles) {
-				particle.Visible = true;
-				particle.Freeze = false;
-				particle.Position = Vector2.Zero;
-				particle.GetChild<CollisionShape2D>(0).Disabled = false;
+			// foreach (RigidBody2D particle in deathParticles) {
+			// 	particle.GetChild<CollisionShape2D>(0).Disabled = false;
+			// 	particle.Freeze = false;
+			// 	particle.Visible = true;
+			// 	particle.Position = Vector2.Zero;
 
-				particle.LinearVelocity = new Vector2(
-					(float)GD.RandRange(-100f, 100f),
-					(float)GD.RandRange(-100f, 100f)
-				);
-			}
+			// 	particle.LinearVelocity = new Vector2(
+			// 		(float)GD.RandRange(-100f, 100f),
+			// 		(float)GD.RandRange(-100f, 100f)
+			// 	);
+			// }
 
 			audioPlayer.Stream = sounds[1];
 			audioPlayer.Play();
@@ -514,12 +519,12 @@ namespace ClockBombGames.PixelMan.GameObjects
 			animator.Visible = true;
 
 			// Stop emitting death particles
-			foreach (RigidBody2D particle in deathParticles) {
-				particle.LinearVelocity = Vector2.Zero;
-				particle.Visible = false;
-				particle.Freeze = true;
-				particle.GetChild<CollisionShape2D>(0).Disabled = true;
-			}
+			// foreach (RigidBody2D particle in deathParticles) {
+			// 	particle.GetChild<CollisionShape2D>(0).Disabled = true;
+			// 	particle.LinearVelocity = Vector2.Zero;
+			// 	particle.Visible = false;
+			// 	particle.Freeze = true;
+			// }
 		}
 
 

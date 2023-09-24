@@ -11,6 +11,7 @@ size = Vector2(20, 16)
 texture_filter = 1
 texture_repeat = 1
 disable_mode = 1
+collision_layer = 16
 collision_mask = 3
 script = ExtResource("1_801t0")
 animator = NodePath("Animator")

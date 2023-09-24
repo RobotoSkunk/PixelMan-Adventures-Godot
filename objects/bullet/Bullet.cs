@@ -42,6 +42,15 @@ namespace ClockBombGames.PixelMan.GameObjects
 			BodyEntered += (other) => {
 				collisionShape.Disabled = true;
 				sprite2d.Visible = false;
+
+				if (other is Player) {
+					Globals.PlayerDied();
+				}
+			};
+
+			AreaEntered += (other) => {
+				collisionShape.Disabled = true;
+				sprite2d.Visible = false;
 			};
 		}
 
