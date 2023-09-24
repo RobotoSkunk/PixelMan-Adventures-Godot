@@ -54,7 +54,7 @@ namespace ClockBombGames.PixelMan
 			get
 			{
 				if (gravity == 0f) {
-					gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
+					gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 				}
 
 				return gravity;

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=7 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="1_gw2ps"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="2_eoc6o"]
 [ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://objects/trampoline/Trampoline.tscn" id="3_bkv65"]
 [ext_resource type="PackedScene" uid="uid://dqenbapncf7e7" path="res://objects/spike/Spike.tscn" id="4_ujff4"]
+[ext_resource type="PackedScene" uid="uid://di0sg0hxj0ubj" path="res://objects/platform/Platform.tscn" id="5_gadtr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqmsn"]
 size = Vector2(16, 16)
@@ -85,3 +86,6 @@ position = Vector2(-4, 32)
 
 [node name="Spike2" parent="." instance=ExtResource("4_ujff4")]
 position = Vector2(12, 32)
+
+[node name="Platform" parent="." instance=ExtResource("5_gadtr")]
+position = Vector2(-42, -15)
