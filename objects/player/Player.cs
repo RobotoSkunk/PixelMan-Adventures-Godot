@@ -389,10 +389,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 						particle.Freeze = false;
 						particle.Reset(GlobalPosition);
 
-						particle.LinearVelocity = new Vector2(
-							(float)GD.RandRange(-16f, 16f) * 15f,
-							(float)GD.RandRange(-16f, 16f) * 15f
-						);
+						particle.LinearVelocity = RSRandom.Circle2D() * 16f * 15f;
 					}
 				}
 
