@@ -115,7 +115,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 				);
 
 			Zoom = originalZoom + new Vector2(-velocityZoom, -velocityZoom);
-			GD.Print(velocityZoom);
 		}
 
 		private async void RestoreToTarget()
