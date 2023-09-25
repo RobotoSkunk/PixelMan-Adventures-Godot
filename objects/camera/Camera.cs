@@ -107,8 +107,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 				}
 			}
 
-			GD.Randomize(); //Important: When using random related stuff always use this! Otherwise the results will always be the same.
-			Offset = originalOffset + new Vector2((float)GD.RandRange(-shakeStrength, shakeStrength), (float)GD.RandRange(-shakeStrength, shakeStrength));
+
+			//Important: When using random related stuff always use this! Otherwise the results will always be the same.
+			GD.Randomize();
+
+			Offset = originalOffset +
+				new Vector2(
+					(float)GD.RandRange(-shakeStrength, shakeStrength),
+					(float)GD.RandRange(-shakeStrength, shakeStrength)
+				);
+
+
 			if ((originalZoom.X > 0f) && (originalZoom.Y > 0f)) {
 				Zoom = originalZoom;
 			}
@@ -130,7 +139,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 			RestoreToTarget();
 		}
 
-		private async void MoveTo(Vector2 newPosition, float movingTime = 0.3f, Tween.TransitionType transitionType = Tween.TransitionType.Cubic, Tween.EaseType easingType = Tween.EaseType.Out)
+		private async void MoveTo(Vector2 newPosition,
+								  float movingTime = 0.3f,
+								  Tween.TransitionType transitionType = Tween.TransitionType.Cubic,
+								  Tween.EaseType easingType = Tween.EaseType.Out)
 		{
 			moveTween?.Kill();
 			moveTween = CreateTween();
@@ -145,7 +157,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 			moveTween.Kill();
 		}
 
-		private async void ZoomOn(Vector2 newZoom, double zoomingTime = 0.3, Tween.TransitionType transitionType = Tween.TransitionType.Cubic, Tween.EaseType easingType = Tween.EaseType.Out)
+		private async void ZoomOn(Vector2 newZoom,
+								  double zoomingTime = 0.3,
+								  Tween.TransitionType transitionType = Tween.TransitionType.Cubic,
+								  Tween.EaseType easingType = Tween.EaseType.Out)
 		{
 			zoomTween?.Kill();
 			zoomTween = CreateTween();
