@@ -16,15 +16,16 @@
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+
 using ClockBombGames.PixelMan.Events;
-using ClockBombGames.PixelMan.GameObjects;
 using Godot;
 using Godot.Collections;
 using System;
 
+
 namespace ClockBombGames.PixelMan.GameObjects 
 {
-	public partial class Camera : Camera2D, IGameObject
+	public partial class Camera : Camera2D
 	{
 		#region Variables
 
@@ -193,19 +194,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			Shake(2f, 0.3f);
 			followingTarget = false;
-		}
-
-		public Dictionary Serialize()
-		{
-			return new()
-				{
-					{ "position", Position }
-				};
-		}
-
-		public void Deserialize(Dictionary data)
-		{
-			Position = (Vector2)data["position"];
 		}
 	}
 }

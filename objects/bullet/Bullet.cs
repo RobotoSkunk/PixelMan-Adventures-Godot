@@ -17,6 +17,7 @@
 */
 
 
+using ClockBombGames.PixelMan.Events;
 using Godot;
 
 
@@ -24,11 +25,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 {
 	public partial class Bullet : Area2D, IGOProjectile
 	{
-		[Export] private Sprite2D sprite2d;
+		[ExportGroup("Components")]
+		[Export] private AnimatedSprite2D animatedSprite2D;
 		[Export] private CollisionShape2D collisionShape;
+		[Export] private GpuParticles2D particles2d;
+		[Export] private AudioStreamPlayer2D audioStreamPlayer2D;
 
 		private Vector2 velocity = Vector2.Zero;
+
 		private bool isActive = false;
+		private bool wasActive = false;
 
 
 		public bool IsActive
@@ -39,31 +45,62 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _Ready()
 		{
-			BodyEntered += (other) =>
-			{
-				isActive = false;
+			BodyEntered += OnBodyEntered;
+			AreaEntered += OnAreaEntered;
 
-				if (other is Player) {
-					Globals.PlayerDied();
-				}
-			};
-
-			AreaEntered += (other) =>
-			{
-				isActive = false;
-			};
+			GameEvents.OnResetGame += OnResetGame;
 		}
 
 		public override void _PhysicsProcess(double delta)
 		{
 			if (isActive) {
 				GlobalPosition += velocity * (float)delta;
+
+				wasActive = true;
+
+			} else if (wasActive) {
+				wasActive = false;
+
+				audioStreamPlayer2D.Play();
+
+				particles2d.Restart();
+				particles2d.Emitting = true;
+
+				animatedSprite2D.Stop();
 			}
 
 			Monitoring = isActive;
 			Monitorable = isActive;
-			sprite2d.Visible = isActive;			
+			animatedSprite2D.Visible = isActive;
 		}
+
+		private void OnResetGame()
+		{
+			isActive = false;
+		}
+
+		private void OnBodyEntered(Node body)
+		{
+			if (!isActive) {
+				return;
+			}
+
+			isActive = false;
+
+			if (body is Player) {
+				Globals.PlayerDied();
+			}
+		}
+
+		private void OnAreaEntered(Node _)
+		{
+			if (!isActive) {
+				return;
+			}
+
+			isActive = false;
+		}
+
 
 		public void ShootAt(Vector2 position, float direction, float speed)
 		{
@@ -72,8 +109,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			velocity = new Vector2(speed, 0).Rotated(direction);
 			isActive = true;
 
-			Monitoring = false;
-			sprite2d.Visible = true;
+			animatedSprite2D.Play();
 		}
 	}
 }

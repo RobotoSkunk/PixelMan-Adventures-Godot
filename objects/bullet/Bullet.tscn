@@ -1,21 +1,73 @@
-[gd_scene load_steps=4 format=3 uid="uid://l4b2aiwd3deo"]
+[gd_scene load_steps=11 format=3 uid="uid://l4b2aiwd3deo"]
 
 [ext_resource type="Script" path="res://objects/bullet/Bullet.cs" id="1_vgtel"]
 [ext_resource type="Texture2D" uid="uid://ljje70ytq3vd" path="res://assets/sprites/atlas-1.sprites/objects/bullet/0.tres" id="1_xsmjk"]
+[ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="3_4ds8b"]
+[ext_resource type="Texture2D" uid="uid://c4lbnse06875q" path="res://assets/sprites/atlas-1.sprites/objects/bullet/1.tres" id="3_lu64d"]
+[ext_resource type="AudioStream" uid="uid://df40p67hhr7e6" path="res://assets/sounds/BulletDestroy.wav" id="4_drhi6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qgyt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xsmjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lu64d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwsec"]
 size = Vector2(6, 4)
 
-[node name="Bullet" type="Area2D" node_paths=PackedStringArray("sprite2d", "collisionShape")]
+[sub_resource type="Curve" id="Curve_j5k80"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.382599), -1.53224, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ghvwp"]
+curve = SubResource("Curve_j5k80")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ckj2e"]
+lifetime_randomness = 0.51
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.05
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_ghvwp")
+
+[node name="Bullet" type="Area2D" node_paths=PackedStringArray("animatedSprite2D", "collisionShape", "particles2d", "audioStreamPlayer2D")]
 collision_layer = 64
 collision_mask = 75
 script = ExtResource("1_vgtel")
-sprite2d = NodePath("Sprite2D")
+animatedSprite2D = NodePath("AnimatedSprite2D")
 collisionShape = NodePath("CollisionShape2D")
+particles2d = NodePath("GPUParticles2D")
+audioStreamPlayer2D = NodePath("AudioStreamPlayer2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xsmjk")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6qgyt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_fwsec")
 debug_color = Color(0.701961, 0, 0, 0.419608)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_ckj2e")
+texture = ExtResource("3_4ds8b")
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_drhi6")
