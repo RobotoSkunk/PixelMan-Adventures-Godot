@@ -28,7 +28,6 @@ scale = Vector2(1, 14)
 
 [node name="Player" parent="." instance=ExtResource("2_eoc6o")]
 position = Vector2(65, 80)
-deathParticleScene = null
 
 [node name="Trampoline" parent="." instance=ExtResource("3_bkv65")]
 position = Vector2(-172, 92)

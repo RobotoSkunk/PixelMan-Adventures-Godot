@@ -109,7 +109,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			GD.Randomize(); //Important: When using random related stuff always use this! Otherwise the results will always be the same.
 			Offset = originalOffset + new Vector2((float)GD.RandRange(-shakeStrength, shakeStrength), (float)GD.RandRange(-shakeStrength, shakeStrength));
-			Zoom = originalZoom;
+			if ((originalZoom.X > 0f) && (originalZoom.Y > 0f)) {
+				Zoom = originalZoom;
+			}
 		}
 
 		private async void RestoreToTarget()
