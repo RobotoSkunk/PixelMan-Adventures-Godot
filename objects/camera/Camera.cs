@@ -1,6 +1,7 @@
 /*
 	PixelMan Adventures - An open-source 2D platformer game.
 	Copyright (C) 2023 Edgar Lima (RobotoSkunk) <contact@robotoskunk.com>
+	Copyright (C) 2023 (Repertix)
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published
@@ -16,12 +17,12 @@
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-
 using ClockBombGames.PixelMan.Events;
+using ClockBombGames.PixelMan.GameObjects;
 using Godot;
 using Godot.Collections;
 using System;
-
+using System.Reflection.Metadata;
 
 namespace ClockBombGames.PixelMan.GameObjects 
 {
@@ -30,8 +31,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		#region Variables
 
 		[ExportGroup("Components")]
-		[Export] public Player targetPlayer;
-		[Export] public Node2D targetObject;
+		[Export] public Player target;
 
 		#region Private Variables
 		/// <summary>
@@ -40,19 +40,19 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private Vector2 originalOffset = Vector2.Zero;
 
 		/// <summary>
-		///	Not definition yet.
+		///	Original zoom w/o any alteration
 		/// </summary>
-		private Vector2 originalZoom = Vector2.Zero;
+		private Vector2 originalZoom = new(3.005f, 3.005f);
+
+		/// <summary>
+		///	Substracts current zoom depending on Player's velocity
+		/// </summary>
+		private float velocityZoom = 0f;
 
 		/// <summary>
 		/// How strong is the camera actually shaking
 		/// </summary>
 		private float shakeStrength = 0f;
-
-		/// <summary>
-		///	Determines if the camera follow-target is a Player or an Object
-		/// </summary>
-		private Mode cameraMode = Mode.PLAYER;
 
 		/// <summary>
 		///	Determines if the camera is following it's current target
@@ -80,12 +80,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		#endregion
 
-		enum Mode 
-		{
-			PLAYER,
-			OBJECT
-		}
-
 		public override void _Ready()
 		{
 			RestoreToTarget();
@@ -96,15 +90,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 		public override void _Process(double delta)
 		{
 			if (followingTarget) {
-				GlobalPosition = cameraMode == Mode.PLAYER ? targetPlayer.GlobalPosition : targetObject.GlobalPosition;
+				GlobalPosition = target.GlobalPosition;
 
-				if (cameraMode == Mode.PLAYER) {
-					
-					if (Mathf.Abs(targetPlayer.Velocity.X) > 0.1) {
-						playerDirection = Math.Sign(targetPlayer.Velocity.X);
+				if (target != null) {
+					if (Mathf.Abs(target.Velocity.X) > 0.1f) {
+						playerDirection = Math.Sign(target.Velocity.X);
+						velocityZoom = Mathf.Lerp(velocityZoom, Mathf.Abs(target.Velocity.X) / Constants.maxSpeed, 0.01f) + 0.003f;
+					} else if (target.Velocity.X == 0) {
+						velocityZoom = Mathf.Lerp(velocityZoom, 0f, 0.01f);
 					}
 
-					originalOffset.X = Mathf.Lerp(originalOffset.X, playerDirection * 5f, 0.07f);
+					originalOffset.X = Mathf.Lerp(originalOffset.X, playerDirection * 8f, 0.07f);
 				}
 			}
 
@@ -118,26 +114,18 @@ namespace ClockBombGames.PixelMan.GameObjects
 					(float)GD.RandRange(-shakeStrength, shakeStrength)
 				);
 
-
-			if ((originalZoom.X > 0f) && (originalZoom.Y > 0f)) {
-				Zoom = originalZoom;
-			}
+			Zoom = originalZoom + new Vector2(-velocityZoom, -velocityZoom);
+			GD.Print(velocityZoom);
 		}
 
 		private async void RestoreToTarget()
 		{
 			if (!followingTarget) {
-				MoveTo(cameraMode == Mode.PLAYER ? targetPlayer.GlobalPosition : targetObject.GlobalPosition);
+				ZoomOn(3.005f);
+				MoveTo(target.GlobalPosition);
 				await ToSignal(moveTween, "finished");
 				followingTarget = true;
 			}
-		}
-
-		private void ChangeMode(Mode newMode)
-		{
-			followingTarget = false;
-			cameraMode = newMode;
-			RestoreToTarget();
 		}
 
 		private async void MoveTo(Vector2 newPosition,
@@ -158,7 +146,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			moveTween.Kill();
 		}
 
-		private async void ZoomOn(Vector2 newZoom,
+		private async void ZoomOn(float newZoom,
 								  double zoomingTime = 0.3,
 								  Tween.TransitionType transitionType = Tween.TransitionType.Cubic,
 								  Tween.EaseType easingType = Tween.EaseType.Out)
@@ -169,7 +157,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			zoomTween.SetEase(easingType);
 			zoomTween.SetTrans(transitionType);
 
-			zoomTween.TweenProperty(this, "zoom", newZoom, zoomingTime);
+			zoomTween.TweenProperty(this, "zoom", new Vector2(newZoom, newZoom), zoomingTime);
 			zoomTween.Play();
 
 			await ToSignal(zoomTween, "finished");
