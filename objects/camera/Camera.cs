@@ -105,10 +105,12 @@ namespace ClockBombGames.PixelMan.GameObjects
 						velocityZoom = Mathf.Lerp(velocityZoom, 0f, 0.01f);
 					}
 
-					originalOffset.X = Mathf.Lerp(originalOffset.X, playerDirection * 8f, 0.01f);
+					originalOffset.X = Mathf.Lerp(originalOffset.X, playerDirection * 48f, 0.01f);
 				}
 			}
 
+
+			GlobalPosition = target.GlobalPosition;
 			Offset = originalOffset + (RSRandom.Circle2D() * shakeStrength);
 			Zoom = originalZoom + new Vector2(-velocityZoom, -velocityZoom);
 		}

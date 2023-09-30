@@ -53,5 +53,6 @@ type = 1
 position = Vector2(65, -5)
 
 [node name="Camera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_ialae")]
-position_smoothing_speed = 10.0
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
 target = NodePath("../Player")
