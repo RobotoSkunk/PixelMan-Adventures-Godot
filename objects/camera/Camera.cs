@@ -19,6 +19,7 @@
 
 using ClockBombGames.PixelMan.Events;
 using ClockBombGames.PixelMan.GameObjects;
+using ClockBombGames.PixelMan.Utils;
 using Godot;
 using Godot.Collections;
 using System;
@@ -45,11 +46,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private Vector2 originalZoom = new(3.005f, 3.005f);
 
 		/// <summary>
-		///	Substracts current zoom depending on Player's velocity
-		/// </summary>
-		private float velocityZoom = 0f;
-
-		/// <summary>
 		/// How strong is the camera actually shaking
 		/// </summary>
 		private float shakeStrength = 0f;
@@ -65,6 +61,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 		///	The current direction the player is facing to
 		/// </summary>
 		private int playerDirection = 0;
+
+		/// <summary>
+		///	Substracts current zoom depending on Player's velocity
+		/// </summary>
+		private float velocityZoom = 0f;
+
+		/// <summary>
+		/// How intense the camera is affected by Player's velocity
+		/// </summary>
+		private float velocityZoomIntensity = 0.003f;
 
 		#endregion
 
@@ -90,30 +96,20 @@ namespace ClockBombGames.PixelMan.GameObjects
 		public override void _Process(double delta)
 		{
 			if (followingTarget) {
-				GlobalPosition = target.GlobalPosition;
 
 				if (target != null) {
 					if (Mathf.Abs(target.Velocity.X) > 0.1f) {
 						playerDirection = Math.Sign(target.Velocity.X);
-						velocityZoom = Mathf.Lerp(velocityZoom, Mathf.Abs(target.Velocity.X) / Constants.maxSpeed, 0.01f) + 0.003f;
+						velocityZoom = Mathf.Lerp(velocityZoom, Mathf.Abs(target.Velocity.X) / Constants.maxSpeed, 0.01f) + velocityZoomIntensity;
 					} else if (target.Velocity.X == 0) {
 						velocityZoom = Mathf.Lerp(velocityZoom, 0f, 0.01f);
 					}
 
-					originalOffset.X = Mathf.Lerp(originalOffset.X, playerDirection * 8f, 0.07f);
+					originalOffset.X = Mathf.Lerp(originalOffset.X, playerDirection * 8f, 0.01f);
 				}
 			}
 
-
-			//Important: When using random related stuff always use this! Otherwise the results will always be the same.
-			GD.Randomize();
-
-			Offset = originalOffset +
-				new Vector2(
-					(float)GD.RandRange(-shakeStrength, shakeStrength),
-					(float)GD.RandRange(-shakeStrength, shakeStrength)
-				);
-
+			Offset = originalOffset + (RSRandom.Circle2D() * shakeStrength);
 			Zoom = originalZoom + new Vector2(-velocityZoom, -velocityZoom);
 		}
 

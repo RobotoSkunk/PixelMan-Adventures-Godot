@@ -71,7 +71,7 @@ namespace ClockBombGames.PixelMan.Utils
 		}
 
 		/// <summary>
-		///	Generates a random vector2d with values between -1.0 and 1.0.
+		///	Generates a random Vector2 with values between -1.0 and 1.0.
 		/// </summary>
 		public static Vector2 Circle2D()
 		{

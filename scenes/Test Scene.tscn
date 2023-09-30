@@ -52,4 +52,6 @@ type = 1
 [node name="Gun" parent="." instance=ExtResource("6_uhleu")]
 position = Vector2(65, -5)
 
-[node name="Camera" parent="." instance=ExtResource("7_ialae")]
+[node name="Camera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_ialae")]
+position_smoothing_speed = 10.0
+target = NodePath("../Player")
