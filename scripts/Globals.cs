@@ -74,6 +74,7 @@ namespace ClockBombGames.PixelMan
 		// Private variables
 		static Director director = null;
 		static int avatarIndex = 0;
+		static float shakeStrength = 0f;
 		readonly static List<Player> players = new();
 
 
@@ -119,6 +120,12 @@ namespace ClockBombGames.PixelMan
 		}
 
 
+		public static float ShakeStrength
+		{
+			get => shakeStrength;
+		}
+
+
 		/// <summary>
 		/// Tells the director that the player died.
 		/// </summary>
@@ -158,6 +165,23 @@ namespace ClockBombGames.PixelMan
 		public static void UnregisterPlayers(this Director _)
 		{
 			players.Clear();
+		}
+
+		/// <summary>
+		/// Makes the screen and connected controllers vibrate.
+		/// </summary>
+		public static void Shake(float strength, float duration)
+		{
+			director.Shake(strength, duration);
+		}
+
+
+		/// <summary>
+		/// Sets the shake strength.
+		/// </summary>
+		public static void SetShakeStrength(this Director _, float strength)
+		{
+			shakeStrength = strength;
 		}
 	}
 }

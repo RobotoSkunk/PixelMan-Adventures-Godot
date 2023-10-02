@@ -31,10 +31,14 @@ namespace ClockBombGames.PixelMan
 	{
 		[Export] private int avatarIndex = 0;
 		[Export] private SpriteFrames[] avatars;
+		[Export] private float shakeStrength;
 
 
 		bool playerDied = false;
 		float restartTimer = 0f;
+
+		private Tween shakeTween;
+
 
 		public SpriteFrames[] Avatars
 		{
@@ -68,6 +72,20 @@ namespace ClockBombGames.PixelMan
 
 				this.InvokePlayerDeath();
 			}
+		}
+
+		public async void Shake(float strength, float duration)
+		{
+			shakeTween?.Kill();
+			shakeTween = CreateTween();
+
+			shakeTween.TweenProperty(this, "shakeStrength", 0f, duration);
+			this.SetShakeStrength(strength);
+			shakeTween.Play();
+
+			await ToSignal(shakeTween, "finished");
+			shakeTween.Kill();
+			this.SetShakeStrength(0f);
 		}
 	}
 }

@@ -54,16 +54,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		private float rawZoom = 1f;
 
-		/// <summary>
-		/// How strong is the camera actually shaking
-		/// </summary>
-		private float shakeStrength = 0f;
-
-		/// <summary>
-		/// Tween used to shake the camera
-		/// </summary>
-		private Tween shakeTween;
-
 
 		#region Player Related Variables
 
@@ -113,8 +103,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 			// Apply offset
 			Vector2 shake = Vector2.Zero;
 
-			if (shakeStrength > 0f) {
-				shake = 2f * RSRandom.Circle2D() * shakeStrength * rawZoom;
+			if (Globals.ShakeStrength > 0f) {
+				shake = 2f * RSRandom.Circle2D() * Globals.ShakeStrength * rawZoom;
 			}
 
 			virtualOffset += (rawOffset - Offset) / 15f * RSMath.FixedDelta(delta);
@@ -152,23 +142,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 			rawZoom = 1f;
 		}
 
-		private async void Shake(float strength, float duration)
-		{
-			shakeTween?.Kill();
-			shakeTween = CreateTween();
-
-			shakeTween.TweenProperty(this, "shakeStrength", 0f, duration);
-			shakeStrength = strength;
-			shakeTween.Play();
-
-			await ToSignal(shakeTween, "finished");
-			shakeTween.Kill();
-			shakeStrength = 0f;
-		}
-
 		private void OnPlayerDeath()
 		{
-			Shake(2f, 0.3f);
+			Globals.Shake(2f, 0.3f);
 		}
 	}
 }
