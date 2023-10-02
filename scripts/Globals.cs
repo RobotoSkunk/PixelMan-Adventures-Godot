@@ -47,6 +47,11 @@ namespace ClockBombGames.PixelMan
 		/// </summary>
 		public readonly static float maxSpeed = 16f * 40f;
 
+		/// <summary>
+		/// The max speed of every object in the game squared.
+		/// </summary>
+		public readonly static float maxSpeedSquared = maxSpeed * maxSpeed;
+
 
 		/// <summary>
 		/// The default gravity of the game.

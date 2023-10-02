@@ -18,12 +18,10 @@
 */
 
 using ClockBombGames.PixelMan.Events;
-using ClockBombGames.PixelMan.GameObjects;
 using ClockBombGames.PixelMan.Utils;
 using Godot;
-using Godot.Collections;
 using System;
-using System.Reflection.Metadata;
+
 
 namespace ClockBombGames.PixelMan.GameObjects 
 {
@@ -34,16 +32,27 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[ExportGroup("Components")]
 		[Export] public Player target;
 
+
 		#region Private Variables
 		/// <summary>
-		///	Original offset w/o any shake effect or any other interaction
+		///	Original offset without any shake effect or any other interaction
 		/// </summary>
-		private Vector2 originalOffset = Vector2.Zero;
+		private Vector2 rawOffset = Vector2.Zero;
 
 		/// <summary>
-		///	Original zoom w/o any alteration
+		///	Virtualized offset that is actually applied to the camera
 		/// </summary>
-		private Vector2 originalZoom = new(3.005f, 3.005f);
+		private Vector2 virtualOffset = Vector2.Zero;
+
+		/// <summary>
+		///	Original target position without any alteration
+		/// </summary>
+		private Vector2 rawTargetPosition = Vector2.Zero;
+
+		/// <summary>
+		///	Original zoom without any alteration
+		/// </summary>
+		private float rawZoom = 1f;
 
 		/// <summary>
 		/// How strong is the camera actually shaking
@@ -51,9 +60,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private float shakeStrength = 0f;
 
 		/// <summary>
-		///	Determines if the camera is following it's current target
+		/// Tween used to shake the camera
 		/// </summary>
-		private bool followingTarget = false;
+		private Tween shakeTween;
+
 
 		#region Player Related Variables
 
@@ -63,28 +73,15 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private int playerDirection = 0;
 
 		/// <summary>
-		///	Substracts current zoom depending on Player's velocity
+		///	The current's player velocity
 		/// </summary>
-		private float velocityZoom = 0f;
-
-		/// <summary>
-		/// How intense the camera is affected by Player's velocity
-		/// </summary>
-		private float velocityZoomIntensity = 0.003f;
+		private float playerVelocity = 0f;
 
 		#endregion
-
+		#endregion
 		#endregion
 
-		#endregion
 
-		#region Tweens
-
-		private Tween moveTween;
-		private Tween zoomTween;
-		private Tween shakeTween;
-
-		#endregion
 
 		public override void _Ready()
 		{
@@ -95,70 +92,64 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _Process(double delta)
 		{
-			if (followingTarget) {
+			if (target != null) {
+				rawZoom = 1 + 4f * playerVelocity / Constants.maxSpeed;
 
-				if (target != null) {
-					if (Mathf.Abs(target.Velocity.X) > 0.1f) {
-						playerDirection = Math.Sign(target.Velocity.X);
-						velocityZoom = Mathf.Lerp(velocityZoom, Mathf.Abs(target.Velocity.X) / Constants.maxSpeed, 0.01f) + velocityZoomIntensity;
-					} else if (target.Velocity.X == 0) {
-						velocityZoom = Mathf.Lerp(velocityZoom, 0f, 0.01f);
-					}
+				rawOffset.X = playerDirection * 32f;
 
-					originalOffset.X = Mathf.Lerp(originalOffset.X, playerDirection * 48f, 0.01f);
+				rawTargetPosition = target.GlobalPosition + rawOffset;
+			} else {
+				playerDirection = 0;
+				playerVelocity = 0f;
+				rawOffset = Vector2.Zero;
+				rawZoom = 1f;
+			}
+
+
+			// Apply zoom
+			Zoom = RSMath.Lerp(Zoom, Vector2.One * (5f - rawZoom), 0.01f * RSMath.FixedDelta(delta));
+
+
+			// Apply offset
+			Vector2 shake = Vector2.Zero;
+
+			if (shakeStrength > 0f) {
+				shake = 2f * RSRandom.Circle2D() * shakeStrength * rawZoom;
+			}
+
+			virtualOffset += (rawOffset - Offset) / 15f * RSMath.FixedDelta(delta);
+
+			Offset = virtualOffset + shake;
+
+
+			// Apply position
+			GlobalPosition += (rawTargetPosition - GlobalPosition) / 8f * RSMath.FixedDelta(delta);
+		}
+
+		public override void _PhysicsProcess(double delta)
+		{
+			if (target != null) {
+				playerVelocity = target.Velocity.Length();
+
+				if (Mathf.Abs(target.Velocity.X) > 16f) {
+					playerDirection = Mathf.Sign(target.Velocity.X);
 				}
-			}
-
-
-			GlobalPosition = target.GlobalPosition;
-			Offset = originalOffset + (RSRandom.Circle2D() * shakeStrength);
-			Zoom = originalZoom + new Vector2(-velocityZoom, -velocityZoom);
-		}
-
-		private async void RestoreToTarget()
-		{
-			if (!followingTarget) {
-				ZoomOn(3.005f);
-				MoveTo(target.GlobalPosition);
-				await ToSignal(moveTween, "finished");
-				followingTarget = true;
+			} else {
+				playerVelocity = 0f;
+				playerDirection = 0;
 			}
 		}
 
-		private async void MoveTo(Vector2 newPosition,
-								  float movingTime = 0.3f,
-								  Tween.TransitionType transitionType = Tween.TransitionType.Cubic,
-								  Tween.EaseType easingType = Tween.EaseType.Out)
+
+		private void RestoreToTarget()
 		{
-			moveTween?.Kill();
-			moveTween = CreateTween();
+			rawOffset = Vector2.Zero;
+			rawTargetPosition = target.GlobalPosition;
 
-			moveTween.SetEase(easingType);
-			moveTween.SetTrans(transitionType);
-
-			moveTween.TweenProperty(this, "global_position", newPosition, movingTime);
-			moveTween.Play();
-
-			await ToSignal(moveTween, "finished");
-			moveTween.Kill();
-		}
-
-		private async void ZoomOn(float newZoom,
-								  double zoomingTime = 0.3,
-								  Tween.TransitionType transitionType = Tween.TransitionType.Cubic,
-								  Tween.EaseType easingType = Tween.EaseType.Out)
-		{
-			zoomTween?.Kill();
-			zoomTween = CreateTween();
-
-			zoomTween.SetEase(easingType);
-			zoomTween.SetTrans(transitionType);
-
-			zoomTween.TweenProperty(this, "zoom", new Vector2(newZoom, newZoom), zoomingTime);
-			zoomTween.Play();
-
-			await ToSignal(zoomTween, "finished");
-			zoomTween.Kill();
+			playerDirection = 0;
+			playerVelocity = 0f;
+			rawOffset = Vector2.Zero;
+			rawZoom = 1f;
 		}
 
 		private async void Shake(float strength, float duration)
@@ -178,7 +169,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private void OnPlayerDeath()
 		{
 			Shake(2f, 0.3f);
-			followingTarget = false;
 		}
 	}
 }

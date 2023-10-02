@@ -24,6 +24,9 @@ namespace ClockBombGames.PixelMan.Utils
 {
 	public static class RSMath
 	{
+		public static readonly int targetFPS = 60;
+
+
 		public static Vector2 GetDirection(Vector2 from, Vector2 to)
 		{
 			return (to - from).Normalized();
@@ -37,6 +40,31 @@ namespace ClockBombGames.PixelMan.Utils
 		public static Vector2 Abs(Vector2 vector)
 		{
 			return new Vector2(Mathf.Abs(vector.X), Mathf.Abs(vector.Y));
+		}
+
+		public static Vector2 Lerp(Vector2 from, Vector2 to, float amount)
+		{
+			return from + (to - from) * amount;
+		}
+
+
+		public static float Clamp01(float value)
+		{
+			if (value < 0f) {
+				return 0f;
+			}
+
+			if (value > 1f) {
+				return 1f;
+			}
+
+			return value;
+		}
+
+
+		public static float FixedDelta(double delta)
+		{
+			return (float)delta / (1f / targetFPS);
 		}
 	}
 }
