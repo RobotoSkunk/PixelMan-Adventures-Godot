@@ -475,7 +475,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				velocity.Y += JumpForce.Y;
 
 				if (WantedHorizontalSpeed == 0f) {
-					velocity.X = JumpForce.X * 2f;
+					velocity.X = JumpForce.X * 1.8f;
 				}
 
 				jumpTime = 0f;
@@ -517,8 +517,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 				floorNormal = GetFloorNormal();
 
 				rendererAngle = floorNormal.Angle() + Mathf.DegToRad(90f);
-
-				GD.Print(floorNormal);
 			} else {
 				floorNormal = Vector2.Zero;
 
