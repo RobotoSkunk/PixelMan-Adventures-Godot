@@ -103,6 +103,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		private float acceleration = 0f;
 
+		/// <summary>
+		/// The angle of the renderer.
+		/// </summary>
+		private float rendererAngle = 0f;
+
 
 		/// <summary>
 		/// If the player is in a trampoline.
@@ -168,6 +173,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// Player's previous position.
 		/// </summary>
 		private Vector2 previousPosition;
+
+		/// <summary>
+		/// The normal vector of the floor.
+		/// </summary>
+		private Vector2 floorNormal;
 		#endregion
 
 		#region Getters and setters
@@ -189,14 +199,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// <summary>
 		/// Player's jump force.
 		/// </summary>
-		private float JumpForce
+		private Vector2 JumpForce
 		{
 			get
 			{
+				Vector2 _speed = speed * floorNormal;
+
 				if (invertedGravity) {
-					return speed.Y;
+					return new Vector2(_speed.X, -_speed.Y);
 				} else {
-					return -speed.Y;
+					return _speed;
 				}
 			}
 		}
@@ -215,7 +227,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// <summary>
 		/// Wanted horizontal speed.
 		/// </summary>
-		private float WantedHorizontalSpeed
+		public float WantedHorizontalSpeed
 		{
 			get
 			{
@@ -460,7 +472,12 @@ namespace ClockBombGames.PixelMan.GameObjects
 			velocity.Y += Gravity * (float)delta;
 
 			if (jumpTime > 0f && hangCount > 0f) {
-				velocity.Y = JumpForce;
+				velocity.Y += JumpForce.Y;
+
+				if (WantedHorizontalSpeed == 0f) {
+					velocity.X = JumpForce.X * 2f;
+				}
+
 				jumpTime = 0f;
 				canReduceJump = true;
 
@@ -493,6 +510,22 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			// The man? Pixel'd
 			MoveAndSlide();
+
+
+			// Apply player's rotation
+			if (IsOnFloor()) {
+				floorNormal = GetFloorNormal();
+
+				rendererAngle = floorNormal.Angle() + Mathf.DegToRad(90f);
+
+				GD.Print(floorNormal);
+			} else {
+				floorNormal = Vector2.Zero;
+
+				rendererAngle = 0f;
+			}
+
+			renderer.Rotation = Mathf.Lerp(renderer.Rotation, rendererAngle, 0.33f);
 		}
 
 

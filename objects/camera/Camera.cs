@@ -120,8 +120,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 			if (target != null) {
 				playerVelocity = target.Velocity.Length();
 
-				if (Mathf.Abs(target.Velocity.X) > 16f) {
-					playerDirection = Mathf.Sign(target.Velocity.X);
+				if (Mathf.Abs(target.WantedHorizontalSpeed) != 0f) {
+					playerDirection = Mathf.Sign(target.WantedHorizontalSpeed);
 				}
 			} else {
 				playerVelocity = 0f;

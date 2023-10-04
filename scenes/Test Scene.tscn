@@ -10,19 +10,34 @@
 [node name="Test Scene" type="Node2D"]
 
 [node name="Default Block" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(0, 112)
+position = Vector2(86.05, 112)
+scale = Vector2(34.065, 1)
+
+[node name="Default Block5" parent="." instance=ExtResource("1_1v0s6")]
+position = Vector2(258, 99)
+rotation = -3.3999
 scale = Vector2(24, 1)
 
-[node name="Default Block4" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(0, -112)
+[node name="Default Block7" parent="." instance=ExtResource("1_1v0s6")]
+position = Vector2(306, 89)
+rotation = 2.40332
 scale = Vector2(24, 1)
+
+[node name="Default Block6" parent="." instance=ExtResource("1_1v0s6")]
+position = Vector2(190, 112)
+rotation = 0.785398
+scale = Vector2(3, 3)
+
+[node name="Default Block4" parent="." instance=ExtResource("1_1v0s6")]
+position = Vector2(86.05, -112)
+scale = Vector2(34.065, 1)
 
 [node name="Default Block2" parent="." instance=ExtResource("1_1v0s6")]
 position = Vector2(-192, 0)
 scale = Vector2(1, 14)
 
 [node name="Default Block3" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(192, 0)
+position = Vector2(360, 0)
 scale = Vector2(1, 14)
 
 [node name="Player" parent="." instance=ExtResource("2_eoc6o")]
@@ -43,6 +58,10 @@ position = Vector2(10, 96)
 
 [node name="Platform" parent="." instance=ExtResource("5_gadtr")]
 position = Vector2(-43, 46)
+
+[node name="Platform3" parent="." instance=ExtResource("5_gadtr")]
+position = Vector2(-43, -50)
+rotation = 3.14159
 
 [node name="Platform2" parent="." instance=ExtResource("5_gadtr")]
 position = Vector2(-125, 53)
