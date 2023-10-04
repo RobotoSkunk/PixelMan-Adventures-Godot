@@ -21,7 +21,7 @@ Before continuing, make sure that you read the
 ## Getting Started
 If you want to contribute to the project, you'll need to have
 
-- [Godot .NET 4.1.1](https://godotengine.org/download) installed.
+- [Godot .NET 4.1.2](https://godotengine.org/download) installed.
 - A compatible C# IDE (we recommend
     [Visual Studio Code](https://code.visualstudio.com/Download)).
 - And that's it!
