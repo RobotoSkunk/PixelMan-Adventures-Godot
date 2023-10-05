@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://l4b2aiwd3deo"]
 
-[ext_resource type="Script" path="res://objects/bullet/Bullet.cs" id="1_vgtel"]
+[ext_resource type="Script" path="res://objects/obstacles/bullet/Bullet.cs" id="1_vgtel"]
 [ext_resource type="Texture2D" uid="uid://ljje70ytq3vd" path="res://assets/sprites/atlas-1.sprites/objects/bullet/0.tres" id="1_xsmjk"]
 [ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="3_4ds8b"]
 [ext_resource type="Texture2D" uid="uid://c4lbnse06875q" path="res://assets/sprites/atlas-1.sprites/objects/bullet/1.tres" id="3_lu64d"]
