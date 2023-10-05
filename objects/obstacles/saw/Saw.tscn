@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://brkd2fftojs6k"]
+
+[ext_resource type="Texture2D" uid="uid://dk75mspyxp1u2" path="res://assets/sprites/atlas-1.sprites/objects/saw.tres" id="1_r4ne4"]
+[ext_resource type="Script" path="res://objects/obstacles/saw/Saw.cs" id="1_s0ob0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_agr6p"]
+radius = 14.0
+
+[node name="Saw" type="Area2D" node_paths=PackedStringArray("notifier", "sprite")]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_s0ob0")
+notifier = NodePath("On Screen Notifier")
+sprite = NodePath("Sprite")
+
+[node name="On Screen Notifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(4.76837e-07, 2.74181e-06)
+scale = Vector2(2.2, 2.2)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_r4ne4")
+
+[node name="Collision Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_agr6p")
+debug_color = Color(0.701961, 0, 0, 0.419608)

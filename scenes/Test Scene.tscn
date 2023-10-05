@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=9 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://objects/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="2_eoc6o"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://di0sg0hxj0ubj" path="res://objects/platform/Platform.tscn" id="5_gadtr"]
 [ext_resource type="PackedScene" uid="uid://61njvyrcqhy2" path="res://objects/camera/Camera.tscn" id="7_ialae"]
 [ext_resource type="PackedScene" uid="uid://b5ft4empinjoh" path="res://objects/power_ups/gravity_switch/Gravity Switch.tscn" id="7_uyf0w"]
+[ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://objects/obstacles/saw/Saw.tscn" id="8_01yl1"]
 
 [node name="Test Scene" type="Node2D"]
 
@@ -79,7 +80,10 @@ zoom = Vector2(3.03, 3.03)
 target = NodePath("../Player")
 
 [node name="Gravity Switch" parent="." instance=ExtResource("7_uyf0w")]
-position = Vector2(296, 46)
+position = Vector2(271, 35)
 
 [node name="Gravity Switch2" parent="." instance=ExtResource("7_uyf0w")]
 position = Vector2(69, -69)
+
+[node name="Saw" parent="." instance=ExtResource("8_01yl1")]
+position = Vector2(118, 48)
