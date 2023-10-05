@@ -18,12 +18,13 @@
 
 
 using ClockBombGames.PixelMan.Utils;
+
 using Godot;
 
 
 namespace ClockBombGames.PixelMan.GameObjects 
 {
-	public partial class GravitySwitch : Area2D
+	public partial class GravitySwitch : ExtendedArea2D<IGODynamicBody>
 	{
 		[ExportGroup("Components")]
 		[Export] VisibleOnScreenNotifier2D screenNotifier2D;
@@ -39,17 +40,18 @@ namespace ClockBombGames.PixelMan.GameObjects
 		float reloadProgress = 1f;
 
 
+
 		public override void _Ready()
 		{
 			rotationSpeed = RSRandom.Range(180f, 270f) * RSRandom.Sign();
 
-			BodyEntered += OnBodyEntered;
+			base._Ready();
 		}
 
 
 		public override void _Process(double delta)
 		{
-			if (screenNotifier2D.IsOnScreen() && Visible){
+			if (screenNotifier2D.IsOnScreen() && Visible) {
 
 				// Particles
 				particles.Visible = reloadProgress >= 1f;
@@ -69,24 +71,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 			reloadProgress += (float)delta / reloadTime;
 			reloadProgress = RSMath.Clamp01(reloadProgress);
 
-
-			bool monitor = reloadProgress >= 1f;
-
-			Monitoring = monitor;
-			Monitorable = monitor;
+			base._PhysicsProcess(delta);
 		}
 
 
-		private void OnBodyEntered(Node2D body)
+		protected override void OnBodyStay(IGODynamicBody body)
 		{
-			if (reloadProgress < 1f) {
-				return;
-			}
+			if (reloadProgress >= 1f) {
+				body.SwitchGravity();
 
-			if (body is IGODynamicBody dynamicBody) {
-				dynamicBody.SwitchGravity();
 				reloadProgress = 0f;
-
 				streamPlayer.Play();
 			}
 		}
