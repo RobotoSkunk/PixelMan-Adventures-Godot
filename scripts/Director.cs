@@ -35,7 +35,12 @@ namespace ClockBombGames.PixelMan
 
 
 		bool playerDied = false;
+		bool gamePaused = false;
 		float restartTimer = 0f;
+		/// <summary>
+		/// Cooldown between Input usage with UIs
+		/// </summary>
+		float inputTimer = 0f;
 
 		private Tween shakeTween;
 
@@ -54,7 +59,7 @@ namespace ClockBombGames.PixelMan
 
 		public override void _Process(double delta)
 		{
-			if (playerDied) {
+			if (playerDied && !gamePaused) {
 				restartTimer -= (float)delta;
 
 				if (restartTimer <= 0f) {
@@ -62,6 +67,28 @@ namespace ClockBombGames.PixelMan
 					playerDied = false;
 				}
 			}
+
+			if (inputTimer > 0f) {
+				inputTimer -= (float)(delta);
+			}
+		}
+
+		public override void _Input(InputEvent @event)
+		{
+			if (inputTimer > 0f) { 
+				return;
+			}
+
+			if (@event.IsActionPressed("pause")) {
+				TogglePause();
+				inputTimer = 0.5f;
+			}
+		}
+
+		public void TogglePause()
+		{
+			GetTree().Paused = !GetTree().Paused;
+			gamePaused = GetTree().Paused;
 		}
 
 		public void TriggerPlayerDeath()
