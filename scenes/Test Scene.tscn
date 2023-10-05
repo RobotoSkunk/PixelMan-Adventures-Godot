@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://di0sg0hxj0ubj" path="res://objects/platform/Platform.tscn" id="5_gadtr"]
 [ext_resource type="PackedScene" uid="uid://61njvyrcqhy2" path="res://objects/camera/Camera.tscn" id="7_ialae"]
 [ext_resource type="PackedScene" uid="uid://b5ft4empinjoh" path="res://objects/power_ups/gravity_switch/Gravity Switch.tscn" id="7_uyf0w"]
-[ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://objects/obstacles/saw/Saw.tscn" id="8_01yl1"]
+[ext_resource type="PackedScene" uid="uid://dph5i4hb3sd5x" path="res://objects/obstacles/saw_base/Saw Base.tscn" id="8_hrnhg"]
 
 [node name="Test Scene" type="Node2D"]
 
@@ -85,5 +85,5 @@ position = Vector2(271, 35)
 [node name="Gravity Switch2" parent="." instance=ExtResource("7_uyf0w")]
 position = Vector2(69, -69)
 
-[node name="Saw" parent="." instance=ExtResource("8_01yl1")]
-position = Vector2(118, 48)
+[node name="Saw Base" parent="." instance=ExtResource("8_hrnhg")]
+position = Vector2(118, 94)

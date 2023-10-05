@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dph5i4hb3sd5x"]
+
+[ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://objects/obstacles/saw/Saw.tscn" id="1_5vupl"]
+[ext_resource type="Script" path="res://objects/obstacles/saw_base/SawBase.cs" id="1_fja5v"]
+[ext_resource type="Texture2D" uid="uid://bwclsb5nplltg" path="res://assets/sprites/atlas-1.sprites/objects/saw-base.tres" id="2_edbag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqjt2"]
+size = Vector2(34, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkgta"]
+size = Vector2(10, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4d0t"]
+size = Vector2(20, 8)
+
+[node name="Saw Base" type="StaticBody2D" node_paths=PackedStringArray("notifier", "sprite", "saw")]
+script = ExtResource("1_fja5v")
+notifier = NodePath("On Screen Notifier")
+sprite = NodePath("Sprite")
+saw = NodePath("Saw")
+
+[node name="Saw" parent="." instance=ExtResource("1_5vupl")]
+position = Vector2(0, -13)
+
+[node name="On Screen Notifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.66893e-06, -12)
+scale = Vector2(2.3, 2.4)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("2_edbag")
+
+[node name="Collision Shape 1" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_dqjt2")
+
+[node name="Collision Shape 2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_bkgta")
+
+[node name="Collision Shape 3" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_f4d0t")

@@ -24,32 +24,35 @@ using Godot;
 
 namespace ClockBombGames.PixelMan.GameObjects
 {
-	public partial class Saw : Area2D
+	public partial class SawBase : StaticBody2D
 	{
+		[ExportGroup("Components")]
 		[Export] VisibleOnScreenNotifier2D notifier;
 		[Export] Sprite2D sprite;
+		[Export] Saw saw;
 
-		float rotationSpeed;
+		[ExportGroup("Properties")]
+		[Export] bool enableSaw = true;
 
-		public bool Enabled { get; set; } = true;
+
+		Vector2 rawPosition = Vector2.Zero;
 
 
 		public override void _Ready()
 		{
-			rotationSpeed = RSRandom.Range(600f, 700f) * RSRandom.Sign();
+			rawPosition = sprite.Position;
 		}
 
 		public override void _Process(double delta)
 		{
-			if (notifier.IsOnScreen() && Enabled) {
-				sprite.RotationDegrees += rotationSpeed * (float)delta;
-				sprite.Position = RSRandom.Circle2D();
+			if (notifier.IsOnScreen() && enableSaw) {
+				sprite.Position = rawPosition + RSRandom.Circle2D();
 			}
 		}
 
 		public override void _PhysicsProcess(double delta)
 		{
-			Monitorable = Enabled;
+			saw.Enabled = enableSaw;
 		}
 	}
 }
