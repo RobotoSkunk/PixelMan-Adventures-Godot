@@ -19,8 +19,10 @@
 
 namespace ClockBombGames.PixelMan.GameObjects
 {
-	public interface IGOImpulsable
+	public interface IGODynamicBody
 	{
 		void Impulse(float direction, float force);
+
+		void SwitchGravity();
 	}
 }

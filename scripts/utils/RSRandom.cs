@@ -77,5 +77,25 @@ namespace ClockBombGames.PixelMan.Utils
 		{
 			return new Vector2(Circle(), Circle());
 		}
+
+		/// <summary>
+		///	Generates a random sign (-1 or 1).
+		/// </summary>
+		public static float Sign()
+		{
+			return Single() > 0.5f ? -1f : 1f;
+		}
+
+		/// <summary>
+		///	Generates a random float with a Gaussian distribution.
+		/// </summary>
+		public static float Gaussian(float mean, float stdDev)
+		{
+			float u1 = 1f - Single();
+			float u2 = 1f - Single();
+
+			float randStdNormal = Mathf.Sqrt(-2f * Mathf.Log(u1)) * Mathf.Sin(2f * Mathf.Pi * u2);
+			return mean + stdDev * randStdNormal;
+		}
 	}
 }

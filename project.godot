@@ -74,6 +74,7 @@ test_button={
 2d_physics/layer_5="Trigger"
 2d_physics/layer_6="Decoration"
 2d_physics/layer_7="Projectile"
+2d_physics/layer_8="Dynamic Body"
 
 [physics]
 

@@ -50,7 +50,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				player.isInTrampoline = true;
 			}
 
-			if (body is IGOImpulsable obj) {
+			if (body is IGODynamicBody obj) {
 				obj.Impulse(Mathf.DegToRad(RotationDegrees - 90f), impulseForce);
 
 				animator.Play("bounce");

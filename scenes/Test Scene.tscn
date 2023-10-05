@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=8 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://objects/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="2_eoc6o"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dqenbapncf7e7" path="res://objects/spike/Spike.tscn" id="4_ujff4"]
 [ext_resource type="PackedScene" uid="uid://di0sg0hxj0ubj" path="res://objects/platform/Platform.tscn" id="5_gadtr"]
 [ext_resource type="PackedScene" uid="uid://61njvyrcqhy2" path="res://objects/camera/Camera.tscn" id="7_ialae"]
+[ext_resource type="PackedScene" uid="uid://b5ft4empinjoh" path="res://objects/power_ups/gravity_switch/Gravity Switch.tscn" id="7_uyf0w"]
 
 [node name="Test Scene" type="Node2D"]
 
@@ -50,6 +51,12 @@ rotation = 0.785398
 [node name="Trampoline2" parent="." instance=ExtResource("3_bkv65")]
 position = Vector2(-43, 96)
 
+[node name="Trampoline3" parent="." node_paths=PackedStringArray("animator", "audioPlayer") instance=ExtResource("3_bkv65")]
+position = Vector2(-111, -96)
+rotation = 3.14159
+animator = NodePath("../Trampoline2/Animator")
+audioPlayer = NodePath("../Trampoline2/Audio Stream")
+
 [node name="Spike" parent="." instance=ExtResource("4_ujff4")]
 position = Vector2(-6, 96)
 
@@ -70,3 +77,9 @@ type = 1
 [node name="Camera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_ialae")]
 zoom = Vector2(3.03, 3.03)
 target = NodePath("../Player")
+
+[node name="Gravity Switch" parent="." instance=ExtResource("7_uyf0w")]
+position = Vector2(296, 46)
+
+[node name="Gravity Switch2" parent="." instance=ExtResource("7_uyf0w")]
+position = Vector2(69, -69)

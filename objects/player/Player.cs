@@ -1,7 +1,7 @@
 /*
 	PixelMan Adventures - An open-source 2D platformer game.
 	Copyright (C) 2023 Edgar Lima (RobotoSkunk) <contact@robotoskunk.com>
-	Copyright (C) 2023 (Repertix)
+	Copyright (C) 2023 Repertix
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published
@@ -27,7 +27,7 @@ using ClockBombGames.PixelMan.Events;
 
 namespace ClockBombGames.PixelMan.GameObjects
 {
-	public partial class Player : CharacterBody2D, IGameObject, IGOImpulsable
+	public partial class Player : CharacterBody2D, IGameObject, IGODynamicBody
 	{
 		#region Variables
 
@@ -203,13 +203,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			get
 			{
-				Vector2 _speed = speed * floorNormal;
-
-				if (invertedGravity) {
-					return new Vector2(_speed.X, -_speed.Y);
-				} else {
-					return _speed;
-				}
+				return speed * floorNormal;
 			}
 		}
 
@@ -264,8 +258,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 				Globals.PlayerDied();
 			};
 
-			killzoneHitbox.BodyEntered += (area) => {
-				if (area is Player) {
+			killzoneHitbox.BodyEntered += (body) => {
+				if (body is Player) {
 					return;
 				}
 
@@ -333,6 +327,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 				dustParticlesTimer -= (float)delta;
 			}
 
+
+			renderer.Scale = new Vector2(renderer.Scale.X, invertedGravity ? -1f : 1f);
 
 			if (horizontalInput != 0f) {
 				int direction = horizontalInput > 0f ? 1 : -1;
@@ -420,6 +416,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			isMoving = previousPosition.DistanceSquaredTo(GlobalPosition) > 0.1f;
 			previousPosition = GlobalPosition;
+
+			UpDirection = new Vector2(0f, invertedGravity ? 1f : -1f);
 
 
 			if (pressedJump) {
@@ -516,7 +514,13 @@ namespace ClockBombGames.PixelMan.GameObjects
 			if (IsOnFloor()) {
 				floorNormal = GetFloorNormal();
 
-				rendererAngle = floorNormal.Angle() + Mathf.DegToRad(90f);
+				float floorAngle = floorNormal.Angle();
+
+				if (Mathf.RadToDeg(floorAngle) > 0f) {
+					floorAngle -= Mathf.DegToRad(180f);
+				}
+
+				rendererAngle = floorAngle + Mathf.DegToRad(90f);
 			} else {
 				floorNormal = Vector2.Zero;
 
@@ -542,6 +546,14 @@ namespace ClockBombGames.PixelMan.GameObjects
 			jumpTime = 0f;
 		}
 
+		public void SwitchGravity()
+		{
+			invertedGravity = !invertedGravity;
+		}
+
+
+
+		#region Delegate methods
 		private void OnPlayerDeath()
 		{
 			isDead = true;
@@ -560,7 +572,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 			Velocity = Vector2.Zero;
 
 			animator.Visible = true;
+			invertedGravity = false;
 		}
+		#endregion
 
 
 		public Dictionary Serialize()
