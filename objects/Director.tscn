@@ -6,7 +6,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dgo8j0r533i5t" path="res://objects/player/animations/Avatar - 2.tres" id="4_15n03"]
 [ext_resource type="SpriteFrames" uid="uid://ccs5hd3r57lrs" path="res://objects/player/animations/Avatar - 3.tres" id="5_t6nr4"]
 
-[node name="Director" type="Node2D"]
+[node name="Director" type="Node"]
 process_mode = 3
 script = ExtResource("1_ucqku")
 avatars = Array[SpriteFrames]([ExtResource("2_a42iq"), ExtResource("3_7hk0i"), ExtResource("4_15n03"), ExtResource("5_t6nr4")])

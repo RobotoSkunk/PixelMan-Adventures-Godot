@@ -27,7 +27,7 @@ namespace ClockBombGames.PixelMan
 	/// <summary>
 	/// The Director is the main node of the game.
 	/// </summary>
-	public partial class Director : Node2D
+	public partial class Director : Node
 	{
 		[Export] private int avatarIndex = 0;
 		[Export] private SpriteFrames[] avatars;
