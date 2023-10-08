@@ -1631,6 +1631,7 @@
             <key type="filename">gui/generics/xbox/button-north.png</key>
             <key type="filename">gui/generics/xbox/button-south.png</key>
             <key type="filename">gui/generics/xbox/button-weast.png</key>
+            <key type="filename">objects/mobile-saw/but-the-actual-saw.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -2015,6 +2016,22 @@
                 <rect>2,0,3,1</rect>
                 <key>scale9Paddings</key>
                 <rect>2,0,3,1</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">objects/mobile-saw/0.png</key>
+            <key type="filename">objects/mobile-saw/1.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>7,4,15,7</rect>
+                <key>scale9Paddings</key>
+                <rect>7,4,15,7</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
