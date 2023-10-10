@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://2d0cigkls7ni" path="res://assets/sprites/atlas-1.sprites/objects/mobile-saw/1.tres" id="5_agau2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ifsn"]
+radius = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n81hk"]
 size = Vector2(29, 7)
@@ -26,48 +27,50 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8syee"]
-size = Vector2(20, 5)
+size = Vector2(19, 16)
 
-[node name="Mobile Saw" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+[node name="Mobile Saw" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "container")]
 collision_layer = 132
 collision_mask = 9
 script = ExtResource("1_uhp8w")
-sprite = NodePath("Car Sprite")
+sprite = NodePath("Killzones and sprites/Car Sprite")
+container = NodePath("Killzones and sprites")
 
 [node name="Screen Notifier" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(0, -4)
 scale = Vector2(1.5, 1.3)
 
-[node name="Saw" type="Area2D" parent="." node_paths=PackedStringArray("notifier", "sprite")]
+[node name="Killzones and sprites" type="Node2D" parent="."]
+
+[node name="Saw" type="Area2D" parent="Killzones and sprites" node_paths=PackedStringArray("notifier", "sprite")]
 position = Vector2(0, -4.5)
 collision_layer = 4
 collision_mask = 0
 monitoring = false
 script = ExtResource("1_5mg2l")
-notifier = NodePath("../Screen Notifier")
+notifier = NodePath("../../Screen Notifier")
 sprite = NodePath("Saw Sprite")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Saw"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzones and sprites/Saw"]
 shape = SubResource("CircleShape2D_1ifsn")
 debug_color = Color(0.701961, 0, 0, 0.419608)
 
-[node name="Saw Sprite" type="Sprite2D" parent="Saw"]
+[node name="Saw Sprite" type="Sprite2D" parent="Killzones and sprites/Saw"]
 texture = ExtResource("1_x1xvd")
 
-[node name="Killzone" type="Area2D" parent="."]
+[node name="Killzone" type="Area2D" parent="Killzones and sprites"]
 collision_layer = 4
 collision_mask = 0
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzones and sprites/Killzone"]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_n81hk")
 debug_color = Color(0.701961, 0, 0, 0.419608)
 
-[node name="Car Sprite" type="AnimatedSprite2D" parent="."]
+[node name="Car Sprite" type="AnimatedSprite2D" parent="Killzones and sprites"]
 sprite_frames = SubResource("SpriteFrames_it7lu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 5.5)
 shape = SubResource("RectangleShape2D_8syee")
 debug_color = Color(0.701961, 0.407843, 0, 0.419608)

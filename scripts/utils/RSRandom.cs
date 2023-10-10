@@ -97,5 +97,11 @@ namespace ClockBombGames.PixelMan.Utils
 			float randStdNormal = Mathf.Sqrt(-2f * Mathf.Log(u1)) * Mathf.Sin(2f * Mathf.Pi * u2);
 			return mean + stdDev * randStdNormal;
 		}
+
+
+		public static bool Bool()
+		{
+			return Single() > 0.5f;
+		}
 	}
 }
