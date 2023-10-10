@@ -28,7 +28,21 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[ExportGroup("Components")]
 		[Export] AnimatedSprite2D sprite;
 
+
+		/// <summary>
+		/// Tells if the saw is moving in the positive direction.
+		/// </summary>
 		private bool goPositive = true;
+
+		/// <summary>
+		/// The normal vector of the floor.
+		/// </summary>
+		private Vector2 floorNormal;
+
+		/// <summary>
+		/// The raw angle of the object.
+		/// </summary>
+		private float rawAngle = 0f;
 
 
 		public override void _Ready()
@@ -38,9 +52,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _PhysicsProcess(double delta)
 		{
-			Vector2 velocity = ProcessVelocity(speed.X * (goPositive ? 1f : -1f) * 1.2f, true, (float)delta);
-
-			ApplyVelocity(velocity);
+			ApplyVelocity(
+				ProcessVelocity(speed.X * (goPositive ? 1f : -1f) * 1.5f, true, (float)delta)
+			);
 
 			// Purrr meow meow.
 			MoveAndSlide();
@@ -52,6 +66,25 @@ namespace ClockBombGames.PixelMan.GameObjects
 				Velocity = new Vector2(0f, Velocity.Y);
 				goPositive = !goPositive;
 			}
+
+
+			if (IsOnFloor()) {
+				floorNormal = GetFloorNormal();
+
+				float floorAngle = floorNormal.Angle();
+
+				if (Mathf.RadToDeg(floorAngle) > 0f) {
+					floorAngle -= Mathf.DegToRad(180f);
+				}
+
+				rawAngle = floorAngle + Mathf.DegToRad(90f);
+			} else {
+				floorNormal = Vector2.Zero;
+
+				rawAngle = 0f;
+			}
+
+			Rotation = Mathf.Lerp(Rotation, rawAngle, 0.33f);
 		}
 
 		public override void Impulse(float direction, float force)

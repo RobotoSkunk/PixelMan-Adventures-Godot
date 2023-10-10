@@ -89,9 +89,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private float dustParticlesTimer = 0f;
 
 		/// <summary>
-		/// The angle of the renderer.
+		/// The raw angle of the player.
 		/// </summary>
-		private float rendererAngle = 0f;
+		private float rawAngle = 0f;
 
 
 		/// <summary>
@@ -453,14 +453,14 @@ namespace ClockBombGames.PixelMan.GameObjects
 					floorAngle -= Mathf.DegToRad(180f);
 				}
 
-				rendererAngle = floorAngle + Mathf.DegToRad(90f);
+				rawAngle = floorAngle + Mathf.DegToRad(90f);
 			} else {
 				floorNormal = Vector2.Zero;
 
-				rendererAngle = 0f;
+				rawAngle = 0f;
 			}
 
-			renderer.Rotation = Mathf.Lerp(renderer.Rotation, rendererAngle, 0.33f);
+			Rotation = Mathf.Lerp(Rotation, rawAngle, 0.33f);
 		}
 
 		public override void Impulse(float direction, float force)
