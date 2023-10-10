@@ -27,7 +27,7 @@ using ClockBombGames.PixelMan.Events;
 
 namespace ClockBombGames.PixelMan.GameObjects
 {
-	public partial class Player : CharacterBody2D, IGameObject, IGODynamicBody
+	public partial class Player : DynamicBody, IGameObject
 	{
 		#region Variables
 
@@ -60,11 +60,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		private readonly float maxHangCount = 0.1f;
 
-		/// <summary>
-		/// The speed to be applied to the player.
-		/// </summary>
-		private readonly Vector2 speed = new(144, 272);
-
 
 		/// <summary>
 		/// The player's death particles list.
@@ -94,16 +89,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private float dustParticlesTimer = 0f;
 
 		/// <summary>
-		/// Friction applied to the player.
-		/// </summary>
-		private float friction = 0f;
-
-		/// <summary>
-		/// Acceleration input applied to the player.
-		/// </summary>
-		private float acceleration = 0f;
-
-		/// <summary>
 		/// The angle of the renderer.
 		/// </summary>
 		private float rendererAngle = 0f;
@@ -128,11 +113,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// If the jump button can reduce the jump force when released.
 		/// </summary>
 		private bool canReduceJump = false;
-
-		/// <summary>
-		/// If the gravity is inverted.
-		/// </summary>
-		private bool invertedGravity = false;
 
 		/// <summary>
 		/// If the player should emit dust particles when falling.
@@ -181,20 +161,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		#endregion
 
 		#region Getters and setters
-		/// <summary>
-		/// Gravity force applied to the player.
-		/// </summary>
-		private float Gravity
-		{
-			get
-			{
-				if (invertedGravity) {
-					return -Constants.Gravity;
-				} else {
-					return Constants.Gravity;
-				}
-			}
-		}
 
 		/// <summary>
 		/// Player's jump force.
@@ -417,8 +383,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 			isMoving = previousPosition.DistanceSquaredTo(GlobalPosition) > 0.1f;
 			previousPosition = GlobalPosition;
 
-			UpDirection = new Vector2(0f, invertedGravity ? 1f : -1f);
-
 
 			if (pressedJump) {
 				jumpTime = maxJumpTime;
@@ -439,36 +403,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			#region Process physics
 
-			Vector2 velocity = Velocity;
+			Vector2 velocity = ProcessVelocity(WantedHorizontalSpeed, horizontalInput != 0f, (float)delta);
 
-			#region Horizontal movement
-
-			// Apply friction
-			if (IsOnFloor() && horizontalInput == 0f) {
-				friction = 4f;
-				acceleration = 1f;
-			} else {
-				friction = 2f;
-				acceleration = 3f;
-			}
-
-			if (Mathf.Abs(Velocity.X) > 10f) {
-				velocity.X -= Mathf.Sign(Velocity.X) * friction * speed.X * (float)delta;
-			} else {
-				velocity.X = 0f;
-			}
-
-			// Apply horizontal input
-			if (Mathf.Abs(Velocity.X) < speed.X && horizontalInput != 0f) {
-				velocity.X += Mathf.Pow(WantedHorizontalSpeed * (float)delta, 2f)
-								* Mathf.Sign(WantedHorizontalSpeed)
-								* acceleration;
-			}
-			#endregion
-
-			#region Vertical movement
-			velocity.Y += Gravity * (float)delta;
-
+			#region Jump
 			if (jumpTime > 0f && hangCount > 0f) {
 				velocity.Y += JumpForce.Y;
 
@@ -499,12 +436,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 				releasedJump = false;
 			}
 
-
 			// Apply changes
-			Velocity = new Vector2(
-				Mathf.Clamp(velocity.X, -Constants.maxSpeed, Constants.maxSpeed),
-				Mathf.Clamp(velocity.Y, -Constants.maxSpeed, Constants.maxSpeed)
-			);
+			ApplyVelocity(velocity);
 
 			// The man? Pixel'd
 			MoveAndSlide();
@@ -530,25 +463,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 			renderer.Rotation = Mathf.Lerp(renderer.Rotation, rendererAngle, 0.33f);
 		}
 
-
-		public void AddVelocity(Vector2 velocity)
+		public override void Impulse(float direction, float force)
 		{
-			Velocity += velocity;
-		}
-
-		public void Impulse(float direction, float force)
-		{
-			Vector2 directionVector = RSMath.AngleToVector(direction);
-
-			Velocity *= Vector2.One - RSMath.Abs(directionVector);
-			Velocity += directionVector * force;
+			base.Impulse(direction, force);
 
 			jumpTime = 0f;
-		}
-
-		public void SwitchGravity()
-		{
-			invertedGravity = !invertedGravity;
 		}
 
 

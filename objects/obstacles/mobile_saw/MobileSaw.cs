@@ -17,36 +17,51 @@
 */
 
 
+using ClockBombGames.PixelMan.Utils;
 using Godot;
 
 
 namespace ClockBombGames.PixelMan.GameObjects
 {
-	public partial class MobileSaw : CharacterBody2D
+	public partial class MobileSaw : DynamicBody
 	{
-		[Export] float speed = 1f;
-
+		[ExportGroup("Components")]
+		[Export] AnimatedSprite2D sprite;
 
 		private bool goPositive = true;
 
 
+		public override void _Ready()
+		{
+			sprite.Play();
+		}
+
 		public override void _PhysicsProcess(double delta)
 		{
-			Vector2 velocity = Velocity;
+			Vector2 velocity = ProcessVelocity(speed.X * (goPositive ? 1f : -1f) * 1.2f, true, (float)delta);
 
-			velocity.X = speed * (goPositive ? 1f : -1f);
-			velocity.Y += Constants.Gravity * (float)delta;
-
-
-			Velocity = velocity;
+			ApplyVelocity(velocity);
 
 			// Purrr meow meow.
 			MoveAndSlide();
 
+			sprite.Offset = new Vector2(0f, RSRandom.Circle());
 
 			if (IsOnWall())
 			{
+				Velocity = new Vector2(0f, Velocity.Y);
 				goPositive = !goPositive;
+			}
+		}
+
+		public override void Impulse(float direction, float force)
+		{
+			base.Impulse(direction, force);
+
+			Vector2 directionVector = Vector2.Right.Rotated(direction);
+
+			if (Mathf.Abs(directionVector.X) > 0.1f) {
+				goPositive = directionVector.X > 0f;
 			}
 		}
 	}

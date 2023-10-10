@@ -1,62 +1,46 @@
-[gd_scene load_steps=10 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=6 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://objects/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="2_eoc6o"]
 [ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://objects/trampoline/Trampoline.tscn" id="3_bkv65"]
-[ext_resource type="PackedScene" uid="uid://dqenbapncf7e7" path="res://objects/obstacles/spike/Spike.tscn" id="4_ujff4"]
-[ext_resource type="PackedScene" uid="uid://di0sg0hxj0ubj" path="res://objects/platform/Platform.tscn" id="5_gadtr"]
 [ext_resource type="PackedScene" uid="uid://61njvyrcqhy2" path="res://objects/camera/Camera.tscn" id="7_ialae"]
-[ext_resource type="PackedScene" uid="uid://b5ft4empinjoh" path="res://objects/power_ups/gravity_switch/Gravity Switch.tscn" id="7_uyf0w"]
-[ext_resource type="PackedScene" uid="uid://dph5i4hb3sd5x" path="res://objects/obstacles/saw_base/Saw Base.tscn" id="8_hrnhg"]
 [ext_resource type="PackedScene" uid="uid://cfmk4d5cmkdfh" path="res://objects/obstacles/mobile_saw/Mobile Saw.tscn" id="9_tmqdc"]
 
 [node name="Test Scene" type="Node2D"]
 
 [node name="Default Block" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(86.05, 112)
-scale = Vector2(34.065, 1)
+position = Vector2(261, 112)
+scale = Vector2(56.92, 1)
 
 [node name="Default Block5" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(258, 99)
+position = Vector2(570, 99)
 rotation = -3.3999
 scale = Vector2(24, 1)
 
 [node name="Default Block7" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(306, 89)
+position = Vector2(618, 89)
 rotation = 2.40332
 scale = Vector2(24, 1)
 
 [node name="Default Block6" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(190, 112)
+position = Vector2(502, 112)
 rotation = 0.785398
 scale = Vector2(3, 3)
 
 [node name="Default Block4" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(86.05, -112)
-scale = Vector2(34.065, 1)
+position = Vector2(261, -112)
+scale = Vector2(56.92, 1)
 
 [node name="Default Block2" parent="." instance=ExtResource("1_1v0s6")]
 position = Vector2(-192, 0)
 scale = Vector2(1, 14)
 
 [node name="Default Block3" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(360, 0)
-scale = Vector2(1, 14)
-
-[node name="Default Block8" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(69.05, 360)
-scale = Vector2(34.065, 1)
-
-[node name="Default Block9" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(-209, 248)
-scale = Vector2(1, 14)
-
-[node name="Default Block10" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(343, 248)
+position = Vector2(713, 0)
 scale = Vector2(1, 14)
 
 [node name="Player" parent="." instance=ExtResource("2_eoc6o")]
-position = Vector2(-93, 332)
+position = Vector2(-78, 84)
 
 [node name="Trampoline" parent="." instance=ExtResource("3_bkv65")]
 position = Vector2(-172, 92)
@@ -65,41 +49,9 @@ rotation = 0.785398
 [node name="Trampoline2" parent="." instance=ExtResource("3_bkv65")]
 position = Vector2(-43, 96)
 
-[node name="Trampoline3" parent="." node_paths=PackedStringArray("animator", "audioPlayer") instance=ExtResource("3_bkv65")]
-position = Vector2(-111, -96)
-rotation = 3.14159
-animator = NodePath("../Trampoline2/Animator")
-audioPlayer = NodePath("../Trampoline2/Audio Stream")
-
-[node name="Spike" parent="." instance=ExtResource("4_ujff4")]
-position = Vector2(-6, 96)
-
-[node name="Spike2" parent="." instance=ExtResource("4_ujff4")]
-position = Vector2(10, 96)
-
-[node name="Platform" parent="." instance=ExtResource("5_gadtr")]
-position = Vector2(-43, 46)
-
-[node name="Platform3" parent="." instance=ExtResource("5_gadtr")]
-position = Vector2(-43, -50)
-rotation = 3.14159
-
-[node name="Platform2" parent="." instance=ExtResource("5_gadtr")]
-position = Vector2(-125, 53)
-type = 1
-
 [node name="Camera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_ialae")]
 zoom = Vector2(3.03, 3.03)
 target = NodePath("../Player")
 
-[node name="Gravity Switch" parent="." instance=ExtResource("7_uyf0w")]
-position = Vector2(271, 35)
-
-[node name="Gravity Switch2" parent="." instance=ExtResource("7_uyf0w")]
-position = Vector2(69, -69)
-
-[node name="Saw Base" parent="." instance=ExtResource("8_hrnhg")]
-position = Vector2(118, 94)
-
 [node name="Mobile Saw" parent="." instance=ExtResource("9_tmqdc")]
-position = Vector2(139, 335)
+position = Vector2(62, 94)
