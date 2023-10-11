@@ -12,6 +12,10 @@
 	<b>A simple, low-resource, open-source platformer game!</b>
 </p>
 
+## "Deep-Testing" Branch
+You're right now out of the main branch. This branch is meant for testing features deeply and some of these features may be unpolished or against the main coding standards.
+
+If you're looking for the main branch you can [Click here](https://github.com/ClockBomb-Games/PixelMan-Adventures)
 
 ## Development
 The game is being developed using [Godot .NET 4.1.2](https://godotengine.org/download).

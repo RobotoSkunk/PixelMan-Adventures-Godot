@@ -158,6 +158,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// The normal vector of the floor.
 		/// </summary>
 		private Vector2 floorNormal;
+
+		/// <summary>
+		/// If this player instance is for the second player
+		/// </summary>
+		public bool isSecondPlayer = false;
 		#endregion
 
 		#region Getters and setters
@@ -240,7 +245,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 				if (node is PlayerDeathParticle particle) {
 					particle.Visible = false;
 					deathParticles[i] = particle;
-
 					GetOwner<Node2D>().CallDeferred("add_child", node);
 				}
 			}
@@ -252,11 +256,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 				return;
 			}
 
-			if (@event.IsActionPressed("jump")) {
+			if (@event.IsActionPressed((isSecondPlayer ? "jump_snd" : "jump"))) {
 				pressedJump = true;
 			}
 
-			if (@event.IsActionReleased("jump")) {
+			if (@event.IsActionReleased((isSecondPlayer ? "jump_snd" : "jump"))) {
 				releasedJump = true;
 			}
 		}
@@ -268,7 +272,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				return;
 			}
 
-			horizontalInput = Input.GetAxis("left", "right");
+			horizontalInput = isSecondPlayer ? Input.GetAxis("left_snd", "right_snd") : Input.GetAxis("left", "right");
 
 			#region Dust Particles
 			bool doDustTimer = false;

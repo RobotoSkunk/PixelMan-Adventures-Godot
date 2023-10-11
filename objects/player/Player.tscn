@@ -81,7 +81,7 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Animator" type="AnimatedSprite2D" parent="Rendering"]
 sprite_frames = ExtResource("4_7yq56")
-animation = &"running"
+animation = &"idle"
 offset = Vector2(0, -4)
 
 [node name="Dust Particles" type="GPUParticles2D" parent="Rendering"]

@@ -73,6 +73,7 @@ namespace ClockBombGames.PixelMan
 	{
 		// Private variables
 		static Director director = null;
+		static Node2D sceneTree = null;
 		static int avatarIndex = 0;
 		static float shakeStrength = 0f;
 		readonly static List<Player> players = new();
@@ -84,6 +85,14 @@ namespace ClockBombGames.PixelMan
 		public static Director Director
 		{
 			get => director;
+		}
+
+		/// <summary>
+		/// The start of the list of Nodes in the current scene
+		/// </summary>
+		public static Node2D SceneTree
+		{
+			get => sceneTree;
 		}
 
 		/// <summary>
@@ -142,6 +151,15 @@ namespace ClockBombGames.PixelMan
 		{
 			Globals.director = director;
 		}
+
+		/// <summary>
+		/// Sets the scene tree of the game.
+		/// </summary>
+		public static void SetSceneTree(Node2D sceneTree)
+		{
+			Globals.sceneTree = sceneTree;
+		}
+
 
 		/// <summary>
 		/// Registers a player to the game.
