@@ -17,6 +17,7 @@
 */
 
 
+using ClockBombGames.PixelMan.Events;
 using ClockBombGames.PixelMan.Utils;
 using Godot;
 
@@ -27,6 +28,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 	{
 		[ExportGroup("Components")]
 		[Export] AnimatedSprite2D sprite;
+		[Export] Node2D container;
 
 
 		/// <summary>
@@ -35,25 +37,39 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private bool goPositive = true;
 
 		/// <summary>
+		/// The raw angle of the object.
+		/// </summary>
+		private float rawAngle = 0f;
+
+		/// <summary>
 		/// The normal vector of the floor.
 		/// </summary>
 		private Vector2 floorNormal;
 
 		/// <summary>
-		/// The raw angle of the object.
+		/// The initial position of the object.
 		/// </summary>
-		private float rawAngle = 0f;
+		private Vector2 initialPosition;
 
 
 		public override void _Ready()
 		{
 			sprite.Play();
+			goPositive = RSRandom.Bool();
+			initialPosition = Position;
+
+			GameEvents.OnResetGame += OnGameReset;
+		}
+
+		public override void _Process(double delta)
+		{
+			container.Scale = new Vector2(1f, invertedGravity ? -1f : 1f);
 		}
 
 		public override void _PhysicsProcess(double delta)
 		{
 			ApplyVelocity(
-				ProcessVelocity(speed.X * (goPositive ? 1f : -1f) * 1.5f, true, (float)delta)
+				ProcessVelocity(speed.X * (goPositive ? 1f : -1f) * 2f, true, (float)delta)
 			);
 
 			// Purrr meow meow.
@@ -96,6 +112,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 			if (Mathf.Abs(directionVector.X) > 0.1f) {
 				goPositive = directionVector.X > 0f;
 			}
+		}
+
+
+		private void OnGameReset()
+		{
+			Position = initialPosition;
+			Velocity = Vector2.Zero;
+
+			goPositive = RSRandom.Bool();
+			invertedGravity = false;
 		}
 	}
 }
