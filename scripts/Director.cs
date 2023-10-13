@@ -21,7 +21,6 @@ using Godot;
 
 using ClockBombGames.PixelMan.Events;
 using ClockBombGames.PixelMan.GameObjects;
-using System.Linq;
 
 namespace ClockBombGames.PixelMan
 {
@@ -33,11 +32,14 @@ namespace ClockBombGames.PixelMan
 		[Export] private int avatarIndex = 0;
 		[Export] private SpriteFrames[] avatars;
 		[Export] private float shakeStrength;
+		[Export] private PackedScene playerScene;
 
 		bool playerDied = false;
 		bool secondPlayer = false;
 		bool gamePaused = false;
 		float restartTimer = 0f;
+
+
 		/// <summary>
 		/// Cooldown between Input usage with UIs
 		/// </summary>
@@ -49,6 +51,12 @@ namespace ClockBombGames.PixelMan
 		public SpriteFrames[] Avatars
 		{
 			get => avatars;
+		}
+
+		// TODO: Test only, remove later
+		public PackedScene PlayerScene
+		{
+			get => playerScene;
 		}
 
 
@@ -86,7 +94,7 @@ namespace ClockBombGames.PixelMan
 				inputTimer = 0.5f;
 			}
 
-			if (@event.IsActionPressed("snd_player")) {
+			if (@event.IsActionPressed("second_player")) {
 				AddSecondPlayer();
 			}
 		}
@@ -123,11 +131,15 @@ namespace ClockBombGames.PixelMan
 
 		public static void AddSecondPlayer()
 		{
-			CharacterBody2D playerRes = GD.Load<PackedScene>("res://objects/player/Player.tscn").Instantiate<CharacterBody2D>();
-			playerRes.GlobalPosition = Globals.GetPlayers()[0].GlobalPosition;
-			playerRes.SetDeferred("isSecondPlayer", true);
-			Globals.SceneTree.CallDeferred("add_child", playerRes);
+			Player secondPlayer = Globals.PlayerScene.Instantiate<Player>();
+			Player firstPlayer = Globals.GetPlayers()[0];
+
+			secondPlayer.GlobalPosition = Globals.GetPlayers()[0].GlobalPosition;
+			secondPlayer.PlayerIndex = 2;
+
+			firstPlayer.PlayerIndex = 1;
+
+			Globals.SceneTree.CallDeferred("add_child", secondPlayer);
 		}
-		
 	}
 }

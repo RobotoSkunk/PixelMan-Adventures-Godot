@@ -95,6 +95,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 
 		/// <summary>
+		/// The player's index.<br/>
+		/// <list type="bullet">
+		///     <item>0 = Single player</item>
+		///     <item>1 = Player 1</item>
+		///     <item>2 = Player 2</item>
+		/// </list>
+		/// </summary>
+		public int playerIndex = 0;
+
+
+		/// <summary>
 		/// If the player is in a trampoline.
 		/// </summary>
 		public bool isInTrampoline = false;
@@ -158,11 +169,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// The normal vector of the floor.
 		/// </summary>
 		private Vector2 floorNormal;
-
-		/// <summary>
-		/// If this player instance is for the second player
-		/// </summary>
-		public bool isSecondPlayer = false;
 		#endregion
 
 		#region Getters and setters
@@ -198,6 +204,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 			{
 				return speed.X * horizontalInput;
 			}
+		}
+
+
+		/// <summary>
+		/// The player's index.
+		/// </summary>
+		public int PlayerIndex
+		{
+			get => playerIndex;
+			set => playerIndex = value;
 		}
 		#endregion
 
@@ -256,12 +272,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 				return;
 			}
 
-			if (@event.IsActionPressed((isSecondPlayer ? "jump_snd" : "jump"))) {
-				pressedJump = true;
-			}
 
-			if (@event.IsActionReleased((isSecondPlayer ? "jump_snd" : "jump"))) {
-				releasedJump = true;
+			bool isJumpPressed = playerIndex switch
+			{
+				1 => Input.IsActionPressed("jump_p1"),
+				2 => Input.IsActionPressed("jump_p2"),
+				_ => Input.IsActionPressed("jump"),
+			};
+
+			if (isJumpPressed) {
+				pressedJump = true;
 			}
 		}
 
@@ -272,7 +292,13 @@ namespace ClockBombGames.PixelMan.GameObjects
 				return;
 			}
 
-			horizontalInput = isSecondPlayer ? Input.GetAxis("left_snd", "right_snd") : Input.GetAxis("left", "right");
+			horizontalInput = playerIndex switch
+			{
+				1 => Input.GetAxis("left_p1", "right_p1"),
+				2 => Input.GetAxis("left_p2", "right_p2"),
+				_ => Input.GetAxis("left", "right"),
+			};
+
 
 			#region Dust Particles
 			bool doDustTimer = false;

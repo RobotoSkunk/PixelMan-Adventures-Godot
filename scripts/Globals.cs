@@ -134,6 +134,12 @@ namespace ClockBombGames.PixelMan
 			get => shakeStrength;
 		}
 
+		// TODO: Test only, remove later
+		public static PackedScene PlayerScene
+		{
+			get => director.PlayerScene;
+		}
+
 
 		/// <summary>
 		/// Tells the director that the player died.
