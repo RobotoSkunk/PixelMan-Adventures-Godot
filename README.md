@@ -11,7 +11,6 @@
 <p align="center" style="font-size: 1.3em">
 	<b>A simple, low-resource, open-source platformer game!</b>
 </p>
-[Click here](https://github.com/ClockBomb-Games/PixelMan-Adventures)
 
 ## Development
 The game is being developed using [Godot .NET 4.1.2](https://godotengine.org/download).
