@@ -22,6 +22,7 @@ using ClockBombGames.PixelMan.Utils;
 using Godot.Collections;
 using Godot;
 using System.Linq;
+using ClockBombGames.PixelMan.Events;
 
 
 namespace ClockBombGames.PixelMan.GameObjects
@@ -50,6 +51,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		int pathIndex = 0;
 
 		/// <summary>
+		/// If true, the saw is moving forward.
+		/// </summary>
+		bool goingForward = true;
+
+		/// <summary>
 		/// The initial position of the saw.
 		/// </summary>
 		Vector2 initialPosition = Vector2.Zero;
@@ -65,6 +71,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			rotationSpeed = RSRandom.Range(600f, 700f) * RSRandom.Sign();
 			initialPosition = Position;
+
+			GameEvents.OnResetGame += OnGameReset;
 
 			if (path != null && path.Count > 1) {
 				linePath.Points = path.ToArray();
@@ -89,22 +97,45 @@ namespace ClockBombGames.PixelMan.GameObjects
 				Vector2 target = initialPosition + path[pathIndex];
 
 				Position = Position.MoveToward(target, speed * (float)delta);
-
 				linePath.GlobalPosition = initialPosition;
 
 
 				if (Position.DistanceTo(target) < 1f) {
-					pathIndex++;
 
+					// Point to the next target
+					if (goingForward) {
+						pathIndex++;
+					} else {
+						pathIndex--;
+					}
+
+					// Check if the path is finished
 					if (pathIndex >= path.Count) {
-						pathIndex = 0;
 
-						if (!returnToStart) {
-							path.Reverse();
+						// Check if the path should be looped or reversed
+						if (returnToStart) {
+							pathIndex = 0;
+
+						} else {
+							goingForward = false;
+
+							pathIndex -= 2; // -2 because the index was already incremented
+											// and we want to go back to the previous point
 						}
+					} else if (pathIndex < 0) { // This should only happen if the path is reversed
+						goingForward = true;
+						pathIndex += 2;
 					}
 				}
 			}
+		}
+
+
+		private void OnGameReset()
+		{
+			Position = initialPosition;
+			goingForward = true;
+			pathIndex = 0;
 		}
 	}
 }

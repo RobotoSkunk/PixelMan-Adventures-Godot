@@ -65,5 +65,4 @@ speed = 160.0
 [node name="Saw3" parent="." instance=ExtResource("5_kr1w6")]
 position = Vector2(262, 94)
 path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0), Vector2(40, -80)])
-returnToStart = true
 speed = 160.0
