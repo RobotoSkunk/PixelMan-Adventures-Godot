@@ -51,7 +51,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		int pathIndex = 0;
 
 		/// <summary>
-		/// If true, the saw is moving forward.
+		/// If true, the saw is moving forward in the path.
 		/// </summary>
 		bool goingForward = true;
 
@@ -66,6 +66,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		public bool Enabled { get; set; } = true;
 
+		/// <summary>
+		/// If true, it means that the saw has a path to follow.
+		/// </summary>
+		public bool HasAPath
+		{
+			get
+			{
+				return path != null && path.Count > 1;
+			}
+		}
+
 
 		public override void _Ready()
 		{
@@ -74,13 +85,15 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			GameEvents.OnResetGame += OnGameReset;
 
-			if (path != null && path.Count > 1) {
+			if (HasAPath) {
 				linePath.Points = path.ToArray();
 
 				if (returnToStart) {
 					linePath.AddPoint(path[0]);
 				}
 			}
+
+			linePath.Visible = HasAPath;
 		}
 
 		public override void _Process(double delta)
@@ -89,15 +102,18 @@ namespace ClockBombGames.PixelMan.GameObjects
 				sprite.RotationDegrees += rotationSpeed * (float)delta;
 				sprite.Position = RSRandom.Circle2D();
 			}
+
+			if (HasAPath) {
+				linePath.GlobalPosition = initialPosition;
+			}
 		}
 
 		public override void _PhysicsProcess(double delta)
 		{
-			if (path != null && path.Count > 1 && Enabled) {
+			if (HasAPath && Enabled) {
 				Vector2 target = initialPosition + path[pathIndex];
 
 				Position = Position.MoveToward(target, speed * (float)delta);
-				linePath.GlobalPosition = initialPosition;
 
 
 				if (Position.DistanceTo(target) < 1f) {
