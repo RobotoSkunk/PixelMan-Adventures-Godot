@@ -45,6 +45,7 @@ namespace ClockBombGames.PixelMan
 		/// </summary>
 		float inputTimer = 0f;
 
+		private Player[] players;
 		private Tween shakeTween;
 
 
@@ -129,12 +130,18 @@ namespace ClockBombGames.PixelMan
 			this.SetShakeStrength(0f);
 		}
 
-		public static void AddSecondPlayer()
+		public void AddSecondPlayer()
 		{
-			Player secondPlayer = Globals.PlayerScene.Instantiate<Player>();
-			Player firstPlayer = Globals.GetPlayers()[0];
+			Globals.GetPlayersNonAlloc(ref players);
 
-			secondPlayer.GlobalPosition = Globals.GetPlayers()[0].GlobalPosition;
+			if (players.Length >= 2) {
+				return;
+			}
+
+			Player secondPlayer = Globals.PlayerScene.Instantiate<Player>();
+			Player firstPlayer = players[0];
+
+			secondPlayer.GlobalPosition = players[0].GlobalPosition;
 			secondPlayer.PlayerIndex = 2;
 
 			firstPlayer.PlayerIndex = 1;

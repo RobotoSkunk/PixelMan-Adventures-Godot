@@ -184,6 +184,14 @@ namespace ClockBombGames.PixelMan
 		}
 
 		/// <summary>
+		/// Gets all the registered players and puts them in the given array.
+		/// </summary>
+		public static void GetPlayersNonAlloc(ref Player[] array)
+		{
+			players.CopyTo(array);
+		}
+
+		/// <summary>
 		/// Unregisters all the players.
 		/// </summary>
 		public static void UnregisterPlayers(this Director _)
