@@ -53,6 +53,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		public override void _PhysicsProcess(double delta)
 		{
 			saw.Enabled = enableSaw;
+			saw.Monitorable = enableSaw;
 		}
 	}
 }

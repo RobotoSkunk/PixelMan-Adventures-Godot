@@ -19,6 +19,7 @@
 
 
 using ClockBombGames.PixelMan.Utils;
+using Godot.Collections;
 using Godot;
 
 
@@ -29,14 +30,38 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] VisibleOnScreenNotifier2D notifier;
 		[Export] Sprite2D sprite;
 
-		float rotationSpeed;
+		[ExportGroup("Settings")]
+		[Export] Array<Vector2> path;
+		[Export] bool returnToStart; // Instead of just reversing the path, it will return directly to the start
+		[Export] float speed;
 
+
+		/// <summary>
+		/// If true, the path will be looped.
+		/// </summary>
+		float rotationSpeed = 0f;
+
+		/// <summary>
+		/// The current index of the path.
+		/// </summary>
+		int pathIndex = 0;
+
+		/// <summary>
+		/// The initial position of the saw.
+		/// </summary>
+		Vector2 initialPosition = Vector2.Zero;
+
+
+		/// <summary>
+		/// If true, the saw will move.
+		/// </summary>
 		public bool Enabled { get; set; } = true;
 
 
 		public override void _Ready()
 		{
 			rotationSpeed = RSRandom.Range(600f, 700f) * RSRandom.Sign();
+			initialPosition = Position;
 		}
 
 		public override void _Process(double delta)
@@ -49,7 +74,24 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _PhysicsProcess(double delta)
 		{
-			Monitorable = Enabled;
+			if (path != null && path.Count > 1 && Enabled) {
+				Vector2 target = initialPosition + path[pathIndex];
+
+				Position = Position.MoveToward(target, speed * (float)delta);
+
+
+				if (Position.DistanceTo(target) < 1f) {
+					pathIndex++;
+
+					if (pathIndex >= path.Count) {
+						pathIndex = 0;
+
+						if (!returnToStart) {
+							path.Reverse();
+						}
+					}
+				}
+			}
 		}
 	}
 }
