@@ -439,7 +439,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 			if (jumpTime > 0f && hangCount > 0f) {
 				velocity.Y += JumpForce.Y;
 
-				if (WantedHorizontalSpeed == 0f) {
+				if (
+					WantedHorizontalSpeed == 0f ||
+					WantedHorizontalSpeed > 0f && velocity.X < JumpForce.X ||
+					WantedHorizontalSpeed < 0f && velocity.X > -JumpForce.X
+				) {
 					velocity.X = JumpForce.X * 1.8f;
 				}
 
