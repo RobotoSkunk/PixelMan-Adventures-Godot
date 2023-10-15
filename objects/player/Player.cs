@@ -275,9 +275,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			bool isJumpPressed = playerIndex switch
 			{
-				1 => Input.IsActionPressed("jump_p1"),
-				2 => Input.IsActionPressed("jump_p2"),
-				_ => Input.IsActionPressed("jump"),
+				1 => @event.IsActionPressed("jump_p1"),
+				2 => @event.IsActionPressed("jump_p2"),
+				_ => @event.IsActionPressed("jump"),
 			};
 
 			if (isJumpPressed) {
