@@ -21,14 +21,17 @@
 using ClockBombGames.PixelMan.Utils;
 using Godot.Collections;
 using Godot;
+using System.Linq;
 
 
 namespace ClockBombGames.PixelMan.GameObjects
 {
 	public partial class Saw : Area2D
 	{
+		[ExportCategory("Components")]
 		[Export] VisibleOnScreenNotifier2D notifier;
 		[Export] Sprite2D sprite;
+		[Export] Line2D linePath;
 
 		[ExportGroup("Settings")]
 		[Export] Array<Vector2> path;
@@ -62,6 +65,14 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			rotationSpeed = RSRandom.Range(600f, 700f) * RSRandom.Sign();
 			initialPosition = Position;
+
+			if (path != null && path.Count > 1) {
+				linePath.Points = path.ToArray();
+
+				if (returnToStart) {
+					linePath.AddPoint(path[0]);
+				}
+			}
 		}
 
 		public override void _Process(double delta)
@@ -78,6 +89,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 				Vector2 target = initialPosition + path[pathIndex];
 
 				Position = Position.MoveToward(target, speed * (float)delta);
+
+				linePath.GlobalPosition = initialPosition;
 
 
 				if (Position.DistanceTo(target) < 1f) {

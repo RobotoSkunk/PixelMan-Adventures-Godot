@@ -6,17 +6,22 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_agr6p"]
 radius = 14.0
 
-[node name="Saw" type="Area2D" node_paths=PackedStringArray("notifier", "sprite")]
+[node name="Saw" type="Area2D" node_paths=PackedStringArray("notifier", "sprite", "linePath")]
 collision_layer = 4
 collision_mask = 0
 monitoring = false
 script = ExtResource("1_s0ob0")
 notifier = NodePath("On Screen Notifier")
 sprite = NodePath("Sprite")
+linePath = NodePath("Line2D")
 
 [node name="On Screen Notifier" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(4.76837e-07, 2.74181e-06)
 scale = Vector2(2.2, 2.2)
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 1.0
+default_color = Color(0.25, 0.25, 0.25, 1)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_r4ne4")
