@@ -73,7 +73,6 @@ namespace ClockBombGames.PixelMan
 	{
 		// Private variables
 		static Director director = null;
-		static Node2D sceneTree = null;
 		static int avatarIndex = 0;
 		static float shakeStrength = 0f;
 		readonly static List<Player> players = new();
@@ -90,10 +89,7 @@ namespace ClockBombGames.PixelMan
 		/// <summary>
 		/// The start of the list of Nodes in the current scene
 		/// </summary>
-		public static Node2D SceneTree
-		{
-			get => sceneTree;
-		}
+		public static Node2D SceneTree { get; set; }
 
 		/// <summary>
 		/// Shorthand of <code>Globals.Director.Avatars</code>
@@ -158,14 +154,6 @@ namespace ClockBombGames.PixelMan
 			Globals.director = director;
 		}
 
-		/// <summary>
-		/// Sets the scene tree of the game.
-		/// </summary>
-		public static void SetSceneTree(Node2D sceneTree)
-		{
-			Globals.sceneTree = sceneTree;
-		}
-
 
 		/// <summary>
 		/// Registers a player to the game.
@@ -186,9 +174,10 @@ namespace ClockBombGames.PixelMan
 		/// <summary>
 		/// Gets all the registered players and puts them in the given array.
 		/// </summary>
-		public static void GetPlayersNonAlloc(ref Player[] array)
+		public static void GetPlayersNonAlloc(ref List<Player> array)
 		{
-			players.CopyTo(array);
+			array.Clear();
+			array.AddRange(players);
 		}
 
 		/// <summary>

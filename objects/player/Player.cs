@@ -32,21 +32,22 @@ namespace ClockBombGames.PixelMan.GameObjects
 		#region Variables
 
 		[ExportGroup("Components")]
-		[Export] private Node2D renderer;
-		[Export] private AnimatedSprite2D animator;
-		[Export] private GpuParticles2D dustParticles;
-		[Export] private GpuParticles2D fallDustParticles;
-		[Export] private AudioStreamPlayer2D audioPlayer;
-		[Export] private CollisionShape2D collisionShape;
+		[Export] Node2D renderer;
+		[Export] AnimatedSprite2D animator;
+		[Export] GpuParticles2D dustParticles;
+		[Export] GpuParticles2D fallDustParticles;
+		[Export] AudioStreamPlayer2D audioPlayer;
+		[Export] CollisionShape2D collisionShape;
+		[Export] Camera camera;
 
 		[ExportGroup("Killzone detection components")]
-		[Export] private Area2D killzoneHitbox;
-		[Export] private CollisionShape2D killzoneCollisionShape;
-		[Export] private CollisionLayers killzoneCollisionMask;
+		[Export] Area2D killzoneHitbox;
+		[Export] CollisionShape2D killzoneCollisionShape;
+		[Export] CollisionLayers killzoneCollisionMask;
 
 		[ExportGroup("Properties")]
-		[Export] private PackedScene deathParticleScene;
-		[Export(PropertyHint.ArrayType)] private AudioStream[] sounds;
+		[Export] PackedScene deathParticleScene;
+		[Export(PropertyHint.ArrayType)] AudioStream[] sounds;
 
 
 		#region Readonly variables
@@ -146,6 +147,12 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private bool emitDeathParticles = false;
 
 		/// <summary>
+		/// If the particles were added to the parent.
+		/// </summary>
+		private bool addedParticlesToParent = false;
+
+
+		/// <summary>
 		/// Current player state (for animation).
 		/// </summary>
 		private State currentState = State.IDLE;
@@ -236,6 +243,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			// Register the player
 			this.RegisterPlayer();
+			camera.SetTarget(this);
 
 			// Connect events
 			GameEvents.OnPlayerDeath += OnPlayerDeath;
@@ -253,7 +261,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 				Globals.PlayerDied();
 			};
 
-
 			// Create the death particles
 			for (int i = 0; i < deathParticles.Length; i++) {
 				Node node = deathParticleScene.Instantiate();
@@ -261,7 +268,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 				if (node is PlayerDeathParticle particle) {
 					particle.Visible = false;
 					deathParticles[i] = particle;
-					GetOwner<Node2D>().CallDeferred("add_child", node);
 				}
 			}
 		}
@@ -298,6 +304,21 @@ namespace ClockBombGames.PixelMan.GameObjects
 				2 => Input.GetAxis("left_p2", "right_p2"),
 				_ => Input.GetAxis("left", "right"),
 			};
+
+			// Add death particles to the parent if they weren't added yet
+			if (!addedParticlesToParent) {
+				Node2D owner = GetParent<Node2D>();
+
+				if (owner != null) {
+					for (int i = 0; i < deathParticles.Length; i++) {
+						Node node = deathParticles[i];
+
+						owner.CallDeferred("add_child", node);
+					}
+
+					addedParticlesToParent = true;
+				}
+			}
 
 
 			#region Dust Particles

@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=5 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://objects/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="2_eoc6o"]
 [ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://objects/trampoline/Trampoline.tscn" id="3_bkv65"]
 [ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://objects/obstacles/saw/Saw.tscn" id="5_kr1w6"]
-[ext_resource type="PackedScene" uid="uid://61njvyrcqhy2" path="res://objects/camera/Camera.tscn" id="7_ialae"]
 
 [node name="Test Scene" type="Node2D"]
 
@@ -48,10 +47,6 @@ rotation = 0.785398
 
 [node name="Trampoline2" parent="." instance=ExtResource("3_bkv65")]
 position = Vector2(-43, 96)
-
-[node name="Camera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_ialae")]
-zoom = Vector2(3.03, 3.03)
-target = NodePath("../Player")
 
 [node name="Saw" parent="." instance=ExtResource("5_kr1w6")]
 position = Vector2(-79, 41)

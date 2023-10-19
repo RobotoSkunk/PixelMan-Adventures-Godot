@@ -21,6 +21,7 @@ using Godot;
 
 using ClockBombGames.PixelMan.Events;
 using ClockBombGames.PixelMan.GameObjects;
+using System.Collections.Generic;
 
 namespace ClockBombGames.PixelMan
 {
@@ -45,7 +46,7 @@ namespace ClockBombGames.PixelMan
 		/// </summary>
 		float inputTimer = 0f;
 
-		private Player[] players;
+		private List<Player> players = new();
 		private Tween shakeTween;
 
 
@@ -64,7 +65,9 @@ namespace ClockBombGames.PixelMan
 		public override void _Ready()
 		{
 			this.SetDirector();
-			Globals.SetSceneTree((Node2D)GetTree().Root.GetChild(GetTree().Root.GetChildCount() - 1));
+			Globals.SceneTree = (Node2D)GetTree().Root.GetChild(
+				GetTree().Root.GetChildCount() - 1
+			);
 			Globals.AvatarIndex = avatarIndex;
 		}
 
@@ -134,19 +137,19 @@ namespace ClockBombGames.PixelMan
 		{
 			Globals.GetPlayersNonAlloc(ref players);
 
-			if (players.Length >= 2) {
+			if (players.Count >= 2) {
 				return;
 			}
 
 			Player secondPlayer = Globals.PlayerScene.Instantiate<Player>();
 			Player firstPlayer = players[0];
 
+			Globals.SceneTree.CallDeferred("add_child", secondPlayer);
+
 			secondPlayer.GlobalPosition = players[0].GlobalPosition;
 			secondPlayer.PlayerIndex = 2;
 
 			firstPlayer.PlayerIndex = 1;
-
-			Globals.SceneTree.CallDeferred("add_child", secondPlayer);
 		}
 	}
 }

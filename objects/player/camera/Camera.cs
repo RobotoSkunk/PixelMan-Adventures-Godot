@@ -27,13 +27,14 @@ namespace ClockBombGames.PixelMan.GameObjects
 {
 	public partial class Camera : Camera2D
 	{
+		[Export] SubViewport viewport;
+
 		#region Variables
+		/// <summary>
+		///	The current target of the camera
+		/// </summary>
+		private Player target;
 
-		[ExportGroup("Components")]
-		[Export] public Player target;
-
-
-		#region Private Variables
 		/// <summary>
 		///	Original offset without any shake effect or any other interaction
 		/// </summary>
@@ -56,7 +57,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 
 		#region Player Related Variables
-
 		/// <summary>
 		///	The current direction the player is facing to
 		/// </summary>
@@ -66,9 +66,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 		///	The current's player velocity
 		/// </summary>
 		private float playerVelocity = 0f;
+		#endregion
 
-		#endregion
-		#endregion
 		#endregion
 
 
@@ -78,6 +77,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 			RestoreToTarget();
 			GameEvents.OnResetGame += RestoreToTarget;
 			GameEvents.OnPlayerDeath += OnPlayerDeath;
+
+			MakeCurrent();
 		}
 
 		public override void _Process(double delta)
@@ -130,11 +131,19 @@ namespace ClockBombGames.PixelMan.GameObjects
 			}
 		}
 
+		public void SetTarget(Player player)
+		{
+			target = player;
+		}
 
 		private void RestoreToTarget()
 		{
 			rawOffset = Vector2.Zero;
-			rawTargetPosition = target.GlobalPosition;
+
+			if (target != null) {
+				rawTargetPosition = target.GlobalPosition;
+				GlobalPosition = rawTargetPosition;
+			}
 
 			playerDirection = 0;
 			playerVelocity = 0f;
