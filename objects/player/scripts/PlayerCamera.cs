@@ -25,9 +25,9 @@ using Godot;
 
 namespace ClockBombGames.PixelMan.GameObjects 
 {
-	public partial class Camera : Camera2D
+	public partial class PlayerCamera : Camera2D
 	{
-		[Export] SubViewport viewport;
+		TextureRect textureRect;
 
 		#region Variables
 		/// <summary>
@@ -89,6 +89,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 				rawOffset.X = playerDirection * 32f;
 
 				rawTargetPosition = target.GlobalPosition + rawOffset;
+
+
+				if (target.PlayerIndex != 0) {
+					rawOffset.X /= 2;
+				}
 			} else {
 				playerDirection = 0;
 				playerVelocity = 0f;
@@ -134,6 +139,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		public void SetTarget(Player player)
 		{
 			target = player;
+		}
+
+		public void SetTextureRect(TextureRect rect)
+		{
+			rect.Texture = GetViewport().GetTexture();
 		}
 
 		private void RestoreToTarget()

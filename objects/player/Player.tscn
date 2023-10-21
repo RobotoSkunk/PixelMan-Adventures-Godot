@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://so6iom4ptltd"]
+[gd_scene load_steps=13 format=3 uid="uid://so6iom4ptltd"]
 
-[ext_resource type="Script" path="res://objects/player/Player.cs" id="1_4lx6j"]
+[ext_resource type="Script" path="res://objects/player/scripts/Player.cs" id="1_yr5fv"]
 [ext_resource type="AudioStream" uid="uid://bdmsjyhuv5bir" path="res://assets/sounds/Jump.wav" id="2_36iwa"]
 [ext_resource type="PackedScene" uid="uid://dh3w62ygikp60" path="res://objects/player/Player Death Particle.tscn" id="2_d8fqs"]
 [ext_resource type="AudioStream" uid="uid://cc466fco7woo1" path="res://assets/sounds/Death.wav" id="3_agnwr"]
 [ext_resource type="SpriteFrames" uid="uid://00xgn5d1pig" path="res://objects/player/animations/Avatar - 0.tres" id="4_7yq56"]
-[ext_resource type="PackedScene" uid="uid://61njvyrcqhy2" path="res://objects/player/camera/Camera.tscn" id="7_rja3c"]
+[ext_resource type="Script" path="res://objects/player/scripts/PlayerCamera.cs" id="7_1fxl7"]
+[ext_resource type="Script" path="res://objects/player/scripts/PlayerViewport.cs" id="7_xa5fg"]
 [ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="16_ylwl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o402s"]
@@ -45,26 +46,44 @@ linear_accel_max = -52.01
 scale_min = 0.03
 scale_max = 0.05
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer", "collisionShape", "camera", "killzoneHitbox", "killzoneCollisionShape")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer", "collisionShape", "viewport", "killzoneHitbox", "killzoneCollisionShape")]
 texture_filter = 1
 texture_repeat = 1
 disable_mode = 2
 collision_layer = 130
 collision_mask = 15
 safe_margin = 0.05
-script = ExtResource("1_4lx6j")
+script = ExtResource("1_yr5fv")
 renderer = NodePath("Rendering")
 animator = NodePath("Rendering/Animator")
 dustParticles = NodePath("Rendering/Dust Particles")
 fallDustParticles = NodePath("Rendering/Fall Dust Particles")
 audioPlayer = NodePath("Audio Player")
 collisionShape = NodePath("Box Collider")
-camera = NodePath("Camera")
+viewport = NodePath("SubViewportContainer")
 killzoneHitbox = NodePath("Killzone Hitbox")
 killzoneCollisionShape = NodePath("Killzone Hitbox/Killzone Box Collider")
 killzoneCollisionMask = 5
 deathParticleScene = ExtResource("2_d8fqs")
 sounds = Array[AudioStream]([ExtResource("2_36iwa"), ExtResource("3_agnwr")])
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." node_paths=PackedStringArray("camera", "subViewport")]
+offset_right = 635.0
+offset_bottom = 360.0
+script = ExtResource("7_xa5fg")
+camera = NodePath("Viewport/Camera2D")
+subViewport = NodePath("Viewport")
+
+[node name="Viewport" type="SubViewport" parent="SubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+size = Vector2i(1270, 720)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/Viewport"]
+script = ExtResource("7_1fxl7")
 
 [node name="Box Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_o402s")
@@ -84,7 +103,8 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Animator" type="AnimatedSprite2D" parent="Rendering"]
 sprite_frames = ExtResource("4_7yq56")
-animation = &"idle"
+animation = &"running"
+frame_progress = 0.595106
 offset = Vector2(0, -4)
 
 [node name="Dust Particles" type="GPUParticles2D" parent="Rendering"]
@@ -101,7 +121,3 @@ texture = ExtResource("16_ylwl0")
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
-
-[node name="Camera" parent="." node_paths=PackedStringArray("viewport") instance=ExtResource("7_rja3c")]
-position = Vector2(0, 0)
-viewport = NodePath("")

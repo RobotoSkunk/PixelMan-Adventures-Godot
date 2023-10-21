@@ -1,69 +1,76 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=6 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://objects/default_block/Default Block.tscn" id="1_1v0s6"]
+[ext_resource type="PackedScene" uid="uid://dinit3e161y8v" path="res://scenes/utils/viewports/viewports.tscn" id="1_o4ovk"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="2_eoc6o"]
 [ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://objects/trampoline/Trampoline.tscn" id="3_bkv65"]
 [ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://objects/obstacles/saw/Saw.tscn" id="5_kr1w6"]
 
 [node name="Test Scene" type="Node2D"]
 
-[node name="Default Block" parent="." instance=ExtResource("1_1v0s6")]
+[node name="Viewports" parent="." node_paths=PackedStringArray("world") instance=ExtResource("1_o4ovk")]
+world = NodePath("../Game Objects")
+
+[node name="Game Objects" type="Node2D" parent="."]
+
+[node name="Player" parent="Game Objects" node_paths=PackedStringArray("viewports") instance=ExtResource("2_eoc6o")]
+position = Vector2(139, 82)
+viewports = NodePath("../../Viewports")
+
+[node name="Default Block" parent="Game Objects" instance=ExtResource("1_1v0s6")]
 position = Vector2(261, 112)
 scale = Vector2(56.92, 1)
 
-[node name="Default Block5" parent="." instance=ExtResource("1_1v0s6")]
+[node name="Default Block5" parent="Game Objects" instance=ExtResource("1_1v0s6")]
 position = Vector2(570, 99)
-rotation = -3.3999
+rotation = 2.88329
 scale = Vector2(24, 1)
 
-[node name="Default Block7" parent="." instance=ExtResource("1_1v0s6")]
+[node name="Default Block7" parent="Game Objects" instance=ExtResource("1_1v0s6")]
 position = Vector2(618, 89)
 rotation = 2.40332
 scale = Vector2(24, 1)
 
-[node name="Default Block6" parent="." instance=ExtResource("1_1v0s6")]
+[node name="Default Block6" parent="Game Objects" instance=ExtResource("1_1v0s6")]
 position = Vector2(502, 112)
 rotation = 0.785398
 scale = Vector2(3, 3)
 
-[node name="Default Block4" parent="." instance=ExtResource("1_1v0s6")]
+[node name="Default Block4" parent="Game Objects" instance=ExtResource("1_1v0s6")]
 position = Vector2(261, -112)
 scale = Vector2(56.92, 1)
 
-[node name="Default Block2" parent="." instance=ExtResource("1_1v0s6")]
+[node name="Default Block2" parent="Game Objects" instance=ExtResource("1_1v0s6")]
 position = Vector2(-192, 0)
 scale = Vector2(1, 14)
 
-[node name="Default Block3" parent="." instance=ExtResource("1_1v0s6")]
+[node name="Default Block3" parent="Game Objects" instance=ExtResource("1_1v0s6")]
 position = Vector2(713, 0)
 scale = Vector2(1, 14)
 
-[node name="Player" parent="." instance=ExtResource("2_eoc6o")]
-position = Vector2(92, 92)
-
-[node name="Trampoline" parent="." instance=ExtResource("3_bkv65")]
+[node name="Trampoline" parent="Game Objects" instance=ExtResource("3_bkv65")]
 position = Vector2(-172, 92)
 rotation = 0.785398
 
-[node name="Trampoline2" parent="." instance=ExtResource("3_bkv65")]
+[node name="Trampoline2" parent="Game Objects" instance=ExtResource("3_bkv65")]
 position = Vector2(-43, 96)
 
-[node name="Saw" parent="." instance=ExtResource("5_kr1w6")]
+[node name="Saw" parent="Game Objects" instance=ExtResource("5_kr1w6")]
 position = Vector2(-79, 41)
 path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0)])
 speed = 160.0
 
-[node name="Saw2" parent="." instance=ExtResource("5_kr1w6")]
+[node name="Saw2" parent="Game Objects" instance=ExtResource("5_kr1w6")]
 position = Vector2(392, 87)
 speed = 160.0
 
-[node name="Saw3" parent="." instance=ExtResource("5_kr1w6")]
+[node name="Saw3" parent="Game Objects" instance=ExtResource("5_kr1w6")]
 position = Vector2(262, 94)
 path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0), Vector2(40, -80)])
 returnToStart = true
 speed = 160.0
 
-[node name="Saw4" parent="." instance=ExtResource("5_kr1w6")]
+[node name="Saw4" parent="Game Objects" instance=ExtResource("5_kr1w6")]
 position = Vector2(83, 55)
 path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0), Vector2(40, -80)])
 speed = 160.0

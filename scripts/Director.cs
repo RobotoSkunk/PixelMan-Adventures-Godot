@@ -141,13 +141,14 @@ namespace ClockBombGames.PixelMan
 				return;
 			}
 
-			Player secondPlayer = Globals.PlayerScene.Instantiate<Player>();
 			Player firstPlayer = players[0];
+			Player secondPlayer = Globals.PlayerScene.Instantiate<Player>();
 
-			Globals.SceneTree.CallDeferred("add_child", secondPlayer);
+			firstPlayer.Viewport.World.CallDeferred("add_child", secondPlayer);
 
 			secondPlayer.GlobalPosition = players[0].GlobalPosition;
 			secondPlayer.PlayerIndex = 2;
+			firstPlayer.ViewportsContainer.AddToContainer(secondPlayer.Viewport);
 
 			firstPlayer.PlayerIndex = 1;
 		}

@@ -38,7 +38,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] GpuParticles2D fallDustParticles;
 		[Export] AudioStreamPlayer2D audioPlayer;
 		[Export] CollisionShape2D collisionShape;
-		[Export] Camera camera;
+
+		[ExportGroup("PlayerCamera Components")]
+		[Export] PlayerViewport viewport;
+		[Export] Viewports viewports;
 
 		[ExportGroup("Killzone detection components")]
 		[Export] Area2D killzoneHitbox;
@@ -213,7 +216,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 			}
 		}
 
-
 		/// <summary>
 		/// The player's index.
 		/// </summary>
@@ -222,6 +224,35 @@ namespace ClockBombGames.PixelMan.GameObjects
 			get => playerIndex;
 			set => playerIndex = value;
 		}
+
+		/// <summary>
+		/// The player's camera viewport.
+		/// </summary>
+		public PlayerViewport Viewport
+		{
+			get
+			{
+				return viewport;
+			}
+		}
+
+		/// <summary>
+		/// The player's camera viewports container.
+		/// </summary>
+		public Viewports ViewportsContainer
+		{
+			get
+			{
+				return viewports;
+			}
+
+			set
+			{
+				viewports = value;
+				viewports.AddToContainer(viewport);
+			}
+		}
+
 		#endregion
 
 		#endregion
@@ -243,7 +274,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			// Register the player
 			this.RegisterPlayer();
-			camera.SetTarget(this);
+
+			// Configure the camera
+			viewport.Camera.SetTarget(this);
+			viewports?.AddToContainer(viewport);
+
 
 			// Connect events
 			GameEvents.OnPlayerDeath += OnPlayerDeath;
@@ -517,6 +552,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			Rotation = Mathf.Lerp(Rotation, rawAngle, 0.33f);
 		}
+
 
 		public override void Impulse(float direction, float force)
 		{

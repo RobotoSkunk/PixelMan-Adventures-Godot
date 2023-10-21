@@ -24,6 +24,8 @@ Director="*res://objects/Director.tscn"
 
 [display]
 
+window/size/viewport_width=1270
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 

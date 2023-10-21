@@ -251,6 +251,8 @@
             <key type="filename">blocks/special/0.png</key>
             <key type="filename">blocks/special/1.png</key>
             <key type="filename">gui/generics/editor-level-size-dragger.png</key>
+            <key type="filename">gui/square-black.png</key>
+            <key type="filename">gui/square-white.png</key>
             <key type="filename">objects/killzone.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>

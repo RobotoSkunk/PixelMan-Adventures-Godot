@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh3w62ygikp60"]
 
 [ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="1_50kdv"]
-[ext_resource type="Script" path="res://objects/player/PlayerDeathParticle.cs" id="1_wsg52"]
+[ext_resource type="Script" path="res://objects/player/scripts/PlayerDeathParticle.cs" id="1_wsg52"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uttpr"]
 friction = 0.1

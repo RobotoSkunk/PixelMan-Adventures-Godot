@@ -4,4 +4,4 @@
 
 [resource]
 atlas = ExtResource("1_dqtor")
-region = Rect2(158, 742, 32, 22)
+region = Rect2(459, 584, 32, 22)

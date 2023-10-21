@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dinit3e161y8v"]
+
+[ext_resource type="Script" path="res://scenes/utils/viewports/Viewports.cs" id="1_ns63k"]
+
+[node name="Viewports" type="CanvasLayer" node_paths=PackedStringArray("container")]
+script = ExtResource("1_ns63k")
+container = NodePath("Container")
+
+[node name="Texture" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container" type="GridContainer" parent="."]
+layout_direction = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
