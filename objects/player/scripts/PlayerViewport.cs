@@ -53,7 +53,7 @@ namespace ClockBombGames.PixelMan.Utils
 			int viewportCount = GetParent().GetChildCount();
 			Vector2I size = GetWindow().Size;
 
-			if (viewportCount > 2) {
+			if (viewportCount > 1) {
 				size.X /= 2;
 			}
 

@@ -92,7 +92,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 
 				if (target.PlayerIndex != 0) {
-					rawOffset.X /= 2;
+					rawOffset.X /= 4;
 				}
 			} else {
 				playerDirection = 0;
