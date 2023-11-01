@@ -3,3 +3,8 @@
 
 # Linux files
 .directory
+
+# IDE config files
+.vscode/
+.idea/
+*.sln
