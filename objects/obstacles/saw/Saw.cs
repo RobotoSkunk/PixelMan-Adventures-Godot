@@ -73,7 +73,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			get
 			{
-				return path != null && path.Count > 1;
+				if (path == null) {
+					return false;
+				}
+
+				return path.Count > 1;
 			}
 		}
 
