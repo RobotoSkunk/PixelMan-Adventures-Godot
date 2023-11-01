@@ -18,7 +18,10 @@
 */
 
 
+using System;
+using ClockBombGames.PixelMan.GameObjects;
 using Godot;
+using Godot.Collections;
 
 
 namespace ClockBombGames.PixelMan.Utils
@@ -27,36 +30,72 @@ namespace ClockBombGames.PixelMan.Utils
 	{
 		[Export] GridContainer container;
 		[Export] Node2D world;
+		[Export] Array<PlayerViewport> viewports;
 
 		PlayerViewport firstViewport;
+
+		public Node2D World
+		{
+			get
+			{
+				return world;
+			}
+		}
 
 
 		public override void _Ready()
 		{
 			container.Columns = 1;
+
+			this.RegisterViewportsContainer();
 		}
 
+		[Obsolete("Use AddToContainer(PlayerViewport viewport) instead.")]
 		public void AddToContainer(PlayerViewport viewport)
 		{
-			// Move the viewport to the container
-			viewport.GetParent().CallDeferred("remove_child", viewport);
-			container.CallDeferred("add_child", viewport);
+			// // Move the viewport to the container
+			// viewport.GetParent().CallDeferred("remove_child", viewport);
+			// container.CallDeferred("add_child", viewport);
 
-			if (firstViewport == null) {
-				firstViewport = viewport;
+			// if (firstViewport == null) {
+			// 	firstViewport = viewport;
 
-				// Move the world to the first viewport
-				world.GetParent().CallDeferred("remove_child", world);
-				viewport.SubViewport.CallDeferred("add_child", world);
+			// 	// Move the world to the first viewport
+			// 	world.GetParent().CallDeferred("remove_child", world);
+			// 	viewport.SubViewport.CallDeferred("add_child", world);
 
-				// Attach the world to the viewport attribute
-				viewport.World = world;
+			// 	// Attach the world to the viewport attribute
+			// 	viewport.World = world;
 
-			} else {
-				container.Columns = 2;
+			// } else {
+			// 	container.Columns = 2;
 
-				viewport.SubViewport.World2D = firstViewport.SubViewport.World2D;
+			// 	viewport.SubViewport.World2D = firstViewport.SubViewport.World2D;
+			// }
+		}
+
+		/// <summary>
+		/// Add a player to the first available viewport
+		/// </summary>
+		public void AddPlayer(Player player)
+		{
+			foreach (PlayerViewport viewport in viewports) {
+				if (viewport.InUse) {
+					continue;
+				}
+
+				viewport.Camera.Target = player;
+				viewport.SetWorld2D(world.GetWorld2D());
+				viewport.Visible = true;
+				return;
 			}
+
+			GD.PushWarning("No more viewports available.");
+		}
+
+		public Array<PlayerViewport> GetViewports()
+		{
+			return viewports;
 		}
 	}
 }

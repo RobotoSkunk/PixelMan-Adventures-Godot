@@ -55,12 +55,6 @@ namespace ClockBombGames.PixelMan
 			get => avatars;
 		}
 
-		// TODO: Test only, remove later
-		public PackedScene PlayerScene
-		{
-			get => playerScene;
-		}
-
 
 		public override void _Ready()
 		{
@@ -142,15 +136,15 @@ namespace ClockBombGames.PixelMan
 			}
 
 			Player firstPlayer = players[0];
-			Player secondPlayer = Globals.PlayerScene.Instantiate<Player>();
-
-			firstPlayer.Viewport.World.CallDeferred("add_child", secondPlayer);
+			Player secondPlayer = playerScene.Instantiate<Player>();
 
 			secondPlayer.GlobalPosition = players[0].GlobalPosition;
-			secondPlayer.PlayerIndex = 2;
-			firstPlayer.ViewportsContainer.AddToContainer(secondPlayer.Viewport);
 
+			secondPlayer.PlayerIndex = 2;
 			firstPlayer.PlayerIndex = 1;
+
+			Globals.Viewports.World.AddChild(secondPlayer);
+			Globals.Viewports.AddPlayer(secondPlayer);
 		}
 	}
 }

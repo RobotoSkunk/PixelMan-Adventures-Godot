@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using ClockBombGames.PixelMan.GameObjects;
+using ClockBombGames.PixelMan.Utils;
 using Godot;
 
 
@@ -75,6 +76,7 @@ namespace ClockBombGames.PixelMan
 		static Director director = null;
 		static int avatarIndex = 0;
 		static float shakeStrength = 0f;
+		static Viewports viewports = null;
 		readonly static List<Player> players = new();
 
 
@@ -130,10 +132,9 @@ namespace ClockBombGames.PixelMan
 			get => shakeStrength;
 		}
 
-		// TODO: Test only, remove later
-		public static PackedScene PlayerScene
+		public static Viewports Viewports
 		{
-			get => director.PlayerScene;
+			get => viewports;
 		}
 
 
@@ -203,6 +204,14 @@ namespace ClockBombGames.PixelMan
 		public static void SetShakeStrength(this Director _, float strength)
 		{
 			shakeStrength = strength;
+		}
+
+		/// <summary>
+		/// Registers a player to the game.
+		/// </summary>
+		public static void RegisterViewportsContainer(this Viewports container)
+		{
+			viewports = container;
 		}
 	}
 }

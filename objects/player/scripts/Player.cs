@@ -52,6 +52,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] PackedScene deathParticleScene;
 		[Export(PropertyHint.ArrayType)] AudioStream[] sounds;
 
+		[ExportGroup("Editor Only")]
+		[Export] Viewports worldViewports;
+
 
 		#region Readonly variables
 		/// <summary>
@@ -225,34 +228,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 			set => playerIndex = value;
 		}
 
-		/// <summary>
-		/// The player's camera viewport.
-		/// </summary>
-		public PlayerViewport Viewport
-		{
-			get
-			{
-				return viewport;
-			}
-		}
-
-		/// <summary>
-		/// The player's camera viewports container.
-		/// </summary>
-		public Viewports ViewportsContainer
-		{
-			get
-			{
-				return viewports;
-			}
-
-			set
-			{
-				viewports = value;
-				viewports.AddToContainer(viewport);
-			}
-		}
-
 		#endregion
 
 		#endregion
@@ -276,8 +251,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			this.RegisterPlayer();
 
 			// Configure the camera
-			viewport.Camera.SetTarget(this);
-			viewports?.AddToContainer(viewport);
+			viewports?.AddPlayer(this);
 
 
 			// Connect events

@@ -37,27 +37,40 @@ namespace ClockBombGames.PixelMan.Utils
 			}
 		}
 
-		public SubViewport SubViewport
+		public bool InUse
 		{
 			get
 			{
-				return subViewport;
+				return camera.Target != null;
 			}
 		}
-
-		public Node2D World { get; set; }
 
 
 		public override void _Process(double delta)
 		{
-			int viewportCount = GetParent().GetChildCount();
 			Vector2I size = GetWindow().Size;
 
-			if (viewportCount > 1) {
-				size.X /= 2;
+			int viewportsInUse = 0;
+
+			if (Globals.Viewports != null) {
+				foreach (PlayerViewport viewport in Globals.Viewports.GetViewports()) {
+					if (viewport.InUse) {
+						viewportsInUse++;
+					}
+				}
+			}
+
+			if (viewportsInUse > 1) {
+				size.Y /= 2;
 			}
 
 			subViewport.Size = size;
+		}
+
+
+		public void SetWorld2D(World2D world)
+		{
+			subViewport.World2D = world;
 		}
 	}
 }

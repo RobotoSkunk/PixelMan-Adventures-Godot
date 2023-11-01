@@ -31,11 +31,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		#region Variables
 		/// <summary>
-		///	The current target of the camera
-		/// </summary>
-		private Player target;
-
-		/// <summary>
 		///	Original offset without any shake effect or any other interaction
 		/// </summary>
 		private Vector2 rawOffset = Vector2.Zero;
@@ -46,7 +41,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private Vector2 virtualOffset = Vector2.Zero;
 
 		/// <summary>
-		///	Original target position without any alteration
+		///	Original Target position without any alteration
 		/// </summary>
 		private Vector2 rawTargetPosition = Vector2.Zero;
 
@@ -68,6 +63,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private float playerVelocity = 0f;
 		#endregion
 
+		/// <summary>
+		///	The current Target of the camera
+		/// </summary>
+		public Player Target { get; set; }
+
 		#endregion
 
 
@@ -83,16 +83,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _Process(double delta)
 		{
-			if (target != null) {
+			if (Target != null) {
 				rawZoom = 1 + 4f * playerVelocity / Constants.maxSpeed;
 
 				rawOffset.X = playerDirection * 32f;
 
-				rawTargetPosition = target.GlobalPosition + rawOffset;
+				rawTargetPosition = Target.GlobalPosition + rawOffset;
 
 
-				if (target.PlayerIndex != 0) {
-					rawOffset.X /= 4;
+				if (Target.PlayerIndex != 0) {
+					rawZoom++;
 				}
 			} else {
 				playerDirection = 0;
@@ -124,21 +124,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _PhysicsProcess(double delta)
 		{
-			if (target != null) {
-				playerVelocity = target.Velocity.Length();
+			if (Target != null) {
+				playerVelocity = Target.Velocity.Length();
 
-				if (Mathf.Abs(target.WantedHorizontalSpeed) != 0f) {
-					playerDirection = Mathf.Sign(target.WantedHorizontalSpeed);
+				if (Mathf.Abs(Target.WantedHorizontalSpeed) != 0f) {
+					playerDirection = Mathf.Sign(Target.WantedHorizontalSpeed);
 				}
 			} else {
 				playerVelocity = 0f;
 				playerDirection = 0;
 			}
-		}
-
-		public void SetTarget(Player player)
-		{
-			target = player;
 		}
 
 		public void SetTextureRect(TextureRect rect)
@@ -150,8 +145,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			rawOffset = Vector2.Zero;
 
-			if (target != null) {
-				rawTargetPosition = target.GlobalPosition;
+			if (Target != null) {
+				rawTargetPosition = Target.GlobalPosition;
 				GlobalPosition = rawTargetPosition;
 			}
 
