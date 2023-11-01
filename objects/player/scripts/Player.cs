@@ -295,8 +295,19 @@ namespace ClockBombGames.PixelMan.GameObjects
 				_ => @event.IsActionPressed("jump"),
 			};
 
+			bool isJumpReleased = playerIndex switch
+			{
+				1 => @event.IsActionReleased("jump_p1"),
+				2 => @event.IsActionReleased("jump_p2"),
+				_ => @event.IsActionReleased("jump"),
+			};
+
+
 			if (isJumpPressed) {
 				pressedJump = true;
+
+			} else if (isJumpReleased) {
+				releasedJump = true;
 			}
 		}
 

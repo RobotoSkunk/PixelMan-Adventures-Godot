@@ -10,9 +10,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o402s"]
 size = Vector2(8, 14)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn215"]
-size = Vector2(4, 10)
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_agblt"]
 lifetime_randomness = 0.1
 emission_shape = 3
@@ -44,6 +41,9 @@ linear_accel_max = -52.01
 scale_min = 0.03
 scale_max = 0.05
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn215"]
+size = Vector2(4, 10)
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("renderer", "animator", "dustParticles", "fallDustParticles", "audioPlayer", "collisionShape", "killzoneHitbox", "killzoneCollisionShape")]
 texture_filter = 1
 texture_repeat = 1
@@ -70,14 +70,6 @@ one_way_collision = true
 
 [node name="Audio Player" type="AudioStreamPlayer2D" parent="."]
 
-[node name="Killzone Hitbox" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 5
-
-[node name="Killzone Box Collider" type="CollisionShape2D" parent="Killzone Hitbox"]
-shape = SubResource("RectangleShape2D_jn215")
-debug_color = Color(1, 0, 0, 0.419608)
-
 [node name="Rendering" type="Node2D" parent="."]
 
 [node name="Animator" type="AnimatedSprite2D" parent="Rendering"]
@@ -100,3 +92,11 @@ texture = ExtResource("16_ylwl0")
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
+
+[node name="Killzone Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 5
+
+[node name="Killzone Box Collider" type="CollisionShape2D" parent="Killzone Hitbox"]
+shape = SubResource("RectangleShape2D_jn215")
+debug_color = Color(1, 0, 0, 0.419608)
