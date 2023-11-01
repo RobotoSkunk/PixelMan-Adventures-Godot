@@ -34,6 +34,7 @@ namespace ClockBombGames.PixelMan
 		[Export] private SpriteFrames[] avatars;
 		[Export] private float shakeStrength;
 		[Export] private PackedScene playerScene;
+		[Export] private RichTextLabel debugLabel;
 
 		bool playerDied = false;
 		bool secondPlayer = false;
@@ -67,6 +68,10 @@ namespace ClockBombGames.PixelMan
 
 		public override void _Process(double delta)
 		{
+			debugLabel.Text = "FPS: " + Engine.GetFramesPerSecond() +
+							"\nMemory: " + OS.GetStaticMemoryUsage() +
+							"\nDraw Calls: " + Performance.GetMonitor(Performance.Monitor.RenderTotalDrawCallsInFrame);
+
 			if (playerDied && !gamePaused) {
 				restartTimer -= (float)delta;
 

@@ -7,9 +7,24 @@
 [ext_resource type="SpriteFrames" uid="uid://ccs5hd3r57lrs" path="res://objects/player/animations/Avatar - 3.tres" id="5_t6nr4"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://objects/player/Player.tscn" id="6_u0lwu"]
 
-[node name="Director" type="Node"]
+[node name="Director" type="Node" node_paths=PackedStringArray("debugLabel")]
 process_mode = 3
 script = ExtResource("1_ucqku")
 avatars = Array[SpriteFrames]([ExtResource("2_a42iq"), ExtResource("3_7hk0i"), ExtResource("4_15n03"), ExtResource("5_t6nr4")])
 shakeStrength = 1.0
 playerScene = ExtResource("6_u0lwu")
+debugLabel = NodePath("Debug/Output Text")
+
+[node name="Debug" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Output Text" type="RichTextLabel" parent="Debug"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
