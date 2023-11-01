@@ -113,7 +113,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				shake = 2f * RSRandom.Circle2D() * Globals.ShakeStrength * rawZoom;
 			}
 
-			virtualOffset += (rawOffset - Offset) / 15f * RSMath.FixedDelta(delta);
+			virtualOffset += (rawOffset - Offset) / 50f * RSMath.FixedDelta(delta);
 
 			Offset = virtualOffset + shake;
 
