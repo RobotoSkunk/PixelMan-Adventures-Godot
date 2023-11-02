@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhm3yaulej1hv"]
+
+[ext_resource type="Texture2D" uid="uid://0drbgjyclgud" path="res://assets/sprites/atlas-1.sprites/objects/rocket/0.tres" id="1_mu35x"]
+[ext_resource type="Texture2D" uid="uid://ctqbjdpdi80a" path="res://assets/sprites/atlas-1.sprites/objects/rocket/1.tres" id="2_mmeod"]
+[ext_resource type="Texture2D" uid="uid://cei1axltehr7k" path="res://assets/sprites/atlas-1.sprites/objects/rocket/2.tres" id="3_x4sdl"]
+[ext_resource type="Texture2D" uid="uid://brxd8y7dbpwax" path="res://assets/sprites/atlas-1.sprites/objects/rocket/3.tres" id="4_25xm2"]
+[ext_resource type="Texture2D" uid="uid://cst5o17igc3lh" path="res://assets/sprites/atlas-1.sprites/objects/rocket/4.tres" id="5_631dr"]
+[ext_resource type="Texture2D" uid="uid://br4a1k4x74670" path="res://assets/sprites/atlas-1.sprites/objects/rocket/5.tres" id="6_duohi"]
+[ext_resource type="Texture2D" uid="uid://cs647ph32hww" path="res://assets/sprites/atlas-1.sprites/objects/rocket/6.tres" id="7_rnouk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3avug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mu35x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mmeod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x4sdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_25xm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_631dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_duohi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rnouk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3avug")
+frame = 6
+frame_progress = 0.597218
