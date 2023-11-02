@@ -4,4 +4,4 @@
 
 [resource]
 atlas = ExtResource("1_tifp0")
-region = Rect2(387, 187, 35, 35)
+region = Rect2(97, 738, 35, 35)

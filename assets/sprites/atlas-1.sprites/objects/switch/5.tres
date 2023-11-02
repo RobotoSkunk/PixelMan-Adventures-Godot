@@ -4,4 +4,4 @@
 
 [resource]
 atlas = ExtResource("1_gvitv")
-region = Rect2(358, 683, 14, 21)
+region = Rect2(432, 632, 14, 21)
