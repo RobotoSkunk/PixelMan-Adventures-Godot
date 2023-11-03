@@ -1,12 +1,44 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhm3yaulej1hv"]
+[gd_scene load_steps=15 format=3 uid="uid://bhm3yaulej1hv"]
 
 [ext_resource type="Texture2D" uid="uid://0drbgjyclgud" path="res://assets/sprites/atlas-1.sprites/objects/rocket/0.tres" id="1_mu35x"]
+[ext_resource type="Script" path="res://objects/obstacles/rocket_launcher/Rocket.cs" id="1_nhnjf"]
 [ext_resource type="Texture2D" uid="uid://ctqbjdpdi80a" path="res://assets/sprites/atlas-1.sprites/objects/rocket/1.tres" id="2_mmeod"]
 [ext_resource type="Texture2D" uid="uid://cei1axltehr7k" path="res://assets/sprites/atlas-1.sprites/objects/rocket/2.tres" id="3_x4sdl"]
 [ext_resource type="Texture2D" uid="uid://brxd8y7dbpwax" path="res://assets/sprites/atlas-1.sprites/objects/rocket/3.tres" id="4_25xm2"]
 [ext_resource type="Texture2D" uid="uid://cst5o17igc3lh" path="res://assets/sprites/atlas-1.sprites/objects/rocket/4.tres" id="5_631dr"]
 [ext_resource type="Texture2D" uid="uid://br4a1k4x74670" path="res://assets/sprites/atlas-1.sprites/objects/rocket/5.tres" id="6_duohi"]
 [ext_resource type="Texture2D" uid="uid://cs647ph32hww" path="res://assets/sprites/atlas-1.sprites/objects/rocket/6.tres" id="7_rnouk"]
+[ext_resource type="AudioStream" uid="uid://dkppe4qstn33l" path="res://assets/sounds/Rocket.wav" id="9_plaug"]
+[ext_resource type="AudioStream" uid="uid://7pakv48gj86i" path="res://assets/sounds/Explosion.wav" id="10_6omof"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ekfay"]
+lifetime_randomness = 0.55
+emission_shape = 3
+emission_box_extents = Vector3(1, 3, 1)
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 6.0
+initial_velocity_max = 6.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.6
+scale_max = 1.2
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hunxt"]
+lifetime_randomness = 0.81
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -400.0
+linear_accel_max = -200.0
+scale_min = 2.0
+scale_max = 5.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3avug"]
 animations = [{
@@ -37,9 +69,45 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnvve"]
+size = Vector2(16, 8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Rocket" type="Area2D" node_paths=PackedStringArray("animatedSprite2D", "collisionShape", "trailParticles", "explosionParticles", "rocketAudio", "explosionAudio")]
+collision_layer = 64
+collision_mask = 75
+script = ExtResource("1_nhnjf")
+animatedSprite2D = NodePath("Animation")
+collisionShape = NodePath("Hitbox")
+trailParticles = NodePath("Trail Particles")
+explosionParticles = NodePath("Explosion Particles")
+rocketAudio = NodePath("Rocket Audio")
+explosionAudio = NodePath("Explosion Audio")
+factor = 5.0
+
+[node name="Trail Particles" type="GPUParticles2D" parent="."]
+position = Vector2(-4, 0)
+amount = 48
+process_material = SubResource("ParticleProcessMaterial_ekfay")
+lifetime = 1.4
+randomness = 0.24
+
+[node name="Explosion Particles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 150
+process_material = SubResource("ParticleProcessMaterial_hunxt")
+one_shot = true
+explosiveness = 1.0
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3avug")
-frame = 6
-frame_progress = 0.597218
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, 0)
+shape = SubResource("RectangleShape2D_xnvve")
+debug_color = Color(0.701961, 0, 0, 0.419608)
+
+[node name="Rocket Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_plaug")
+
+[node name="Explosion Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_6omof")

@@ -64,7 +64,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 				if (timeToShoot <= 0f) {
 					Vector2 from = GlobalPosition + new Vector2(16f * 1.5f, 0).Rotated(GlobalRotation);
 
-					Shoot(from, bulletSpeed);
+					IGOProjectile rocket = Shoot(from, bulletSpeed);
+
+					if (rocket is Rocket _rocket) {
+						_rocket.SetTarget(player);
+					}
 
 					timeToShoot = shootInterval;
 					audioStreamPlayer2D.Play();
@@ -75,6 +79,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			} else {
 				temporalAngle++;
 				LookAt(Mathf.DegToRad(temporalAngle), 10f);
+
 
 				timeToShoot = 0.5f;
 			}

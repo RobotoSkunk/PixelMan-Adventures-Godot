@@ -111,8 +111,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// <param name="delta">The delta value to use in the interpolation.</param>
 		protected virtual void LookAt(float direction, float delta)
 		{
-			float wanted = Mathf.RadToDeg(direction);
-			angle += Mathf.Sin(Mathf.DegToRad(wanted - angle)) * delta;
+			angle += Mathf.Sin(direction - Mathf.DegToRad(angle)) * delta;
 
 			GlobalRotationDegrees = angle;	
 		}

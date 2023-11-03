@@ -70,7 +70,7 @@ position = Vector2(392, 87)
 speed = 160.0
 
 [node name="Saw3" parent="Game Objects" instance=ExtResource("5_kr1w6")]
-position = Vector2(262, 94)
+position = Vector2(278, 56)
 path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0), Vector2(40, -80)])
 returnToStart = true
 speed = 160.0
