@@ -93,7 +93,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				rawZoom = 1 + 4f * playerVelocity / Constants.maxSpeed;
 
 				// Calculate offset
-				rawOffset.X = playerDirection * 32f;
+				rawOffset.X = playerDirection * 48f;
 
 				// Calculate position
 				if (Target.GlobalPosition.Y < GlobalPosition.Y - verticalDeadzone) {
@@ -136,7 +136,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				shake = 2f * RSRandom.Circle2D() * Globals.ShakeStrength * rawZoom;
 			}
 
-			virtualOffset += (rawOffset - Offset) / 50f * RSMath.FixedDelta(delta);
+			virtualOffset += (rawOffset - Offset) / 25f * RSMath.FixedDelta(delta);
 
 			Offset = virtualOffset + shake;
 
