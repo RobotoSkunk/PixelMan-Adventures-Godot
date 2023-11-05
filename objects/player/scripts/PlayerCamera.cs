@@ -50,6 +50,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		private float rawZoom = 1f;
 
+		/// <summary>
+		///	How much of the screen is considered safe for the player to move without the camera following it in pixels
+		/// </summary>
+		private readonly float verticalDeadzone = 16f;
+
 
 		#region Player Related Variables
 		/// <summary>
@@ -84,11 +89,29 @@ namespace ClockBombGames.PixelMan.GameObjects
 		public override void _Process(double delta)
 		{
 			if (Target != null) {
+				// Calculate zoom
 				rawZoom = 1 + 4f * playerVelocity / Constants.maxSpeed;
 
+				// Calculate offset
 				rawOffset.X = playerDirection * 32f;
 
-				rawTargetPosition = Target.GlobalPosition + rawOffset;
+				// Calculate position
+				if (Target.GlobalPosition.Y < GlobalPosition.Y - verticalDeadzone) {
+					rawTargetPosition.Y = Target.GlobalPosition.Y + verticalDeadzone;
+
+				} else if (Target.GlobalPosition.Y > GlobalPosition.Y + verticalDeadzone) {
+					rawTargetPosition.Y = Target.GlobalPosition.Y - verticalDeadzone;
+				}
+
+				rawTargetPosition.X = Target.GlobalPosition.X;
+
+				// float distanceToPlayerY = Mathf.Abs(Target.GlobalPosition.Y - GlobalPosition.Y);
+
+				// if (distanceToPlayerY > viewportSize.Y * verticalSafeZone) {
+				// 	rawTargetPosition.Y = Target.GlobalPosition.Y - viewportSize.Y * verticalSafeZone;
+				// }
+
+				// rawTargetPosition.X = Target.GlobalPosition.X;
 
 
 				if (Target.PlayerIndex != 0) {
