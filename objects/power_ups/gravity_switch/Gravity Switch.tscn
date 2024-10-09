@@ -26,11 +26,11 @@ shape = SubResource("CircleShape2D_l6df6")
 debug_color = Color(0, 0.701961, 0.0470588, 0.419608)
 
 [node name="Renderer" type="TextureProgressBar" parent="."]
+auto_translate_mode = 2
 offset_left = -10.0
 offset_top = -10.0
 offset_right = 10.0
 offset_bottom = 10.0
-auto_translate = false
 localize_numeral_system = false
 mouse_filter = 2
 max_value = 1.0
