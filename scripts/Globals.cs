@@ -89,11 +89,6 @@ namespace ClockBombGames.PixelMan
 		}
 
 		/// <summary>
-		/// The start of the list of Nodes in the current scene
-		/// </summary>
-		public static Node2D SceneTree { get; set; }
-
-		/// <summary>
 		/// Shorthand of <code>Globals.Director.Avatars</code>
 		/// </summary>
 		public static SpriteFrames[] Avatars

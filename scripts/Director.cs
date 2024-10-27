@@ -60,9 +60,6 @@ namespace ClockBombGames.PixelMan
 		public override void _Ready()
 		{
 			this.SetDirector();
-			Globals.SceneTree = (Node2D)GetTree().Root.GetChild(
-				GetTree().Root.GetChildCount() - 1
-			);
 			Globals.AvatarIndex = avatarIndex;
 		}
 
