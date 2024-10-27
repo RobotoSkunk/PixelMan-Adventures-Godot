@@ -250,7 +250,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			this.RegisterPlayer();
 
 			// Configure the camera
-			Globals.Viewports?.AddPlayer(this);
+			// Globals.Viewports?.AddPlayer(this);
 
 
 			// Connect events

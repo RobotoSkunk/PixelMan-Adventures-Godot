@@ -17,8 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Viewports" parent="Control" node_paths=PackedStringArray("world") instance=ExtResource("1_o4ovk")]
-world = NodePath("../../Game Objects")
+[node name="Viewports" parent="Control" instance=ExtResource("1_o4ovk")]
 
 [node name="Game Objects" type="Node2D" parent="."]
 

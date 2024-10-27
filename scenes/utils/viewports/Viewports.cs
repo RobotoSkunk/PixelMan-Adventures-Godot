@@ -18,7 +18,7 @@
 */
 
 
-using System;
+using System.Collections.Generic;
 using ClockBombGames.PixelMan.GameObjects;
 using Godot;
 using Godot.Collections;
@@ -29,68 +29,33 @@ namespace ClockBombGames.PixelMan.Utils
 	public partial class Viewports : CanvasLayer
 	{
 		[Export] GridContainer container;
-		[Export] Node2D world;
 		[Export] Array<PlayerViewport> viewports;
 
 		PlayerViewport firstViewport;
-
-		public Node2D World
-		{
-			get
-			{
-				return world;
-			}
-		}
+		List<Player> players = new();
 
 
 		public override void _Ready()
 		{
 			container.Columns = 1;
-
-			this.RegisterViewportsContainer();
 		}
 
-		[Obsolete("Use AddToContainer(PlayerViewport viewport) instead.")]
-		public void AddToContainer(PlayerViewport viewport)
+		public override void _Process(double delta)
 		{
-			// // Move the viewport to the container
-			// viewport.GetParent().CallDeferred("remove_child", viewport);
-			// container.CallDeferred("add_child", viewport);
+			Globals.GetPlayersNonAlloc(ref players);
 
-			// if (firstViewport == null) {
-			// 	firstViewport = viewport;
+			for (int i = 0; i < viewports.Count; i++) {
+				PlayerViewport viewport = viewports[i];
+				viewport.Visible = i < players.Count;
 
-			// 	// Move the world to the first viewport
-			// 	world.GetParent().CallDeferred("remove_child", world);
-			// 	viewport.SubViewport.CallDeferred("add_child", world);
-
-			// 	// Attach the world to the viewport attribute
-			// 	viewport.World = world;
-
-			// } else {
-			// 	container.Columns = 2;
-
-			// 	viewport.SubViewport.World2D = firstViewport.SubViewport.World2D;
-			// }
-		}
-
-		/// <summary>
-		/// Add a player to the first available viewport
-		/// </summary>
-		public void AddPlayer(Player player)
-		{
-			foreach (PlayerViewport viewport in viewports) {
-				if (viewport.InUse) {
+				if (!viewport.Visible) {
 					continue;
 				}
 
-				viewport.Camera.Target = player;
-				viewport.SetWorld2D(world.GetWorld2D());
-				viewport.Visible = true;
-				return;
-			}
+				Player player = players[i];
 
-			GD.PushWarning("No more viewports available.");
+				viewport.Camera.Target = player;
+			}
 		}
 
 		public Array<PlayerViewport> GetViewports()

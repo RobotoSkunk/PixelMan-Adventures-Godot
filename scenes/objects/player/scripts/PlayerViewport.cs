@@ -46,9 +46,9 @@ namespace ClockBombGames.PixelMan.Utils
 		}
 
 
-		public void SetWorld2D(World2D world)
+		public override void _Process(double delta)
 		{
-			subViewport.World2D = world;
+			subViewport.World2D = Globals.World?.GetWorld2D();
 		}
 	}
 }

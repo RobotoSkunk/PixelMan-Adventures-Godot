@@ -17,34 +17,26 @@
 */
 
 
+using ClockBombGames.PixelMan.Utils;
 using Godot;
 
 
 namespace ClockBombGames.PixelMan
 {
-	public partial class Main : Node
+	public partial class Playground : Node
 	{
-		[Export] private Playground playground;
-		[Export] private RichTextLabel debugLabel;
+		[Export] private Node2D worldNode;
+		[Export] private Viewports viewports;
 
 
-		public Playground Playground
+		public Node2D World
 		{
-			get => playground;
+			get => worldNode;
 		}
 
-
-		public override void _Ready()
+		public Viewports Viewports
 		{
-			this.RegisterMain();
-		}
-
-		// Called every frame. 'delta' is the elapsed time since the previous frame.
-		public override void _Process(double delta)
-		{
-			debugLabel.Text = "FPS: " + Engine.GetFramesPerSecond() +
-							"\nMemory: " + OS.GetStaticMemoryUsage() +
-							"\nDraw Calls: " + Performance.GetMonitor(Performance.Monitor.RenderTotalDrawCallsInFrame);
+			get => viewports;
 		}
 	}
 }
