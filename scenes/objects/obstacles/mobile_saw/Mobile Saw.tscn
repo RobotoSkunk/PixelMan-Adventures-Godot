@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cfmk4d5cmkdfh"]
 
-[ext_resource type="Script" path="res://objects/obstacles/saw/Saw.cs" id="1_5mg2l"]
-[ext_resource type="Script" path="res://objects/obstacles/mobile_saw/MobileSaw.cs" id="1_uhp8w"]
+[ext_resource type="Script" path="res://scenes/objects/obstacles/saw/Saw.cs" id="1_5mg2l"]
+[ext_resource type="Script" path="res://scenes/objects/obstacles/mobile_saw/MobileSaw.cs" id="1_uhp8w"]
 [ext_resource type="Texture2D" uid="uid://dxru5e43fjt3v" path="res://assets/sprites/atlas-1.sprites/objects/mobile-saw/but-the-actual-saw.tres" id="1_x1xvd"]
 [ext_resource type="Texture2D" uid="uid://dksboq4hst13n" path="res://assets/sprites/atlas-1.sprites/objects/mobile-saw/0.tres" id="2_vq5yw"]
 [ext_resource type="Texture2D" uid="uid://2d0cigkls7ni" path="res://assets/sprites/atlas-1.sprites/objects/mobile-saw/1.tres" id="5_agau2"]
