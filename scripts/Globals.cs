@@ -74,9 +74,9 @@ namespace ClockBombGames.PixelMan
 	{
 		// Private variables
 		static Director director = null;
+		static Main main = null;
 		static int avatarIndex = 0;
 		static float shakeStrength = 0f;
-		static Viewports viewports = null;
 		readonly static List<Player> players = new();
 
 
@@ -87,11 +87,6 @@ namespace ClockBombGames.PixelMan
 		{
 			get => director;
 		}
-
-		/// <summary>
-		/// The start of the list of Nodes in the current scene
-		/// </summary>
-		public static Node2D SceneTree { get; set; }
 
 		/// <summary>
 		/// Shorthand of <code>Globals.Director.Avatars</code>
@@ -134,7 +129,12 @@ namespace ClockBombGames.PixelMan
 
 		public static Viewports Viewports
 		{
-			get => viewports;
+			get => main.Playground.Viewports;
+		}
+
+		public static Node2D World
+		{
+			get => main.Playground.World;
 		}
 
 
@@ -153,6 +153,14 @@ namespace ClockBombGames.PixelMan
 		public static void SetDirector(this Director director)
 		{
 			Globals.director = director;
+		}
+
+		/// <summary>
+		/// Registers the main node of the game.
+		/// </summary>
+		public static void RegisterMain(this Main main)
+		{
+			Globals.main = main;
 		}
 
 
@@ -204,14 +212,6 @@ namespace ClockBombGames.PixelMan
 		public static void SetShakeStrength(this Director _, float strength)
 		{
 			shakeStrength = strength;
-		}
-
-		/// <summary>
-		/// Registers a player to the game.
-		/// </summary>
-		public static void RegisterViewportsContainer(this Viewports container)
-		{
-			viewports = container;
 		}
 	}
 }

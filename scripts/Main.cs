@@ -1,7 +1,6 @@
 /*
 	PixelMan Adventures - An open-source 2D platformer game.
 	Copyright (C) 2023 Edgar Lima (RobotoSkunk) <contact@robotoskunk.com>
-	Copyright (C) 2023 Repertix
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published
@@ -18,37 +17,34 @@
 */
 
 
-using ClockBombGames.PixelMan.GameObjects;
 using Godot;
 
 
-namespace ClockBombGames.PixelMan.Utils
+namespace ClockBombGames.PixelMan
 {
-	public partial class PlayerViewport : SubViewportContainer
+	public partial class Main : Node
 	{
-		[Export] PlayerCamera camera;
-		[Export] SubViewport subViewport;
+		[Export] private Playground playground;
+		[Export] private RichTextLabel debugLabel;
 
-		public PlayerCamera Camera
-		{
-			get
-			{
-				return camera;
-			}
-		}
 
-		public bool InUse
+		public Playground Playground
 		{
-			get
-			{
-				return camera.Target != null;
-			}
+			get => playground;
 		}
 
 
-		public void SetWorld2D(World2D world)
+		public override void _Ready()
 		{
-			subViewport.World2D = world;
+			this.RegisterMain();
+		}
+
+		// Called every frame. 'delta' is the elapsed time since the previous frame.
+		public override void _Process(double delta)
+		{
+			debugLabel.Text = "FPS: " + Engine.GetFramesPerSecond() +
+							"\nMemory: " + OS.GetStaticMemoryUsage() +
+							"\nDraw Calls: " + Performance.GetMonitor(Performance.Monitor.RenderTotalDrawCallsInFrame);
 		}
 	}
 }

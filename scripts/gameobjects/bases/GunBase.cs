@@ -64,7 +64,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			bullets.Add(projectile);
 			projectile.ShootAt(from, GlobalRotation, speed);
 
-			GetOwner<Node2D>().AddChild(instance);
+			Globals.World.AddChild(instance);
 
 			return projectile;
 		}

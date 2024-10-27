@@ -1,0 +1,12 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4gvjuhbqhmry"]
+
+[ext_resource type="Script" path="res://scripts/Director.cs" id="1_qeg1l"]
+[ext_resource type="SpriteFrames" uid="uid://00xgn5d1pig" path="res://scenes/objects/player/animations/Avatar - 0.tres" id="2_xo26h"]
+[ext_resource type="SpriteFrames" uid="uid://b82ym5xryr6vy" path="res://scenes/objects/player/animations/Avatar - 1.tres" id="3_7bcw3"]
+[ext_resource type="SpriteFrames" uid="uid://dgo8j0r533i5t" path="res://scenes/objects/player/animations/Avatar - 2.tres" id="4_3lmjm"]
+[ext_resource type="SpriteFrames" uid="uid://ccs5hd3r57lrs" path="res://scenes/objects/player/animations/Avatar - 3.tres" id="5_66m1y"]
+
+[node name="Director" type="Node"]
+script = ExtResource("1_qeg1l")
+avatarIndex = 1
+avatars = Array[SpriteFrames]([ExtResource("2_xo26h"), ExtResource("3_7bcw3"), ExtResource("4_3lmjm"), ExtResource("5_66m1y")])

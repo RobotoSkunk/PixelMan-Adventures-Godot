@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0fsqkjb1mkwq"]
 
-[ext_resource type="Script" path="res://objects/obstacles/gun/Gun.cs" id="1_8fixr"]
+[ext_resource type="Script" path="res://scenes/objects/obstacles/gun/Gun.cs" id="1_8fixr"]
 [ext_resource type="Texture2D" uid="uid://b6fe6jpb2tk3f" path="res://assets/sprites/atlas-1.sprites/objects/swivel-gun.tres" id="2_1t0c6"]
-[ext_resource type="PackedScene" uid="uid://l4b2aiwd3deo" path="res://objects/obstacles/bullet/Bullet.tscn" id="2_w7nbu"]
+[ext_resource type="PackedScene" uid="uid://l4b2aiwd3deo" path="res://scenes/objects/obstacles/bullet/Bullet.tscn" id="2_w7nbu"]
 [ext_resource type="AudioStream" uid="uid://fhpq5rv0hatq" path="res://assets/sounds/Shoot.wav" id="4_flqi2"]
 
 [node name="Gun" type="Node2D" node_paths=PackedStringArray("audioStreamPlayer2D", "rayCast")]

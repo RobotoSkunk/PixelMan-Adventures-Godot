@@ -18,49 +18,37 @@
 */
 
 
-using System.Collections.Generic;
 using ClockBombGames.PixelMan.GameObjects;
 using Godot;
-using Godot.Collections;
 
 
 namespace ClockBombGames.PixelMan.Utils
 {
-	public partial class Viewports : CanvasLayer
+	public partial class PlayerViewport : SubViewportContainer
 	{
-		[Export] GridContainer container;
-		[Export] Array<PlayerViewport> viewports;
+		[Export] PlayerCamera camera;
+		[Export] SubViewport subViewport;
 
-		PlayerViewport firstViewport;
-		List<Player> players = new();
-
-
-		public override void _Ready()
+		public PlayerCamera Camera
 		{
-			container.Columns = 1;
-		}
-
-		public override void _Process(double delta)
-		{
-			Globals.GetPlayersNonAlloc(ref players);
-
-			for (int i = 0; i < viewports.Count; i++) {
-				PlayerViewport viewport = viewports[i];
-				viewport.Visible = i < players.Count;
-
-				if (!viewport.Visible) {
-					continue;
-				}
-
-				Player player = players[i];
-
-				viewport.Camera.Target = player;
+			get
+			{
+				return camera;
 			}
 		}
 
-		public Array<PlayerViewport> GetViewports()
+		public bool InUse
 		{
-			return viewports;
+			get
+			{
+				return camera.Target != null;
+			}
+		}
+
+
+		public override void _Process(double delta)
+		{
+			subViewport.World2D = Globals.World?.GetWorld2D();
 		}
 	}
 }

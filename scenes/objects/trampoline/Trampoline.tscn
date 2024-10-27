@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ckmcojtyxje3x"]
 
-[ext_resource type="Script" path="res://objects/trampoline/Trampoline.cs" id="1_801t0"]
-[ext_resource type="SpriteFrames" uid="uid://cg4ppddvmeclv" path="res://objects/trampoline/Trampoline_Animation.tres" id="2_3gfki"]
+[ext_resource type="Script" path="res://scenes/objects/trampoline/Trampoline.cs" id="1_801t0"]
+[ext_resource type="SpriteFrames" uid="uid://cg4ppddvmeclv" path="res://scenes/objects/trampoline/Trampoline_Animation.tres" id="2_3gfki"]
 [ext_resource type="AudioStream" uid="uid://c2slyy672ccbv" path="res://assets/sounds/Trampoline.wav" id="6_mdnmx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rxpj"]
