@@ -1,12 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc2ucaglbxrpu"]
+[gd_scene load_steps=4 format=3 uid="uid://cc2ucaglbxrpu"]
 
-[ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://scenes/objects/player/Player.tscn" id="1_33qhw"]
 [ext_resource type="PackedScene" uid="uid://dinit3e161y8v" path="res://scenes/utils/viewports/viewports.tscn" id="1_ouqyc"]
 [ext_resource type="Script" path="res://scripts/Playground.cs" id="1_pjoaq"]
-[ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://scenes/objects/default_block/Default Block.tscn" id="2_75ffs"]
-[ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://scenes/objects/trampoline/Trampoline.tscn" id="3_o8kxb"]
-[ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://scenes/objects/obstacles/saw/Saw.tscn" id="4_nvka3"]
-[ext_resource type="PackedScene" uid="uid://djs8y3b5sbg6" path="res://scenes/objects/obstacles/rocket_launcher/Rocket Launcher.tscn" id="5_fp3cf"]
+[ext_resource type="PackedScene" uid="uid://ds8gpr35ere4s" path="res://scenes/Test Scene.tscn" id="3_27w22"]
 
 [node name="Playground" type="Node" node_paths=PackedStringArray("worldNode", "viewports")]
 script = ExtResource("1_pjoaq")
@@ -31,75 +27,7 @@ render_target_update_mode = 0
 
 [node name="World" type="Node2D" parent="World Container/Main Viewport"]
 
-[node name="Game Objects" type="Node2D" parent="World Container/Main Viewport/World"]
-
-[node name="Player" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("1_33qhw")]
-position = Vector2(92, 93)
-
-[node name="Default Block" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("2_75ffs")]
-position = Vector2(261, 112)
-scale = Vector2(56.92, 1)
-
-[node name="Default Block5" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("2_75ffs")]
-position = Vector2(570, 99)
-rotation = 2.88329
-scale = Vector2(24, 1)
-
-[node name="Default Block7" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("2_75ffs")]
-position = Vector2(618, 89)
-rotation = 2.40332
-scale = Vector2(24, 1)
-
-[node name="Default Block6" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("2_75ffs")]
-position = Vector2(502, 112)
-rotation = 0.785398
-scale = Vector2(3, 3)
-
-[node name="Default Block4" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("2_75ffs")]
-position = Vector2(261, -112)
-scale = Vector2(56.92, 1)
-
-[node name="Default Block2" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("2_75ffs")]
-position = Vector2(-192, 0)
-scale = Vector2(1, 14)
-
-[node name="Default Block8" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("2_75ffs")]
-position = Vector2(110, 188)
-scale = Vector2(1, 14)
-
-[node name="Default Block3" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("2_75ffs")]
-position = Vector2(713, 0)
-scale = Vector2(1, 14)
-
-[node name="Trampoline" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("3_o8kxb")]
-position = Vector2(-172, 92)
-rotation = 0.785398
-
-[node name="Trampoline2" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("3_o8kxb")]
-position = Vector2(-43, 96)
-
-[node name="Saw" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("4_nvka3")]
-position = Vector2(-79, 41)
-path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0)])
-speed = 160.0
-
-[node name="Saw2" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("4_nvka3")]
-position = Vector2(392, 87)
-speed = 160.0
-
-[node name="Saw3" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("4_nvka3")]
-position = Vector2(278, 56)
-path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0), Vector2(40, -80)])
-returnToStart = true
-speed = 160.0
-
-[node name="Saw4" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("4_nvka3")]
-position = Vector2(66, 47)
-path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0), Vector2(40, -80)])
-speed = 160.0
-
-[node name="Rocket Launcher" parent="World Container/Main Viewport/World/Game Objects" instance=ExtResource("5_fp3cf")]
-position = Vector2(210, 34)
+[node name="Test Scene" parent="World Container/Main Viewport/World" instance=ExtResource("3_27w22")]
 
 [node name="Main Camera" type="Camera2D" parent="World Container/Main Viewport"]
 visible = false
