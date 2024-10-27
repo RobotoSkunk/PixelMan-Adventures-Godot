@@ -20,7 +20,7 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-Director="*res://objects/Director.tscn"
+Director="*res://scenes/Director.tscn"
 
 [display]
 
