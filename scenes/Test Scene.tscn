@@ -7,12 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://objects/obstacles/saw/Saw.tscn" id="5_kr1w6"]
 [ext_resource type="PackedScene" uid="uid://djs8y3b5sbg6" path="res://objects/obstacles/rocket_launcher/Rocket Launcher.tscn" id="6_wn7lu"]
 
-[node name="Test Scene" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="Test Scene" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
