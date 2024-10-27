@@ -132,6 +132,11 @@ namespace ClockBombGames.PixelMan
 			get => viewports;
 		}
 
+		public static Node2D World
+		{
+			get => viewports.World;
+		}
+
 
 		/// <summary>
 		/// Tells the director that the player died.

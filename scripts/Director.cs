@@ -33,8 +33,6 @@ namespace ClockBombGames.PixelMan
 		[Export] private int avatarIndex = 0;
 		[Export] private SpriteFrames[] avatars;
 		[Export] private float shakeStrength;
-		[Export] private PackedScene playerScene;
-		[Export] private RichTextLabel debugLabel;
 
 		bool playerDied = false;
 		bool secondPlayer = false;
@@ -47,7 +45,7 @@ namespace ClockBombGames.PixelMan
 		/// </summary>
 		float inputTimer = 0f;
 
-		private List<Player> players = new();
+		// private List<Player> players = new();
 		private Tween shakeTween;
 
 
@@ -65,10 +63,6 @@ namespace ClockBombGames.PixelMan
 
 		public override void _Process(double delta)
 		{
-			debugLabel.Text = "FPS: " + Engine.GetFramesPerSecond() +
-							"\nMemory: " + OS.GetStaticMemoryUsage() +
-							"\nDraw Calls: " + Performance.GetMonitor(Performance.Monitor.RenderTotalDrawCallsInFrame);
-
 			if (playerDied && !gamePaused) {
 				restartTimer -= (float)delta;
 
@@ -93,16 +87,12 @@ namespace ClockBombGames.PixelMan
 				TogglePause();
 				inputTimer = 0.5f;
 			}
-
-			if (@event.IsActionPressed("second_player")) {
-				AddSecondPlayer();
-			}
 		}
 
 		public void TogglePause()
 		{
-			GetTree().Paused = !GetTree().Paused;
-			gamePaused = GetTree().Paused;
+			Globals.World.GetTree().Paused = !Globals.World.GetTree().Paused;
+			gamePaused = Globals.World.GetTree().Paused;
 		}
 
 		public void TriggerPlayerDeath()
@@ -129,24 +119,24 @@ namespace ClockBombGames.PixelMan
 			this.SetShakeStrength(0f);
 		}
 
-		public void AddSecondPlayer()
-		{
-			Globals.GetPlayersNonAlloc(ref players);
+		// public void AddSecondPlayer()
+		// {
+		// 	Globals.GetPlayersNonAlloc(ref players);
 
-			if (players.Count >= 2) {
-				return;
-			}
+		// 	if (players.Count >= 2) {
+		// 		return;
+		// 	}
 
-			Player firstPlayer = players[0];
-			Player secondPlayer = playerScene.Instantiate<Player>();
+		// 	Player firstPlayer = players[0];
+		// 	Player secondPlayer = playerScene.Instantiate<Player>();
 
-			secondPlayer.GlobalPosition = players[0].GlobalPosition;
+		// 	secondPlayer.GlobalPosition = players[0].GlobalPosition;
 
-			secondPlayer.PlayerIndex = 2;
-			firstPlayer.PlayerIndex = 1;
+		// 	secondPlayer.PlayerIndex = 2;
+		// 	firstPlayer.PlayerIndex = 1;
 
-			Globals.Viewports.World.AddChild(secondPlayer);
-			Globals.Viewports.AddPlayer(secondPlayer);
-		}
+		// 	Globals.Viewports.World.AddChild(secondPlayer);
+		// 	Globals.Viewports.AddPlayer(secondPlayer);
+		// }
 	}
 }
