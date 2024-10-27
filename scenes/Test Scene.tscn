@@ -22,9 +22,8 @@ world = NodePath("../../Game Objects")
 
 [node name="Game Objects" type="Node2D" parent="."]
 
-[node name="Player" parent="Game Objects" node_paths=PackedStringArray("viewports") instance=ExtResource("2_eoc6o")]
+[node name="Player" parent="Game Objects" instance=ExtResource("2_eoc6o")]
 position = Vector2(92, 93)
-viewports = NodePath("../../Control/Viewports")
 
 [node name="Default Block" parent="Game Objects" instance=ExtResource("1_1v0s6")]
 position = Vector2(261, 112)

@@ -41,7 +41,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		[ExportGroup("PlayerCamera Components")]
 		[Export] PlayerViewport viewport;
-		[Export] Viewports viewports;
 
 		[ExportGroup("Killzone detection components")]
 		[Export] Area2D killzoneHitbox;
@@ -251,7 +250,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			this.RegisterPlayer();
 
 			// Configure the camera
-			viewports?.AddPlayer(this);
+			Globals.Viewports?.AddPlayer(this);
 
 
 			// Connect events
