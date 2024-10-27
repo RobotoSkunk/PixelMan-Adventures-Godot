@@ -39,9 +39,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] AudioStreamPlayer2D audioPlayer;
 		[Export] CollisionShape2D collisionShape;
 
-		[ExportGroup("PlayerCamera Components")]
-		[Export] PlayerViewport viewport;
-
 		[ExportGroup("Killzone detection components")]
 		[Export] Area2D killzoneHitbox;
 		[Export] CollisionShape2D killzoneCollisionShape;
@@ -50,9 +47,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[ExportGroup("Properties")]
 		[Export] PackedScene deathParticleScene;
 		[Export(PropertyHint.ArrayType)] AudioStream[] sounds;
-
-		[ExportGroup("Editor Only")]
-		[Export] Viewports worldViewports;
 
 
 		#region Readonly variables
@@ -248,9 +242,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			// Register the player
 			this.RegisterPlayer();
-
-			// Configure the camera
-			// Globals.Viewports?.AddPlayer(this);
 
 
 			// Connect events
