@@ -7,16 +7,26 @@
 [ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://objects/obstacles/saw/Saw.tscn" id="5_kr1w6"]
 [ext_resource type="PackedScene" uid="uid://djs8y3b5sbg6" path="res://objects/obstacles/rocket_launcher/Rocket Launcher.tscn" id="6_wn7lu"]
 
-[node name="Test Scene" type="Node2D"]
+[node name="Test Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
-[node name="Viewports" parent="." node_paths=PackedStringArray("world") instance=ExtResource("1_o4ovk")]
-world = NodePath("../Game Objects")
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Viewports" parent="Control" node_paths=PackedStringArray("world") instance=ExtResource("1_o4ovk")]
+world = NodePath("../../Game Objects")
 
 [node name="Game Objects" type="Node2D" parent="."]
 
 [node name="Player" parent="Game Objects" node_paths=PackedStringArray("viewports") instance=ExtResource("2_eoc6o")]
 position = Vector2(92, 93)
-viewports = NodePath("../../Viewports")
+viewports = NodePath("../../Control/Viewports")
 
 [node name="Default Block" parent="Game Objects" instance=ExtResource("1_1v0s6")]
 position = Vector2(261, 112)

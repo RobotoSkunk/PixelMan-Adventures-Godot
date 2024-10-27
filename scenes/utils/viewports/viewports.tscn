@@ -1,25 +1,35 @@
 [gd_scene load_steps=5 format=3 uid="uid://dinit3e161y8v"]
 
 [ext_resource type="Script" path="res://scenes/utils/viewports/Viewports.cs" id="1_ns63k"]
-[ext_resource type="Texture2D" uid="uid://deuhoa34bwgw4" path="res://assets/sprites/atlas-1.sprites/gui/square-white.tres" id="2_c2i4r"]
+[ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="2_5uatc"]
 [ext_resource type="Script" path="res://objects/player/scripts/PlayerViewport.cs" id="3_mgdin"]
 [ext_resource type="Script" path="res://objects/player/scripts/PlayerCamera.cs" id="4_dxh3r"]
 
 [node name="Viewports" type="CanvasLayer" node_paths=PackedStringArray("container", "viewports")]
 script = ExtResource("1_ns63k")
-container = NodePath("Container")
-viewports = [NodePath("Container/SubViewport Player 1"), NodePath("Container/SubViewport Player 2")]
+container = NodePath("Control/Container")
+viewports = [NodePath("Control/Container/SubViewport Player 1"), NodePath("Control/Container/SubViewport Player 2")]
 
-[node name="Texture" type="TextureRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_c2i4r")
 
-[node name="Container" type="GridContainer" parent="."]
+[node name="Texture" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5uatc")
+
+[node name="Container" type="GridContainer" parent="Control"]
 layout_direction = 2
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,38 +38,44 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SubViewport Player 1" type="SubViewportContainer" parent="Container" node_paths=PackedStringArray("camera", "subViewport")]
+[node name="SubViewport Player 1" type="SubViewportContainer" parent="Control/Container" node_paths=PackedStringArray("camera", "subViewport")]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
 script = ExtResource("3_mgdin")
 camera = NodePath("Viewport/Camera2D")
 subViewport = NodePath("Viewport")
 
-[node name="Viewport" type="SubViewport" parent="Container/SubViewport Player 1"]
+[node name="Viewport" type="SubViewport" parent="Control/Container/SubViewport Player 1"]
 disable_3d = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
-size = Vector2i(1270, 720)
+size = Vector2i(2, 2)
 render_target_update_mode = 0
 
-[node name="Camera2D" type="Camera2D" parent="Container/SubViewport Player 1/Viewport"]
+[node name="Camera2D" type="Camera2D" parent="Control/Container/SubViewport Player 1/Viewport"]
 script = ExtResource("4_dxh3r")
 
-[node name="SubViewport Player 2" type="SubViewportContainer" parent="Container" node_paths=PackedStringArray("camera", "subViewport")]
+[node name="SubViewport Player 2" type="SubViewportContainer" parent="Control/Container" node_paths=PackedStringArray("camera", "subViewport")]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
 script = ExtResource("3_mgdin")
 camera = NodePath("Viewport/Camera2D")
 subViewport = NodePath("Viewport")
 
-[node name="Viewport" type="SubViewport" parent="Container/SubViewport Player 2"]
+[node name="Viewport" type="SubViewport" parent="Control/Container/SubViewport Player 2"]
 disable_3d = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
-size = Vector2i(1270, 720)
+size = Vector2i(2, 2)
 render_target_update_mode = 0
 
-[node name="Camera2D" type="Camera2D" parent="Container/SubViewport Player 2/Viewport"]
+[node name="Camera2D" type="Camera2D" parent="Control/Container/SubViewport Player 2/Viewport"]
 script = ExtResource("4_dxh3r")
