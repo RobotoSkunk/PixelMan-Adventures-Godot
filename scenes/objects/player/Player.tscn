@@ -12,30 +12,26 @@ size = Vector2(8, 14)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_agblt"]
 lifetime_randomness = 0.1
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(3, 0.5, 0)
-particle_flag_disable_z = true
 direction = Vector3(-0.2, -1, 0)
-gravity = Vector3(0, 98, 0)
 initial_velocity_min = 20.0
 initial_velocity_max = 30.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 98, 0)
 scale_min = 0.03
 scale_max = 0.05
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_413j1"]
 lifetime_randomness = 0.5
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(6, 1, 1)
-particle_flag_disable_z = true
 direction = Vector3(0, -1, 0)
 spread = 65.0
-gravity = Vector3(0, 98, 0)
 initial_velocity_min = 40.0
 initial_velocity_max = 40.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 98, 0)
 linear_accel_min = -61.44
 linear_accel_max = -52.01
 scale_min = 0.03
