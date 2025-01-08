@@ -1,0 +1,96 @@
+[gd_scene load_steps=26 format=3 uid="uid://btxvoypjswqqe"]
+
+[ext_resource type="Texture2D" uid="uid://b67diqegotm2m" path="res://assets/sprites/atlas-1.sprites/objects/laser/body/1.tres" id="1_04xqo"]
+[ext_resource type="Script" path="res://scenes/objects/obstacles/laser_gun/LaserGun.cs" id="1_xg465"]
+[ext_resource type="Texture2D" uid="uid://c5voirhquxu3i" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/10.tres" id="1_xrksn"]
+[ext_resource type="Texture2D" uid="uid://c21d1x4ptm1cf" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/0.tres" id="2_65no7"]
+[ext_resource type="Texture2D" uid="uid://bjss1epna5xa8" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/1.tres" id="3_ioy25"]
+[ext_resource type="Texture2D" uid="uid://bvbqfqhq763lk" path="res://assets/sprites/atlas-1.sprites/objects/laser/dots/0.tres" id="3_p600n"]
+[ext_resource type="Texture2D" uid="uid://dxsoj1lcjui2m" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/2.tres" id="4_v4tuu"]
+[ext_resource type="Texture2D" uid="uid://dhyukdy4wpikp" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/3.tres" id="5_fgrw0"]
+[ext_resource type="Texture2D" uid="uid://c2bnypymv35vn" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/4.tres" id="6_ctgmc"]
+[ext_resource type="Texture2D" uid="uid://cl86w0ktj37s8" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/5.tres" id="7_yvkl7"]
+[ext_resource type="Texture2D" uid="uid://c5v58ba8tn7bu" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/6.tres" id="8_su6qu"]
+[ext_resource type="Texture2D" uid="uid://bbitscp5w7j1o" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/7.tres" id="9_vl3fp"]
+[ext_resource type="Texture2D" uid="uid://bilctodxygi52" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/8.tres" id="10_efa8y"]
+[ext_resource type="Texture2D" uid="uid://cv3adijqc8jy" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/9.tres" id="11_xbm5x"]
+[ext_resource type="Texture2D" uid="uid://dedeqsjsrvwb0" path="res://assets/sprites/atlas-1.sprites/objects/laser/body/0.tres" id="13_34jkr"]
+[ext_resource type="Texture2D" uid="uid://jvecognlx38q" path="res://assets/sprites/atlas-1.sprites/objects/laser/dots/1.tres" id="16_lrgjd"]
+[ext_resource type="Texture2D" uid="uid://bjta4fbkcwyw2" path="res://assets/sprites/atlas-1.sprites/objects/laser/dots/2.tres" id="17_tyjys"]
+[ext_resource type="Texture2D" uid="uid://3j0ac1vi32un" path="res://assets/sprites/atlas-1.sprites/objects/laser/dots/3.tres" id="18_5yix8"]
+[ext_resource type="Texture2D" uid="uid://dcyy43nr7qm5d" path="res://assets/sprites/atlas-1.sprites/objects/laser/dots/4.tres" id="19_gienw"]
+[ext_resource type="Texture2D" uid="uid://815gjuvdyhfv" path="res://assets/sprites/atlas-1.sprites/objects/laser/dots/5.tres" id="20_10iyb"]
+[ext_resource type="AudioStream" uid="uid://bp2uyxc6lc8u7" path="res://assets/sounds/LaserDetected.wav" id="21_0qe5w"]
+[ext_resource type="Texture2D" uid="uid://cr7bc8hxxjtq8" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/outline.tres" id="21_qa67i"]
+[ext_resource type="Texture2D" uid="uid://dw5h1kbi8717b" path="res://assets/sprites/atlas-1.sprites/objects/laser/line.tres" id="22_ta4yw"]
+[ext_resource type="AudioStream" uid="uid://b0tro08pvv8h4" path="res://assets/sounds/Laser.wav" id="22_yn77v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0w4g"]
+size = Vector2(1, 8)
+
+[node name="LaserGun" type="Node2D" node_paths=PackedStringArray("renderer", "rendererOutline", "rayCast2D", "playerRayCast2D", "audioStreamPlayer", "laserBody", "laserDots", "laserLine", "laserHitbox")]
+script = ExtResource("1_xg465")
+renderer = NodePath("Renderer")
+rendererOutline = NodePath("Renderer Outline")
+rayCast2D = NodePath("Laser/RayCast")
+playerRayCast2D = NodePath("Laser/Player RayCast")
+audioStreamPlayer = NodePath("AudioStreamPlayer2D")
+laserBody = NodePath("Laser/Body")
+laserDots = NodePath("Laser/Dots")
+laserLine = NodePath("Laser/Line")
+laserHitbox = NodePath("Laser/Body/Hitbox")
+rendererSprites = Array[Texture2D]([ExtResource("2_65no7"), ExtResource("3_ioy25"), ExtResource("4_v4tuu"), ExtResource("5_fgrw0"), ExtResource("6_ctgmc"), ExtResource("7_yvkl7"), ExtResource("8_su6qu"), ExtResource("9_vl3fp"), ExtResource("10_efa8y"), ExtResource("11_xbm5x"), ExtResource("1_xrksn")])
+laserSprites = Array[Texture2D]([ExtResource("13_34jkr"), ExtResource("1_04xqo")])
+dotsSprites = Array[Texture2D]([ExtResource("3_p600n"), ExtResource("16_lrgjd"), ExtResource("17_tyjys"), ExtResource("18_5yix8"), ExtResource("19_gienw"), ExtResource("20_10iyb")])
+audioDetected = ExtResource("21_0qe5w")
+audioShoot = ExtResource("22_yn77v")
+
+[node name="Laser" type="Node2D" parent="."]
+position = Vector2(-10.5, 0)
+
+[node name="RayCast" type="RayCast2D" parent="Laser"]
+target_position = Vector2(1600, 0)
+collision_mask = 9
+
+[node name="Player RayCast" type="RayCast2D" parent="Laser"]
+target_position = Vector2(1600, 0)
+collision_mask = 2
+
+[node name="Line Screen Notifier" type="VisibleOnScreenNotifier2D" parent="Laser"]
+rect = Rect2(0, -0.5, 1, 1)
+
+[node name="Line" type="Sprite2D" parent="Laser"]
+texture = ExtResource("22_ta4yw")
+centered = false
+offset = Vector2(0, -0.5)
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="Dots" type="Sprite2D" parent="Laser"]
+texture_repeat = 2
+texture = ExtResource("3_p600n")
+centered = false
+offset = Vector2(0, -0.5)
+region_enabled = true
+region_rect = Rect2(0, 0, 1, 1)
+
+[node name="Body" type="Sprite2D" parent="Laser"]
+texture = ExtResource("1_04xqo")
+offset = Vector2(0.5, 0)
+
+[node name="Hitbox" type="Area2D" parent="Laser/Body"]
+collision_layer = 4
+collision_mask = 12
+
+[node name="Shape" type="CollisionShape2D" parent="Laser/Body/Hitbox"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_l0w4g")
+debug_color = Color(0.7, 0, 0, 0.42)
+
+[node name="Renderer Outline" type="Sprite2D" parent="."]
+texture = ExtResource("21_qa67i")
+
+[node name="Renderer" type="Sprite2D" parent="."]
+texture = ExtResource("1_xrksn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
