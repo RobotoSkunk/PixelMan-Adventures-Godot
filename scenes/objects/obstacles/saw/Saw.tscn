@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/objects/obstacles/saw/Saw.cs" id="1_s0ob0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_agr6p"]
-radius = 14.0
+radius = 18.0
 
 [node name="Saw" type="Area2D" node_paths=PackedStringArray("notifier", "sprite", "linePath")]
 collision_layer = 4
