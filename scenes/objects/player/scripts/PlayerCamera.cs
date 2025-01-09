@@ -129,7 +129,13 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 
 			// Apply zoom
-			Zoom = RSMath.Lerp(Zoom, Vector2.One * (5f - rawZoom), 0.01f * RSMath.FixedDelta(delta));
+			float zoomDelta = 0.01f;
+
+			if ((cameraOverrideOptions & CameraAreaOptions.OVERRIDE_ZOOM) != 0) {
+				zoomDelta = 0.1f;
+			}
+
+			Zoom = RSMath.Lerp(Zoom, Vector2.One * (5f - rawZoom), zoomDelta * RSMath.FixedDelta(delta));
 
 
 			// Apply offset

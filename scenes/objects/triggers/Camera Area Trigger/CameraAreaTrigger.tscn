@@ -13,3 +13,4 @@ overrideOptions = 103
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6ise7")
+debug_color = Color(1, 1, 0.658824, 0.419608)
