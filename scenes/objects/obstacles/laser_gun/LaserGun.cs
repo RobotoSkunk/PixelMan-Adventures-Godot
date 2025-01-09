@@ -18,6 +18,7 @@
 
 
 using System.Collections.Generic;
+using ClockBombGames.PixelMan.Events;
 using Godot;
 using Godot.Collections;
 
@@ -87,6 +88,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 					foundProjectiles.Remove(projectile);
 				}
 			};
+
+			GameEvents.OnResetGame += OnResetGame;
 		}
 
 		public override void _Process(double delta)
@@ -213,6 +216,14 @@ namespace ClockBombGames.PixelMan.GameObjects
 			} else {
 				laserBody.Visible = false;
 			}
+		}
+
+
+		private void OnResetGame()
+		{
+			reloadProgress = 1f;
+			shootLaser = false;
+			laserBody.Scale = Vector2.Zero;
 		}
 
 
