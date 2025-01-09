@@ -60,12 +60,21 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		float laserDistance = 1600f;
 
+		int foundPlayersCount = 0;
+
 		public override void _Ready()
 		{
 			laserHitbox.BodyEntered += (body) =>
 			{
 				if (body is Player player) {
-					Globals.PlayerDied();
+					foundPlayersCount++;
+				}
+			};
+
+			laserHitbox.BodyExited += (body) =>
+			{
+				if (body is Player player) {
+					foundPlayersCount--;
 				}
 			};
 		}
@@ -177,18 +186,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 			}
 
 
-			if (laserBody.Scale.Y > 0.05f) {
+			if (laserBody.Scale.Y > 0.1f) {
 				float newY = Mathf.Lerp(laserBody.Scale.Y, 0f, 0.15f);
 
 				laserBody.Visible = true;
-				laserHitbox.Monitorable = true;
+				
+				if (foundPlayersCount > 0) {
+					Globals.PlayerDied();
+				}
 
 				laserBody.Scale = new Vector2(laserDistance, newY);
 			} else {
-				if (laserHitbox.Monitorable) {
-					laserHitbox.Monitorable = false;
-				}
-
 				laserBody.Visible = false;
 			}
 		}

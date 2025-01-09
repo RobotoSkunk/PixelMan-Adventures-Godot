@@ -79,8 +79,9 @@ texture = ExtResource("1_04xqo")
 offset = Vector2(0.5, 0)
 
 [node name="Hitbox" type="Area2D" parent="Laser/Body"]
-collision_layer = 4
-collision_mask = 12
+collision_layer = 0
+collision_mask = 6
+monitorable = false
 
 [node name="Shape" type="CollisionShape2D" parent="Laser/Body/Hitbox"]
 position = Vector2(0.5, 0)

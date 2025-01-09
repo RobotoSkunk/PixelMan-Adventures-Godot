@@ -80,4 +80,3 @@ rotation = 2.00054
 [node name="LaserGun2" parent="." instance=ExtResource("5_pxsf5")]
 position = Vector2(223, 34)
 rotation = 1.57079
-reloadTime = 5.0
