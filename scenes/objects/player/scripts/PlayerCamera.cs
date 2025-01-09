@@ -72,8 +72,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		public Player TargetPlayer { get; set; }
 
 
-		private CameraAreaOptions cameraOverrideOptions = 0;
-		bool enteredCameraArea = false;
+		int enteredCameraAreaCount = 0;
 
 		#endregion
 
@@ -90,7 +89,57 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _Process(double delta)
 		{
+			CameraAreaOptions cameraOverrideOptions = 0;
+
 			if (TargetPlayer != null) {
+				// Calculate camera area triggers
+				Vector2 tmpTargetPosition = rawTargetPosition;
+
+				foreach (CameraAreaTrigger areaTrigger in TargetPlayer.CameraAreaTriggers) {
+
+					if ((areaTrigger.CameraAreaOptions & CameraAreaOptions.OVERRIDE_OVERLAPING_AREAS_OPTIONS) != 0) {
+						cameraOverrideOptions = areaTrigger.CameraAreaOptions;
+					} else {
+						cameraOverrideOptions |= areaTrigger.CameraAreaOptions;
+					}
+
+					if ((cameraOverrideOptions & CameraAreaOptions.CENTER_POSITION_X) != 0) {
+						tmpTargetPosition.X = areaTrigger.GlobalPosition.X;
+					}
+
+					if ((cameraOverrideOptions & CameraAreaOptions.CENTER_POSITION_Y) != 0) {
+						tmpTargetPosition.Y = areaTrigger.GlobalPosition.Y;
+					}
+
+					if ((cameraOverrideOptions & CameraAreaOptions.OVERRIDE_ZOOM) != 0) {
+						rawZoom = areaTrigger.Zoom;
+					}
+
+					if ((cameraOverrideOptions & CameraAreaOptions.OVERRIDE_OFFSET) != 0) {
+						rawOffset = areaTrigger.Offset;
+					}
+				}
+
+				if ((cameraOverrideOptions & CameraAreaOptions.CENTER_POSITION_X) != 0) {
+					rawTargetPosition = new Vector2(tmpTargetPosition.X, rawTargetPosition.Y);
+				}
+
+				if ((cameraOverrideOptions & CameraAreaOptions.CENTER_POSITION_Y) != 0) {
+					rawTargetPosition = new Vector2(rawTargetPosition.X, tmpTargetPosition.Y);
+				}
+
+
+				if (enteredCameraAreaCount != TargetPlayer.CameraAreaTriggers.Count) {
+					enteredCameraAreaCount = TargetPlayer.CameraAreaTriggers.Count;
+
+					if ((cameraOverrideOptions & CameraAreaOptions.INSTANT_TRANSITION_ON_ENTER) != 0) {
+						GlobalPosition = rawTargetPosition;
+						virtualOffset = rawOffset;
+						Zoom = Vector2.One * (5f - rawZoom);
+					}
+				}
+
+
 				// Calculate zoom
 				if ((cameraOverrideOptions & CameraAreaOptions.OVERRIDE_ZOOM) == 0) {
 					rawZoom = 1 + 4f * playerVelocity / Constants.maxSpeed;
@@ -157,43 +206,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		public override void _PhysicsProcess(double delta)
 		{
 			if (TargetPlayer != null) {
-				cameraOverrideOptions = 0;
-
-				foreach (CameraAreaTrigger areaTrigger in TargetPlayer.CameraAreaTriggers) {
-					cameraOverrideOptions |= areaTrigger.CameraAreaOptions;
-
-					if ((cameraOverrideOptions & CameraAreaOptions.CENTER_POSITION_X) != 0) {
-						rawTargetPosition = new Vector2(areaTrigger.GlobalPosition.X, rawTargetPosition.Y);
-					}
-
-					if ((cameraOverrideOptions & CameraAreaOptions.CENTER_POSITION_Y) != 0) {
-						rawTargetPosition = new Vector2(rawTargetPosition.X, areaTrigger.GlobalPosition.Y);
-					}
-
-					if ((cameraOverrideOptions & CameraAreaOptions.OVERRIDE_ZOOM) != 0) {
-						rawZoom = areaTrigger.Zoom;
-					}
-
-					if ((cameraOverrideOptions & CameraAreaOptions.OVERRIDE_OFFSET) != 0) {
-						rawOffset = areaTrigger.Offset;
-					}
-				}
-
-
-
-				if (TargetPlayer.CameraAreaTriggers.Count == 0) {
-					enteredCameraArea = false;
-
-				} else if (!enteredCameraArea) {
-					enteredCameraArea = true;
-
-					if ((cameraOverrideOptions & CameraAreaOptions.INSTANT_TRANSITION_ON_ENTER) != 0) {
-						GlobalPosition = rawTargetPosition;
-						virtualOffset = rawOffset;
-						Zoom = Vector2.One * (5f - rawZoom);
-					}
-				}
-
 				playerVelocity = TargetPlayer.Velocity.Length();
 
 				if (Mathf.Abs(TargetPlayer.WantedHorizontalSpeed) != 0f) {

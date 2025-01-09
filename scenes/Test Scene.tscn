@@ -88,6 +88,8 @@ scale = Vector2(28.7906, 15.186)
 
 [node name="CameraAreaTrigger2" parent="." instance=ExtResource("6_mema5")]
 position = Vector2(626, 57)
+rotation = 21.416
 scale = Vector2(13.119, 12.518)
-overrideOptions = 39
+overrideOptions = 132
 zoom = 1.176
+rotation = 21.416

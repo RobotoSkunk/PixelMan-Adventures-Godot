@@ -32,7 +32,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 			"SET_HORIZONTAL_LIMITS," +
 			"SET_VERTICAL_LIMITS," +
 			"OVERRIDE_OFFSET," +
-			"INSTANT_TRANSITION_ON_ENTER"
+			"INSTANT_TRANSITION_ON_ENTER," +
+			"OVERRIDE_OVERLAPING_AREAS_OPTIONS"
 		)]
 		private int overrideOptions;
 		
@@ -59,12 +60,13 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 	public enum CameraAreaOptions
 	{
-		CENTER_POSITION_X           = 1 << 0,
-		CENTER_POSITION_Y           = 1 << 1,
-		OVERRIDE_ZOOM               = 1 << 2,
-		SET_HORIZONTAL_LIMITS       = 1 << 3,
-		SET_VERTICAL_LIMITS         = 1 << 4,
-		OVERRIDE_OFFSET             = 1 << 5,
-		INSTANT_TRANSITION_ON_ENTER = 1 << 6,
+		CENTER_POSITION_X                 = 1 << 0,
+		CENTER_POSITION_Y                 = 1 << 1,
+		OVERRIDE_ZOOM                     = 1 << 2,
+		SET_HORIZONTAL_LIMITS             = 1 << 3,
+		SET_VERTICAL_LIMITS               = 1 << 4,
+		OVERRIDE_OFFSET                   = 1 << 5,
+		INSTANT_TRANSITION_ON_ENTER       = 1 << 6,
+		OVERRIDE_OVERLAPING_AREAS_OPTIONS = 1 << 7,
 	}
 }
