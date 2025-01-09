@@ -34,7 +34,7 @@ namespace ClockBombGames.PixelMan
 		[Export] private SpriteFrames[] avatars;
 		[Export] private float shakeStrength;
 
-		bool playerDied = false;
+		bool playerIsDead = false;
 		bool secondPlayer = false;
 		bool gamePaused = false;
 		float restartTimer = 0f;
@@ -63,12 +63,12 @@ namespace ClockBombGames.PixelMan
 
 		public override void _Process(double delta)
 		{
-			if (playerDied && !gamePaused) {
+			if (playerIsDead && !gamePaused) {
 				restartTimer -= (float)delta;
 
 				if (restartTimer <= 0f) {
 					this.InvokeResetGame();
-					playerDied = false;
+					playerIsDead = false;
 				}
 			}
 
@@ -97,8 +97,8 @@ namespace ClockBombGames.PixelMan
 
 		public void TriggerPlayerDeath()
 		{
-			if (!playerDied) {
-				playerDied = true;
+			if (!playerIsDead) {
+				playerIsDead = true;
 				restartTimer = 1f;
 
 				this.InvokePlayerDeath();

@@ -141,7 +141,7 @@ namespace ClockBombGames.PixelMan
 		/// <summary>
 		/// Tells the director that the player died.
 		/// </summary>
-		public static void PlayerDied()
+		public static void KillPlayers()
 		{
 			director.TriggerPlayerDeath();
 		}

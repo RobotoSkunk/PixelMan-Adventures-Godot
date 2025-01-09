@@ -192,7 +192,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				laserBody.Visible = true;
 				
 				if (foundPlayersCount > 0) {
-					Globals.PlayerDied();
+					Globals.KillPlayers();
 				}
 
 				laserBody.Scale = new Vector2(laserDistance, newY);

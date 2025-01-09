@@ -88,7 +88,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			isActive = false;
 
 			if (body is Player) {
-				Globals.PlayerDied();
+				Globals.KillPlayers();
 			}
 		}
 
