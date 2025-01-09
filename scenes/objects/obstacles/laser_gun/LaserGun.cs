@@ -176,7 +176,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 					shootLaser = false;
 					reloadProgress = 0f;
 
-					Globals.Shake(1f, 0.2f);
+					Globals.Shake(0.5f, 0.2f);
 
 					laserBody.Scale = new Vector2(laserDistance, 1.5f);
 
