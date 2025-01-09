@@ -17,6 +17,7 @@
 */
 
 
+using System.Collections.Generic;
 using Godot;
 using Godot.Collections;
 
@@ -60,12 +61,30 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		float laserDistance = 1600f;
 
+		int foundPlayersCount = 0;
+
+		List<IGOProjectile> foundProjectiles = new();
+
+
 		public override void _Ready()
 		{
 			laserHitbox.BodyEntered += (body) =>
 			{
 				if (body is Player player) {
-					Globals.PlayerDied();
+					foundPlayersCount++;
+
+				} else if (body is IGOProjectile projectile) {
+					foundProjectiles.Add(projectile);
+				}
+			};
+
+			laserHitbox.BodyExited += (body) =>
+			{
+				if (body is Player player) {
+					foundPlayersCount--;
+
+				} else if (body is IGOProjectile projectile) {
+					foundProjectiles.Remove(projectile);
 				}
 			};
 		}
@@ -167,7 +186,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 					shootLaser = false;
 					reloadProgress = 0f;
 
-					Globals.Shake(1f, 0.2f);
+					Globals.Shake(0.5f, 0.2f);
 
 					laserBody.Scale = new Vector2(laserDistance, 1.5f);
 
@@ -177,18 +196,21 @@ namespace ClockBombGames.PixelMan.GameObjects
 			}
 
 
-			if (laserBody.Scale.Y > 0.05f) {
+			if (laserBody.Scale.Y > 0.1f) {
 				float newY = Mathf.Lerp(laserBody.Scale.Y, 0f, 0.15f);
 
 				laserBody.Visible = true;
-				laserHitbox.Monitorable = true;
+				
+				if (foundPlayersCount > 0) {
+					Globals.KillPlayers();
+				}
+
+				foreach (IGOProjectile projectile in foundProjectiles) {
+					projectile.Destroy();
+				}
 
 				laserBody.Scale = new Vector2(laserDistance, newY);
 			} else {
-				if (laserHitbox.Monitorable) {
-					laserHitbox.Monitorable = false;
-				}
-
 				laserBody.Visible = false;
 			}
 		}

@@ -127,24 +127,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		private void OnBodyEntered(Node body)
 		{
-			if (!isActive) {
-				return;
-			}
-
-			isActive = false;
+			Destroy();
 
 			if (body is Player) {
-				Globals.PlayerDied();
+				Globals.KillPlayers();
 			}
 		}
 
 		private void OnAreaEntered(Node _)
 		{
-			if (!isActive) {
-				return;
-			}
-
-			isActive = false;
+			Destroy();
 		}
 
 
@@ -181,6 +173,15 @@ namespace ClockBombGames.PixelMan.GameObjects
 			GlobalRotationDegrees = angle;
 
 			velocity = new Vector2(speed, 0).Rotated(Mathf.DegToRad(angle));
+		}
+
+		public void Destroy()
+		{
+			if (!isActive) {
+				return;
+			}
+
+			isActive = false;
 		}
 	}
 }

@@ -249,7 +249,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			GameEvents.OnResetGame += OnGameReset;
 
 			killzoneHitbox.AreaEntered += (area) => {
-				Globals.PlayerDied();
+				Globals.KillPlayers();
 			};
 
 			killzoneHitbox.BodyEntered += (body) => {
@@ -257,7 +257,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 					return;
 				}
 
-				Globals.PlayerDied();
+				Globals.KillPlayers();
 			};
 
 			// Create the death particles
