@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=7 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://scenes/objects/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://scenes/objects/player/Player.tscn" id="2_eoc6o"]
 [ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://scenes/objects/trampoline/Trampoline.tscn" id="3_bkv65"]
 [ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://scenes/objects/obstacles/saw/Saw.tscn" id="5_kr1w6"]
 [ext_resource type="PackedScene" uid="uid://btxvoypjswqqe" path="res://scenes/objects/obstacles/laser_gun/Laser Gun.tscn" id="5_pxsf5"]
+[ext_resource type="PackedScene" uid="uid://34ekuavnpvw5" path="res://scenes/objects/triggers/Camera Area Trigger/CameraAreaTrigger.tscn" id="6_mema5"]
 
 [node name="Test Scene" type="Node2D"]
 
@@ -80,3 +81,7 @@ rotation = 2.00054
 [node name="LaserGun2" parent="." instance=ExtResource("5_pxsf5")]
 position = Vector2(223, 34)
 rotation = 1.57079
+
+[node name="CameraAreaTrigger" parent="." instance=ExtResource("6_mema5")]
+position = Vector2(488, 1.78814e-07)
+scale = Vector2(28.7906, 15.186)

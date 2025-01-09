@@ -27,8 +27,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 {
 	public partial class PlayerCamera : Camera2D
 	{
-		TextureRect textureRect;
-
 		#region Variables
 		/// <summary>
 		///	Original offset without any shake effect or any other interaction
@@ -41,7 +39,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private Vector2 virtualOffset = Vector2.Zero;
 
 		/// <summary>
-		///	Original Target position without any alteration
+		///	Original TargetPlayer position without any alteration
 		/// </summary>
 		private Vector2 rawTargetPosition = Vector2.Zero;
 
@@ -69,9 +67,13 @@ namespace ClockBombGames.PixelMan.GameObjects
 		#endregion
 
 		/// <summary>
-		///	The current Target of the camera
+		///	The current TargetPlayer of the camera
 		/// </summary>
-		public Player Target { get; set; }
+		public Player TargetPlayer { get; set; }
+
+
+		private CameraAreaOptions cameraOverrideOptions = 0;
+		bool enteredCameraArea = false;
 
 		#endregion
 
@@ -79,8 +81,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _Ready()
 		{
-			RestoreToTarget();
-			GameEvents.OnResetGame += RestoreToTarget;
+			ResetToTarget();
+			GameEvents.OnResetGame += ResetToTarget;
 			GameEvents.OnPlayerDeath += OnPlayerDeath;
 
 			MakeCurrent();
@@ -88,34 +90,35 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _Process(double delta)
 		{
-			if (Target != null) {
+			if (TargetPlayer != null) {
 				// Calculate zoom
-				rawZoom = 1 + 4f * playerVelocity / Constants.maxSpeed;
+				if ((cameraOverrideOptions & CameraAreaOptions.OVERRIDE_ZOOM) == 0) {
+					rawZoom = 1 + 4f * playerVelocity / Constants.maxSpeed;
 
-				// Calculate offset
-				rawOffset.X = playerDirection * 48f;
-
-				// Calculate position
-				if (Target.GlobalPosition.Y < GlobalPosition.Y - verticalDeadzone) {
-					rawTargetPosition.Y = Target.GlobalPosition.Y + verticalDeadzone;
-
-				} else if (Target.GlobalPosition.Y > GlobalPosition.Y + verticalDeadzone) {
-					rawTargetPosition.Y = Target.GlobalPosition.Y - verticalDeadzone;
+					if (TargetPlayer.PlayerIndex != 0) {
+						rawZoom++;
+					}
 				}
 
-				rawTargetPosition.X = Target.GlobalPosition.X;
+				// Calculate offset
+				if ((cameraOverrideOptions & CameraAreaOptions.OVERRIDE_OFFSET) == 0) {
+					rawOffset.X = playerDirection * 48f;
+				} else {
+					rawOffset = Vector2.Zero;
+				}
 
-				// float distanceToPlayerY = Mathf.Abs(Target.GlobalPosition.Y - GlobalPosition.Y);
+				// Calculate position
+				if ((cameraOverrideOptions & CameraAreaOptions.CENTER_POSITION_Y) == 0) {
+					if (TargetPlayer.GlobalPosition.Y < GlobalPosition.Y - verticalDeadzone) {
+						rawTargetPosition.Y = TargetPlayer.GlobalPosition.Y + verticalDeadzone;
 
-				// if (distanceToPlayerY > viewportSize.Y * verticalSafeZone) {
-				// 	rawTargetPosition.Y = Target.GlobalPosition.Y - viewportSize.Y * verticalSafeZone;
-				// }
+					} else if (TargetPlayer.GlobalPosition.Y > GlobalPosition.Y + verticalDeadzone) {
+						rawTargetPosition.Y = TargetPlayer.GlobalPosition.Y - verticalDeadzone;
+					}
+				}
 
-				// rawTargetPosition.X = Target.GlobalPosition.X;
-
-
-				if (Target.PlayerIndex != 0) {
-					rawZoom++;
+				if ((cameraOverrideOptions & CameraAreaOptions.CENTER_POSITION_X) == 0) {
+					rawTargetPosition.X = TargetPlayer.GlobalPosition.X;
 				}
 			} else {
 				playerDirection = 0;
@@ -147,11 +150,48 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _PhysicsProcess(double delta)
 		{
-			if (Target != null) {
-				playerVelocity = Target.Velocity.Length();
+			if (TargetPlayer != null) {
+				cameraOverrideOptions = 0;
 
-				if (Mathf.Abs(Target.WantedHorizontalSpeed) != 0f) {
-					playerDirection = Mathf.Sign(Target.WantedHorizontalSpeed);
+				foreach (CameraAreaTrigger areaTrigger in TargetPlayer.CameraAreaTriggers) {
+					cameraOverrideOptions |= areaTrigger.CameraAreaOptions;
+
+					if ((cameraOverrideOptions & CameraAreaOptions.CENTER_POSITION_X) != 0) {
+						rawTargetPosition = new Vector2(areaTrigger.GlobalPosition.X, rawTargetPosition.Y);
+					}
+
+					if ((cameraOverrideOptions & CameraAreaOptions.CENTER_POSITION_Y) != 0) {
+						rawTargetPosition = new Vector2(rawTargetPosition.X, areaTrigger.GlobalPosition.Y);
+					}
+
+					if ((cameraOverrideOptions & CameraAreaOptions.OVERRIDE_ZOOM) != 0) {
+						rawZoom = areaTrigger.Zoom;
+					}
+
+					if ((cameraOverrideOptions & CameraAreaOptions.OVERRIDE_OFFSET) != 0) {
+						rawOffset = areaTrigger.Offset;
+					}
+				}
+
+
+
+				if (TargetPlayer.CameraAreaTriggers.Count == 0) {
+					enteredCameraArea = false;
+
+				} else if (!enteredCameraArea) {
+					enteredCameraArea = true;
+
+					if ((cameraOverrideOptions & CameraAreaOptions.INSTANT_TRANSITION_ON_ENTER) != 0) {
+						GlobalPosition = rawTargetPosition;
+						virtualOffset = rawOffset;
+						Zoom = Vector2.One * (5f - rawZoom);
+					}
+				}
+
+				playerVelocity = TargetPlayer.Velocity.Length();
+
+				if (Mathf.Abs(TargetPlayer.WantedHorizontalSpeed) != 0f) {
+					playerDirection = Mathf.Sign(TargetPlayer.WantedHorizontalSpeed);
 				}
 			} else {
 				playerVelocity = 0f;
@@ -164,12 +204,12 @@ namespace ClockBombGames.PixelMan.GameObjects
 			rect.Texture = GetViewport().GetTexture();
 		}
 
-		private void RestoreToTarget()
+		private void ResetToTarget()
 		{
 			rawOffset = Vector2.Zero;
 
-			if (Target != null) {
-				rawTargetPosition = Target.GlobalPosition;
+			if (TargetPlayer != null) {
+				rawTargetPosition = TargetPlayer.GlobalPosition;
 				GlobalPosition = rawTargetPosition;
 			}
 

@@ -23,6 +23,7 @@ using Godot.Collections;
 
 using ClockBombGames.PixelMan.Utils;
 using ClockBombGames.PixelMan.Events;
+using System.Collections.Generic;
 
 
 namespace ClockBombGames.PixelMan.GameObjects
@@ -38,6 +39,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] GpuParticles2D fallDustParticles;
 		[Export] AudioStreamPlayer2D audioPlayer;
 		[Export] CollisionShape2D collisionShape;
+		[Export] Area2D triggersHitbox;
 
 		[ExportGroup("Killzone detection components")]
 		[Export] Area2D killzoneHitbox;
@@ -227,6 +229,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 			set => playerIndex = value;
 		}
 
+		/// <summary>
+		/// A list of the camera area triggers the player is touching.
+		/// </summary>
+		public List<CameraAreaTrigger> CameraAreaTriggers { get; private set; } = new();
+
 		#endregion
 
 		#endregion
@@ -254,16 +261,32 @@ namespace ClockBombGames.PixelMan.GameObjects
 			GameEvents.OnPlayerDeath += OnPlayerDeath;
 			GameEvents.OnResetGame += OnGameReset;
 
-			killzoneHitbox.AreaEntered += (area) => {
+			killzoneHitbox.AreaEntered += (area) =>
+			{
 				Globals.KillPlayers();
 			};
 
-			killzoneHitbox.BodyEntered += (body) => {
+			killzoneHitbox.BodyEntered += (body) =>
+			{
 				if (body is Player) {
 					return;
 				}
 
 				Globals.KillPlayers();
+			};
+
+			triggersHitbox.AreaEntered += (area) =>
+			{
+				if (area is CameraAreaTrigger cameraAreaTrigger) {
+					CameraAreaTriggers.Add(cameraAreaTrigger);
+				}
+			};
+
+			triggersHitbox.AreaExited += (area) =>
+			{
+				if (area is CameraAreaTrigger cameraAreaTrigger) {
+					CameraAreaTriggers.Remove(cameraAreaTrigger);
+				}
 			};
 
 			// Create the death particles
@@ -547,7 +570,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			jumpTime = 0f;
 		}
-
 
 
 		#region Delegate methods

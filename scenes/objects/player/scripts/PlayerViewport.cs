@@ -41,7 +41,7 @@ namespace ClockBombGames.PixelMan.Utils
 		{
 			get
 			{
-				return camera.Target != null;
+				return camera.TargetPlayer != null;
 			}
 		}
 
