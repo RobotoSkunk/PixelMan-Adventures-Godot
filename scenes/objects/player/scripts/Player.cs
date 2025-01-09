@@ -104,6 +104,12 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		public int playerIndex = 0;
 
+		/// <summary>
+		/// The ticks for a small workaround to prevent other areas and raycast from detecting
+		/// the player after the game resets for the designed ticks.
+		/// </summary>
+		private int delayedTicksAfterReset = 0;
+
 
 		/// <summary>
 		/// If the player is in a trampoline.
@@ -410,6 +416,12 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _PhysicsProcess(double delta)
 		{
+			// Small delay to prevent the physics from being updated in ticks
+			if (delayedTicksAfterReset > 0) {
+				delayedTicksAfterReset--;
+				return;
+			}
+
 			collisionShape.Disabled = isDead;
 			killzoneHitbox.Monitoring = !isDead;
 			killzoneHitbox.Monitorable = !isDead;
@@ -558,6 +570,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			animator.Visible = true;
 			invertedGravity = false;
+
+			delayedTicksAfterReset = 1;
 		}
 		#endregion
 

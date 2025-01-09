@@ -59,7 +59,7 @@ path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0)])
 speed = 160.0
 
 [node name="Saw2" parent="." instance=ExtResource("5_kr1w6")]
-position = Vector2(392, 87)
+position = Vector2(393, 103)
 speed = 160.0
 
 [node name="Saw3" parent="." instance=ExtResource("5_kr1w6")]
