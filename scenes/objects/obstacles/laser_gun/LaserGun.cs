@@ -17,6 +17,7 @@
 */
 
 
+using System.Collections.Generic;
 using Godot;
 using Godot.Collections;
 
@@ -62,12 +63,18 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		int foundPlayersCount = 0;
 
+		List<IGOProjectile> foundProjectiles = new();
+
+
 		public override void _Ready()
 		{
 			laserHitbox.BodyEntered += (body) =>
 			{
 				if (body is Player player) {
 					foundPlayersCount++;
+
+				} else if (body is IGOProjectile projectile) {
+					foundProjectiles.Add(projectile);
 				}
 			};
 
@@ -75,6 +82,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 			{
 				if (body is Player player) {
 					foundPlayersCount--;
+
+				} else if (body is IGOProjectile projectile) {
+					foundProjectiles.Remove(projectile);
 				}
 			};
 		}
@@ -193,6 +203,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 				
 				if (foundPlayersCount > 0) {
 					Globals.KillPlayers();
+				}
+
+				foreach (IGOProjectile projectile in foundProjectiles) {
+					projectile.Destroy();
 				}
 
 				laserBody.Scale = new Vector2(laserDistance, newY);

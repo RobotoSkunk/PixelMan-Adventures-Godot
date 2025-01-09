@@ -81,11 +81,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		private void OnBodyEntered(Node body)
 		{
-			if (!isActive) {
-				return;
-			}
-
-			isActive = false;
+			Destroy();
 
 			if (body is Player) {
 				Globals.KillPlayers();
@@ -94,11 +90,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		private void OnAreaEntered(Node _)
 		{
-			if (!isActive) {
-				return;
-			}
-
-			isActive = false;
+			Destroy();
 		}
 
 
@@ -110,6 +102,15 @@ namespace ClockBombGames.PixelMan.GameObjects
 			isActive = true;
 
 			animatedSprite2D.Play();
+		}
+
+		public void Destroy()
+		{
+			if (!isActive) {
+				return;
+			}
+
+			isActive = false;
 		}
 	}
 }

@@ -25,6 +25,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 	public interface IGOProjectile
 	{
 		void ShootAt(Vector2 position, float direction, float speed);
+		void Destroy();
 		bool IsActive { get; }
 	}
 }
