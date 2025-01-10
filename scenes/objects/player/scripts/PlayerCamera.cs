@@ -44,6 +44,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private Vector2 rawTargetPosition = Vector2.Zero;
 
 		/// <summary>
+		///	Initial TargetPlayer position
+		/// </summary>
+		private Vector2 initialTargetPosition = Vector2.Zero;
+
+		/// <summary>
 		///	Original zoom without any alteration
 		/// </summary>
 		private float rawZoom = 1f;
@@ -69,8 +74,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// <summary>
 		///	The current TargetPlayer of the camera
 		/// </summary>
-		public Player TargetPlayer { get; set; }
+		public Player TargetPlayer {
+			get {
+				return __targetPlayer;
+			}
+			set {
+				__targetPlayer = value;
+				initialTargetPosition = value.GlobalPosition;
+			}
+		}
 
+		private Player __targetPlayer;
 
 		/// <summary>
 		/// The ticks for a small workaround to prevent other areas and raycast from detecting
@@ -86,15 +100,27 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _Ready()
 		{
-			ResetToTarget();
-			GameEvents.OnResetGame += ResetToTarget;
+			ResetToInitialPosition();
+
 			GameEvents.OnPlayerDeath += OnPlayerDeath;
+			GameEvents.OnResetGame += () => {
+				ResetToInitialPosition();
+
+				delayedTicksAfterReset = 1;
+			};
 
 			MakeCurrent();
 		}
 
 		public override void _Process(double delta)
 		{
+			// Small delay to prevent the physics from being updated in ticks
+			if (delayedTicksAfterReset > 0) {
+				ResetToInitialPosition();
+				return;
+			}
+
+
 			CameraAreaOptions cameraOverrideOptions = 0;
 
 			if (TargetPlayer != null) {
@@ -214,24 +240,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 			// Small delay to prevent the physics from being updated in ticks
 			if (delayedTicksAfterReset > 0) {
 				delayedTicksAfterReset--;
-
-				rawOffset = Vector2.Zero;
-
-				if (TargetPlayer != null) {
-					rawTargetPosition = TargetPlayer.GlobalPosition;
-					GlobalPosition = rawTargetPosition;
-
-					GD.Print("Called");
-				}
-
-				playerDirection = 0;
-				playerVelocity = 0f;
-
-				rawOffset = Vector2.Zero;
-				Offset = rawOffset;
-
-				rawZoom = 1f;
-
 				return;
 			}
 
@@ -252,9 +260,19 @@ namespace ClockBombGames.PixelMan.GameObjects
 			rect.Texture = GetViewport().GetTexture();
 		}
 
-		private void ResetToTarget()
+		private void ResetToInitialPosition()
 		{
-			delayedTicksAfterReset = 1;
+			rawOffset = Vector2.Zero;
+			virtualOffset = Vector2.Zero;
+			Offset = rawOffset;
+
+			rawTargetPosition = initialTargetPosition;
+			GlobalPosition = initialTargetPosition;
+
+			playerDirection = 0;
+			playerVelocity = 0f;
+
+			rawZoom = 1f;
 		}
 
 		private void OnPlayerDeath()

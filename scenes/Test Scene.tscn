@@ -89,17 +89,5 @@ position = Vector2(612, 14)
 [node name="Gravity Switch2" parent="." instance=ExtResource("6_kivx3")]
 position = Vector2(508, -60)
 
-[node name="Mobile Saw2" parent="." instance=ExtResource("7_vn5wq")]
-position = Vector2(202, 88)
-
-[node name="Mobile Saw5" parent="." instance=ExtResource("7_vn5wq")]
-position = Vector2(465, 71)
-
-[node name="Mobile Saw3" parent="." instance=ExtResource("7_vn5wq")]
-position = Vector2(547, 67)
-
-[node name="Mobile Saw4" parent="." instance=ExtResource("7_vn5wq")]
-position = Vector2(397, 62)
-
 [node name="Mobile Saw" parent="." instance=ExtResource("7_vn5wq")]
-position = Vector2(347, 86)
+position = Vector2(325, 86)
