@@ -442,6 +442,12 @@ namespace ClockBombGames.PixelMan.GameObjects
 			// Small delay to prevent the physics from being updated in ticks
 			if (delayedTicksAfterReset > 0) {
 				delayedTicksAfterReset--;
+
+				hangCount = 0f;
+				jumpTime = 0f;
+				canReduceJump = false;
+				horizontalInput = 0;
+				rawAngle = 0;
 				return;
 			}
 
@@ -594,12 +600,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 			invertedGravity = false;
 
 			delayedTicksAfterReset = 1;
-
-			hangCount = 0f;
-			jumpTime = 0f;
-			canReduceJump = false;
-			horizontalInput = 0;
-			rawAngle = 0;
 		}
 		#endregion
 
