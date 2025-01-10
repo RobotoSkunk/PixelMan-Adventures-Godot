@@ -1,0 +1,1698 @@
+{
+	"textures": [
+		{
+			"image": "ui.png",
+			"size": {
+				"w": 512,
+				"h": 505
+			},
+			"sprites": [
+				{
+					"filename": "cute-stinker.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 270,
+						"h": 282
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "xbox/controller.png",
+					"region": {
+						"x": 1,
+						"y": 285,
+						"w": 275,
+						"h": 183
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/hue-rulette.png",
+					"region": {
+						"x": 273,
+						"y": 1,
+						"w": 126,
+						"h": 126
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "title.png",
+					"region": {
+						"x": 273,
+						"y": 129,
+						"w": 197,
+						"h": 49
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/back.png",
+					"region": {
+						"x": 273,
+						"y": 180,
+						"w": 133,
+						"h": 43
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/credits.png",
+					"region": {
+						"x": 273,
+						"y": 225,
+						"w": 133,
+						"h": 43
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "volume-bar.png",
+					"region": {
+						"x": 1,
+						"y": 470,
+						"w": 128,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/profile.png",
+					"region": {
+						"x": 278,
+						"y": 270,
+						"w": 133,
+						"h": 43
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/color-bar-container.png",
+					"region": {
+						"x": 131,
+						"y": 470,
+						"w": 128,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "menu-dirt.png",
+					"region": {
+						"x": 131,
+						"y": 488,
+						"w": 80,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/color-bar-flat.png",
+					"region": {
+						"x": 278,
+						"y": 315,
+						"w": 122,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/gradient-bar-palette.png",
+					"region": {
+						"x": 278,
+						"y": 327,
+						"w": 122,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/hue-bar-palette.png",
+					"region": {
+						"x": 278,
+						"y": 339,
+						"w": 122,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/sv-palette.png",
+					"region": {
+						"x": 401,
+						"y": 1,
+						"w": 66,
+						"h": 66
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/transparency-checker-bar.png",
+					"region": {
+						"x": 278,
+						"y": 351,
+						"w": 122,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/T2.png",
+					"region": {
+						"x": 408,
+						"y": 180,
+						"w": 46,
+						"h": 53
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/btn/hsv2-1.png",
+					"region": {
+						"x": 213,
+						"y": 488,
+						"w": 31,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor-hide.png",
+					"region": {
+						"x": 401,
+						"y": 69,
+						"w": 46,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor-show.png",
+					"region": {
+						"x": 278,
+						"y": 363,
+						"w": 46,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/zoom-in.png",
+					"region": {
+						"x": 401,
+						"y": 102,
+						"w": 25,
+						"h": 25
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/local.png",
+					"region": {
+						"x": 469,
+						"y": 1,
+						"w": 41,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/online.png",
+					"region": {
+						"x": 278,
+						"y": 396,
+						"w": 36,
+						"h": 36
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/zoom-out.png",
+					"region": {
+						"x": 428,
+						"y": 102,
+						"w": 25,
+						"h": 25
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/social-fb.png",
+					"region": {
+						"x": 278,
+						"y": 434,
+						"w": 35,
+						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/social-gh.png",
+					"region": {
+						"x": 469,
+						"y": 34,
+						"w": 35,
+						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/social-tw.png",
+					"region": {
+						"x": 326,
+						"y": 363,
+						"w": 35,
+						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/social-website.png",
+					"region": {
+						"x": 363,
+						"y": 363,
+						"w": 35,
+						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/folder-add.png",
+					"region": {
+						"x": 408,
+						"y": 235,
+						"w": 38,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/social-yt.png",
+					"region": {
+						"x": 413,
+						"y": 265,
+						"w": 35,
+						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/btn/hsv1-0.png",
+					"region": {
+						"x": 246,
+						"y": 488,
+						"w": 28,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/locked.png",
+					"region": {
+						"x": 276,
+						"y": 471,
+						"w": 27,
+						"h": 33
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/pause.png",
+					"region": {
+						"x": 316,
+						"y": 400,
+						"w": 34,
+						"h": 34
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/folder-up.png",
+					"region": {
+						"x": 352,
+						"y": 400,
+						"w": 38,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/container.png",
+					"region": {
+						"x": 315,
+						"y": 436,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/T1.png",
+					"region": {
+						"x": 456,
+						"y": 180,
+						"w": 28,
+						"h": 35
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/folder.png",
+					"region": {
+						"x": 449,
+						"y": 71,
+						"w": 38,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/restart_level.png",
+					"region": {
+						"x": 489,
+						"y": 71,
+						"w": 22,
+						"h": 23
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "xbox/trigger-left.png",
+					"region": {
+						"x": 455,
+						"y": 101,
+						"w": 21,
+						"h": 26
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/editor.png",
+					"region": {
+						"x": 478,
+						"y": 101,
+						"w": 33,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/help.png",
+					"region": {
+						"x": 472,
+						"y": 131,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/zoom-reset.png",
+					"region": {
+						"x": 486,
+						"y": 165,
+						"w": 25,
+						"h": 25
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/achievements.png",
+					"region": {
+						"x": 486,
+						"y": 192,
+						"w": 24,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/redo.png",
+					"region": {
+						"x": 456,
+						"y": 217,
+						"w": 28,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "xbox/button-east-pressed.png",
+					"region": {
+						"x": 486,
+						"y": 218,
+						"w": 24,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/btn/hex-1.png",
+					"region": {
+						"x": 413,
+						"y": 302,
+						"w": 33,
+						"h": 12
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/pause.png",
+					"region": {
+						"x": 402,
+						"y": 316,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/objects.png",
+					"region": {
+						"x": 402,
+						"y": 350,
+						"w": 32,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/save-and-play.png",
+					"region": {
+						"x": 400,
+						"y": 374,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/options.png",
+					"region": {
+						"x": 392,
+						"y": 408,
+						"w": 32,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/save.png",
+					"region": {
+						"x": 436,
+						"y": 316,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/properties.png",
+					"region": {
+						"x": 436,
+						"y": 350,
+						"w": 32,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/settings.png",
+					"region": {
+						"x": 434,
+						"y": 374,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/target_attempts.png",
+					"region": {
+						"x": 426,
+						"y": 408,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/clock.png",
+					"region": {
+						"x": 261,
+						"y": 470,
+						"w": 13,
+						"h": 13
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/target_coin.png",
+					"region": {
+						"x": 305,
+						"y": 471,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/target_time.png",
+					"region": {
+						"x": 450,
+						"y": 247,
+						"w": 32,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/stop.png",
+					"region": {
+						"x": 450,
+						"y": 281,
+						"w": 28,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/btn/rgb-1.png",
+					"region": {
+						"x": 352,
+						"y": 430,
+						"w": 33,
+						"h": 12
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/test.png",
+					"region": {
+						"x": 349,
+						"y": 444,
+						"w": 28,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/editor/undo.png",
+					"region": {
+						"x": 339,
+						"y": 474,
+						"w": 28,
+						"h": 28
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/btn/hex-0.png",
+					"region": {
+						"x": 387,
+						"y": 432,
+						"w": 32,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "xbox/button-north-pressed.png",
+					"region": {
+						"x": 379,
+						"y": 444,
+						"w": 24,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/exit.png",
+					"region": {
+						"x": 405,
+						"y": 444,
+						"w": 16,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "xbox/button-south-pressed.png",
+					"region": {
+						"x": 423,
+						"y": 442,
+						"w": 24,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/btn/rgb-0.png",
+					"region": {
+						"x": 379,
+						"y": 470,
+						"w": 32,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "xbox/button-east.png",
+					"region": {
+						"x": 369,
+						"y": 482,
+						"w": 22,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "xbox/button-north.png",
+					"region": {
+						"x": 393,
+						"y": 482,
+						"w": 22,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "xbox/button-weast-pressed.png",
+					"region": {
+						"x": 449,
+						"y": 442,
+						"w": 24,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "xbox/trigger-right.png",
+					"region": {
+						"x": 460,
+						"y": 408,
+						"w": 21,
+						"h": 26
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/h-picker.png",
+					"region": {
+						"x": 460,
+						"y": 436,
+						"w": 16,
+						"h": 4
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/btn/hsv2-0.png",
+					"region": {
+						"x": 423,
+						"y": 468,
+						"w": 30,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/icon/global.png",
+					"region": {
+						"x": 417,
+						"y": 484,
+						"w": 20,
+						"h": 20
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/icon/local.png",
+					"region": {
+						"x": 439,
+						"y": 484,
+						"w": 20,
+						"h": 20
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/play.png",
+					"region": {
+						"x": 455,
+						"y": 468,
+						"w": 15,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/filter-order.png",
+					"region": {
+						"x": 413,
+						"y": 470,
+						"w": 8,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/info.png",
+					"region": {
+						"x": 461,
+						"y": 484,
+						"w": 19,
+						"h": 19
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/left.png",
+					"region": {
+						"x": 472,
+						"y": 468,
+						"w": 14,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/btn/hsv1-1.png",
+					"region": {
+						"x": 482,
+						"y": 484,
+						"w": 29,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/main_menu.png",
+					"region": {
+						"x": 488,
+						"y": 244,
+						"w": 23,
+						"h": 19
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "xbox/button-south.png",
+					"region": {
+						"x": 484,
+						"y": 265,
+						"w": 22,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "xbox/button-weast.png",
+					"region": {
+						"x": 480,
+						"y": 289,
+						"w": 22,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/settings.png",
+					"region": {
+						"x": 470,
+						"y": 313,
+						"w": 19,
+						"h": 19
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/next_level.png",
+					"region": {
+						"x": 470,
+						"y": 334,
+						"w": 19,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/task.png",
+					"region": {
+						"x": 470,
+						"y": 354,
+						"w": 21,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "editor-level-size-dragger.png",
+					"region": {
+						"x": 491,
+						"y": 313,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "square-black.png",
+					"region": {
+						"x": 491,
+						"y": 331,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "square-white.png",
+					"region": {
+						"x": 493,
+						"y": 349,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/sync.png",
+					"region": {
+						"x": 369,
+						"y": 474,
+						"w": 7,
+						"h": 6
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/trash-can.png",
+					"region": {
+						"x": 504,
+						"y": 289,
+						"w": 7,
+						"h": 9
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "editor-cur-idle.png",
+					"region": {
+						"x": 504,
+						"y": 300,
+						"w": 7,
+						"h": 7
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/date.png",
+					"region": {
+						"x": 472,
+						"y": 165,
+						"w": 11,
+						"h": 9
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/arrow.png",
+					"region": {
+						"x": 493,
+						"y": 367,
+						"w": 16,
+						"h": 8
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/picker.png",
+					"region": {
+						"x": 506,
+						"y": 131,
+						"w": 5,
+						"h": 5
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "area-selector.png",
+					"region": {
+						"x": 408,
+						"y": 265,
+						"w": 3,
+						"h": 3
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "containers/button-1.png",
+					"region": {
+						"x": 475,
+						"y": 442,
+						"w": 15,
+						"h": 15
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "color-selector/handler.png",
+					"region": {
+						"x": 489,
+						"y": 96,
+						"w": 5,
+						"h": 3
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "containers/button-3.png",
+					"region": {
+						"x": 468,
+						"y": 374,
+						"w": 15,
+						"h": 15
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/minus.png",
+					"region": {
+						"x": 468,
+						"y": 391,
+						"w": 14,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/plus.png",
+					"region": {
+						"x": 485,
+						"y": 377,
+						"w": 14,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/right.png",
+					"region": {
+						"x": 484,
+						"y": 393,
+						"w": 14,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/toggle-off.png",
+					"region": {
+						"x": 483,
+						"y": 409,
+						"w": 14,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/filter.png",
+					"region": {
+						"x": 483,
+						"y": 425,
+						"w": 14,
+						"h": 10
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "containers/slider-1.png",
+					"region": {
+						"x": 501,
+						"y": 377,
+						"w": 9,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "containers/button-2.png",
+					"region": {
+						"x": 500,
+						"y": 393,
+						"w": 9,
+						"h": 9
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "buttons/toggle-on.png",
+					"region": {
+						"x": 492,
+						"y": 437,
+						"w": 14,
+						"h": 14
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "containers/dropdown-1.png",
+					"region": {
+						"x": 492,
+						"y": 453,
+						"w": 15,
+						"h": 8
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "symbols/coin.png",
+					"region": {
+						"x": 488,
+						"y": 463,
+						"w": 13,
+						"h": 13
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "containers/dropdown-2.png",
+					"region": {
+						"x": 475,
+						"y": 459,
+						"w": 9,
+						"h": 5
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "containers/button-4.png",
+					"region": {
+						"x": 500,
+						"y": 404,
+						"w": 9,
+						"h": 9
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "containers/button-5.png",
+					"region": {
+						"x": 499,
+						"y": 415,
+						"w": 9,
+						"h": 9
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mini-arrow-corner.png",
+					"region": {
+						"x": 273,
+						"y": 270,
+						"w": 3,
+						"h": 3
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mini-arrow.png",
+					"region": {
+						"x": 316,
+						"y": 396,
+						"w": 3,
+						"h": 2
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:ba5ee624effb9a83d0b0bd13f10f48c4:0c23cd51c6acc3684675255489529be9:0468195115ed5bbbcf55e2ca0092fcfa$"
+	}
+}

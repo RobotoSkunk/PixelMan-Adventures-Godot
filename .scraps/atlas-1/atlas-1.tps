@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>6</int>
         <key>texturePackerVersion</key>
-        <string>7.0.3</string>
+        <string>7.5.0</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -124,7 +124,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../assets/sprites/atlas-1.tpsheet</filename>
+                <filename>../../assets/sprites/atlas-1.tpsheet</filename>
             </struct>
         </map>
         <key>multiPackMode</key>
@@ -176,9 +176,6 @@
             <key type="filename">blocks/beams/0.png</key>
             <key type="filename">blocks/cobblestone/0.png</key>
             <key type="filename">blocks/dirt/0.png</key>
-            <key type="filename">gui/generics/buttons/info.png</key>
-            <key type="filename">gui/generics/symbols/next_level.png</key>
-            <key type="filename">gui/generics/symbols/settings.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -250,9 +247,6 @@
             <key type="filename">blocks/minimalistic/9.png</key>
             <key type="filename">blocks/special/0.png</key>
             <key type="filename">blocks/special/1.png</key>
-            <key type="filename">gui/generics/editor-level-size-dragger.png</key>
-            <key type="filename">gui/square-black.png</key>
-            <key type="filename">gui/square-white.png</key>
             <key type="filename">objects/killzone.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -835,8 +829,6 @@
                 <false/>
             </struct>
             <key type="filename">effects/sparkle/1.png</key>
-            <key type="filename">gui/generics/mini-arrow-corner.png</key>
-            <key type="filename">gui/generics/mini-arrow.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -852,7 +844,6 @@
                 <false/>
             </struct>
             <key type="filename">effects/sparkle/2.png</key>
-            <key type="filename">gui/generics/color-selector/picker.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -868,8 +859,6 @@
                 <false/>
             </struct>
             <key type="filename">effects/sparkle/3.png</key>
-            <key type="filename">gui/generics/editor-cur-idle.png</key>
-            <key type="filename">gui/generics/symbols/sync.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -881,876 +870,6 @@
                 <rect>2,2,3,3</rect>
                 <key>scale9Paddings</key>
                 <rect>2,2,3,3</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/cute-stinker.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>1,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>68,71,135,141</rect>
-                <key>scale9Paddings</key>
-                <rect>68,71,135,141</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/area-selector.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <true/>
-                <key>scale9Borders</key>
-                <rect>1,1,1,1</rect>
-                <key>scale9Paddings</key>
-                <rect>1,1,1,1</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/T1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>1,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <true/>
-                <key>scale9Borders</key>
-                <rect>26,0,2,35</rect>
-                <key>scale9Paddings</key>
-                <rect>7,9,14,17</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/T2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>1,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <true/>
-                <key>scale9Borders</key>
-                <rect>44,0,2,53</rect>
-                <key>scale9Paddings</key>
-                <rect>12,13,23,27</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/back.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0,0</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>33,11,67,21</rect>
-                <key>scale9Paddings</key>
-                <rect>33,11,67,21</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/credits.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>1,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>33,11,67,21</rect>
-                <key>scale9Paddings</key>
-                <rect>33,11,67,21</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/editor-hide.png</key>
-            <key type="filename">gui/generics/buttons/editor-show.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>12,8,23,15</rect>
-                <key>scale9Paddings</key>
-                <rect>12,8,23,15</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/editor/container.png</key>
-            <key type="filename">gui/generics/buttons/editor/help.png</key>
-            <key type="filename">gui/generics/buttons/editor/pause.png</key>
-            <key type="filename">gui/generics/buttons/editor/save-and-play.png</key>
-            <key type="filename">gui/generics/buttons/editor/save.png</key>
-            <key type="filename">gui/generics/buttons/editor/settings.png</key>
-            <key type="filename">gui/generics/symbols/target_attempts.png</key>
-            <key type="filename">gui/generics/symbols/target_coin.png</key>
-            <key type="filename">gui/generics/symbols/target_time.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>8,8,16,16</rect>
-                <key>scale9Paddings</key>
-                <rect>8,8,16,16</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/editor/objects.png</key>
-            <key type="filename">gui/generics/buttons/editor/options.png</key>
-            <key type="filename">gui/generics/buttons/editor/properties.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>1,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>8,6,16,11</rect>
-                <key>scale9Paddings</key>
-                <rect>8,6,16,11</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/editor/redo.png</key>
-            <key type="filename">gui/generics/buttons/editor/stop.png</key>
-            <key type="filename">gui/generics/buttons/editor/test.png</key>
-            <key type="filename">gui/generics/buttons/editor/undo.png</key>
-            <key type="filename">objects/gravity-switch-particles.png</key>
-            <key type="filename">objects/preview/gravity-switch.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>7,7,14,14</rect>
-                <key>scale9Paddings</key>
-                <rect>7,7,14,14</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/editor/zoom-in.png</key>
-            <key type="filename">gui/generics/buttons/editor/zoom-out.png</key>
-            <key type="filename">gui/generics/buttons/editor/zoom-reset.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>6,6,13,13</rect>
-                <key>scale9Paddings</key>
-                <rect>6,6,13,13</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/filter-order.png</key>
-            <key type="filename">objects/checkpoint/number/0.png</key>
-            <key type="filename">objects/checkpoint/number/1.png</key>
-            <key type="filename">objects/checkpoint/number/2.png</key>
-            <key type="filename">objects/checkpoint/number/3.png</key>
-            <key type="filename">objects/checkpoint/number/4.png</key>
-            <key type="filename">objects/checkpoint/number/5.png</key>
-            <key type="filename">objects/checkpoint/number/6.png</key>
-            <key type="filename">objects/checkpoint/number/7.png</key>
-            <key type="filename">objects/checkpoint/number/8.png</key>
-            <key type="filename">objects/checkpoint/number/9.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>2,3,4,5</rect>
-                <key>scale9Paddings</key>
-                <rect>2,3,4,5</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/filter.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>4,3,7,5</rect>
-                <key>scale9Paddings</key>
-                <rect>4,3,7,5</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/icon/global.png</key>
-            <key type="filename">gui/generics/buttons/icon/local.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>3,3,6,6</rect>
-                <key>scale9Paddings</key>
-                <rect>3,3,6,6</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/left.png</key>
-            <key type="filename">gui/generics/buttons/minus.png</key>
-            <key type="filename">gui/generics/buttons/plus.png</key>
-            <key type="filename">gui/generics/buttons/right.png</key>
-            <key type="filename">gui/generics/buttons/toggle-off.png</key>
-            <key type="filename">gui/generics/buttons/toggle-on.png</key>
-            <key type="filename">gui/generics/symbols/play.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>4,4,7,7</rect>
-                <key>scale9Paddings</key>
-                <rect>4,4,7,7</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/pause.png</key>
-            <key type="filename">gui/generics/buttons/social-fb.png</key>
-            <key type="filename">gui/generics/buttons/social-gh.png</key>
-            <key type="filename">gui/generics/buttons/social-tw.png</key>
-            <key type="filename">gui/generics/buttons/social-website.png</key>
-            <key type="filename">gui/generics/buttons/social-yt.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>9,9,17,17</rect>
-                <key>scale9Paddings</key>
-                <rect>9,9,17,17</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/buttons/profile.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>1,0</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>33,11,67,21</rect>
-                <key>scale9Paddings</key>
-                <rect>33,11,67,21</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/btn/hex-0.png</key>
-            <key type="filename">gui/generics/color-selector/btn/rgb-0.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>8,3,16,5</rect>
-                <key>scale9Paddings</key>
-                <rect>8,3,16,5</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/btn/hex-1.png</key>
-            <key type="filename">gui/generics/color-selector/btn/rgb-1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.484848,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>8,3,17,6</rect>
-                <key>scale9Paddings</key>
-                <rect>8,3,17,6</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/btn/hsv1-0.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>7,4,14,8</rect>
-                <key>scale9Paddings</key>
-                <rect>7,4,14,8</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/btn/hsv1-1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.482759,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>7,5,15,9</rect>
-                <key>scale9Paddings</key>
-                <rect>7,5,15,9</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/btn/hsv2-0.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>8,4,15,7</rect>
-                <key>scale9Paddings</key>
-                <rect>8,4,15,7</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/btn/hsv2-1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.483871,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>8,4,15,8</rect>
-                <key>scale9Paddings</key>
-                <rect>8,4,15,8</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/color-bar-container.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>32,4,64,8</rect>
-                <key>scale9Paddings</key>
-                <rect>32,4,64,8</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/color-bar-flat.png</key>
-            <key type="filename">gui/generics/color-selector/gradient-bar-palette.png</key>
-            <key type="filename">gui/generics/color-selector/hue-bar-palette.png</key>
-            <key type="filename">gui/generics/color-selector/transparency-checker-bar.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>31,3,61,5</rect>
-                <key>scale9Paddings</key>
-                <rect>31,3,61,5</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/h-picker.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>4,1,8,2</rect>
-                <key>scale9Paddings</key>
-                <rect>4,1,8,2</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/handler.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>1,1,3,1</rect>
-                <key>scale9Paddings</key>
-                <rect>1,1,3,1</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/hue-rulette.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>32,32,63,63</rect>
-                <key>scale9Paddings</key>
-                <rect>32,32,63,63</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/color-selector/sv-palette.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>17,17,33,33</rect>
-                <key>scale9Paddings</key>
-                <rect>17,17,33,33</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/containers/button-1.png</key>
-            <key type="filename">gui/generics/containers/button-3.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <true/>
-                <key>scale9Borders</key>
-                <rect>7,7,1,1</rect>
-                <key>scale9Paddings</key>
-                <rect>4,4,7,7</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/containers/button-2.png</key>
-            <key type="filename">gui/generics/containers/button-4.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <true/>
-                <key>scale9Borders</key>
-                <rect>4,4,1,1</rect>
-                <key>scale9Paddings</key>
-                <rect>2,2,5,5</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/containers/button-5.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <true/>
-                <key>scale9Borders</key>
-                <rect>3,3,3,3</rect>
-                <key>scale9Paddings</key>
-                <rect>4,4,7,7</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/containers/dropdown-1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <true/>
-                <key>scale9Borders</key>
-                <rect>7,0,1,1</rect>
-                <key>scale9Paddings</key>
-                <rect>4,2,7,4</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/containers/dropdown-2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <true/>
-                <key>scale9Borders</key>
-                <rect>4,0,1,1</rect>
-                <key>scale9Paddings</key>
-                <rect>2,1,5,3</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/containers/slider-1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <true/>
-                <key>scale9Borders</key>
-                <rect>4,3,1,8</rect>
-                <key>scale9Paddings</key>
-                <rect>2,4,5,7</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/achievements.png</key>
-            <key type="filename">gui/generics/xbox/button-east-pressed.png</key>
-            <key type="filename">gui/generics/xbox/button-north-pressed.png</key>
-            <key type="filename">gui/generics/xbox/button-south-pressed.png</key>
-            <key type="filename">gui/generics/xbox/button-weast-pressed.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>6,6,12,12</rect>
-                <key>scale9Paddings</key>
-                <rect>6,6,12,12</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/arrow.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>4,2,8,4</rect>
-                <key>scale9Paddings</key>
-                <rect>4,2,8,4</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/clock.png</key>
-            <key type="filename">gui/generics/symbols/coin.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>3,3,7,7</rect>
-                <key>scale9Paddings</key>
-                <rect>3,3,7,7</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/date.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>3,2,5,5</rect>
-                <key>scale9Paddings</key>
-                <rect>3,2,5,5</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/editor.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>8,7,17,14</rect>
-                <key>scale9Paddings</key>
-                <rect>8,7,17,14</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/exit.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>4,6,8,12</rect>
-                <key>scale9Paddings</key>
-                <rect>4,6,8,12</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/folder-add.png</key>
-            <key type="filename">gui/generics/symbols/folder-up.png</key>
-            <key type="filename">gui/generics/symbols/folder.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>10,7,19,14</rect>
-                <key>scale9Paddings</key>
-                <rect>10,7,19,14</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/local.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>10,8,21,15</rect>
-                <key>scale9Paddings</key>
-                <rect>10,8,21,15</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/locked.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>7,8,13,17</rect>
-                <key>scale9Paddings</key>
-                <rect>7,8,13,17</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/main_menu.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>6,5,11,9</rect>
-                <key>scale9Paddings</key>
-                <rect>6,5,11,9</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/online.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>9,9,18,18</rect>
-                <key>scale9Paddings</key>
-                <rect>9,9,18,18</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/restart_level.png</key>
-            <key type="filename">gui/generics/xbox/button-east.png</key>
-            <key type="filename">gui/generics/xbox/button-north.png</key>
-            <key type="filename">gui/generics/xbox/button-south.png</key>
-            <key type="filename">gui/generics/xbox/button-weast.png</key>
-            <key type="filename">objects/mobile-saw/but-the-actual-saw.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>6,6,11,11</rect>
-                <key>scale9Paddings</key>
-                <rect>6,6,11,11</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/task.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>5,4,9,7</rect>
-                <key>scale9Paddings</key>
-                <rect>5,4,9,7</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/symbols/trash-can.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>2,2,3,5</rect>
-                <key>scale9Paddings</key>
-                <rect>2,2,3,5</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/volume-bar.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <true/>
-                <key>scale9Borders</key>
-                <rect>0,0,128,32</rect>
-                <key>scale9Paddings</key>
-                <rect>32,8,64,16</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/xbox/controller.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>69,46,137,91</rect>
-                <key>scale9Paddings</key>
-                <rect>69,46,137,91</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/generics/xbox/trigger-left.png</key>
-            <key type="filename">gui/generics/xbox/trigger-right.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>5,7,11,13</rect>
-                <key>scale9Paddings</key>
-                <rect>5,7,11,13</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/menu-dirt.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>20,4,40,8</rect>
-                <key>scale9Paddings</key>
-                <rect>20,4,40,8</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">gui/title.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>49,12,99,25</rect>
-                <key>scale9Paddings</key>
-                <rect>49,12,99,25</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -1782,6 +901,30 @@
                 <rect>3,2,5,4</rect>
                 <key>scale9Paddings</key>
                 <rect>3,2,5,4</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">objects/checkpoint/number/0.png</key>
+            <key type="filename">objects/checkpoint/number/1.png</key>
+            <key type="filename">objects/checkpoint/number/2.png</key>
+            <key type="filename">objects/checkpoint/number/3.png</key>
+            <key type="filename">objects/checkpoint/number/4.png</key>
+            <key type="filename">objects/checkpoint/number/5.png</key>
+            <key type="filename">objects/checkpoint/number/6.png</key>
+            <key type="filename">objects/checkpoint/number/7.png</key>
+            <key type="filename">objects/checkpoint/number/8.png</key>
+            <key type="filename">objects/checkpoint/number/9.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>2,3,4,5</rect>
+                <key>scale9Paddings</key>
+                <rect>2,3,4,5</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -1915,6 +1058,22 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">objects/gravity-switch-particles.png</key>
+            <key type="filename">objects/preview/gravity-switch.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>7,7,14,14</rect>
+                <key>scale9Paddings</key>
+                <rect>7,7,14,14</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">objects/gravity-switch.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -2034,6 +1193,21 @@
                 <rect>7,4,15,7</rect>
                 <key>scale9Paddings</key>
                 <rect>7,4,15,7</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">objects/mobile-saw/but-the-actual-saw.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>6,6,11,11</rect>
+                <key>scale9Paddings</key>
+                <rect>6,6,11,11</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -2356,7 +1530,6 @@
                 <key>files</key>
                 <array>
                     <filename>blocks</filename>
-                    <filename>gui</filename>
                     <filename>objects</filename>
                     <filename>effects</filename>
                 </array>

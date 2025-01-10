@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=8 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://scenes/objects/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://scenes/objects/player/Player.tscn" id="2_eoc6o"]
 [ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://scenes/objects/trampoline/Trampoline.tscn" id="3_bkv65"]
 [ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://scenes/objects/obstacles/saw/Saw.tscn" id="5_kr1w6"]
 [ext_resource type="PackedScene" uid="uid://btxvoypjswqqe" path="res://scenes/objects/obstacles/laser_gun/Laser Gun.tscn" id="5_pxsf5"]
-[ext_resource type="PackedScene" uid="uid://34ekuavnpvw5" path="res://scenes/objects/triggers/Camera Area Trigger/CameraAreaTrigger.tscn" id="6_mema5"]
+[ext_resource type="PackedScene" uid="uid://b5ft4empinjoh" path="res://scenes/objects/power_ups/gravity_switch/Gravity Switch.tscn" id="6_kivx3"]
+[ext_resource type="PackedScene" uid="uid://cfmk4d5cmkdfh" path="res://scenes/objects/obstacles/mobile_saw/Mobile Saw.tscn" id="7_vn5wq"]
 
 [node name="Test Scene" type="Node2D"]
 
@@ -82,14 +83,11 @@ rotation = 2.00054
 position = Vector2(223, 34)
 rotation = 1.57079
 
-[node name="CameraAreaTrigger" parent="." instance=ExtResource("6_mema5")]
-position = Vector2(488, 1.78814e-07)
-scale = Vector2(28.7906, 15.186)
+[node name="Gravity Switch" parent="." instance=ExtResource("6_kivx3")]
+position = Vector2(612, 14)
 
-[node name="CameraAreaTrigger2" parent="." instance=ExtResource("6_mema5")]
-position = Vector2(626, 57)
-rotation = 21.416
-scale = Vector2(13.119, 12.518)
-overrideOptions = 132
-zoom = 1.176
-rotation = 21.416
+[node name="Gravity Switch2" parent="." instance=ExtResource("6_kivx3")]
+position = Vector2(508, -60)
+
+[node name="Mobile Saw" parent="." instance=ExtResource("7_vn5wq")]
+position = Vector2(310, 94)
