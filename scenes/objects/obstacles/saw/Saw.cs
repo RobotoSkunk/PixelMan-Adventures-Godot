@@ -89,15 +89,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			GameEvents.OnResetGame += OnGameReset;
 
-			if (HasAPath) {
-				linePath.Points = path.ToArray();
+			if (linePath != null) {
+				if (HasAPath) {
+					linePath.Points = path.ToArray();
 
-				if (returnToStart) {
-					linePath.AddPoint(path[0]);
+					if (returnToStart) {
+						linePath.AddPoint(path[0]);
+					}
 				}
-			}
 
-			linePath.Visible = HasAPath;
+				linePath.Visible = HasAPath;
+			}
 		}
 
 		public override void _Process(double delta)
