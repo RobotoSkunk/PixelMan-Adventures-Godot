@@ -72,6 +72,12 @@ namespace ClockBombGames.PixelMan.GameObjects
 		public Player TargetPlayer { get; set; }
 
 
+		/// <summary>
+		/// The ticks for a small workaround to prevent other areas and raycast from detecting
+		/// the player after the game resets for the designed ticks.
+		/// </summary>
+		private int delayedTicksAfterReset = 0;
+
 		int enteredCameraAreaCount = 0;
 
 		#endregion
@@ -205,6 +211,30 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _PhysicsProcess(double delta)
 		{
+			// Small delay to prevent the physics from being updated in ticks
+			if (delayedTicksAfterReset > 0) {
+				delayedTicksAfterReset--;
+
+				rawOffset = Vector2.Zero;
+
+				if (TargetPlayer != null) {
+					rawTargetPosition = TargetPlayer.GlobalPosition;
+					GlobalPosition = rawTargetPosition;
+
+					GD.Print("Called");
+				}
+
+				playerDirection = 0;
+				playerVelocity = 0f;
+
+				rawOffset = Vector2.Zero;
+				Offset = rawOffset;
+
+				rawZoom = 1f;
+
+				return;
+			}
+
 			if (TargetPlayer != null) {
 				playerVelocity = TargetPlayer.Velocity.Length();
 
@@ -224,17 +254,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		private void ResetToTarget()
 		{
-			rawOffset = Vector2.Zero;
-
-			if (TargetPlayer != null) {
-				rawTargetPosition = TargetPlayer.GlobalPosition;
-				GlobalPosition = rawTargetPosition;
-			}
-
-			playerDirection = 0;
-			playerVelocity = 0f;
-			rawOffset = Vector2.Zero;
-			rawZoom = 1f;
+			delayedTicksAfterReset = 1;
 		}
 
 		private void OnPlayerDeath()
