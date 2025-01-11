@@ -35,11 +35,9 @@ lifetime_randomness = 0.51
 particle_flag_disable_z = true
 direction = Vector3(0, 0, 0)
 spread = 180.0
-gravity = Vector3(0, 0, 0)
 initial_velocity_min = 5.0
 initial_velocity_max = 30.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 0, 0)
 scale_min = 0.05
 scale_max = 0.1
 scale_curve = SubResource("CurveTexture_ghvwp")
@@ -71,3 +69,4 @@ explosiveness = 1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_drhi6")
+max_distance = 1600.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://34ekuavnpvw5"]
 
-[ext_resource type="Script" path="res://scenes/objects/triggers/Camera Area Trigger/CameraAreaTrigger.cs" id="1_3oo2j"]
+[ext_resource type="Script" path="res://scenes/objects/triggers/camera_area_trigger/CameraAreaTrigger.cs" id="1_3oo2j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ise7"]
 size = Vector2(16, 16)

@@ -1,93 +1,84 @@
-[gd_scene load_steps=8 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=7 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://scenes/objects/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://scenes/objects/player/Player.tscn" id="2_eoc6o"]
 [ext_resource type="PackedScene" uid="uid://ckmcojtyxje3x" path="res://scenes/objects/trampoline/Trampoline.tscn" id="3_bkv65"]
 [ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://scenes/objects/obstacles/saw/Saw.tscn" id="5_kr1w6"]
-[ext_resource type="PackedScene" uid="uid://btxvoypjswqqe" path="res://scenes/objects/obstacles/laser_gun/Laser Gun.tscn" id="5_pxsf5"]
 [ext_resource type="PackedScene" uid="uid://b5ft4empinjoh" path="res://scenes/objects/power_ups/gravity_switch/Gravity Switch.tscn" id="6_kivx3"]
-[ext_resource type="PackedScene" uid="uid://cfmk4d5cmkdfh" path="res://scenes/objects/obstacles/mobile_saw/Mobile Saw.tscn" id="7_vn5wq"]
+[ext_resource type="PackedScene" uid="uid://b5y7ke78vnvat" path="res://scenes/objects/obstacles/wall_gun/Wall Gun.tscn" id="6_up6i3"]
 
 [node name="Test Scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_eoc6o")]
-position = Vector2(92, 93)
+position = Vector2(-18, 92)
 
 [node name="Default Block" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(261, 112)
+position = Vector2(151, 111)
 scale = Vector2(56.92, 1)
 
 [node name="Default Block5" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(570, 99)
+position = Vector2(460, 98)
 rotation = 2.88329
 scale = Vector2(24, 1)
 
 [node name="Default Block7" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(618, 89)
+position = Vector2(508, 88)
 rotation = 2.40332
 scale = Vector2(24, 1)
 
 [node name="Default Block6" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(502, 112)
+position = Vector2(392, 111)
 rotation = 0.785398
 scale = Vector2(3, 3)
 
 [node name="Default Block4" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(261, -112)
+position = Vector2(151, -113)
 scale = Vector2(56.92, 1)
 
 [node name="Default Block2" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(-192, 0)
+position = Vector2(-302, -1)
 scale = Vector2(1, 14)
 
 [node name="Default Block8" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(110, 188)
+position = Vector2(0, 187)
 scale = Vector2(1, 14)
 
 [node name="Default Block3" parent="." instance=ExtResource("1_1v0s6")]
-position = Vector2(713, 0)
+position = Vector2(603, -1)
 scale = Vector2(1, 14)
 
 [node name="Trampoline" parent="." instance=ExtResource("3_bkv65")]
-position = Vector2(-172, 92)
+position = Vector2(-282, 91)
 rotation = 0.785398
 
 [node name="Trampoline2" parent="." instance=ExtResource("3_bkv65")]
-position = Vector2(-43, 96)
+position = Vector2(-153, 95)
 
 [node name="Saw" parent="." instance=ExtResource("5_kr1w6")]
-position = Vector2(-79, 41)
+position = Vector2(-189, 40)
 path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0)])
 speed = 160.0
 
 [node name="Saw2" parent="." instance=ExtResource("5_kr1w6")]
-position = Vector2(393, 103)
+position = Vector2(283, 102)
 speed = 160.0
 
 [node name="Saw3" parent="." instance=ExtResource("5_kr1w6")]
-position = Vector2(278, 56)
+position = Vector2(166, 36)
 path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0), Vector2(40, -80)])
 returnToStart = true
 speed = 160.0
 
 [node name="Saw4" parent="." instance=ExtResource("5_kr1w6")]
-position = Vector2(66, 47)
+position = Vector2(-38, 26)
 path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0), Vector2(40, -80)])
 speed = 160.0
 
-[node name="LaserGun" parent="." instance=ExtResource("5_pxsf5")]
-position = Vector2(194, 5)
-rotation = 2.00054
-
-[node name="LaserGun2" parent="." instance=ExtResource("5_pxsf5")]
-position = Vector2(223, 34)
-rotation = 1.57079
-
 [node name="Gravity Switch" parent="." instance=ExtResource("6_kivx3")]
-position = Vector2(612, 14)
+position = Vector2(502, 13)
 
 [node name="Gravity Switch2" parent="." instance=ExtResource("6_kivx3")]
-position = Vector2(508, -60)
+position = Vector2(398, -61)
 
-[node name="Mobile Saw" parent="." instance=ExtResource("7_vn5wq")]
-position = Vector2(325, 86)
+[node name="WallGun" parent="." instance=ExtResource("6_up6i3")]
+position = Vector2(15, 88)
