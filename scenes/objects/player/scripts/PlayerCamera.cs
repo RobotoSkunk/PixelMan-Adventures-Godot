@@ -100,11 +100,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _Ready()
 		{
-			ResetToInitialPosition();
+			ResetToTarget();
 
-			GameEvents.OnPlayerDeath += OnPlayerDeath;
 			GameEvents.OnResetGame += () => {
-				ResetToInitialPosition();
+				ResetToTarget();
 
 				delayedTicksAfterReset = 1;
 			};
@@ -116,7 +115,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			// Small delay to prevent the physics from being updated in ticks
 			if (delayedTicksAfterReset > 0) {
-				ResetToInitialPosition();
+				ResetToTarget();
 				return;
 			}
 
@@ -260,7 +259,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			rect.Texture = GetViewport().GetTexture();
 		}
 
-		private void ResetToInitialPosition()
+		private void ResetToTarget()
 		{
 			rawOffset = Vector2.Zero;
 			virtualOffset = Vector2.Zero;
@@ -273,11 +272,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 			playerVelocity = 0f;
 
 			rawZoom = 1f;
-		}
-
-		private void OnPlayerDeath()
-		{
-			Globals.Shake(2f, 0.3f);
 		}
 	}
 }

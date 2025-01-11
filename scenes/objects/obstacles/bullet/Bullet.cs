@@ -84,8 +84,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			Destroy();
 
-			if (body is Player) {
-				Globals.KillPlayers();
+			if (body is Player player) {
+				player.KillPlayer();
 			}
 		}
 

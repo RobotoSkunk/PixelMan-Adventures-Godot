@@ -63,8 +63,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		float laserDistance = 1600f;
 
-		int foundPlayersCount = 0;
-
+		List<Player> foundPlayers = new();
 		List<IGOProjectile> foundProjectiles = new();
 
 
@@ -73,7 +72,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			laserHitbox.BodyEntered += (body) =>
 			{
 				if (body is Player player) {
-					foundPlayersCount++;
+					foundPlayers.Add(player);
 
 				} else if (body is IGOProjectile projectile) {
 					foundProjectiles.Add(projectile);
@@ -83,7 +82,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			laserHitbox.BodyExited += (body) =>
 			{
 				if (body is Player player) {
-					foundPlayersCount--;
+					foundPlayers.Remove(player);
 
 				} else if (body is IGOProjectile projectile) {
 					foundProjectiles.Remove(projectile);
@@ -205,9 +204,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 				float newY = Mathf.Lerp(laserBody.Scale.Y, 0f, 0.15f);
 
 				laserBody.Visible = true;
-				
-				if (foundPlayersCount > 0) {
-					Globals.KillPlayers();
+
+				foreach (Player player in foundPlayers) {
+					player.KillPlayer();
 				}
 
 				foreach (IGOProjectile projectile in foundProjectiles) {

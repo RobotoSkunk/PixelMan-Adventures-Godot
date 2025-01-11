@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=8 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://scenes/objects/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://scenes/objects/player/Player.tscn" id="2_eoc6o"]
@@ -6,11 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://scenes/objects/obstacles/saw/Saw.tscn" id="5_kr1w6"]
 [ext_resource type="PackedScene" uid="uid://b5ft4empinjoh" path="res://scenes/objects/power_ups/gravity_switch/Gravity Switch.tscn" id="6_kivx3"]
 [ext_resource type="PackedScene" uid="uid://b5y7ke78vnvat" path="res://scenes/objects/obstacles/wall_gun/Wall Gun.tscn" id="6_up6i3"]
+[ext_resource type="PackedScene" uid="uid://btxvoypjswqqe" path="res://scenes/objects/obstacles/laser_gun/Laser Gun.tscn" id="7_pbbjc"]
 
 [node name="Test Scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_eoc6o")]
 position = Vector2(-18, 92)
+playerIndex = 1
+
+[node name="Player2" parent="." instance=ExtResource("2_eoc6o")]
+position = Vector2(-41, 87)
+playerIndex = 2
 
 [node name="Default Block" parent="." instance=ExtResource("1_1v0s6")]
 position = Vector2(151, 111)
@@ -86,3 +92,7 @@ position = Vector2(15, 93)
 [node name="WallGun2" parent="." instance=ExtResource("6_up6i3")]
 position = Vector2(15, 75)
 delayAtStart = 0.5
+
+[node name="LaserGun" parent="." instance=ExtResource("7_pbbjc")]
+position = Vector2(-92, 21)
+rotation = 1.68996

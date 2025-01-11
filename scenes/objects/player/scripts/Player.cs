@@ -104,7 +104,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		///     <item>2 = Player 2</item>
 		/// </list>
 		/// </summary>
-		public int playerIndex = 0;
+		[Export] public int playerIndex = 0;
 
 		/// <summary>
 		/// The ticks for a small workaround to prevent other areas and raycast from detecting
@@ -210,6 +210,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 		}
 
 		/// <summary>
+		/// Is the player dead?
+		/// </summary>
+		public bool IsDead
+		{
+			get
+			{
+				return isDead;
+			}
+		}
+
+		/// <summary>
 		/// Wanted horizontal speed.
 		/// </summary>
 		public float WantedHorizontalSpeed
@@ -258,12 +269,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 
 			// Connect events
-			GameEvents.OnPlayerDeath += OnPlayerDeath;
 			GameEvents.OnResetGame += OnGameReset;
 
 			killzoneHitbox.AreaEntered += (area) =>
 			{
-				Globals.KillPlayers();
+				KillPlayer();
 			};
 
 			killzoneHitbox.BodyEntered += (body) =>
@@ -272,7 +282,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 					return;
 				}
 
-				Globals.KillPlayers();
+				KillPlayer();
 			};
 
 			triggersHitbox.AreaEntered += (area) =>
@@ -596,7 +606,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 
 		#region Delegate methods
-		private void OnPlayerDeath()
+		public void KillPlayer()
 		{
 			isDead = true;
 			Velocity = Vector2.Zero;
@@ -605,6 +615,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			audioPlayer.Stream = sounds[1];
 			audioPlayer.Play();
+
+			Globals.Shake(1f, 0.3f);
+			Globals.KillPlayers();
 		}
 
 		private void OnGameReset()
