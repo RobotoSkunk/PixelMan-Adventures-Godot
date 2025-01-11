@@ -17,6 +17,7 @@
 */
 
 
+using ClockBombGames.PixelMan.Events;
 using Godot;
 using Godot.Collections;
 
@@ -33,16 +34,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] private float shootInterval = 1f;
 		[Export] private float delayAtStart = 0f;
 
-		private bool playerIsDead = false;
-
 		private float timeToShoot = 0f;
+
+
+		public override void _Ready()
+		{
+			GameEvents.OnResetGame += ResetTimeToShoot;
+			ResetTimeToShoot();
+		}
 
 		public override void _PhysicsProcess(double delta)
 		{
-			if (playerIsDead) {
-				return;
-			}
-
 			if (timeToShoot <= 0f) {
 				Shoot(GlobalPosition, bulletSpeed);
 
@@ -54,16 +56,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 			}
 		}
 
-		private void OnPlayerDeath()
+		private void ResetTimeToShoot()
 		{
-			playerIsDead = true;
-		}
-
-		private void OnResetGame()
-		{
-			playerIsDead = false;
-
-			timeToShoot = 0.5f;
+			timeToShoot = delayAtStart;
 		}
 
 		public void Deserialize(Dictionary data)
