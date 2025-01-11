@@ -39,6 +39,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] private Sprite2D laserDots;
 		[Export] private Sprite2D laserLine;
 		[Export] private Area2D laserHitbox;
+		[Export] private VisibleOnScreenNotifier2D laserScreenNotifier;
 
 		[ExportGroup("Sprites")]
 		[Export] private Array<Texture2D> rendererSprites;
@@ -114,7 +115,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				}
 
 			} else if (!shootLaser) {
-				if (executeFrame) {
+				if (executeFrame && laserScreenNotifier.IsOnScreen()) {
 					dotsSpritesIndex++;
 
 					if (dotsSpritesIndex >= dotsSprites.Count) {
@@ -167,6 +168,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			if (rayCast2D.IsColliding()) {
 				laserDistance = rayCast2D.GetCollisionPoint().DistanceTo(rayCast2D.GlobalPosition);
+				laserScreenNotifier.Scale = new Vector2(laserDistance, 1f);
 			}
 
 			if (reloadProgress < 1f) {

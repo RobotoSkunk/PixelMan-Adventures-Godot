@@ -443,11 +443,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			if (delayedTicksAfterReset > 0) {
 				delayedTicksAfterReset--;
 
-				hangCount = 0f;
-				jumpTime = 0f;
-				canReduceJump = false;
-				horizontalInput = 0;
-				rawAngle = 0;
+				ResetToInitialPosition();
 				return;
 			}
 
@@ -577,6 +573,24 @@ namespace ClockBombGames.PixelMan.GameObjects
 			jumpTime = 0f;
 		}
 
+		private void ResetToInitialPosition()
+		{
+			isDead = false;
+			Position = startPosition;
+			Velocity = Vector2.Zero;
+
+			animator.Visible = true;
+			invertedGravity = false;
+
+			hangCount = 0f;
+			jumpTime = 0f;
+			canReduceJump = false;
+			horizontalInput = 0;
+
+			rawAngle = 0;
+			Rotation = 0;
+		}
+
 
 		#region Delegate methods
 		private void OnPlayerDeath()
@@ -592,12 +606,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		private void OnGameReset()
 		{
-			isDead = false;
-			Position = startPosition;
-			Velocity = Vector2.Zero;
-
-			animator.Visible = true;
-			invertedGravity = false;
+			ResetToInitialPosition();
 
 			delayedTicksAfterReset = 1;
 		}
