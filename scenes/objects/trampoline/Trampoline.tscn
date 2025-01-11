@@ -25,6 +25,7 @@ offset = Vector2(0, -1)
 
 [node name="Audio Stream" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_mdnmx")
+max_distance = 800.0
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6rxpj")

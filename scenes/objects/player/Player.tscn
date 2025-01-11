@@ -78,6 +78,7 @@ shape = SubResource("RectangleShape2D_o402s")
 one_way_collision = true
 
 [node name="Audio Player" type="AudioStreamPlayer2D" parent="."]
+max_distance = 800.0
 
 [node name="Rendering" type="Node2D" parent="."]
 
