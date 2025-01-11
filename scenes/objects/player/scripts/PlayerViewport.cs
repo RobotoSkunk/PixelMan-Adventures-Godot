@@ -49,6 +49,7 @@ namespace ClockBombGames.PixelMan.Utils
 		public override void _Process(double delta)
 		{
 			subViewport.World2D = Globals.World?.GetWorld2D();
+			subViewport.AudioListenerEnable2D = InUse;
 		}
 	}
 }

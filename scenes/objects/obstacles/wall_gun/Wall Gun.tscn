@@ -16,4 +16,4 @@ texture = ExtResource("1_ve82k")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_kjb3m")
-max_distance = 1600.0
+max_distance = 800.0
