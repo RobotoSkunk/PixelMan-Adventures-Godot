@@ -45,6 +45,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 			initialRotation = GlobalRotationDegrees;
 			angle = initialRotation;
 
+			timeToShoot = shootInterval;
+
 			GameEvents.OnPlayerDeath += OnPlayerDeath;
 			GameEvents.OnResetGame += OnResetGame;
 		}

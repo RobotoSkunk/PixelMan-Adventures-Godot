@@ -122,6 +122,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 			explosionParticles.Restart();
 			explosionParticles.Emitting = false;
 
+			trailParticles.Restart();
+			trailParticles.Emitting = false;
+
 			animatedSprite2D.Stop();
 		}
 
