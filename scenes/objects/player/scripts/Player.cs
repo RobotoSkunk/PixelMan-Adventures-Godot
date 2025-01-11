@@ -589,6 +589,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			rawAngle = 0;
 			Rotation = 0;
+
+			pressedJump = false;
+			releasedJump = false;
 		}
 
 

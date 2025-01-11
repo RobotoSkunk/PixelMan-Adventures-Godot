@@ -40,6 +40,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private float temporalAngle = 0f;
 
 
+		Player cachedPlayer;
+
+
 		public override void _Ready()
 		{
 			initialRotation = GlobalRotationDegrees;
@@ -57,10 +60,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 				return;
 			}
 
-			Player player = GetNearestPlayer();
-
-			if (player != null) {
-				LookAt(GlobalPosition.DirectionTo(player.GlobalPosition).Angle(), 10f);
+			if (cachedPlayer != null) {
+				LookAt(GlobalPosition.DirectionTo(cachedPlayer.GlobalPosition).Angle(), 10f);
 				temporalAngle = GlobalRotationDegrees;
 
 				if (timeToShoot <= 0f) {
@@ -69,7 +70,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 					IGOProjectile rocket = Shoot(from, bulletSpeed);
 
 					if (rocket is Rocket _rocket) {
-						_rocket.SetTarget(player);
+						_rocket.SetTarget(cachedPlayer);
 					}
 
 					timeToShoot = shootInterval;
@@ -85,6 +86,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 				timeToShoot = 0.5f;
 			}
+
+			cachedPlayer = GetNearestPlayer();
 		}
 
 		private void OnPlayerDeath()
