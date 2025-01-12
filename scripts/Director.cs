@@ -95,13 +95,18 @@ namespace ClockBombGames.PixelMan
 			gamePaused = Globals.World.GetTree().Paused;
 		}
 
-		public void TriggerPlayerDeath()
+		public void TriggerPlayerDeath(Player player)
+		{
+			this.InvokePlayerDeath(player);
+		}
+
+		public void TriggerAllPlayersDeath()
 		{
 			if (!playerIsDead) {
 				playerIsDead = true;
 				restartTimer = 1f;
 
-				this.InvokePlayerDeath();
+				this.InvokeAllPlayersDeath();
 			}
 		}
 

@@ -1,0 +1,47 @@
+[gd_scene load_steps=15 format=3 uid="uid://d3petahsbw3ne"]
+
+[ext_resource type="Texture2D" uid="uid://bdxmmciyryy1o" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/sign.tres" id="1_2rglr"]
+[ext_resource type="Script" path="res://scenes/objects/checkpoint/Checkpoint.cs" id="1_xlr8o"]
+[ext_resource type="Texture2D" uid="uid://cw0gjpbiq7650" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/0.tres" id="2_6gptr"]
+[ext_resource type="Texture2D" uid="uid://bso64p1qtigoi" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/post.tres" id="2_dju8x"]
+[ext_resource type="Texture2D" uid="uid://cexpo2jqdixdk" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/9.tres" id="2_mc1yc"]
+[ext_resource type="Texture2D" uid="uid://dx71uuild5asv" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/1.tres" id="3_lxvhv"]
+[ext_resource type="Texture2D" uid="uid://bd6prot1s6coe" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/2.tres" id="4_3xw78"]
+[ext_resource type="Texture2D" uid="uid://dw1teycmwudwo" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/3.tres" id="5_vuv0e"]
+[ext_resource type="Texture2D" uid="uid://d1j7jmcx1haqi" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/4.tres" id="6_oan01"]
+[ext_resource type="Texture2D" uid="uid://2mua5uvoeb4c" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/5.tres" id="7_2mhky"]
+[ext_resource type="Texture2D" uid="uid://c4s665rebvxuv" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/6.tres" id="8_jp88v"]
+[ext_resource type="Texture2D" uid="uid://cxyscsi0fjp2a" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/7.tres" id="9_kpa2r"]
+[ext_resource type="Texture2D" uid="uid://d0cobbjeruolr" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/8.tres" id="10_3d0qb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fcbl"]
+size = Vector2(16, 29)
+
+[node name="Checkpoint" type="Node2D" node_paths=PackedStringArray("signSprite", "numberSprite", "hitbox")]
+script = ExtResource("1_xlr8o")
+signSprite = NodePath("Sign")
+numberSprite = NodePath("Sign/Number")
+hitbox = NodePath("Hitbox")
+numbersTextures = Array[Texture2D]([ExtResource("2_6gptr"), ExtResource("3_lxvhv"), ExtResource("4_3xw78"), ExtResource("5_vuv0e"), ExtResource("6_oan01"), ExtResource("7_2mhky"), ExtResource("8_jp88v"), ExtResource("9_kpa2r"), ExtResource("10_3d0qb"), ExtResource("2_mc1yc")])
+
+[node name="Sign" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+texture = ExtResource("1_2rglr")
+offset = Vector2(0, -13)
+
+[node name="Number" type="Sprite2D" parent="Sign"]
+position = Vector2(0, -15)
+texture = ExtResource("2_mc1yc")
+
+[node name="Post" type="Sprite2D" parent="."]
+position = Vector2(0, -7.5)
+texture = ExtResource("2_dju8x")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_6fcbl")
+debug_color = Color(0, 1, 0, 0.419608)

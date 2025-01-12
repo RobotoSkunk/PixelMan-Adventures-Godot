@@ -47,7 +47,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			initialRotation = GlobalRotationDegrees;
 			angle = initialRotation;
 
-			GameEvents.OnPlayerDeath += OnPlayerDeath;
+			GameEvents.OnAllPlayersDeath += OnAllPlayersDeath;
 			GameEvents.OnResetGame += OnResetGame;
 		}
 
@@ -78,7 +78,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			cachedPlayer = GetNearestPlayer();
 		}
 
-		private void OnPlayerDeath()
+		private void OnAllPlayersDeath()
 		{
 			playerIsDead = true;
 		}

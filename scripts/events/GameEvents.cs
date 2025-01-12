@@ -17,6 +17,7 @@
 */
 
 
+using ClockBombGames.PixelMan.GameObjects;
 using Godot;
 
 
@@ -30,11 +31,19 @@ namespace ClockBombGames.PixelMan.Events
 		[Signal]
 		public delegate void GeneralEventHandler();
 
+		[Signal]
+		public delegate void PlayerEventHandler(Player player);
+
 
 		/// <summary>
-		/// When the player dies, this event is triggered.
+		/// When all players dies, this event is triggered.
 		/// </summary>
-		public static event GeneralEventHandler OnPlayerDeath = delegate { };
+		public static event GeneralEventHandler OnAllPlayersDeath = delegate { };
+
+		/// <summary>
+		/// When a player dies, this event is triggered.
+		/// </summary>
+		public static event PlayerEventHandler OnPlayerDeath = delegate { };
 
 		/// <summary>
 		/// Is triggered when the director request reset all the objects in the game.
@@ -43,11 +52,19 @@ namespace ClockBombGames.PixelMan.Events
 
 
 		/// <summary>
-		/// Invoke the OnPlayerDeath event.
+		/// Invoke the OnAllPlayersDeath event.
 		/// </summary>
-		public static void InvokePlayerDeath(this Director _)
+		public static void InvokeAllPlayersDeath(this Director _)
 		{
-			OnPlayerDeath();
+			OnAllPlayersDeath();
+		}
+
+		/// <summary>
+		/// Invoke the OnAllPlayersDeath event.
+		/// </summary>
+		public static void InvokePlayerDeath(this Director _, Player player)
+		{
+			OnPlayerDeath(player);
 		}
 
 		/// <summary>

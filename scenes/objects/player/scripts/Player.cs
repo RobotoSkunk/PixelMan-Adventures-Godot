@@ -221,6 +221,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 		}
 
 		/// <summary>
+		/// The number of available attempts the player has to resurrect with a checkpoint.
+		/// </summary>
+		public int CheckpointAttempts { get; set; }
+
+		/// <summary>
 		/// Wanted horizontal speed.
 		/// </summary>
 		public float WantedHorizontalSpeed
@@ -585,8 +590,13 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		private void ResetToInitialPosition()
 		{
+			Resurrect(startPosition);
+		}
+
+		public void Resurrect(Vector2 position)
+		{
 			isDead = false;
-			Position = startPosition;
+			Position = position;
 			Velocity = Vector2.Zero;
 
 			animator.Visible = true;
@@ -617,7 +627,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			audioPlayer.Play();
 
 			Globals.Shake(1f, 0.3f);
-			Globals.KillPlayers();
+			Globals.CallPlayerDeathEvents();
 		}
 
 		private void OnGameReset()
@@ -625,6 +635,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			ResetToInitialPosition();
 
 			delayedTicksAfterReset = 1;
+			CheckpointAttempts = 0;
 		}
 		#endregion
 

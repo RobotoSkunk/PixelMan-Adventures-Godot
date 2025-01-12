@@ -50,7 +50,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			timeToShoot = shootInterval;
 
-			GameEvents.OnPlayerDeath += OnPlayerDeath;
+			GameEvents.OnAllPlayersDeath += OnAllPlayersDeath;
 			GameEvents.OnResetGame += OnResetGame;
 		}
 
@@ -90,7 +90,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			cachedPlayer = GetNearestPlayer();
 		}
 
-		private void OnPlayerDeath()
+		private void OnAllPlayersDeath()
 		{
 			playerIsDead = true;
 		}

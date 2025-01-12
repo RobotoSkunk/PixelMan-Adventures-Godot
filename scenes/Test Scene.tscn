@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=9 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://scenes/objects/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://scenes/objects/player/Player.tscn" id="2_eoc6o"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ft4empinjoh" path="res://scenes/objects/power_ups/gravity_switch/Gravity Switch.tscn" id="6_kivx3"]
 [ext_resource type="PackedScene" uid="uid://b5y7ke78vnvat" path="res://scenes/objects/obstacles/wall_gun/Wall Gun.tscn" id="6_up6i3"]
 [ext_resource type="PackedScene" uid="uid://btxvoypjswqqe" path="res://scenes/objects/obstacles/laser_gun/Laser Gun.tscn" id="7_pbbjc"]
+[ext_resource type="PackedScene" uid="uid://d3petahsbw3ne" path="res://scenes/objects/checkpoint/checkpoint.tscn" id="8_xoibk"]
 
 [node name="Test Scene" type="Node2D"]
 
@@ -96,3 +97,7 @@ delayAtStart = 0.5
 [node name="LaserGun" parent="." instance=ExtResource("7_pbbjc")]
 position = Vector2(-92, 21)
 rotation = 1.68996
+
+[node name="Checkpoint" parent="." instance=ExtResource("8_xoibk")]
+position = Vector2(-124, 95)
+availableAttempts = 3
