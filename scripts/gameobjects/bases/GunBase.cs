@@ -52,7 +52,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			}
 
 
-			var instance = bulletScene.Instantiate();
+			var instance = (Node2D)bulletScene.Instantiate();
 
 			if (instance is not IGOProjectile) {
 				throw new InvalidCastException("Gun: bulletScene is not an IGOProjectile.");
@@ -63,6 +63,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			bullets.Add(projectile);
 			projectile.ShootAt(from, GlobalRotation, speed);
+			instance.ZIndex = ZIndex - 1;
 
 			Globals.World.AddChild(instance);
 
@@ -76,7 +77,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		protected virtual Player GetNearestPlayer()
 		{
 			if (rayCast == null) {
-				throw new NullReferenceException("Gun: a raycast is required to get the nearest player.");
+				throw new NullReferenceException(Name + ": a raycast is required to get the nearest player.");
 			}
 
 
@@ -107,7 +108,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// <summary>
 		/// Makes the object look at a given position.
 		/// </summary>
-		/// <param name="direction">The direction to look at.</param>
+		/// <param name="direction">The direction to look at in radians.</param>
 		/// <param name="delta">The delta value to use in the interpolation.</param>
 		protected virtual void LookAt(float direction, float delta)
 		{

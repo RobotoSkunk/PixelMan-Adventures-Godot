@@ -54,7 +54,7 @@ namespace ClockBombGames.PixelMan.Utils
 
 				Player player = players[i];
 
-				viewport.Camera.Target = player;
+				viewport.Camera.TargetPlayer = player;
 			}
 		}
 

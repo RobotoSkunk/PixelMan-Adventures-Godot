@@ -18,6 +18,7 @@
 
 
 using System.Collections.Generic;
+using ClockBombGames.PixelMan.Events;
 using Godot;
 using Godot.Collections;
 
@@ -38,6 +39,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] private Sprite2D laserDots;
 		[Export] private Sprite2D laserLine;
 		[Export] private Area2D laserHitbox;
+		[Export] private VisibleOnScreenNotifier2D laserScreenNotifier;
 
 		[ExportGroup("Sprites")]
 		[Export] private Array<Texture2D> rendererSprites;
@@ -61,8 +63,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		float laserDistance = 1600f;
 
-		int foundPlayersCount = 0;
-
+		List<Player> foundPlayers = new();
 		List<IGOProjectile> foundProjectiles = new();
 
 
@@ -71,7 +72,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			laserHitbox.BodyEntered += (body) =>
 			{
 				if (body is Player player) {
-					foundPlayersCount++;
+					foundPlayers.Add(player);
 
 				} else if (body is IGOProjectile projectile) {
 					foundProjectiles.Add(projectile);
@@ -81,12 +82,14 @@ namespace ClockBombGames.PixelMan.GameObjects
 			laserHitbox.BodyExited += (body) =>
 			{
 				if (body is Player player) {
-					foundPlayersCount--;
+					foundPlayers.Remove(player);
 
 				} else if (body is IGOProjectile projectile) {
 					foundProjectiles.Remove(projectile);
 				}
 			};
+
+			GameEvents.OnResetGame += OnResetGame;
 		}
 
 		public override void _Process(double delta)
@@ -111,7 +114,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 				}
 
 			} else if (!shootLaser) {
-				if (executeFrame) {
+				if (executeFrame && laserScreenNotifier.IsOnScreen()) {
 					dotsSpritesIndex++;
 
 					if (dotsSpritesIndex >= dotsSprites.Count) {
@@ -164,6 +167,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			if (rayCast2D.IsColliding()) {
 				laserDistance = rayCast2D.GetCollisionPoint().DistanceTo(rayCast2D.GlobalPosition);
+				laserScreenNotifier.Scale = new Vector2(laserDistance, 1f);
 			}
 
 			if (reloadProgress < 1f) {
@@ -200,9 +204,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 				float newY = Mathf.Lerp(laserBody.Scale.Y, 0f, 0.15f);
 
 				laserBody.Visible = true;
-				
-				if (foundPlayersCount > 0) {
-					Globals.KillPlayers();
+
+				foreach (Player player in foundPlayers) {
+					player.KillPlayer();
 				}
 
 				foreach (IGOProjectile projectile in foundProjectiles) {
@@ -213,6 +217,14 @@ namespace ClockBombGames.PixelMan.GameObjects
 			} else {
 				laserBody.Visible = false;
 			}
+		}
+
+
+		private void OnResetGame()
+		{
+			reloadProgress = 1f;
+			shootLaser = false;
+			laserBody.Scale = Vector2.Zero;
 		}
 
 

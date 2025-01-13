@@ -122,6 +122,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 			explosionParticles.Restart();
 			explosionParticles.Emitting = false;
 
+			trailParticles.Restart();
+			trailParticles.Emitting = false;
+
 			animatedSprite2D.Stop();
 		}
 
@@ -129,8 +132,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			Destroy();
 
-			if (body is Player) {
-				Globals.KillPlayers();
+			if (body is Player player) {
+				player.KillPlayer();
 			}
 		}
 

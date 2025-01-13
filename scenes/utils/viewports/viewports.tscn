@@ -59,6 +59,9 @@ render_target_update_mode = 0
 [node name="Camera2D" type="Camera2D" parent="Control/Container/SubViewport Player 1/Viewport"]
 script = ExtResource("4_dxh3r")
 
+[node name="AudioListener2D" type="AudioListener2D" parent="Control/Container/SubViewport Player 1/Viewport/Camera2D"]
+current = true
+
 [node name="SubViewport Player 2" type="SubViewportContainer" parent="Control/Container" node_paths=PackedStringArray("camera", "subViewport")]
 visible = false
 layout_mode = 2
@@ -79,3 +82,6 @@ render_target_update_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="Control/Container/SubViewport Player 2/Viewport"]
 script = ExtResource("4_dxh3r")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Control/Container/SubViewport Player 2/Viewport/Camera2D"]
+current = true

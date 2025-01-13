@@ -23,6 +23,7 @@ using Godot.Collections;
 
 using ClockBombGames.PixelMan.Utils;
 using ClockBombGames.PixelMan.Events;
+using System.Collections.Generic;
 
 
 namespace ClockBombGames.PixelMan.GameObjects
@@ -38,6 +39,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		[Export] GpuParticles2D fallDustParticles;
 		[Export] AudioStreamPlayer2D audioPlayer;
 		[Export] CollisionShape2D collisionShape;
+		[Export] Area2D triggersHitbox;
 
 		[ExportGroup("Killzone detection components")]
 		[Export] Area2D killzoneHitbox;
@@ -102,7 +104,13 @@ namespace ClockBombGames.PixelMan.GameObjects
 		///     <item>2 = Player 2</item>
 		/// </list>
 		/// </summary>
-		public int playerIndex = 0;
+		[Export] public int playerIndex = 0;
+
+		/// <summary>
+		/// The ticks for a small workaround to prevent other areas and raycast from detecting
+		/// the player after the game resets for the designed ticks.
+		/// </summary>
+		private int delayedTicksAfterReset = 0;
 
 
 		/// <summary>
@@ -202,6 +210,22 @@ namespace ClockBombGames.PixelMan.GameObjects
 		}
 
 		/// <summary>
+		/// Is the player dead?
+		/// </summary>
+		public bool IsDead
+		{
+			get
+			{
+				return isDead;
+			}
+		}
+
+		/// <summary>
+		/// The number of available attempts the player has to resurrect with a checkpoint.
+		/// </summary>
+		public int CheckpointAttempts { get; set; }
+
+		/// <summary>
 		/// Wanted horizontal speed.
 		/// </summary>
 		public float WantedHorizontalSpeed
@@ -220,6 +244,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 			get => playerIndex;
 			set => playerIndex = value;
 		}
+
+		/// <summary>
+		/// A list of the camera area triggers the player is touching.
+		/// </summary>
+		public List<CameraAreaTrigger> CameraAreaTriggers { get; private set; } = new();
 
 		#endregion
 
@@ -245,19 +274,34 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 
 			// Connect events
-			GameEvents.OnPlayerDeath += OnPlayerDeath;
 			GameEvents.OnResetGame += OnGameReset;
 
-			killzoneHitbox.AreaEntered += (area) => {
-				Globals.KillPlayers();
+			killzoneHitbox.AreaEntered += (area) =>
+			{
+				KillPlayer();
 			};
 
-			killzoneHitbox.BodyEntered += (body) => {
+			killzoneHitbox.BodyEntered += (body) =>
+			{
 				if (body is Player) {
 					return;
 				}
 
-				Globals.KillPlayers();
+				KillPlayer();
+			};
+
+			triggersHitbox.AreaEntered += (area) =>
+			{
+				if (area is CameraAreaTrigger cameraAreaTrigger) {
+					CameraAreaTriggers.Add(cameraAreaTrigger);
+				}
+			};
+
+			triggersHitbox.AreaExited += (area) =>
+			{
+				if (area is CameraAreaTrigger cameraAreaTrigger) {
+					CameraAreaTriggers.Remove(cameraAreaTrigger);
+				}
 			};
 
 			// Create the death particles
@@ -410,6 +454,14 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public override void _PhysicsProcess(double delta)
 		{
+			// Small delay to prevent the physics from being updated in ticks
+			if (delayedTicksAfterReset > 0) {
+				delayedTicksAfterReset--;
+
+				ResetToInitialPosition();
+				return;
+			}
+
 			collisionShape.Disabled = isDead;
 			killzoneHitbox.Monitoring = !isDead;
 			killzoneHitbox.Monitorable = !isDead;
@@ -536,10 +588,35 @@ namespace ClockBombGames.PixelMan.GameObjects
 			jumpTime = 0f;
 		}
 
+		private void ResetToInitialPosition()
+		{
+			Resurrect(startPosition);
+		}
+
+		public void Resurrect(Vector2 position)
+		{
+			isDead = false;
+			Position = position;
+			Velocity = Vector2.Zero;
+
+			animator.Visible = true;
+			invertedGravity = false;
+
+			hangCount = 0f;
+			jumpTime = 0f;
+			canReduceJump = false;
+			horizontalInput = 0;
+
+			rawAngle = 0;
+			Rotation = 0;
+
+			pressedJump = false;
+			releasedJump = false;
+		}
 
 
 		#region Delegate methods
-		private void OnPlayerDeath()
+		public void KillPlayer()
 		{
 			isDead = true;
 			Velocity = Vector2.Zero;
@@ -548,16 +625,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			audioPlayer.Stream = sounds[1];
 			audioPlayer.Play();
+
+			Globals.Shake(1f, 0.3f);
+			Globals.CallPlayerDeathEvents();
 		}
 
 		private void OnGameReset()
 		{
-			isDead = false;
-			Position = startPosition;
-			Velocity = Vector2.Zero;
+			ResetToInitialPosition();
 
-			animator.Visible = true;
-			invertedGravity = false;
+			delayedTicksAfterReset = 1;
+			CheckpointAttempts = 0;
 		}
 		#endregion
 

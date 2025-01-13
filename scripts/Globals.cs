@@ -139,11 +139,26 @@ namespace ClockBombGames.PixelMan
 
 
 		/// <summary>
-		/// Tells the director that the player died.
+		/// Tries to tells the director that all player died.
+		/// Only triggers the OnAllPlayersDeath event when all player died.
 		/// </summary>
-		public static void KillPlayers()
+		public static void CallPlayerDeathEvents()
 		{
-			director.TriggerPlayerDeath();
+			int deadPlayersCount = 0;
+
+			foreach (Player player in players) {
+				if (player.IsDead) {
+					director.TriggerPlayerDeath(player);
+
+					if (player.CheckpointAttempts <= 0) {
+						deadPlayersCount++;
+					}
+				}
+			}
+
+			if (deadPlayersCount == players.Count) {
+				director.TriggerAllPlayersDeath();
+			}
 		}
 
 

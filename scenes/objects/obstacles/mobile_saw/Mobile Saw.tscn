@@ -30,7 +30,7 @@ animations = [{
 size = Vector2(19, 16)
 
 [node name="Mobile Saw" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "container")]
-collision_layer = 132
+collision_layer = 128
 collision_mask = 9
 script = ExtResource("1_uhp8w")
 sprite = NodePath("Killzones and sprites/Car Sprite")

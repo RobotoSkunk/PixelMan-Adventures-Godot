@@ -39,12 +39,15 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private float timeToShoot = 0f;
 
 
+		Player cachedPlayer;
+
+
 		public override void _Ready()
 		{
 			initialRotation = GlobalRotationDegrees;
 			angle = initialRotation;
 
-			GameEvents.OnPlayerDeath += OnPlayerDeath;
+			GameEvents.OnAllPlayersDeath += OnAllPlayersDeath;
 			GameEvents.OnResetGame += OnResetGame;
 		}
 
@@ -54,10 +57,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 				return;
 			}
 
-			Player player = GetNearestPlayer();
-
-			if (player != null) {
-				LookAt(GlobalPosition.DirectionTo(player.GlobalPosition).Angle(), 10f);
+			if (cachedPlayer != null) {
+				LookAt(GlobalPosition.DirectionTo(cachedPlayer.GlobalPosition).Angle(), 10f);
 
 				if (timeToShoot <= 0f) {
 					Vector2 from = GlobalPosition + new Vector2(16f * 1.5f, 0).Rotated(GlobalRotation);
@@ -73,9 +74,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 			} else {
 				timeToShoot = 0.5f;
 			}
+
+			cachedPlayer = GetNearestPlayer();
 		}
 
-		private void OnPlayerDeath()
+		private void OnAllPlayersDeath()
 		{
 			playerIsDead = true;
 		}

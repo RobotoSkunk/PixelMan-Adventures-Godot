@@ -77,14 +77,15 @@ namespace ClockBombGames.PixelMan.GameObjects
 		private void OnResetGame()
 		{
 			isActive = false;
+			wasActive = false;
 		}
 
 		private void OnBodyEntered(Node body)
 		{
 			Destroy();
 
-			if (body is Player) {
-				Globals.KillPlayers();
+			if (body is Player player) {
+				player.KillPlayer();
 			}
 		}
 
@@ -102,6 +103,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 			isActive = true;
 
 			animatedSprite2D.Play();
+
+			particles2d.Restart();
+			particles2d.Emitting = false;
 		}
 
 		public void Destroy()

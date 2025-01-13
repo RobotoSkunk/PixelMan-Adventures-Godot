@@ -28,7 +28,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0w4g"]
 size = Vector2(1, 8)
 
-[node name="LaserGun" type="Node2D" node_paths=PackedStringArray("renderer", "rendererOutline", "rayCast2D", "playerRayCast2D", "audioStreamPlayer", "laserBody", "laserDots", "laserLine", "laserHitbox")]
+[node name="LaserGun" type="Node2D" node_paths=PackedStringArray("renderer", "rendererOutline", "rayCast2D", "playerRayCast2D", "audioStreamPlayer", "laserBody", "laserDots", "laserLine", "laserHitbox", "laserScreenNotifier")]
 script = ExtResource("1_xg465")
 renderer = NodePath("Renderer")
 rendererOutline = NodePath("Renderer Outline")
@@ -39,6 +39,7 @@ laserBody = NodePath("Laser/Body")
 laserDots = NodePath("Laser/Dots")
 laserLine = NodePath("Laser/Line")
 laserHitbox = NodePath("Laser/Body/Hitbox")
+laserScreenNotifier = NodePath("Laser/Line Screen Notifier")
 rendererSprites = Array[Texture2D]([ExtResource("2_65no7"), ExtResource("3_ioy25"), ExtResource("4_v4tuu"), ExtResource("5_fgrw0"), ExtResource("6_ctgmc"), ExtResource("7_yvkl7"), ExtResource("8_su6qu"), ExtResource("9_vl3fp"), ExtResource("10_efa8y"), ExtResource("11_xbm5x"), ExtResource("1_xrksn")])
 laserSprites = Array[Texture2D]([ExtResource("13_34jkr"), ExtResource("1_04xqo")])
 dotsSprites = Array[Texture2D]([ExtResource("3_p600n"), ExtResource("16_lrgjd"), ExtResource("17_tyjys"), ExtResource("18_5yix8"), ExtResource("19_gienw"), ExtResource("20_10iyb")])
@@ -57,7 +58,8 @@ target_position = Vector2(1600, 0)
 collision_mask = 2
 
 [node name="Line Screen Notifier" type="VisibleOnScreenNotifier2D" parent="Laser"]
-rect = Rect2(0, -0.5, 1, 1)
+scale = Vector2(1.01215, 1)
+rect = Rect2(0, -1, 1, 2)
 
 [node name="Line" type="Sprite2D" parent="Laser"]
 texture = ExtResource("22_ta4yw")
@@ -95,3 +97,4 @@ texture = ExtResource("21_qa67i")
 texture = ExtResource("1_xrksn")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_distance = 800.0
