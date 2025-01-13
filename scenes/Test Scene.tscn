@@ -13,11 +13,6 @@
 
 [node name="Player" parent="." instance=ExtResource("2_eoc6o")]
 position = Vector2(-18, 92)
-playerIndex = 1
-
-[node name="Player2" parent="." instance=ExtResource("2_eoc6o")]
-position = Vector2(-41, 87)
-playerIndex = 2
 
 [node name="Default Block" parent="." instance=ExtResource("1_1v0s6")]
 position = Vector2(151, 111)
@@ -62,7 +57,7 @@ rotation = 0.785398
 position = Vector2(-153, 95)
 
 [node name="Saw" parent="." instance=ExtResource("5_kr1w6")]
-position = Vector2(-189, 40)
+position = Vector2(-77, -45)
 path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0)])
 speed = 160.0
 

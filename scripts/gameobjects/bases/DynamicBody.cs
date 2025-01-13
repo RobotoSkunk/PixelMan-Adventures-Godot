@@ -37,7 +37,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// <summary>
 		/// The speed to be applied to the body.
 		/// </summary>
-		protected Vector2 speed = new(144, 272);
+		protected Vector2 speed = new(144, 304);
 
 
 		/// <summary>
