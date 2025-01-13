@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d0cobbjeruolr" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/8.tres" id="10_3d0qb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fcbl"]
-size = Vector2(16, 29)
+size = Vector2(18, 51)
 
 [node name="Checkpoint" type="Node2D" node_paths=PackedStringArray("signSprite", "numberSprite", "hitbox")]
 script = ExtResource("1_xlr8o")
@@ -42,6 +42,6 @@ collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -7.5)
+position = Vector2(0, -18.5)
 shape = SubResource("RectangleShape2D_6fcbl")
 debug_color = Color(0, 1, 0, 0.419608)
