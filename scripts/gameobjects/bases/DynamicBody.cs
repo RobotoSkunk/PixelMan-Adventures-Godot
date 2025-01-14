@@ -40,12 +40,12 @@ namespace ClockBombGames.PixelMan.GameObjects
 		protected Vector2 speed = new(144, 304);
 
 		/// <summary>
-		/// The current friction of the player.
+		/// The current friction of the body.
 		/// </summary>
 		protected float friction = 2f;
 
 		/// <summary>
-		/// If true, the friction will not change when the player is in the air.
+		/// If true, the friction will not change when the body is in the air.
 		/// </summary>
 		protected bool overrideFrictionOnAir = false;
 
@@ -90,15 +90,19 @@ namespace ClockBombGames.PixelMan.GameObjects
 			///// Horizontal movement
 
 			// Apply friction
-			float tmpFriction = friction;
-
 			if (IsOnFloorOnly()) {
 				KinematicCollision2D kinematic = GetLastSlideCollision();
-				if (kinematic != null && kinematic.GetCollider() is Block block) {
-					friction = block.Friction;
-					tmpSpeed.X *= block.Acceleration;
 
-					overrideFrictionOnAir = block.OverrideFrictionOnAir;
+				if (kinematic != null) {
+					if (kinematic.GetCollider() is Block block) {
+						friction = block.Friction;
+						tmpSpeed.X *= block.Acceleration;
+
+						overrideFrictionOnAir = block.OverrideFrictionOnAir;
+					} else {
+						overrideFrictionOnAir = false;
+						friction = 4f;
+					}
 
 					if (hasHorizontalInput) {
 						friction /= 2f;
@@ -107,7 +111,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			}
 
 			if (!IsOnFloor() && !overrideFrictionOnAir) {
-				friction = 2f;
+				friction = 1.5f;
 			}
 
 

@@ -108,9 +108,9 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		/// <summary>
 		/// The ticks for a small workaround to prevent other areas and raycast from detecting
-		/// the player after the game resets for the designed ticks.
+		/// the player after the player resurrects for the designed ticks.
 		/// </summary>
-		private int delayedTicksAfterReset = 0;
+		private int delayedTicksAfterResurrect = 0;
 
 
 		/// <summary>
@@ -183,6 +183,21 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// The normal vector of the floor.
 		/// </summary>
 		private Vector2 floorNormal;
+
+		/// <summary>
+		/// The normal vector of the floor.
+		/// </summary>
+		private Vector2 resurrectPosition;
+
+		/// <summary>
+		/// The velocity of the last platform the player was colliding with.
+		/// </summary>
+		protected Vector2 lastPlatformVelocity = Vector2.Zero;
+
+		/// <summary>
+		/// If true, the velocity of the last platform the player was colliding with will be applied.
+		/// </summary>
+		protected bool addVelocityOnLeave = false;
 		#endregion
 
 		#region Getters and setters
@@ -455,10 +470,10 @@ namespace ClockBombGames.PixelMan.GameObjects
 		public override void _PhysicsProcess(double delta)
 		{
 			// Small delay to prevent the physics from being updated in ticks
-			if (delayedTicksAfterReset > 0) {
-				delayedTicksAfterReset--;
+			if (delayedTicksAfterResurrect > 0) {
+				delayedTicksAfterResurrect--;
 
-				ResetToInitialPosition();
+				Resurrect(resurrectPosition);
 				return;
 			}
 
@@ -518,6 +533,17 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 			Vector2 velocity = ProcessVelocity(WantedHorizontalSpeed, horizontalInput != 0f, (float)delta);
 
+			if (IsOnFloorOnly()) {
+				KinematicCollision2D kinematic = GetLastSlideCollision();
+
+				if (kinematic != null && kinematic.GetCollider() is Platform platform) {
+					addVelocityOnLeave = true;
+					lastPlatformVelocity = platform.Velocity;
+				} else {
+					addVelocityOnLeave = false;
+				}
+			}
+
 			#region Jump
 			if (jumpTime > 0f && hangCount > 0f) {
 				velocity.Y += JumpForce.Y;
@@ -528,6 +554,11 @@ namespace ClockBombGames.PixelMan.GameObjects
 					WantedHorizontalSpeed < 0f && velocity.X > -JumpForce.X
 				) {
 					velocity.X += JumpForce.X * 1.8f;
+				}
+
+				if (addVelocityOnLeave) {
+					velocity.X += lastPlatformVelocity.X * 1.75f;
+					addVelocityOnLeave = false;
 				}
 
 				jumpTime = 0f;
@@ -595,8 +626,14 @@ namespace ClockBombGames.PixelMan.GameObjects
 
 		public void Resurrect(Vector2 position)
 		{
-			isDead = false;
-			Position = position;
+			if (isDead) {
+				delayedTicksAfterResurrect = 1;
+				resurrectPosition = position;
+
+				isDead = false;
+			}
+
+			Position = resurrectPosition;
 			Velocity = Vector2.Zero;
 
 			animator.Visible = true;
@@ -606,6 +643,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 			jumpTime = 0f;
 			canReduceJump = false;
 			horizontalInput = 0;
+			addVelocityOnLeave = false;
 
 			rawAngle = 0;
 			Rotation = 0;
@@ -634,7 +672,6 @@ namespace ClockBombGames.PixelMan.GameObjects
 		{
 			ResetToInitialPosition();
 
-			delayedTicksAfterReset = 1;
 			CheckpointAttempts = 0;
 		}
 		#endregion

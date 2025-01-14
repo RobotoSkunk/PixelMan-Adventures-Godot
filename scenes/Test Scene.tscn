@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ds8gpr35ere4s"]
+[gd_scene load_steps=10 format=3 uid="uid://ds8gpr35ere4s"]
 
 [ext_resource type="PackedScene" uid="uid://hudvebcfiwl1" path="res://scenes/objects/blocks/default_block/Default Block.tscn" id="1_1v0s6"]
 [ext_resource type="PackedScene" uid="uid://so6iom4ptltd" path="res://scenes/objects/player/Player.tscn" id="2_eoc6o"]
@@ -8,11 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://btxvoypjswqqe" path="res://scenes/objects/obstacles/laser_gun/Laser Gun.tscn" id="7_pbbjc"]
 [ext_resource type="PackedScene" uid="uid://d3petahsbw3ne" path="res://scenes/objects/checkpoint/checkpoint.tscn" id="8_xoibk"]
 [ext_resource type="PackedScene" uid="uid://cgg3lknc2en0n" path="res://scenes/objects/blocks/ice_block/Ice Block.tscn" id="9_804lo"]
+[ext_resource type="PackedScene" uid="uid://di0sg0hxj0ubj" path="res://scenes/objects/platform/Platform.tscn" id="9_g02mt"]
 
 [node name="Test Scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_eoc6o")]
-position = Vector2(-111, 82)
+position = Vector2(64, 33)
 
 [node name="Default Block" parent="." instance=ExtResource("1_1v0s6")]
 position = Vector2(151, 111)
@@ -66,7 +67,7 @@ position = Vector2(283, 102)
 speed = 160.0
 
 [node name="Saw3" parent="." instance=ExtResource("5_kr1w6")]
-position = Vector2(166, 36)
+position = Vector2(180, -16)
 path = Array[Vector2]([Vector2(0, 0), Vector2(80, 0), Vector2(40, -80)])
 returnToStart = true
 speed = 160.0
@@ -107,3 +108,7 @@ position = Vector2(64, 0)
 
 [node name="Default Block5" parent="Default Block9" instance=ExtResource("9_804lo")]
 position = Vector2(80, 0)
+
+[node name="Platform" parent="." instance=ExtResource("9_g02mt")]
+position = Vector2(66, 68)
+startPositive = false
