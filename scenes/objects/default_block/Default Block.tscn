@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://hudvebcfiwl1"]
+[gd_scene load_steps=4 format=3 uid="uid://hudvebcfiwl1"]
 
 [ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="1_fkvdl"]
+[ext_resource type="Script" path="res://scenes/objects/blocks/Block.cs" id="1_lrwsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3e02l"]
 size = Vector2(16, 16)
 
 [node name="Default Block" type="StaticBody2D"]
+script = ExtResource("1_lrwsr")
+_friction = 4.0
+_acceleration = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fkvdl")

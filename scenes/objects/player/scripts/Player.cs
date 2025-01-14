@@ -527,7 +527,7 @@ namespace ClockBombGames.PixelMan.GameObjects
 					WantedHorizontalSpeed > 0f && velocity.X < JumpForce.X ||
 					WantedHorizontalSpeed < 0f && velocity.X > -JumpForce.X
 				) {
-					velocity.X = JumpForce.X * 1.8f;
+					velocity.X += JumpForce.X * 1.8f;
 				}
 
 				jumpTime = 0f;

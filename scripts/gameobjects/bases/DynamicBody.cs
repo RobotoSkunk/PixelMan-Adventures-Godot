@@ -39,6 +39,16 @@ namespace ClockBombGames.PixelMan.GameObjects
 		/// </summary>
 		protected Vector2 speed = new(144, 304);
 
+		/// <summary>
+		/// The current friction of the player.
+		/// </summary>
+		protected float friction = 2f;
+
+		/// <summary>
+		/// If true, the friction will not change when the player is in the air.
+		/// </summary>
+		protected bool overrideFrictionOnAir = false;
+
 
 		/// <summary>
 		/// Gravity force applied to the body.
@@ -75,27 +85,39 @@ namespace ClockBombGames.PixelMan.GameObjects
 			UpDirection = new Vector2(0f, invertedGravity ? 1f : -1f);
 
 			Vector2 velocity = Velocity;
+			Vector2 tmpSpeed = speed;
 
 			///// Horizontal movement
 
 			// Apply friction
-			float friction = 2f;
-			float acceleration = 3f;
+			if (IsOnFloorOnly()) {
+				KinematicCollision2D kinematic = GetLastSlideCollision();
+				if (kinematic != null && kinematic.GetCollider() is Block block) {
+					friction = block.Friction;
+					tmpSpeed.X *= block.Acceleration;
 
-			if (IsOnFloor() && !hasHorizontalInput) {
-				friction = 4f;
-				acceleration = 1f;
+					overrideFrictionOnAir = block.OverrideFrictionOnAir;
+				}
 			}
 
-			if (Mathf.Abs(Velocity.X) > 16f) {
-				velocity.X -= Mathf.Sign(Velocity.X) * friction * speed.X * delta;
+			if (IsOnFloor()) {
+				if (hasHorizontalInput) {
+					friction /= 2f;
+				}
+			} else if (!overrideFrictionOnAir) {
+				friction = 2f;
+			}
+
+
+			if (Mathf.Abs(velocity.X) > 16f) {
+				velocity.X -= Mathf.Sign(velocity.X) * friction * tmpSpeed.X * delta;
 			} else {
 				velocity.X = 0f;
 			}
 
 			// Apply horizontal input
-			if (Mathf.Abs(Velocity.X) < speed.X && hasHorizontalInput) {
-				velocity.X += Mathf.Pow(horizontalSpeed * delta, 2f) * Mathf.Sign(horizontalSpeed) * acceleration;
+			if (Mathf.Abs(velocity.X) < tmpSpeed.X && hasHorizontalInput) {
+				velocity.X += Mathf.Pow(horizontalSpeed * delta, 2f) * Mathf.Sign(horizontalSpeed) * 3f;
 			}
 
 			///// Vertical movement

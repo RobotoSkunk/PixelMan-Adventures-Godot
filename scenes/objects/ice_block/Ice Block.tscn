@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgg3lknc2en0n"]
+
+[ext_resource type="Script" path="res://scenes/objects/blocks/Block.cs" id="1_drqwc"]
+[ext_resource type="Texture2D" uid="uid://5astsa66g0vu" path="res://assets/sprites/atlas-1.sprites/blocks/ice.tres" id="1_wtwrt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofv6j"]
+size = Vector2(16, 16)
+
+[node name="Default Block" type="StaticBody2D"]
+script = ExtResource("1_drqwc")
+_friction = 1.0
+_acceleration = 1.65
+_overrideFrictionOnAir = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wtwrt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ofv6j")
