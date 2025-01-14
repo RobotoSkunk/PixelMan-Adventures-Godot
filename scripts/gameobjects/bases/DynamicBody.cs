@@ -90,6 +90,8 @@ namespace ClockBombGames.PixelMan.GameObjects
 			///// Horizontal movement
 
 			// Apply friction
+			float tmpFriction = friction;
+
 			if (IsOnFloorOnly()) {
 				KinematicCollision2D kinematic = GetLastSlideCollision();
 				if (kinematic != null && kinematic.GetCollider() is Block block) {
@@ -97,14 +99,14 @@ namespace ClockBombGames.PixelMan.GameObjects
 					tmpSpeed.X *= block.Acceleration;
 
 					overrideFrictionOnAir = block.OverrideFrictionOnAir;
+
+					if (hasHorizontalInput) {
+						friction /= 2f;
+					}
 				}
 			}
 
-			if (IsOnFloor()) {
-				if (hasHorizontalInput) {
-					friction /= 2f;
-				}
-			} else if (!overrideFrictionOnAir) {
+			if (!IsOnFloor() && !overrideFrictionOnAir) {
 				friction = 2f;
 			}
 
