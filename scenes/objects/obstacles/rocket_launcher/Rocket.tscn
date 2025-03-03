@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bhm3yaulej1hv"]
 
 [ext_resource type="Texture2D" uid="uid://0drbgjyclgud" path="res://assets/sprites/atlas-1.sprites/objects/rocket/0.tres" id="1_mu35x"]
-[ext_resource type="Script" path="res://scenes/objects/obstacles/rocket_launcher/Rocket.cs" id="1_nhnjf"]
+[ext_resource type="Script" uid="uid://dep88khot2lug" path="res://scenes/objects/obstacles/rocket_launcher/Rocket.cs" id="1_nhnjf"]
 [ext_resource type="Texture2D" uid="uid://ctqbjdpdi80a" path="res://assets/sprites/atlas-1.sprites/objects/rocket/1.tres" id="2_mmeod"]
 [ext_resource type="Texture2D" uid="uid://cei1axltehr7k" path="res://assets/sprites/atlas-1.sprites/objects/rocket/2.tres" id="3_x4sdl"]
 [ext_resource type="Texture2D" uid="uid://brxd8y7dbpwax" path="res://assets/sprites/atlas-1.sprites/objects/rocket/3.tres" id="4_25xm2"]

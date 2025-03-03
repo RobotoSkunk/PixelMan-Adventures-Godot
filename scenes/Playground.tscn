@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cc2ucaglbxrpu"]
 
 [ext_resource type="PackedScene" uid="uid://dinit3e161y8v" path="res://scenes/utils/viewports/viewports.tscn" id="1_ouqyc"]
-[ext_resource type="Script" path="res://scripts/Playground.cs" id="1_pjoaq"]
+[ext_resource type="Script" uid="uid://b23i5w2c3mksw" path="res://scripts/Playground.cs" id="1_pjoaq"]
 [ext_resource type="PackedScene" uid="uid://ds8gpr35ere4s" path="res://scenes/Test Scene.tscn" id="3_27w22"]
 
 [node name="Playground" type="Node" node_paths=PackedStringArray("worldNode", "viewports")]

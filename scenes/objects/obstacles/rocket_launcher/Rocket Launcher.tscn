@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://djs8y3b5sbg6"]
 
 [ext_resource type="Texture2D" uid="uid://b7vlj4u8oda2s" path="res://assets/sprites/atlas-1.sprites/objects/rocket-launcher.tres" id="1_gsc16"]
-[ext_resource type="Script" path="res://scenes/objects/obstacles/rocket_launcher/RocketLauncher.cs" id="1_toego"]
+[ext_resource type="Script" uid="uid://dmtgr8au88xgq" path="res://scenes/objects/obstacles/rocket_launcher/RocketLauncher.cs" id="1_toego"]
 [ext_resource type="PackedScene" uid="uid://bhm3yaulej1hv" path="res://scenes/objects/obstacles/rocket_launcher/Rocket.tscn" id="2_411fe"]
 [ext_resource type="AudioStream" uid="uid://b2fcxdha310ad" path="res://assets/sounds/LaunchRocket.wav" id="4_r4ob6"]
 

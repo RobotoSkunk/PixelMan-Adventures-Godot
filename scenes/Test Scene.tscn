@@ -13,7 +13,7 @@
 [node name="Test Scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_eoc6o")]
-position = Vector2(64, 33)
+position = Vector2(67, 19)
 
 [node name="Default Block" parent="." instance=ExtResource("1_1v0s6")]
 position = Vector2(151, 111)
@@ -110,5 +110,5 @@ position = Vector2(64, 0)
 position = Vector2(80, 0)
 
 [node name="Platform" parent="." instance=ExtResource("9_g02mt")]
-position = Vector2(66, 68)
+position = Vector2(63, 48)
 startPositive = false

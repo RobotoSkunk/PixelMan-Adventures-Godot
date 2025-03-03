@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://d3petahsbw3ne"]
 
 [ext_resource type="Texture2D" uid="uid://bdxmmciyryy1o" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/sign.tres" id="1_2rglr"]
-[ext_resource type="Script" path="res://scenes/objects/checkpoint/Checkpoint.cs" id="1_xlr8o"]
+[ext_resource type="Script" uid="uid://csq0y8ux6ys4a" path="res://scenes/objects/checkpoint/Checkpoint.cs" id="1_xlr8o"]
 [ext_resource type="Texture2D" uid="uid://cw0gjpbiq7650" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/0.tres" id="2_6gptr"]
 [ext_resource type="Texture2D" uid="uid://bso64p1qtigoi" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/post.tres" id="2_dju8x"]
 [ext_resource type="Texture2D" uid="uid://cexpo2jqdixdk" path="res://assets/sprites/atlas-1.sprites/objects/checkpoint/number/9.tres" id="2_mc1yc"]

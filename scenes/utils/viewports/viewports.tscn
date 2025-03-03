@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dinit3e161y8v"]
 
-[ext_resource type="Script" path="res://scenes/utils/viewports/Viewports.cs" id="1_ns63k"]
+[ext_resource type="Script" uid="uid://p7ff704ylkcg" path="res://scenes/utils/viewports/Viewports.cs" id="1_ns63k"]
 [ext_resource type="Texture2D" uid="uid://brqrcxaywvi71" path="res://assets/sprites/atlas-1.sprites/blocks/default.tres" id="2_5uatc"]
-[ext_resource type="Script" path="res://scenes/objects/player/scripts/PlayerViewport.cs" id="3_mgdin"]
-[ext_resource type="Script" path="res://scenes/objects/player/scripts/PlayerCamera.cs" id="4_dxh3r"]
+[ext_resource type="Script" uid="uid://cl5wc6krf4cwo" path="res://scenes/objects/player/scripts/PlayerViewport.cs" id="3_mgdin"]
+[ext_resource type="Script" uid="uid://cisdbowqm0pli" path="res://scenes/objects/player/scripts/PlayerCamera.cs" id="4_dxh3r"]
 
 [node name="Viewports" type="CanvasLayer" node_paths=PackedStringArray("container", "viewports")]
 script = ExtResource("1_ns63k")

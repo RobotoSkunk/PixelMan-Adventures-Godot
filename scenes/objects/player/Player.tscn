@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://so6iom4ptltd"]
 
-[ext_resource type="Script" path="res://scenes/objects/player/scripts/Player.cs" id="1_yr5fv"]
+[ext_resource type="Script" uid="uid://c1ib87kdsy02d" path="res://scenes/objects/player/scripts/Player.cs" id="1_yr5fv"]
 [ext_resource type="AudioStream" uid="uid://bdmsjyhuv5bir" path="res://assets/sounds/Jump.wav" id="2_36iwa"]
 [ext_resource type="PackedScene" uid="uid://dh3w62ygikp60" path="res://scenes/objects/player/Player Death Particle.tscn" id="2_d8fqs"]
 [ext_resource type="AudioStream" uid="uid://cc466fco7woo1" path="res://assets/sounds/Death.wav" id="3_agnwr"]
@@ -91,18 +91,18 @@ offset = Vector2(0, -4)
 
 [node name="Dust Particles" type="GPUParticles2D" parent="Rendering"]
 position = Vector2(0, 7)
-process_material = SubResource("ParticleProcessMaterial_agblt")
 texture = ExtResource("16_ylwl0")
 lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_agblt")
 
 [node name="Fall Dust Particles" type="GPUParticles2D" parent="Rendering"]
 position = Vector2(0, 7)
 emitting = false
-process_material = SubResource("ParticleProcessMaterial_413j1")
 texture = ExtResource("16_ylwl0")
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_413j1")
 
 [node name="Killzone Hitbox" type="Area2D" parent="."]
 collision_layer = 0

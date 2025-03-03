@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgg3lknc2en0n"]
 
-[ext_resource type="Script" path="res://scenes/objects/blocks/Block.cs" id="1_drqwc"]
+[ext_resource type="Script" uid="uid://37glrk77rau3" path="res://scenes/objects/blocks/Block.cs" id="1_drqwc"]
 [ext_resource type="Texture2D" uid="uid://5astsa66g0vu" path="res://assets/sprites/atlas-1.sprites/blocks/ice.tres" id="1_wtwrt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofv6j"]

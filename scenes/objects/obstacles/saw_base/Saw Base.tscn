@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dph5i4hb3sd5x"]
 
 [ext_resource type="PackedScene" uid="uid://brkd2fftojs6k" path="res://scenes/objects/obstacles/saw/Saw.tscn" id="1_5vupl"]
-[ext_resource type="Script" path="res://scenes/objects/obstacles/saw_base/SawBase.cs" id="1_fja5v"]
+[ext_resource type="Script" uid="uid://ixrrktxpya8s" path="res://scenes/objects/obstacles/saw_base/SawBase.cs" id="1_fja5v"]
 [ext_resource type="Texture2D" uid="uid://bwclsb5nplltg" path="res://assets/sprites/atlas-1.sprites/objects/saw-base.tres" id="2_edbag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqjt2"]

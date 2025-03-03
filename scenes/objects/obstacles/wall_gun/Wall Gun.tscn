@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5y7ke78vnvat"]
 
-[ext_resource type="Script" path="res://scenes/objects/obstacles/wall_gun/WallGun.cs" id="1_m8ui0"]
+[ext_resource type="Script" uid="uid://dnwi3284gj1ur" path="res://scenes/objects/obstacles/wall_gun/WallGun.cs" id="1_m8ui0"]
 [ext_resource type="Texture2D" uid="uid://u0l7rsqht7bb" path="res://assets/sprites/atlas-1.sprites/objects/static-gun.tres" id="1_ve82k"]
 [ext_resource type="PackedScene" uid="uid://l4b2aiwd3deo" path="res://scenes/objects/obstacles/bullet/Bullet.tscn" id="2_dpf7r"]
 [ext_resource type="AudioStream" uid="uid://fhpq5rv0hatq" path="res://assets/sounds/Shoot.wav" id="4_kjb3m"]

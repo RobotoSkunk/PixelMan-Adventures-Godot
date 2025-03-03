@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://di0sg0hxj0ubj"]
 
-[ext_resource type="Script" path="res://scenes/objects/platform/Platform.cs" id="1_406o7"]
+[ext_resource type="Script" uid="uid://dxn02yoxwovk4" path="res://scenes/objects/platform/Platform.cs" id="1_406o7"]
 [ext_resource type="Texture2D" uid="uid://cq17kq5ro3mwu" path="res://assets/sprites/atlas-1.sprites/objects/platform/large.tres" id="1_m7gfd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7vxm"]

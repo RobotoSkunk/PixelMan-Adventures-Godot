@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://btxvoypjswqqe"]
 
 [ext_resource type="Texture2D" uid="uid://b67diqegotm2m" path="res://assets/sprites/atlas-1.sprites/objects/laser/body/1.tres" id="1_04xqo"]
-[ext_resource type="Script" path="res://scenes/objects/obstacles/laser_gun/LaserGun.cs" id="1_xg465"]
+[ext_resource type="Script" uid="uid://l8jux7vmk5hf" path="res://scenes/objects/obstacles/laser_gun/LaserGun.cs" id="1_xg465"]
 [ext_resource type="Texture2D" uid="uid://c5voirhquxu3i" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/10.tres" id="1_xrksn"]
 [ext_resource type="Texture2D" uid="uid://c21d1x4ptm1cf" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/0.tres" id="2_65no7"]
 [ext_resource type="Texture2D" uid="uid://bjss1epna5xa8" path="res://assets/sprites/atlas-1.sprites/objects/laser-gun/1.tres" id="3_ioy25"]
